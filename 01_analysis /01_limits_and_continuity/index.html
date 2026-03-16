@@ -6,85 +6,66 @@
     <title>النهايات والاستمرارية</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$']],
-      displayMath: [['$$', '$$']]
-    },
-    svg: { fontCache: 'global' }
-  };
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha512-6S73uB6U3suNRL3SpisunD3v+o66LzVz4IAnO3/OizH48f8/L8k5v9GqE4N6N3W6T7bA3Xy9U8h6K5V9GqE4N==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
     <style>
-        .lesson-card {
-            background: white !important;
-            border-radius: 12px !important;
-            padding: 25px !important;
-            margin-bottom: 25px !important;
-            border-right: 8px solid #0d6efd !important; 
-            border-left: 0 !important;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
-            text-align: right !important;
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        .lesson-card { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+            border-right: 8px solid #0d6efd; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            text-align: right;
         }
-        
-        .math-block {
-            /* ملاحظة: المحرك سيهتم بالاتجاه داخل المعادلات، لذا لا نحتاج لفرض ltr هنا */
-            background: #f1f3f4;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            text-align: center;
-            font-size: 1.25rem;
-            color: #1a73e8;
-            min-height: 50px;
+        .math-block { 
+            direction: ltr; 
+            background: #f1f3f4; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 15px 0; 
+            text-align: center; 
+            color: #1a73e8; 
+            font-size: 1.3rem; 
         }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container mt-5">
+<div class="container py-4">
     <div class="lesson-card">
-        <h1 class="display-5 fw-bold text-primary">النهايات والاستمرارية</h1>
-        <p class="lead">ملخص شامل، تفاعلي، ومطابق للمقرر الدراسي.</p>
-    </div>
-
-    <div class="lesson-card">
-        <h3 class="text-secondary border-bottom pb-2">1. حالات عدم التعيين</h3>
-        <p>في الحساب، نصادف أربع حالات تتطلب "إزالة الإبهام":</p>
+        <h2 class="text-primary fw-bold">1. حالات عدم التعيين</h2>
+        <p>في الحساب، نصادف أربع حالات شهيرة تتطلب إزالة الإبهام:</p>
         <div class="math-block">
-            $\frac{0}{0} \text{ , } \frac{\infty}{\infty} \text{ , } 0 \times \infty \text{ , } (+\infty) + (-\infty)$
+            $$\frac{0}{0} \quad , \quad \frac{\infty}{\infty} \quad , \quad 0 \times \infty \quad , \quad (+\infty) + (-\infty)$$
         </div>
     </div>
 
     <div class="lesson-card">
-        <h3 class="text-secondary border-bottom pb-2">2. النهايات عند اللانهاية $\pm\infty$</h3>
-    
+        <h2 class="text-primary fw-bold">2. النهايات عند اللانهاية</h2>
         <div class="mt-4">
             <h5>أ) دالة كثير حدود:</h5>
-            <p>نهاية دالة كثير حدود عند $\pm\infty$ هي <strong>نهاية حدها الأعلى درجة</strong></p>
+            <p>النهاية هي نهاية الحد الأعلى درجة:</p>
             <div class="math-block">
-               $$\lim_{x \to \pm\infty} (a_n x^n + \dots + a_0) = \lim_{x \to \pm\infty} a_n x^n$$
+                $$\lim_{x \to \pm\infty} P(x) = \lim_{x \to \pm\infty} a_n x^n$$
             </div>
         </div>
-
+        
         <div class="mt-4">
             <h5>ب) دالة ناطقة:</h5>
-            <p>نهاية دالة ناطقة عند $\pm\infty$ هي <strong>نهاية حاصل قسمة الحدين الأعلى درجة</strong> في البسط والمقام.</p>
+            <p>النهاية هي نهاية حاصل قسمة الحدين الأعلى درجة:</p>
             <div class="math-block">
-                $$\lim_{x \to \pm\infty} \frac{P(x)}{Q(x)} = \lim_{x \to \pm\infty} \frac{ax^n}{bx^m}$$
+                $$\lim_{x \to \pm\infty} \frac{P(x)}{Q(x)} = \lim_{x \to \pm\infty} \frac{a x^n}{b x^m}$$
             </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>
-
-
-
 
 
 
