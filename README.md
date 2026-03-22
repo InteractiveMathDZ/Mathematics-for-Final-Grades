@@ -1,14 +1,18 @@
-# Mathematics-for-Final-Grades
-​Interactive Math resources and solved exercises for high school seniors. Bridging the gap between theoretical logic and academic excellence.
-Open Interactive Exercises Here: 
-https://interactivemathdz.github.io/Mathematics-for-Final-Grades/
+# 📐 Mathematics for Final Grades (InteractiveMathDZ)
+
+> **الجسر الأكاديمي بين المنطق الرياضي والتميز الدراسي.**
+
+مشروع تعليمي تفاعلي متكامل موجه لطلبة القسم النهائي، يهدف إلى تبسيط المفاهيم الرياضية المعقدة وتحويلها إلى تجربة تطبيقية حية.
 
 ---
 
-<div align="right" dir="rtl">
+## 🚀 الوصول السريع (Quick Access)
+يمكنك تصفح التمارين والدروس التفاعلية مباشرة عبر الرابط التالي:
+🔗 **[تصفح المنصة التفاعلية هنا](https://interactivemathdz.github.io/Mathematics-for-Final-Grades/)**
 
-## 📜 ميثاق المشروع (المرجعية التنظيمية)
+---
 
+## 📜 ميثاق المشروع (The Project Charter)
 بعد ضبط الأدوات وتوفر التوطين، نعتمد هذا التقسيم كدستور تقني وبيداغوجي للمشروع، لضمان أعلى درجات الإتقان ومنع اختلاط الملفات:
 
 ### 🏗️ أولاً: هيكلة المجلدات (المجالات الستة)
@@ -26,4 +30,13 @@ https://interactivemathdz.github.io/Mathematics-for-Final-Grades/
 * **الملاحة:** كل صفحة درس أو تمرين تنتهي بـ (زر المتابعة ⬅️) و (زر الرجوع ➡️).
 * **الاستقلالية:** لكل درس أو تمرين استزادة ملفه الخاص لمنع تراكم الأخطاء.
 
-</div>
+---
+
+## 👤 صاحب المشروع والمطور الأصلي
+**Jouini Abderraziqu** *صاحب الرؤية والمشرف العام على المحتوى البيداغوجي والتقني.*
+
+---
+
+## ⚖️ حقوق النشر والترخيص
+هذا المشروع محمي بموجب رخصة **MIT**.  
+*جميع الحقوق محفوظة © 2026 Jouini Abderraziqu.*
