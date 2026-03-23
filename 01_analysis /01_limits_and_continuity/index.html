@@ -290,59 +290,72 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    function verify_checkbox_type(){
-        allAnswers.forEach(id => {
+/**
+ * 1. Calcule les statistiques (score, erreurs, compte)
+ * Retourne un objet contenant les résultats.
+ */
+function calculate_results(allAnswers, correctAnswers) {
+    let stats = {
+        score: 0,
+        errors: 0,
+        checkedCount: 0
+    };
+
+    allAnswers.forEach(id => {
         const checkbox = document.getElementById(id);
         if (checkbox && checkbox.checked) {
-            checkedCount++;
+            stats.checkedCount++;
             if (correctAnswers.includes(id)) {
-                score++;
+                stats.score++;
             } else {
-                errors++;
+                stats.errors++;
             }
         }
-        });  
-    }
-    
-    function validate_checkbox_type(){
-        if (checkedCount === 0) {
-            alert("إختر على الأقل إجابة واحدة!");
-            return;
-        }
+    });
 
-        if (score === correctAnswers.length && errors === 0) {
-             hintBox.className = "hint-box alert alert-success shadow-sm";
-             hintBox.innerHTML = "<b>ممتاز !</b> لقد فهمت التكافل بين الكتابة $\\mathbb{R}^*$ و اتحاد المجالات المفتوحة.";
-        } else {
-             hintBox.className = "hint-box alert alert-danger shadow-sm";
-             hintBox.innerHTML = "<b>حاول مرة أخرى</b> إنتبه إلى إتجاه المعقوفتين([..]) مفتوح ومغلق كما يجب إقصاء الصفر لأنه يعدم المقام. ";
-        }
+    return stats;
+}
+
+/**
+ * 2. Gère l'affichage des messages d'alerte et du rendu MathJax
+ */
+function display_validation(stats, correctAnswers, hintBoxId) {
+    const hintBox = document.getElementById(hintBoxId);
+    if (!hintBox) return;
+
+    if (stats.checkedCount === 0) {
+        alert("إختر على الأقل إجابة واحدة!");
+        return;
+    }
+
+    if (stats.score === correctAnswers.length && stats.errors === 0) {
+        hintBox.className = "hint-box alert alert-success shadow-sm";
+        hintBox.innerHTML = "<b>ممتاز !</b> لقد فهمت التكافل بين الكتابة $\\mathbb{R}^*$ و اتحاد المجالات المفتوحة.";
+    } else {
+        hintBox.className = "hint-box alert alert-danger shadow-sm";
+        hintBox.innerHTML = "<b>حاول مرة أخرى</b> إنتبه إلى إتجاه المعقوفتين([..]) مفتوح ومغلق كما يجب إقصاء الصفر لأنه يعدم المقام. ";
+    }
 
     // Relance le rendu MathJax pour le nouveau texte
-        if (window.MathJax) {
-             MathJax.typesetPromise([hintBox]);
-         }
-        
+    if (window.MathJax) {
+        MathJax.typesetPromise([hintBox]);
     }
-    
-    function verify_2_1_1() {
-    // On ne garde que les notations mathématiquement rigoureuses
+}
+
+/**
+ * 3. Fonction principale appelée par votre bouton
+ */
+function verify_2_1_1() {
     const correctAnswers = ['st-ans-2-1-1-c', 'st-ans-2-1-1-e'];
     const allAnswers = ['st-ans-2-1-1-a', 'st-ans-2-1-1-b', 'st-ans-2-1-1-c', 'st-ans-2-1-1-d', 'st-ans-2-1-1-e', 'st-ans-2-1-1-f'];
-
-    let score = 0;
-    let errors = 0;
-    let checkedCount = 0;
-
-    verify_checkbox_type();
-
-    const hintBox = document.getElementById('hint-2-1-1');
     
-    validate_checkbox_type()
+    // Étape A : On calcule
+    const results = calculate_results(allAnswers, correctAnswers);
     
-    }
+    // Étape B : On affiche
+    display_validation(results, correctAnswers, 'hint-2-1-1');
+}
 
-    
 </script>
 </body>
 
