@@ -6,23 +6,13 @@
     <title>النهايات والاستمرارية</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
     <script>
          window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <style>
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        .lesson-card {background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; border-right: 8px solid #0d6efd; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
-        h1 {font-size:1.3rem; color:blue;}
-        h2 {font-size:1.2rem; color:blue;}
-        h3 {font-size:1.1rem; color:blue !important;}
-        .accordion-button {background-color: white !important; color: #0d6efd !important; font-weight: bold; text-align: right; flex-direction:row !important;justify-content:flex-start !important; gap:10px; text-align:right;}
-        .accordion-button:not(.collapsed) {color: #0d6efd !important; background-color: #f8f9fa !important;}
-        .accordion-button::after{margin-right:0 !important; margin-left:10px; order:-1; filter: sepia(100%) hue-rotate(190deg) saturate(500%);}
-        .math-wrapper {direction: ltr !important; padding: 15px; border-radius: 8px; margin: 15px 0; overflow-x: auto; -webkit-overflow-scrolling: touch;}
-        .choices {direction:"ltr"; margin-left:30px;}
-    </style>
+   
 </head>
 <body>
 
@@ -292,118 +282,9 @@
 </div> <!--div 1-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-/**
- * 1. Calcule les statistiques (score, erreurs, compte)
- * Retourne un objet contenant les résultats.
- */
-function calculate_results(allAnswers, correctAnswers) {
-    let stats = {
-        score: 0,
-        errors: 0,
-        checkedCount: 0
-    };
 
-    allAnswers.forEach(id => {
-        const checkbox = document.getElementById(id);
-        if (checkbox && checkbox.checked) {
-            stats.checkedCount++;
-            if (correctAnswers.includes(id)) {
-                stats.score++;
-            } else {
-                stats.errors++;
-            }
-        }
-    });
+<script src="index.js"></script>
 
-    return stats;
-}
-
-/**
- * 2. Gère l'affichage des messages d'alerte et du rendu MathJax
- */
-function display_validation(stats, correctAnswers, hintBoxId) {
-    const hintBox = document.getElementById(hintBoxId);
-    if (!hintBox) return;
-
-    if (stats.checkedCount === 0) {
-        alert("إختر على الأقل إجابة واحدة!");
-        return;
-    }
-
-    if (stats.score === correctAnswers.length && stats.errors === 0) {
-        hintBox.className = "hint-box alert alert-success shadow-sm";
-        hintBox.innerHTML = "<b>ممتاز !</b> لقد فهمت التكافؤ بين الكتابة $\\mathbb{R}^*$ و اتحاد المجالات المفتوحة.";
-    } else {
-        hintBox.className = "hint-box alert alert-danger shadow-sm";
-        hintBox.innerHTML = "<b>حاول مرة أخرى</b> إنتبه إلى إتجاه المعقوفتين([..]) مفتوح ومغلق كما يجب إقصاء الصفر لأنه يعدم المقام. ";
-    }
-
-    // Relance le rendu MathJax pour le nouveau texte
-    if (window.MathJax) {
-        MathJax.typesetPromise([hintBox]);
-    }
-}
-
-/**
- * 3. Fonction principale appelée par votre bouton
- */
-function verify_2_1_1() {
-    const correctAnswers = ['st-ans-2-1-1-c', 'st-ans-2-1-1-e'];
-    const allAnswers = ['st-ans-2-1-1-a', 'st-ans-2-1-1-b', 'st-ans-2-1-1-c', 'st-ans-2-1-1-d', 'st-ans-2-1-1-e', 'st-ans-2-1-1-f'];
-    
-    // Étape A : On calcule
-    const results = calculate_results(allAnswers, correctAnswers);
-    
-    // Étape B : On affiche
-    display_validation(results, correctAnswers, 'hint-2-1-1');
-}
-
-
-/**
- * Fonction universelle pour valider une réponse numérique
- * @param {string} inputId - L'ID du champ de saisie
- * @param {number} correctAnswer - La valeur mathématique attendue
- * @param {string} hintBoxId - L'ID de la zone de message
- * @param {string} successMsg - Le message en cas de succès (en LaTeX/HTML)
- * @param {string} errorMsg - Le message en cas d'erreur (en LaTeX/HTML)
- */
-function checkNumericExercise(inputId, correctAnswer, hintBoxId, successMsg, errorMsg) {
-    const inputElement = document.getElementById(inputId);
-    const hintBox = document.getElementById(hintBoxId);
-    const userAnswer = inputElement.value;
-
-    if (userAnswer === "") {
-        alert("يرجى كتابة النتيجة أولاً !");
-        return;
-    }
-
-    if (parseFloat(userAnswer) === correctAnswer) {
-        hintBox.className = "hint-box alert alert-success shadow-sm";
-        hintBox.innerHTML = `<b>إجابة صحيحة !</b> ${successMsg}`;
-    } else {
-        hintBox.className = "hint-box alert alert-danger shadow-sm";
-        hintBox.innerHTML = `<b>إجابة خاطئة.</b> ${errorMsg}`;
-    }
-
-    if (window.MathJax) {
-        MathJax.typesetPromise([hintBox]);
-    }
-}
-
-function verify_2_1_2() {
-    checkNumericExercise(
-        'st-ans-2-1-2', 
-        0, 
-        'hint-2-1-2',
-        "<b>إجابة صحيحة !</b> فعلاً، كلما كبر المقام (في القيمة المطلقة)، اقترب الكسر من الصفر: $\\lim_{x \\to -\\infty} \\frac{1}{x} = 0$.",
-        "تذكر القاعدة: $\\frac{L}{\\infty} = 0$."
-    );
-}
-
-
-
-</script>
 </body>
 
 
