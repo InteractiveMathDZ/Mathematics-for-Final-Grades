@@ -87,24 +87,24 @@
         <p>من بين الخيارت التالية التي تحدد مجموعة التعريف $D_f$ حدد كل الإجابات الصحيحة:</p>
         <div class="choices" dir="ltr">
             <input type="checkbox" id="st-ans-2-1-1-a" name="st_ans-2-1-1">
-            <label for="st-ans-2-1-1-a">$D_f = ]-\infty;0[ \cup [0;+\infty[$</label><br>
+            <label for="st-ans-2-1-1-a">$D_f = ]-\infty;0[ \cup [0;+\infty[$</label><br><br>
             <input type="checkbox" id="st-ans-2-1-1-b" name="st-ans-2-1-1">            
-            <label for="st-ans-2-1-1-b">$D_f = ]-\infty;0] \cup ]0; +\infty[$</label><br>
+            <label for="st-ans-2-1-1-b">$D_f = ]-\infty;0] \cup ]0; +\infty[$</label><br><br>
             <input type="checkbox" id="st-ans-2-1-1-c" name="st-ans-2-1-1">
-            <label for="st-ans-2-1-1-c">$D_f = \mathbb{R}^*$</label><br>
+            <label for="st-ans-2-1-1-c">$D_f = \mathbb{R}^*$</label><br><br>
             <input type="checkbox" id="st-ans-2-1-1-d" name="st_ans-2-1-1">
-            <label for="st-ans-2-1-1-d">$D_f = [-\infty;0[ \cup ]0;+\infty[$</label><br>
+            <label for="st-ans-2-1-1-d">$D_f = [-\infty;0[ \cup ]0;+\infty[$</label><br><br>
             <input type="checkbox" id="st-ans-2-1-1-e" name="st-ans-2-1-1">            
-            <label for="st-ans-2-1-1-e">$D_f = ]-\infty;0[ \cup ]0; +\infty[$</label><br>
+            <label for="st-ans-2-1-1-e">$D_f = ]-\infty;0[ \cup ]0; +\infty[$</label><br><br>
             <input type="checkbox" id="st-ans-2-1-1-f" name="st-ans-2-1-1">
             <label for="st-ans-2-1-1-f">$D_f = \mathbb{R}$</label><br>
             <div id="hint-2-1-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
                 🔍 <b>توجيه:</b> المقام هو $x$, حاول إخراج القيمةالتي تعدم المقام من مجموعة التعريف.
             </div>
-            <button onclick="verify_2_1_1()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button>
+            <button onclick="verify_2_1_1()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button><br><br>
         </div> 
         
-        <p id="answer-2-1-1">1.الدالة $f(x)$ معرفة على $\mathbb{R}^*$؛ لنحسب نهايات هذه الدالة عند حدود مجال تعريفها:</p>
+        <p>فيما يلي ستقوم بحساب نهايات هذه الدالة عند أطراف مجال تعريفها:</p></p>
         <p>2. عندما يؤول $x$ الى $-\infty$ فإن الكسر $\frac{1}{x}$ يعطينا قسمة العدد1 على $-\infty$ وكما نعلم فإن أي عدد ثابت مهما كان كبيرا مقسوم على $\pm \infty$ يعطينا الصفر إذن: $$\lim\limits_{x \to -\infty} \frac{1}{x} = 0^-.$$</p>
         <p>3. عندما يؤول $x$ إلى $0$ بقيم أقل، وهو ما يعبر عنه أحيانا ب: عندما يقترب $x$ من الصفر جهة اليسار، يكون لدينا عدد موجب قسمة عدد سالب قيمته المطلقة متناهية في الصغر، تقارب الصفر ويساوي $-\infty$ ومنه: $$\lim\limits_{x \stackrel{\scriptscriptstyle <}{\to} 0} \frac{1}{x} = -\infty $$</p>
         <p>4. عندما يؤول $x$ إلى الصفر بقيم أكبر، أو عندما يقترب من الصفر جهة اليمين، يكون لدينا عدد موجب قسمة عدد موجب متناهي في الصغر، والنتيجة هي $+\infty$  ومنه : $$\lim\limits_{x \stackrel{\scriptscriptstyle >}{\to} 0} \frac{1}{x} = +\infty.$$</p>
