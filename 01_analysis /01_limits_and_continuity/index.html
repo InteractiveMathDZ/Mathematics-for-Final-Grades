@@ -95,7 +95,7 @@
             <label for="st-ans-2-1-1-d">$[-\infty;0[ \cup ]0;+\infty[$</label><br>
             <input type="checkbox" id="st-ans-2-1-1-e" name="st-ans-2-1-1">            
             <label for="st-ans-2-1-1-e">$]-\infty;0[ \cup ]0; +\infty[$</label><br>
-            <input type="checkbox" id="st-ans-2-1-1-f name="st-ans-2-1-1">
+            <input type="checkbox" id="st-ans-2-1-1-f" name="st-ans-2-1-1">
             <label for="st-ans-2-1-1-f">$\mathbb{R}$</label><br>
             <div id="hint-2-1-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
                 🔍 <b>توجيه:</b> المقام هو $x$, حاول إخراج القيمةالتي تعدم المقام من مجموعة التعريف.
@@ -283,6 +283,49 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    function verify_2_1_1() {
+    // On ne garde que les notations mathématiquement rigoureuses
+    const correctAnswers = ['st-ans-2-1-1-c', 'st-ans-2-1-1-e'];
+    const allAnswers = ['st-ans-2-1-1-a', 'st-ans-2-1-1-b', 'st-ans-2-1-1-c', 'st-ans-2-1-1-d', 'st-ans-2-1-1-e', 'st-ans-2-1-1-f'];
+
+    let score = 0;
+    let errors = 0;
+    let checkedCount = 0;
+
+    allAnswers.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox && checkbox.checked) {
+            checkedCount++;
+            if (correctAnswers.includes(id)) {
+                score++;
+            } else {
+                errors++;
+            }
+        }
+    });
+
+    const hintBox = document.getElementById('hint-2-1-1');
+    
+    // Logique de validation : toutes les bonnes, aucune mauvaise
+    if (checkedCount === 0) {
+        alert("Choisissez au moins une réponse !");
+        return;
+    }
+
+    if (score === correctAnswers.length && errors === 0) {
+        hintBox.className = "hint-box alert alert-success shadow-sm";
+        hintBox.innerHTML = "<b>Bravo !</b> Vous avez saisi l'équivalence entre la notation $\\mathbb{R}^*$ et l'union d'intervalles ouverts.";
+    } else {
+        hintBox.className = "hint-box alert alert-danger shadow-sm";
+        hintBox.innerHTML = "<b>Essaye encore :</b> Attention aux crochets et aux valeurs exclues (0 ne doit pas être inclus).";
+    }
+
+    // Relance le rendu MathJax pour le nouveau texte
+    if (window.MathJax) {
+        MathJax.typesetPromise([hintBox]);
+    }
+}
+
     
 </script>
 </body>
