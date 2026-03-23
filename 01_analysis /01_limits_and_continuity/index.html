@@ -97,10 +97,12 @@
             <label for="st-ans-2-1-1-e">$]-\infty;0[ \cup ]0; +\infty[$</label><br>
             <input type="checkbox" id="st-ans-2-1-1-f name="st-ans-2-1-1">
             <label for="st-ans-2-1-1-f">$\mathbb{R}$</label><br>
-        </div> 
-        <div id="hint-2-1-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small">
+            <div id="hint-2-1-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
                 🔍 <b>توجيه:</b> المقام هو $x$, حاول إخراج القيمةالتي تعدم المقام من مجموعة التعريف.
-        </div>
+            </div>
+            <button onclick="verify_2_1_1()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button>
+        </div> 
+        
         <p id="answer-2-1-1">1.الدالة $f(x)$ معرفة على $\mathbb{R}^*$؛ لنحسب نهايات هذه الدالة عند حدود مجال تعريفها:</p>
         <p>2. عندما يؤول $x$ الى $-\infty$ فإن الكسر $\frac{1}{x}$ يعطينا قسمة العدد1 على $-\infty$ وكما نعلم فإن أي عدد ثابت مهما كان كبيرا مقسوم على $\pm \infty$ يعطينا الصفر إذن: $$\lim\limits_{x \to -\infty} \frac{1}{x} = 0^-.$$</p>
         <p>3. عندما يؤول $x$ إلى $0$ بقيم أقل، وهو ما يعبر عنه أحيانا ب: عندما يقترب $x$ من الصفر جهة اليسار، يكون لدينا عدد موجب قسمة عدد سالب قيمته المطلقة متناهية في الصغر، تقارب الصفر ويساوي $-\infty$ ومنه: $$\lim\limits_{x \stackrel{\scriptscriptstyle <}{\to} 0} \frac{1}{x} = -\infty $$</p>
