@@ -176,6 +176,39 @@ function verify_2_2_1() {
     );
 }
 
+// التحقق من نهاية الجذر عند الصفر (2.2.2)
+function verify_2_2_2() {
+    const correct = ['st-ans-2-2-2-b']; // الإجابة الصحيحة هي 0
+    const all = ['st-ans-2-2-2-a', 'st-ans-2-2-2-b', 'st-ans-2-2-2-c'];
+    
+    const res = calculate_results(all, correct);
+    
+    display_universal_validation(
+        res, 
+        correct.length, 
+        'hint-2-2-2',
+        "إجابة دقيقة! بما أن الصفر ينتمي لمجال التعريف، فالعلاقة بين النهاية والصورة مباشرة تماماً.",
+        "راجع مفهوم نهاية دالة عند نقطة معرفة عندها."
+    );
+}
+
+// التحقق من نهاية الجذر عند اللانهاية (2.2.3)
+function verify_2_2_3() {
+    const correct = ['st-ans-2-2-3-b']; // الإجابة الصحيحة هي زائد لانهاية
+    const all = ['st-ans-2-2-3-a', 'st-ans-2-2-3-b', 'st-ans-2-2-3-c'];
+    
+    const res = calculate_results(all, correct);
+    
+    display_universal_validation(
+        res, 
+        correct.length, 
+        'hint-2-2-3',
+        "أحسنت! الدالة الجذرية دالة متزايدة وتؤول إلى اللانهاية كلما كبر المتغير x.",
+        "تذكر أن الجذر التربيعي للأعداد الكبيرة جداً يبقى كبيراً جداً."
+    );
+}
+
+
 
 
 
