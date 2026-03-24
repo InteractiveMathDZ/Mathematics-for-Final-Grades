@@ -116,13 +116,36 @@
             <label for="st-ans-2-1-3-d">$\lim\limits_{x \stackrel{\scriptscriptstyle <}{\to} 0} \frac{1}{x} = 0^-$ </label><br><br>
             
             <div id="hint-2-1-3" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
-                🔍 <b>توجيه:</b> المقام هو $x$, تذكر أن $\frac{L}{0} = \infty$ بحيث $L≠0}$
-            </div>
+                🔍 <b>توجيه:</b> المقام هو $x$, تذكر أن $\frac{L}{0} = \infty$ بحيث $L≠0$
+            </div><br>
             <button onclick="verify_2_1_3()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button><br><br>
-        </div> 
+        </div> <br><br>
+
+        <p>4.أحسب $\lim\limits_{x \stackrel{\scriptscriptstyle >}{\to} 0} \frac{1}{x}$</p>
+        <p></p>من بين الخيارت التالية، حدد الإجابة الصحيحة:</p>
+        <div class="choices" dir="ltr">
+            <input type="checkbox" id="st-ans-2-1-4-a" name="st_ans-2-1-4">
+            <label for="st-ans-2-1-4-a"> $\lim\limits_{x \stackrel{\scriptscriptstyle >}{\to} 0} \frac{1}{x} = +\infty $</label><br><br>
+            <input type="checkbox" id="st-ans-2-1-4-b" name="st-ans-2-1-4">            
+            <label for="st-ans-2-1-4-b">$\lim\limits_{x \stackrel{\scriptscriptstyle >}{\to} 0} \frac{1}{x}=-\infty$ </label><br><br>
+            <input type="checkbox" id="st-ans-2-1-4-c" name="st-ans-2-1-4">
+            <label for="st-ans-2-1-4-c">$\lim\limits_{x \stackrel{\scriptscriptstyle >}{\to} 0} \frac{1}{x} = 0^+ $ </label><br><br>
+            <input type="checkbox" id="st-ans-2-1-4-d" name="st_ans-2-1-4">
+            <label for="st-ans-2-1-4-d">$\lim\limits_{x \stackrel{\scriptscriptstyle <}{\to} 0} \frac{1}{x} = 0^-$ </label><br><br>
+            
+            <div id="hint-2-1-4" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
+                🔍 <b>توجيه:</b> المقام هو $x$, تذكر أن $\frac{L}{0} = \infty$ بحيث $L≠0$
+            </div><br>
+            <button onclick="verify_2_1_4()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button><br><br>
+        </div> <br><br>
         
-        <p>4. عندما يؤول $x$ إلى الصفر بقيم أكبر، أو عندما يقترب من الصفر جهة اليمين، يكون لدينا عدد موجب قسمة عدد موجب متناهي في الصغر، والنتيجة هي $+\infty$  ومنه : $$\lim\limits_{x \stackrel{\scriptscriptstyle >}{\to} 0} \frac{1}{x} = +\infty.$$</p>
-        <p>5. عندما يؤول $x$ إلى $+\infty$ الكسر يؤول إلى $0$ ومنه: $$\lim\limits_{x \to +\infty} \frac{1}{x} = 0^+. $$</p>
+        <p>5.أحسب $\lim\limits_{x \to +\infty} \frac{1}{x}$</p>
+        <p dir="ltr">$\lim\limits_{x \to +\infty} \frac{1}{x} = $ <input type="number" id="st-ans-2-1-5" name="st-ans-2-1-5" size="3" placeholder="أكتب الإجابة هنا"></p>
+        <div id="hint-2-1-5" class="hint-box alert alert-warning shadow-sm text-body-secondary small">
+            🔍 <b>توجيه:</b> تذكر كم يساوي عدد ثابت قسمة لا نهاية.
+        </div><br>
+        <button onclick="verify_2_1_5()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة </button>
+        <br><br>
     </div>
 
     <div class="lesson-card">
