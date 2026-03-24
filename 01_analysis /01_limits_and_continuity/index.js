@@ -209,6 +209,51 @@ function verify_2_2_3() {
 }
 
 
+// التحقق من مجموعة تعريف 1/sqrt(x)
+function verify_2_3_1() {
+    const correct = ['st-ans-2-3-1-b', 'st-ans-2-3-1-c']; // كلاهما صحيح
+    const all = ['st-ans-2-3-1-a', 'st-ans-2-3-1-b', 'st-ans-2-3-1-c'];
+    
+    const res = calculate_results(all, correct);
+    
+    display_universal_validation(
+        res, 
+        correct.length, 
+        'hint-2-3-1',
+        "ممتاز! لقد انتبهت أن الصفر يجب أن يُستثنى لأن الدالة في المقام.",
+        "انتبه! هل يمكن للـ x أن يساوي الصفر في هذه الدالة؟"
+    );
+}
+
+// التحقق من النهاية عند 0
+function verify_2_3_2() {
+    const correct = ['st-ans-2-3-2-b'];
+    const all = ['st-ans-2-3-2-a', 'st-ans-2-3-2-b'];
+    
+    const res = calculate_results(all, correct);
+    
+    display_universal_validation(
+        res, 
+        correct.length, 
+        'hint-2-3-2',
+        "أحسنت! 1 على صفر موجب يعطي دائماً زائد لانهاية.",
+        "فكر مجدداً، ماذا يحدث للكسر عندما يصغر المقام جداً؟"
+    );
+}
+
+// التحقق من النهاية عند اللانهاية
+function verify_2_3_3() {
+    checkNumericExercise(
+        'st-ans-2-3-3', 
+        0, 
+        'hint-2-3-3',
+        "أحسنت! بما أن $\\lim_{x \\to +\\infty} \\sqrt{x} = +\\infty$، فإن مقلوب اللانهاية يؤول حتماً إلى الصفر الموجب ($0^+$).",
+        "تذكر القاعدة الذهبية: عدد ثابت على لانهاية يعطينا دائماً..."
+    );  
+}
+
+
+
 
 
 
