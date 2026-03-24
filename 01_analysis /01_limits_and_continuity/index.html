@@ -211,11 +211,52 @@
     </div>
 
     <div class="lesson-card">
-        <h3 class="text-primary mb-4">3.2. الدالة $f(x)=\frac{1}{\sqrt x }$</h3>
-        <p>هذه الدالة معرفة على المجال $]0; +\infty[$، لنرى النهايات عند أطراف مجال تعريفها.</p> 
-        <p>1. عند الصفر بقيم أكبر، نلاحظ أن المقام يساوي $0^+$، فيكون 1 قسمة $0^+$ يساوي $+\infty$ إذن: $$\lim\limits_{x \stackrel{>}{\to} 0} \frac{1}{\sqrt x } = +\infty $$</p>
-        <p>2. عند $+\infty$، 1 قسمة $+\infty$ تساوي 0: $$\lim\limits_{x \to +\infty} \frac{1}{\sqrt x } = 0^+$$</p>
+    <h3 class="text-primary mb-4">3.2. الدالة $f(x)=\frac{1}{\sqrt{x}}$</h3>
+
+    <p>1. تعيين $D_f$ مجموعة تعريف الدالة $f(x)$:</p>
+    <div class="choices" dir="ltr">
+        <input type="checkbox" id="st-ans-2-3-1-a" name="st-ans-2-3-1">
+        <label for="st-ans-2-3-1-a">$D_f = [0; +\infty[$</label><br><br>
+        <input type="checkbox" id="st-ans-2-3-1-b" name="st-ans-2-3-1">            
+        <label for="st-ans-2-3-1-b">$D_f = ]0; +\infty[$</label><br><br>
+        <input type="checkbox" id="st-ans-2-3-1-c" name="st-ans-2-3-1">
+        <label for="st-ans-2-3-1-c">$D_f = \mathbb{R}^*_+$</label><br><br>
+        
+        <div id="hint-2-3-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
+            🔍 <b>توجيه:</b> لدينا شرطان؛ ما تحت الجذر يجب أن يكون موجباً، والمقام لا يمكن أن يكون صفراً.
+        </div>
+        <button onclick="verify_2_3_1()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button>
     </div>
+    <br>
+
+    <p>2. أحسب $\lim\limits_{x \stackrel{>}{\to} 0} \frac{1}{\sqrt{x}}$</p>
+    <div class="choices" dir="ltr">
+        <input type="radio" id="st-ans-2-3-2-a" name="st-ans-2-3-2">
+        <label for="st-ans-2-3-2-a">$\lim\limits_{x \to 0^+} \frac{1}{\sqrt{x}} = 0$</label><br><br>
+        <input type="radio" id="st-ans-2-3-2-b" name="st-ans-2-3-2">            
+        <label for="st-ans-2-3-2-b">$\lim\limits_{x \to 0^+} \frac{1}{\sqrt{x}} = +\infty$</label><br><br>
+        
+        <div id="hint-2-3-2" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
+            🔍 <b>توجيه:</b> عندما يقترب $x$ من $0^+$، فإن $\sqrt{x}$ يقترب من $0^+$. تذكر قاعدة "عدد ثابت على صفر موجب".
+        </div>
+        <button onclick="verify_2_3_2()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button>
+    </div>
+    <br>
+
+    <p>3. أحسب $\lim\limits_{x \to +\infty} \frac{1}{\sqrt{x}}$</p>
+    <div class="choices" dir="ltr">
+        <input type="radio" id="st-ans-2-3-3-a" name="st-ans-2-3-3">
+        <label for="st-ans-2-3-3-a">$\lim\limits_{x \to +\infty} \frac{1}{\sqrt{x}} = 0$</label><br><br>
+        <input type="radio" id="st-ans-2-3-3-b" name="st-ans-2-3-3">            
+        <label for="st-ans-2-3-3-b">$\lim\limits_{x \to +\infty} \frac{1}{\sqrt{x}} = +\infty$</label><br><br>
+
+        <div id="hint-2-3-3" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
+            🔍 <b>توجيه:</b> عدد ثابت مقسوم على قيمة تزداد بلا حدود ($+\infty$).
+        </div>
+        <button onclick="verify_2_3_3()" class="btn btn-primary btn-lg w-100">تحقق من الإجابة</button>
+    </div>
+</div>
+
 
     <div class="alert alert-info mt-3" role="alert">
         <strong>فائدة</strong>
