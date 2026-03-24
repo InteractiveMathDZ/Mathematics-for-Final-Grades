@@ -159,6 +159,23 @@ function verify_2_1_5() {
     );  
 }
 
+/*_________________________________*/
+
+function verify_2_2_1() {
+    const correct = ['st-ans-2-2-1-a', 'st-ans-2-2-1-d', 'st-ans-2-2-1-e' ];
+    const all = ['st-ans-2-2-1-a', 'st-ans-2-2-1-b', 'st-ans-2-2-1-c', 'st-ans-2-2-1-d', 'st-ans-2-2-1-e'];
+    
+    const res = calculate_results(all, correct);
+    
+    display_universal_validation(
+        res, 
+        correct.length, 
+        'hint-2-2-1',
+        "أنت تتقن التعامل مع المجموعات و الفرق بين المجموعات، والكتابات المختلفة لمجال التعريف، هنيئا!",
+         "تحتاج إلى تركيز أكثر!"
+    );
+}
+
 
 
 
