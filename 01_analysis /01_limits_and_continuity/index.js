@@ -41,7 +41,7 @@ function display_universal_validation(stats, totalExpected, hintBoxId, successMs
         hintBox.innerHTML = `<b>إجابة جزئية، إختر جميع الإجابات الصحيحة.</b> ${errorMsg}`;
     } else {
         hintBox.className = "hint-box alert alert-danger shadow-sm";
-        hintBox.innerHTML = `<b>إجابة خاطئة، حاول مرة أخرى!</b> ${errorMsg}`;
+        hintBox.innerHTML = `<b>إجابة خاطئة!</b> ${errorMsg}`;
     }
 
     if (window.MathJax) {
@@ -71,7 +71,7 @@ function checkNumericExercise(inputId, correctAnswer, hintBoxId, successMsg, err
 
     if (parseFloat(userAnswer) === correctAnswer) {
         hintBox.className = "hint-box alert alert-success shadow-sm";
-        hintBox.innerHTML = `<b>إجابة صحيحة !</b> ${successMsg}`;
+        hintBox.innerHTML = `<b>جابة صحيحة، ممتاز!</b> ${successMsg}`;
     } else {
         hintBox.className = "hint-box alert alert-danger shadow-sm";
         hintBox.innerHTML = `<b>إجابة خاطئة.</b> ${errorMsg}`;
@@ -106,10 +106,48 @@ function verify_2_1_2() {
         'st-ans-2-1-2', 
         0, 
         'hint-2-1-2',
-        "<b>إجابة صحيحة !</b> فعلاً، كلما كبر المقام (في القيمة المطلقة)، اقترب الكسر من الصفر: $\\lim\\limits_{x \\to -\\infty} \\frac{1}{x} = 0$.",
+        " فعلاً، كلما كبر المقام (في القيمة المطلقة)، اقترب الكسر من الصفر، أما بخصوص الإشارة، فعدد موجب على سالب لا نهاية، يعطينا عدد مقارب جدا للصفر، لكنه سالب: $\\lim\\limits_{x \\to -\\infty} \\frac{1}{x} = 0_-$.",
         "تذكر القاعدة: $\\frac{L}{\\infty} = 0$."
     );  
 }
+
+/*_________________________________*/
+
+function verify_2_1_3() {
+    checkNumericExercise(
+        'st-ans-2-1-3', 
+        0, 
+        'hint-2-1-3',
+        "فعلاً، كلما صغر المقام (في القيمة المطلقة)، اقترب الكسر من اللا نهاية، أما بخصوص الإشارة، فعدد موجب على صفر سالب، يعطينا سالب لا نهاية: $\\lim\\limits_{x \\stackrel{\\scriptscriptstyle <}{\\to} 0} \\frac{1}{x} = -\\infty$.",
+        "تذكر القاعدة: $\\frac{L}{0} = \\infty $."
+    );  
+}
+
+/*_________________________________*/
+
+function verify_2_1_4() {
+    checkNumericExercise(
+        'st-ans-2-1-4', 
+        0, 
+        'hint-2-1-4',
+        " فعلاً، كلما صغر المقام (في القيمة المطلقة)، اقترب الكسر من اللا نهاية، أما بخصوص الإشارة، فعدد موجب على صفر موجب، يعطينا زائد لا نهاية $\\lim\\limits_{x \\stackrel{\\scriptscriptstyle >}{\\to} 0} \\frac{1}{x} = +\\infty$.",
+        "تذكر القاعدة: $\\frac{L}{0} = \\infty $."
+    );  
+}
+
+/*________________________________________*/
+
+function verify_2_1_5() {
+    checkNumericExercise(
+        'st-ans-2-1-5', 
+        0, 
+        'hint-2-1-5',
+        " فعلاً، كلما كبر المقام (في القيمة المطلقة)، اقترب الكسر من الصفر، أما بخصوص الإشارة، فعدد موجب على موجب لا نهاية، يعطينا عدد مقارب جدا للصفر، لكنه موجب: $\\lim\\limits_{x \\to +\\infty} \\frac{1}{x} = 0_+$.",
+        "تذكر القاعدة: $\\frac{L}{\\infty} = 0$."
+    );  
+}
+
+
 
 
 
