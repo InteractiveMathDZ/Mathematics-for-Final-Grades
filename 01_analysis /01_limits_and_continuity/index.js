@@ -253,6 +253,20 @@ function verify_2_3_3() {
 }
 
 
+function verify_2_4_1() {
+    const correct = ['st-ans-2-4-1-b'];
+    const res = calculate_results(['st-ans-2-4-1-a', 'st-ans-2-4-1-b'], correct);
+    display_universal_validation(res, 1, 'hint-2-4-1', "أحسنت! القوة الزوجية تحول الإشارة السالبة إلى موجبة.", "خطأ! تذكر أن $(-1)^2 = 1$.");
+}
+
+function verify_2_4_2() {
+    const correct = ['st-ans-2-4-2-a'];
+    const res = calculate_results(['st-ans-2-4-2-a', 'st-ans-2-4-2-b'], correct);
+    display_universal_validation(res, 1, 'hint-2-4-2', "صحيح! القوة الفردية تحافظ على الإشارة السالبة.", "خطأ! تذكر أن $(-1)^3 = -1$.");
+}
+
+
+
 
 
 
