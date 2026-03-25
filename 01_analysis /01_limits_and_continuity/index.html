@@ -258,7 +258,8 @@
 
     <div class="lesson-card">
         <h3 class="text-primary mb-4">4.2. الدالة $f(x)=x^n$ ($n \in \mathbb{N}^*$)</h3>
-        <p>في هذا المثال سنرى تأثير الأس على النهاية، كونه فرديا أم زوجها.
+        <p>في هذا المثال سنرى تأثير الأس على النهاية، كونه فرديا أم زوجيا.</p>
+        <p> وسنجيب على السؤال:<b>هل تقبل هذه الدالة نهاية ثابتة عندما يؤول $x$ إلى $+\infty$ أو $-\infty$؟</b></p><br>
         <p>1. أحسب $\lim\limits_{x \to -\infty} x^n$ عندما يكون **$n$ عدداً زوجياً** (مثل $x^2$):</p>
         <div class="choices" dir="ltr">
             <input type="radio" id="st-ans-2-4-1-a" name="st-ans-2-4-1">
@@ -275,15 +276,30 @@
         <p class="mt-4">2. أحسب $\lim\limits_{x \to -\infty} x^n$ عندما يكون **$n$ عدداً فردياً** (مثل $x^3$):</p>
         <div class="choices" dir="ltr">
             <input type="radio" id="st-ans-2-4-2-a" name="st-ans-2-4-2">
-            <label for="st-ans-2-4-2-a">$-\infty$</label><br>
+            <label for="st-ans-2-4-2-a">$\lim\limits_{x \to -\infty} x^n = -\infty$</label><br>
             <input type="radio" id="st-ans-2-4-2-b" name="st-ans-2-4-2">
-            <label for="st-ans-2-4-2-b">$+\infty$</label><br>
+            <label for="st-ans-2-4-2-b">$\lim\limits_{x \to -\infty} x^n = +\infty$</label><br>
 
             <div id="hint-2-4-2" class="hint-box alert alert-warning text-body-secondary small" dir="rtl"><b>تنبيه:</b> لاحظ أن $n$ فردي.</div>
             
-            <button onclick="verify_2_4_2()" class="btn btn-primary btn-lg w-100">تحقق</button>
+            <button onclick="verify_2_4_2()" class="btn btn-primary btn-lg w-100">تحقق</button><br>
+        </div>
+        
+        <p class="mt-4">3. أحسب $\lim\limits_{x \to -\infty} x^n$ عندما $n \in \mathbb{N}^*$</p>
+        <div class="choices" dir="ltr">
+            <input type="radio" id="st-ans-2-4-3-a" name="st-ans-2-4-3">
+            <label for="st-ans-2-4-3-a">$\lim\limits_{x \to -\infty} x^n = -\infty$</label><br>
+            <input type="radio" id="st-ans-2-4-3-b" name="st-ans-2-4-3">
+            <label for="st-ans-2-4-3-b">$\lim\limits_{x \to -\infty} x^n = +\infty$</label><br>
+            <input type="radio" id="st-ans-2-4-3-c" name="st-ans-2-4-3">
+            <label for="st-ans-2-4-3-c">الدالة لا تقبل نهاية، النهاية غير موجودة</label><br>
+
+            <div id="hint-2-4-3" class="hint-box alert alert-warning text-body-secondary small" dir="rtl"><b>تنبيه:</b> $n \in \mathbb{N}^*، يعني أنه يمكن أن يكون فرديا كما يمكن أن يكون زوجيا، لكنه بالضرورة غير معدوم.</div>
+            
+            <button onclick="verify_2_4_3()" class="btn btn-primary btn-lg w-100">تحقق</button><br>
         </div>
     </div>
+    
     <div class="lesson-card">
         <h3 class="text-primary mb-4">5.2. الدالة جيب: $f(x) = \sin(x)$</h3>
         
