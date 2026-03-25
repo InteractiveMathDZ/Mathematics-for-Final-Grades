@@ -176,7 +176,8 @@ function verify_2_2_1() {
     );
 }
 
-// التحقق من نهاية الجذر عند الصفر (2.2.2)
+/*______________________________*/
+
 function verify_2_2_2() {
     const correct = ['st-ans-2-2-2-b']; // الإجابة الصحيحة هي 0
     const all = ['st-ans-2-2-2-a', 'st-ans-2-2-2-b', 'st-ans-2-2-2-c'];
@@ -192,7 +193,8 @@ function verify_2_2_2() {
     );
 }
 
-// التحقق من نهاية الجذر عند اللانهاية (2.2.3)
+/*___________________________*/
+
 function verify_2_2_3() {
     const correct = ['st-ans-2-2-3-b']; // الإجابة الصحيحة هي زائد لانهاية
     const all = ['st-ans-2-2-3-a', 'st-ans-2-2-3-b', 'st-ans-2-2-3-c'];
@@ -209,7 +211,8 @@ function verify_2_2_3() {
 }
 
 
-// التحقق من مجموعة تعريف 1/sqrt(x)
+/*______________________________*/
+
 function verify_2_3_1() {
     const correct = ['st-ans-2-3-1-b', 'st-ans-2-3-1-c']; // كلاهما صحيح
     const all = ['st-ans-2-3-1-a', 'st-ans-2-3-1-b', 'st-ans-2-3-1-c'];
@@ -225,7 +228,8 @@ function verify_2_3_1() {
     );
 }
 
-// التحقق من النهاية عند 0
+/*______________________________*/
+
 function verify_2_3_2() {
     const correct = ['st-ans-2-3-2-b'];
     const all = ['st-ans-2-3-2-a', 'st-ans-2-3-2-b'];
@@ -241,7 +245,8 @@ function verify_2_3_2() {
     );
 }
 
-// التحقق من النهاية عند اللانهاية
+/*______________________________*/
+
 function verify_2_3_3() {
     checkNumericExercise(
         'st-ans-2-3-3', 
@@ -251,26 +256,67 @@ function verify_2_3_3() {
         "تذكر القاعدة الذهبية: عدد ثابت على لانهاية يعطينا دائماً..."
     );  
 }
-
+/*______________________________*/
 
 function verify_2_4_1() {
     const correct = ['st-ans-2-4-1-b'];
-    const res = calculate_results(['st-ans-2-4-1-a', 'st-ans-2-4-1-b'], correct);
-    display_universal_validation(res, 1, 'hint-2-4-1', "أحسنت! القوة الزوجية تحول الإشارة السالبة إلى موجبة.", "خطأ! تذكر أن $(-1)^2 = 1$.");
+    const res = calculate_results(
+        ['st-ans-2-4-1-a', 'st-ans-2-4-1-b'], 
+        correct
+    );
+    display_universal_validation(
+        res, 
+        1, 
+        'hint-2-4-1', 
+        "أحسنت! القوة الزوجية تحول الإشارة السالبة إلى موجبة.",
+        "خطأ! تذكر أن $(-1)^2 = 1$."
+    );
 }
+
+/*______________________________*/
 
 function verify_2_4_2() {
     const correct = ['st-ans-2-4-2-a'];
-    const res = calculate_results(['st-ans-2-4-2-a', 'st-ans-2-4-2-b'], correct);
-    display_universal_validation(res, 1, 'hint-2-4-2', "صحيح! القوة الفردية تحافظ على الإشارة السالبة.", "خطأ! تذكر أن $(-1)^3 = -1$.");
+    const res = calculate_results(
+        ['st-ans-2-4-2-a', 'st-ans-2-4-2-b'], 
+        correct
+    );
+    display_universal_validation(
+        res, 
+        1, 
+        'hint-2-4-2', 
+        "صحيح! القوة الفردية تحافظ على الإشارة السالبة.",
+        "خطأ! تذكر أن $(-1)^3 = -1$."
+    );
 }
 
-// التحقق من نهاية sin(x) عند ناقص لانهاية
+/*______________________________*/
+
+function verify_2_4_3() {
+    const correct = ['st-ans-2-4-3-c'];
+    const res = calculate_results(
+        ['st-ans-2-4-3-a', 'st-ans-2-4-3-b', 'st-ans-2-3-3-c'], 
+        correct
+    );
+    display_universal_validation(
+        res, 
+        1, 
+        'hint-2-4-3', 
+        "صحيح! ممتاز! أنت تبلي حسنا. النهاية تتغيرةحسب $n$ فرديا كان أم زوجيا. إذن الدالة لا تقبل نهاية.",
+        "خطأ!  فقط لاحظ السؤالين السابقين!"
+    );
+}
+
+/*______________________________*/
+
 function verify_2_5_1() {
-    const correct = ['st-ans-2-5-1-c']; // النهاية غير موجودة
+    const correct = ['st-ans-2-5-1-c']; 
     const all = ['st-ans-2-5-1-a', 'st-ans-2-5-1-b', 'st-ans-2-5-1-c'];
     
-    const res = calculate_results(all, correct);
+    const res = calculate_results(
+        all, 
+        correct
+    );
     
     display_universal_validation(
         res, 
@@ -281,9 +327,10 @@ function verify_2_5_1() {
     );
 }
 
-// التحقق من نهاية sin(x) عند زائد لانهاية
+/*______________________________*/
+
 function verify_2_5_2() {
-    const correct = ['st-ans-2-5-2-b']; // النهاية غير موجودة
+    const correct = ['st-ans-2-5-2-b']; 
     const all = ['st-ans-2-5-2-a', 'st-ans-2-5-2-b', 'st-ans-2-5-2-c'];
     
     const res = calculate_results(all, correct);
@@ -297,7 +344,8 @@ function verify_2_5_2() {
     );
 }
 
-// التحقق من نهاية cos(x) عند ناقص لانهاية
+/*______________________________*/
+
 function verify_2_6_1() {
     const correct = ['st-ans-2-6-1-c'];
     const all = ['st-ans-2-6-1-a', 'st-ans-2-6-1-b', 'st-ans-2-6-1-c'];
@@ -313,12 +361,16 @@ function verify_2_6_1() {
     );
 }
 
-// التحقق من نهاية cos(x) عند زائد لانهاية
+/*______________________________*/
+
 function verify_2_6_2() {
     const correct = ['st-ans-2-6-2-a'];
     const all = ['st-ans-2-6-2-a', 'st-ans-2-6-2-b', 'st-ans-2-6-2-c'];
     
-    const res = calculate_results(all, correct);
+    const res = calculate_results(
+        all, 
+        correct
+    );
     
     display_universal_validation(
         res, 
@@ -329,7 +381,8 @@ function verify_2_6_2() {
     );
 }
 
-// التحقق من نهاية sin(x)/x عند زائد لانهاية
+/*______________________________*/
+
 function verify_2_7_1() {
     checkNumericExercise(
         'st-ans-2-7-1', 
@@ -340,7 +393,7 @@ function verify_2_7_1() {
     );  
 }
 
-// التحقق من نهاية cos(x)/x عند ناقص لانهاية
+/*______________________________*/
 function verify_2_7_2() {
     checkNumericExercise(
         'st-ans-2-7-2', 
