@@ -304,7 +304,7 @@
         <h3 class="text-primary mb-4">5.2. الدالة جيب: $f(x) = \sin(x)$</h3>
         
         <div class="alert alert-info" role="region">
-            <strong>قاعدة هامة:</strong> الدالة $\sin(x)$ دالة دورية (Périodique)، قيمها تتذبذب باستمرار بين $-1$ و $1$. هذا السلوك التكراري يجعلها <b>لا تقترب من قيمة محددة</b> كلما كبر $x$ أو صغر بشكل غير محدود.
+            <strong>قاعدة هامة:</strong> الدالة $\sin(x)$ دالة دورية (a periodic function)، قيمها تتذبذب باستمرار بين $-1$ و $1$. هذا السلوك التكراري يجعلها <b>لا تقترب من قيمة محددة</b> كلما كبر $x$ أو صغر بشكل غير محدود.
         </div>
 
         <p>1. أحسب $\lim\limits_{x \to -\infty} \sin(x)$:</p>
@@ -314,7 +314,7 @@
             <input type="radio" id="st-ans-2-5-1-b" name="st-ans-2-5-1">            
             <label for="st-ans-2-5-1-b">$\lim\limits_{x \to -\infty} \sin(x) = 1$</label><br><br>
             <input type="radio" id="st-ans-2-5-1-c" name="st-ans-2-5-1">
-            <label for="st-ans-2-5-1-c">النهاية غير موجودة (N'existe pas)</label><br><br>
+            <label for="st-ans-2-5-1-c">النهاية غير موجودة (does not exist.)</label><br><br>
             
             <div id="hint-2-5-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
                 🔍 <b>توجيه:</b> تخيل المنحنى البياني للدالة؛ هل يستقر عند قيمة معينة في جهة اليسار؟
@@ -328,7 +328,7 @@
             <input type="radio" id="st-ans-2-5-2-a" name="st-ans-2-5-2">
             <label for="st-ans-2-5-2-a">$\lim\limits_{x \to +\infty} \sin(x) = 0$</label><br><br>
             <input type="radio" id="st-ans-2-5-2-b" name="st-ans-2-5-2">            
-            <label for="st-ans-2-5-2-b">النهاية غير موجودة (N'existe pas)</label><br><br>
+            <label for="st-ans-2-5-2-b">النهاية غير موجودة (does not exist.)</label><br><br>
             <input type="radio" id="st-ans-2-5-2-c" name="st-ans-2-5-2">
             <label for="st-ans-2-5-2-c">$\lim\limits_{x \to +\infty} \sin(x) = +\infty$</label><br><br>
 
@@ -353,7 +353,7 @@
             <input type="radio" id="st-ans-2-6-1-b" name="st-ans-2-6-1">            
             <label for="st-ans-2-6-1-b">$\lim\limits_{x \to -\infty} \cos(x) = 1$</label><br><br>
             <input type="radio" id="st-ans-2-6-1-c" name="st-ans-2-6-1">
-            <label for="st-ans-2-6-1-c">النهاية غير موجودة (N'existe pas)</label><br><br>
+            <label for="st-ans-2-6-1-c">النهاية غير موجودة (does not exist.)</label><br><br>
             
             <div id="hint-2-6-1" class="hint-box alert alert-warning shadow-sm text-body-secondary small" dir="rtl">
                 🔍 <b>توجيه:</b> هل تختلف طبيعة تذبذب $\cos(x)$ عن $\sin(x)$ عند الأطراف البعيدة؟
@@ -382,8 +382,15 @@
         <h3 class="text-primary mb-4">7.2. نهايات مركبة شهيرة: $\frac{\sin(x)}{x}$ و $\frac{\cos(x)}{x}$</h3>
         
         <div class="alert alert-info" role="region">
-            <strong>قاعدة الحصر (Théorème des Gendarmes):</strong> لحساب نهاية هذه الدوال عند اللانهاية، نستخدم الحصر: 
-            بما أن $-1 \le \sin(x) \le 1$، فإننا نجد $\frac{-1}{x} \le \frac{\sin(x)}{x} \le \frac{1}{x}$ (من أجل $x > 0$).
+            <p><strong>قاعدة الحصر (Squeeze Theorem):</strong> لحساب نهاية هذه الدوال عند $+\infty$، نستخدم الحصر: </p>
+            <p>بما أن:</p>
+            <p dir="ltr">$-1 \le \sin(x) \le 1$،</p>
+            <p> و بما أن $x>0$لأنه في جوار $+\infty $. نقسم كل الأطراف على $x$ فنجد أن :</p>
+            <p dir="ltr">$\frac{-1}{x} \le \frac{\sin(x)}{x} \le \frac{1}{x}$ (من أجل $x > 0$).</p>
+            <p>نعلم مما سبق، أن :</p>
+            <p dir="ltr">$\lim\limits_{x \to +\infty} \frac{-1}{x} = \lim\limits_{x \to +\infty} \frac{1}{x} = 0$</p>
+            <p>إذا كانت نهاية هذه الدالة عند $+\infty$ أكبر من أو تساوي الصفر، وأصغر من أو تساوي الصفر، فهي بكل تأكيد تساوي الصفر.</p>
+        
         </div>
 
         <p>1. أحسب $\lim\limits_{x \to +\infty} \frac{\sin(x)}{x}$:</p>
