@@ -14,19 +14,13 @@ function verify_2_1_1() {
         "لقد فهمت التكافؤ بين الكتابة $\\mathbb{R}^*$ و اتحاد المجالات.",
         "انتبه إلى اتجاه المعقوفتين وإقصاء الصفر."
     );
-
+    
     let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-1-1";
+    updateScores(exerciseID, score);
+    
     // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
     
-    // استدعاء المحرك لتسجيل النتيجة
-    let exerciseID = "math-anal-limits-exem-ex-2-1-1";
-    let result = recordResult(exerciseID, score);
-    
-    // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
-    let displayElement = document.getElementById(exerciseID);
-    if(displayElement) {
-        displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
-    }
 }
 
 /*________________________________________*/
