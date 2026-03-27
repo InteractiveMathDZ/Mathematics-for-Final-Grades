@@ -74,7 +74,7 @@ function verify_2_1_3() {
     // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
     
     // استدعاء المحرك لتسجيل النتيجة
-    let exerciseID = "math-anal-limits-exem-ex-2-1-1";
+    let exerciseID = "math-anal-limits-exem-ex-2-1-3";
     let result = recordResult(exerciseID, score);
     
     // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
