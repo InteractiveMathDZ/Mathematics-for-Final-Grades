@@ -1,28 +1,33 @@
 function checkOrCreateStudent() {
-    // 1. محاولة جلب البيانات
     let data = localStorage.getItem('student_profile');
 
     if (data) {
-        // إذا وجدناه، نرجعه مع علامة أنه ليس جديداً
+        // --- حالة التلميذ العائد ---
         let profile = JSON.parse(data);
-        profile.isNew = false; 
+        profile.isNew = false;
+        
+        // تحديث تاريخ الزيارة الحالية قبل العرض
+        profile.info.lastVisit = new Date().toLocaleString('ar-DZ');
+        
+        // حفظ التحديث في الذاكرة
+        localStorage.setItem('student_profile', JSON.stringify(profile));
+        
         return profile;
     } else {
-        // إذا لم نجده، ننشئ الهيكل الأولي
+        // --- حالة التلميذ الجديد ---
         let newProfile = {
-            isNew: true, // علامة مؤقتة لنعرف أنه جديد
+            isNew: true,
             info: {
                 creationDate: new Date().toLocaleString('ar-DZ'),
-                lastVisit: new Date().toLocaleString('ar-DZ')
+                lastVisit: new Date().toLocaleString('ar-DZ') // أول زيارة هي نفسها تاريخ الإنشاء
             },
-            records: {} // "المحفظة" التي ستخزن الـ IDs مستقبلاً
+            records: {} 
         };
-
-        // حفظ الملف الجديد في ذاكرة المتصفح
         localStorage.setItem('student_profile', JSON.stringify(newProfile));
         return newProfile;
     }
 }
+
 
 window.addEventListener('DOMContentLoaded', () => {
     const statusDiv = document.getElementById('debug-status');
