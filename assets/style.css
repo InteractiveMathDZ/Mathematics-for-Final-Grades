@@ -117,11 +117,11 @@ h3 {
 
 /* صناديق التوجيه والمساعدة (مخفية افتراضياً) */
 .hint-box {
-    display: none;
+    /*display: none;
     margin-top: 12px;
     border-radius: 8px;
     padding: 15px;
-    border: 1px solid #ffeeba;
+    border: 1px solid #ffeeba;*/
 }
 
 /* تسميات الأسئلة */
