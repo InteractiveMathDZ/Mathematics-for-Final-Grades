@@ -19,8 +19,6 @@ function verify_2_1_1() {
     let exerciseID = "math-anal-limits-exem-ex-2-1-1";
     updateScores(exerciseID, score);
     
-    // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
-    
 }
 
 /*________________________________________*/
@@ -34,18 +32,9 @@ function verify_2_1_2() {
         "تذكر القاعدة: $\\frac{L}{\\infty} = 0$."
     );  
 
-      let score = 10;
-    // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
-    
-    // استدعاء المحرك لتسجيل النتيجة
+    let score = 10;
     let exerciseID = "math-anal-limits-exem-ex-2-1-2";
-    let result = recordResult(exerciseID, score);
-    
-    // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
-    let displayElement = document.getElementById(exerciseID);
-    if(displayElement) {
-        displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
-    }
+    updateScores(exerciseID, score);
 }
 
 /*_________________________________*/
@@ -64,18 +53,9 @@ function verify_2_1_3() {
          "انتبه إلى المساواة $\\frac{L}{0^-}=-\\infty$. بشرط $L>0$"
     );
 
-      let score = 10;
-    // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
-    
-    // استدعاء المحرك لتسجيل النتيجة
+    let score = 10;
     let exerciseID = "math-anal-limits-exem-ex-2-1-3";
-    let result = recordResult(exerciseID, score);
-    
-    // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
-    let displayElement = document.getElementById(exerciseID);
-    if(displayElement) {
-        displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
-    }
+    updateScores(exerciseID, score);
 }
 
 
@@ -94,6 +74,9 @@ function verify_2_1_4() {
         " تفكير سليم، كلما صغر المقام، زادت قيمة الكسر بلا حدود، البسط والمقام من نفس الإشارة، وبالتالي فإن $\\lim\\limits_{x \\stackrel{\\scriptscriptstyle >}{\\to} 0} \\frac{1}{x} = +\\infty$",
          "انتبه إلى المساواة $\\frac{L}{0^+}=+\\infty$. حيث أن $L>0$"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-1-4";
+    updateScores(exerciseID, score);
 }
 
 
@@ -107,6 +90,9 @@ function verify_2_1_5() {
         " فعلاً، كلما كبر المقام (في القيمة المطلقة)، اقترب الكسر من الصفر، أما بخصوص الإشارة، فعدد موجب على موجب لا نهاية، يعطينا عدد مقارب جدا للصفر، لكنه موجب: $\\lim\\limits_{x \\to +\\infty} \\frac{1}{x} = 0^+$.",
         "تذكر القاعدة: $\\frac{L}{\\infty} = 0$."
     );  
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-1-5";
+    updateScores(exerciseID, score);
 }
 
 /*_________________________________*/
@@ -124,6 +110,9 @@ function verify_2_2_1() {
         "أنت تتقن التعامل مع المجموعات و الفرق بين المجموعات، والكتابات المختلفة لمجال التعريف، هنيئا!",
          "تحتاج إلى تركيز أكثر!"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-2-1";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -141,6 +130,9 @@ function verify_2_2_2() {
         "إجابة دقيقة! بما أن الصفر ينتمي لمجال التعريف، فالعلاقة بين النهاية والصورة مباشرة تماماً.",
         "راجع مفهوم نهاية دالة عند نقطة معرفة عندها."
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-2-2";
+    updateScores(exerciseID, score);
 }
 
 /*___________________________*/
@@ -158,6 +150,9 @@ function verify_2_2_3() {
         "أحسنت! الدالة الجذرية دالة متزايدة وتؤول إلى اللانهاية كلما كبر المتغير x.",
         "تذكر أن الجذر التربيعي للأعداد الكبيرة جداً يبقى كبيراً جداً."
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-2-3";
+    updateScores(exerciseID, score);
 }
 
 
@@ -176,6 +171,9 @@ function verify_2_3_1() {
         "ممتاز! لقد انتبهت أن الصفر يجب أن يُستثنى لأنه يعدم المقام.",
         "انتبه! هل يمكن للـ x أن يساوي الصفر في هذه الدالة؟"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-3-1";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -193,6 +191,9 @@ function verify_2_3_2() {
         "أحسنت! 1 على صفر موجب يعطي دائماً زائد لانهاية.",
         "فكر مجدداً، ماذا يحدث للكسر عندما يصغر المقام جداً؟"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-3-2";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -205,6 +206,9 @@ function verify_2_3_3() {
         "أحسنت! بما أن $\\lim\\limits_{x \\to +\\infty} \\sqrt{x} = +\\infty$، فإن مقلوب اللانهاية يؤول حتماً إلى الصفر الموجب ($0^+$).",
         "تذكر القاعدة الذهبية: عدد ثابت على لانهاية يعطينا دائماً..."
     );  
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-3-3";
+    updateScores(exerciseID, score);
 }
 /*______________________________*/
 
@@ -221,6 +225,9 @@ function verify_2_4_1() {
         "أحسنت! القوة الزوجية تحول الإشارة السالبة إلى موجبة.",
         "خطأ! تذكر أن $(-1)^2 = 1$."
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-4-1";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -238,6 +245,9 @@ function verify_2_4_2() {
         "صحيح! القوة الفردية تحافظ على الإشارة السالبة.",
         "خطأ! تذكر أن $(-1)^3 = -1$."
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-4-2";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -255,6 +265,9 @@ function verify_2_4_3() {
         "صحيح! أنت تبلي حسنا. النهاية تتغيرةحسب $n$ فرديا كان أم زوجيا. إذن الدالة لا تقبل نهاية.",
         "خطأ!  فقط لاحظ السؤالين السابقين!"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-4-3";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -275,6 +288,9 @@ function verify_2_5_1() {
         "أحسنت! بسبب دورية الدالة وتذبذبها، لا يمكننا القول أنها تقترب من عدد وحيد عند $-\\infty$.",
         "حاول مجدداً؛ هل للدالة سلوك مستقر عند اللانهاية؟"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-5-1";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -292,6 +308,9 @@ function verify_2_5_2() {
         "إجابة دقيقة! نقول رياضياً أن النهاية غير موجودة لأن قيم الدالة لا تستقر.",
         "تذكر طبيعة منحنى الجيب؛ هل يتوقف عن التذبذب؟"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-5-2";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -309,6 +328,9 @@ function verify_2_6_1() {
         "رائع! لقد أدركت القاعدة: كل دالة تذبذبية دورية لا تملك نهاية عند اللانهاية.",
         "فكر مجدداً، هل يستقر منحنى جيب التمام عند قيمة محددة؟"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-6-1";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -329,6 +351,9 @@ function verify_2_6_2() {
         "إجابة صحيحة! تماماً مثل الجيب، جيب التمام يفتقد للنهاية عند $+\\infty$.",
         "تذكر السلوك الدوري للدالة؛ هل يتغير عند اللانهاية؟"
     );
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-6-2";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -341,6 +366,9 @@ function verify_2_7_1() {
         "أحسنت! بالرغم من أن $\\sin(x)$ لا يملك نهاية، إلا أن قسمته على $x$ (الذي يؤول للانهاية) تجعل الكسر يؤول للصفر.",
         "تذكر: حصر الدالة بين $-1/x$ و $1/x$ يؤدي إلى..."
     );  
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-7-1";
+    updateScores(exerciseID, score);
 }
 
 /*______________________________*/
@@ -352,6 +380,9 @@ function verify_2_7_2() {
         "إجابة دقيقة! ينطبق على جيب التمام ما ينطبق على الجيب عند اللانهاية.",
         "فكر في القاعدة: عدد ثابت (أو محصور) على لانهاية يعطي..."
     );  
+    let score = 10;
+    let exerciseID = "math-anal-limits-exem-ex-2-7-2";
+    updateScores(exerciseID, score);
 }
 
 
