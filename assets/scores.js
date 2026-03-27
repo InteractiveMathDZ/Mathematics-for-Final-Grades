@@ -108,6 +108,16 @@ function recordResult(exerciseID, newScore) {
     return profile.records[exerciseID];
 }
 
+function updateScores(exerciseID, score){
+        // استدعاء المحرك لتسجيل النتيجة
+        let result = recordResult(exerciseID, score);
+    
+        // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
+        let displayElement = document.getElementById(exerciseID);
+        if(displayElement) {
+            displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
+         }
+}
 
 
 
