@@ -14,6 +14,19 @@ function verify_2_1_1() {
         "لقد فهمت التكافؤ بين الكتابة $\\mathbb{R}^*$ و اتحاد المجالات.",
         "انتبه إلى اتجاه المعقوفتين وإقصاء الصفر."
     );
+
+    let score = 10;
+    // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
+    
+    // استدعاء المحرك لتسجيل النتيجة
+    let exerciseID = "math-anal-limits-exem-ex-2-1-1";
+    let result = recordResult(exerciseID, score);
+    
+    // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
+    let displayElement = document.getElementById(exerciseID);
+    if(displayElement) {
+        displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
+    }
 }
 
 /*________________________________________*/
@@ -26,6 +39,19 @@ function verify_2_1_2() {
         " فعلاً، كلما كبر المقام (في القيمة المطلقة)، اقترب الكسر من الصفر، أما بخصوص الإشارة، فعدد موجب على سالب لا نهاية، يعطينا عدد مقارب جدا للصفر، لكنه سالب: $\\lim\\limits_{x \\to -\\infty} \\frac{1}{x} = 0^-$.",
         "تذكر القاعدة: $\\frac{L}{\\infty} = 0$."
     );  
+
+      let score = 10;
+    // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
+    
+    // استدعاء المحرك لتسجيل النتيجة
+    let exerciseID = "math-anal-limits-exem-ex-2-1-2";
+    let result = recordResult(exerciseID, score);
+    
+    // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
+    let displayElement = document.getElementById(exerciseID);
+    if(displayElement) {
+        displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
+    }
 }
 
 /*_________________________________*/
@@ -43,6 +69,19 @@ function verify_2_1_3() {
         " تفكير سليم، كلما صغر المقام، زادت قيمة الكسر بلا حدود، البسط والمقام من إشارتين مختلفتين، وبالتالي فإن $\\lim\\limits_{x \\stackrel{\\scriptscriptstyle <}{\\to} 0} \\frac{1}{x} = -\\infty $",
          "انتبه إلى المساواة $\\frac{L}{0^-}=-\\infty$. بشرط $L>0$"
     );
+
+      let score = 10;
+    // ... هنا تضع منطق التصحيح الخاص بك وتحدد قيمة الـ score (مثلاً 10 أو 0) ...
+    
+    // استدعاء المحرك لتسجيل النتيجة
+    let exerciseID = "math-anal-limits-exem-ex-2-1-1";
+    let result = recordResult(exerciseID, score);
+    
+    // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
+    let displayElement = document.getElementById(exerciseID);
+    if(displayElement) {
+        displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
+    }
 }
 
 
