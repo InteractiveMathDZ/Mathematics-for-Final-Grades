@@ -97,15 +97,16 @@ function checkNumericExercise(inputId, correctAnswer, hintBoxId, successMsg, err
     const inputElement = document.getElementById(inputId);
     const hintBox = document.getElementById(hintBoxId);
     const userAnswer = inputElement.value;
-
+    let score = 0;
     if (userAnswer === "") {
         alert("يرجى كتابة النتيجة أولاً !");
-        return;
+        return score;
     }
 
     if (parseFloat(userAnswer) === correctAnswer) {
         hintBox.className = "hint-box alert alert-success shadow-sm";
         hintBox.innerHTML = `<b>إجابة صحيحة، ممتاز!</b> ${successMsg}`;
+        score = 10;
     } else {
         hintBox.className = "hint-box alert alert-danger shadow-sm";
         hintBox.innerHTML = `<b>إجابة خاطئة.</b> ${errorMsg}`;
@@ -114,4 +115,5 @@ function checkNumericExercise(inputId, correctAnswer, hintBoxId, successMsg, err
     if (window.MathJax) {
         MathJax.typesetPromise([hintBox]);
     }
-          }
+    return score;
+}
