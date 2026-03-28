@@ -106,7 +106,7 @@ function checkNumericExercise(inputId, correctAnswer, hintBoxId, successMsg, err
     if (parseFloat(userAnswer) === correctAnswer) {
         hintBox.className = "hint-box alert alert-success shadow-sm";
         hintBox.innerHTML = `<b>إجابة صحيحة، ممتاز!</b> ${successMsg}`;
-        score = 10;
+        score = 12;
     } else {
         hintBox.className = "hint-box alert alert-danger shadow-sm";
         hintBox.innerHTML = `<b>إجابة خاطئة.</b> ${errorMsg}`;
