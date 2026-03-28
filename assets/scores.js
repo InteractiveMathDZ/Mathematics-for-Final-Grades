@@ -121,7 +121,7 @@ function updateScores(exerciseID, score){
             displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
          }
 }
-
+/*
 function hydrateScores() {
     // 1. جلب البيانات من المخزن
     let data = localStorage.getItem('student_profile');
@@ -151,7 +151,41 @@ function hydrateScores() {
             if (record.avg >= 10) element.style.color = "green";
         }
     }
+}*/
+
+function hydrateScores() {
+    let data = JSON.parse(localStorage.getItem('student_profile'));
+    if (!data || !data.records) return;
+
+    Object.keys(data.records).forEach(id => {
+        let record = data.records[id];
+        // نرسل الـ ID والمعدل لدالة التحديث البصري
+        updateUI(id, record.avg);
+    });
 }
+
+// دالة التحديث البصري الموحدة (المحرك البصري)
+function updateUI(id, avgScore) {
+    let bar = document.getElementById(id + "-bar");
+    let valLabel = document.getElementById(id + "-val");
+    if (bar && valLabel) {
+        let percent = (avgScore / 12) * 100;
+        bar.style.width = percent + "%";
+        valLabel.innerHTML = `${avgScore.toFixed(1)} / 12`;
+        // تغيير اللون
+        bar.className = "progress-bar progress-bar-striped " + (percent < 50 ? "bg-danger" : "bg-success");
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
