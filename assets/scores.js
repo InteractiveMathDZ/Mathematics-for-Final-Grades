@@ -73,14 +73,12 @@ function updateParentScores(fullID, delta) {
         
         localStorage.setItem('student_profile', JSON.stringify(profile));
         
-        // تحديث الشاشة للأب إذا كان له عنصر ID
-        let parentElement = document.getElementById(parentID);
-        if (parentElement) {
-            parentElement.innerHTML = `درجة الإتقان: ${Math.round(profile.records[parentID].avg)}`;
-        }
+        // --- التحديث البصري المحرك (المهم جداً) ---
+        // بدلاً من innerHTML، نستخدم المحرك الذي يحرك الشريط
+        updateUI(parentID, profile.records[parentID].avg);
     }
 }
-
+    
 
 
 function recordResult(exerciseID, newScore) {
