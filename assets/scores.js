@@ -114,13 +114,17 @@ function recordResult(exerciseID, newScore) {
 function updateScores(exerciseID, score){
         // استدعاء المحرك لتسجيل النتيجة
         let result = recordResult(exerciseID, score);
+        updateUI(exerciseID, result.avg);
     
         // تحديث واجهة المستخدم (الـ p الذي يحمل المعرف)
         let displayElement = document.getElementById(exerciseID);
         if(displayElement) {
             displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
          }
+
+    
 }
+
 /*
 function hydrateScores() {
     // 1. جلب البيانات من المخزن
