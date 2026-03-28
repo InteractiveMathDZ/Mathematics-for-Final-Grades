@@ -43,6 +43,9 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         statusDiv.className = "alert alert-info text-center small";
         statusDiv.innerHTML = `<i class="bi bi-person-check"></i> أهلاً بك مجدداً! آخر زيارة لك كانت: ${student.info.lastVisit}`;
+        
+        // ثالثاً: (المهمة الجديدة) ملء الدرجات السابقة في الصفحة
+        hydrateScores(); 
     }
 });
 
@@ -118,6 +121,45 @@ function updateScores(exerciseID, score){
             displayElement.innerHTML = `المعدل: ${result.avg} | المحاولات: ${result.count}`;
          }
 }
+
+function hydrateScores() {
+    // 1. جلب البيانات من المخزن
+    let data = localStorage.getItem('student_profile');
+    if (!data) return; // إذا كان تلميذاً جديداً تماماً، لا يوجد ما نملأه
+
+    let profile = JSON.parse(data);
+    let records = profile.records;
+
+    // 2. المرور على كل سجل موجود في محفظة التلميذ
+    for (let id in records) {
+        // البحث عن العنصر الذي يحمل هذا المعرف في صفحة الـ HTML الحالية
+        let element = document.getElementById(id);
+        
+        if (element) {
+            let record = records[id];
+            
+            // 3. التمييز بين "السؤال" و "العناوين الكبرى" في العرض
+            if (id.split('-').length > 5) { 
+                // حالة السؤال (مثل 2-1-1): نعرض المعدل وعدد المحاولات
+                element.innerHTML = `المعدل: ${record.avg} | المحاولات: ${record.count}`;
+            } else {
+                // حالة العناوين (قسم، فصل، مادة): نعرض "درجة الإتقان" فقط
+                element.innerHTML = `درجة الإتقان: ${Math.round(record.avg)}`;
+            }
+            
+            // إضافة لمسة جمالية: تغيير لون النص إذا كان المعدل ممتازاً
+            if (record.avg >= 10) element.style.color = "green";
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
