@@ -804,19 +804,43 @@
     </div>
 
     <div class="lesson-card">
-        <h2 id="summary-of-operations-on-limits" class="text-primary mb-4">5. ملخص العمليات العمليات على النهايات.</h2>
+        <h2 id="summary-of-operations-on-limits" class="text-primary mb-4">5. ملخص العمليات على النهايات.</h2>
         <div class="table-responsive">
-            <table class="table table-bordered text-center">
+            <table class="table table-bordered text-center align-middle">
                 <thead class="table-primary">
-                    <tr><th>العملية</th><th>النتيجة</th></tr>
+                    <tr>
+                        <th>العملية</th>
+                        <th>النتيجة</th>
+                        <th>ملاحظات</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>$L + (\pm\infty)$</td><td>$\pm\infty$</td></tr>
-                    <tr><td>$\frac{L}{\pm\infty}$</td><td>$0$</td></tr>
+                    <tr>
+                        <td>$L + (\pm\infty)$</td>
+                        <td>$\pm\infty$</td>
+                        <td class="small">اللانهاية تغلب الثابت</td>
+                    </tr>
+                    <tr>
+                        <td>$L \times (\pm\infty)$</td>
+                        <td>$\pm\infty$</td>
+                        <td class="small">بشرط $L \neq 0$ (طبق إشارة الجداء)</td>
+                    </tr>
+                    <tr>
+                        <td>$\frac{L}{\pm\infty}$</td>
+                        <td>$0$</td>
+                        <td class="small">أي عدد على لانهاية يساوي صفر</td>
+                    </tr>
+                    <tr>
+                        <td>$\frac{L}{0}$</td>
+                        <td>$\pm\infty$</td>
+                        <td class="small">بشرط $L \neq 0$ (حسب إشارة الصفر)</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+        <p class="text-danger fw-bold small mt-2 text-center">تذكر: الحالات غير المذكورة هنا غالباً ما تكون حالات عدم تعيين (ع.ت).</p>
     </div>
+
                     
      <!--sidebar-->
     <button class="btn btn-light shadow position-fixed end-0 top-50 translate-middle-y rounded-start-pill border" 
