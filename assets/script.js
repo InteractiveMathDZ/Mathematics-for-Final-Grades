@@ -1,3 +1,14 @@
+// دالة لتحديث المظهر بناءً على إعدادات الجهاز
+const updateTheme = () => {
+    const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-bs-theme', theme);
+};
+
+// التنفيذ عند التحميل وعند تغيير إعدادات الجهاز
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+updateTheme();
+
+
 /* cette partie ferme le sidebar en cliquant un lien interne*/
 
 // On récupère tous les liens qui pointent vers une ancre (#) dans le menu
