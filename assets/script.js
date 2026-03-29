@@ -1,48 +1,16 @@
 // دالة لتحديث المظهر بناءً على إعدادات الجهاز
 const updateTheme = () => {
-    const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-bs-theme', theme);
-};
-
-// التنفيذ عند التحميل وعند تغيير إعدادات الجهاز
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
-updateTheme();
-// تفعيل الوضع الليلي التلقائي فوراً
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-bs-theme', 'dark');
+// --- المحرك الموحد للوضع الليلي التلقائي ---
+function applyTheme() {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
 }
 
-/* عندما يكون الوضع ليلياً، سنقوم بتغيير المتغيرات والألوان الصارخة */
-[data-bs-theme="dark"] {
-    /* 1. جعل الخلفية داكنة مريحة (ليست سوداء فاحمة) */
-    --bs-body-bg: #121b22; 
-    --bs-body-color: #e9ecef;
+// الاستجابة فوراً لتغيير إعدادات الهاتف أو المتصفح
+window.matchMedia('(prefers-color-scheme: dark)').onchange = applyTheme;
 
-    /* 2. ترويض الجداول الفيروزية (التي كانت تظهر فسفورية مزعجة) */
-    /* هذا الكود سيستهدف أي عنصر بخلفية فاتحة ويجعلها داكنة وقورة */
-    .table-primary, .bg-info, [style*="background-color"] {
-        background-color: #1a3c40 !important; /* أخضر زمردي غامق */
-        color: #00ffcc !important; /* نص فاتح متناسق */
-    }
-
-    /* 3. إصلاح حدود الجداول والكروت */
-    .card, .table, td, th {
-        border-color: #2d373e !important;
-    }
-
-    /* 4. تعديل لون الروابط والأزرار لتكون مريحة */
-    .btn-primary {
-        background-color: #0d6efd;
-        border-color: #0d6efd;
-    }
-}
-
-/* لمسة جمالية للأشرطة المتحركة في الوضع الليلي */
-[data-bs-theme="dark"] .progress {
-    background-color: #2c343a;
-}
-
-
+// التنفيذ الفوري عند تحميل الصفحة
+applyTheme();
 
 
 /* cette partie ferme le sidebar en cliquant un lien interne*/
