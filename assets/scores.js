@@ -128,15 +128,28 @@ function updateScores(exerciseID, score){
 }
 
 function hydrateScores() {
-    let data = JSON.parse(localStorage.getItem('student_profile'));
-    if (!data || !data.records) return;
+    let data = JSON.parse(localStorage.getItem('student_profile')) || { records: {} };
+    let records = data.records;
 
-    Object.keys(data.records).forEach(id => {
-        let record = data.records[id];
-        // نرسل الـ ID والمعدل لدالة التحديث البصري
-        updateUI(id, record.avg);
+    // المنطق الجديد: مّر على كل ID اكتشفه الجرد الأوتوماتيكي
+    Object.keys(autoWeights).forEach(id => {
+        // إذا كان للتلميذ نقطة، نأخذها، وإلا فهي 0
+        let currentScore = records[id] ? records[id].avg : 0;
+        
+        // تحديث الواجهة (ستظهر الآن 0 / 36 مثلاً للتلميذ الجديد)
+        updateUI(id, currentScore);
+    });
+
+    // لا ننسى الأسئلة الفردية (الأوراق) التي ليست في autoWeights
+    document.querySelectorAll('[id$="-bar"]').forEach(barEl => {
+        let id = barEl.id.replace('-bar', '');
+        if (!autoWeights[id]) { // هذا يعني أنه سؤال (ورقة)
+            let currentScore = records[id] ? records[id].avg : 0;
+            updateUI(id, currentScore);
+        }
     });
 }
+
 
 // دالة التحديث البصري الموحدة (المحرك البصري)
 
