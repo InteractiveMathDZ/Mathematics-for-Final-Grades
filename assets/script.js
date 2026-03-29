@@ -1,16 +1,7 @@
-// دالة لتحديث المظهر بناءً على إعدادات الجهاز
-const updateTheme = () => {
-// --- المحرك الموحد للوضع الليلي التلقائي ---
-function applyTheme() {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
-}
-
-// الاستجابة فوراً لتغيير إعدادات الهاتف أو المتصفح
+const applyTheme = () => document.documentElement.setAttribute('data-bs-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 window.matchMedia('(prefers-color-scheme: dark)').onchange = applyTheme;
-
-// التنفيذ الفوري عند تحميل الصفحة
 applyTheme();
+
 
 
 /* cette partie ferme le sidebar en cliquant un lien interne*/
