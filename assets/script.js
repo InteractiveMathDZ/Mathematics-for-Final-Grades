@@ -1,8 +1,3 @@
-const applyTheme = () => document.documentElement.setAttribute('data-bs-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-window.matchMedia('(prefers-color-scheme: dark)').onchange = applyTheme;
-applyTheme();
-
-
 
 /* cette partie ferme le sidebar en cliquant un lien interne*/
 
