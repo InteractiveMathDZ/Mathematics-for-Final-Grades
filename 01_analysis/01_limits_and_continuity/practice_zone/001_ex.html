@@ -18,6 +18,7 @@
 <body>
 <div class="container py-4">
     <h1 class="text-center mb-5 text-primary fw-bold">تطبيقات</h1>
+
     
     <div class="lesson-card">
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -31,6 +32,11 @@
         <div id="part1" class="mb-4">
             <p class="fw-bold text-secondary">1. وضع تخمين (بصري):</p>
             <p>نعتبر الدالة $f$ المعرفة بـ: $f(x) = \frac{\sqrt{x+1}-1}{x}$. لاحظ أنها غير معرفة عند $0$.</p>
+
+            <div id="graph-limits" class="border rounded bg-white shadow-sm mb-3 text-center math-wrapper">
+            </div>
+            <p class="text-body-secondary small text-center mb-4"><strong>تفاعل:</strong> استخدم عجلة الفأرة للـ Zoom، أو اسحب لتحريك الرسم.</p>
+
         
             <div class="alert alert-light border">
                 <p class="small mb-2">من خلال صور الشاشة (Zoom) حول النقطة $0$، نلاحظ أن المنحنى يمر من القيمة $0.5$.</p>
@@ -159,6 +165,9 @@
 <script src="/Mathematics-for-Final-Grades/assets/scores.js"></script>
 <script src="/Mathematics-for-Final-Grades/assets/script.js"></script>                  
 <script src="01_limits.js"></script>
+
+<script src="https://unpkg.com/d3@7"></script>
+<script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
 
 </body>
 </html>
