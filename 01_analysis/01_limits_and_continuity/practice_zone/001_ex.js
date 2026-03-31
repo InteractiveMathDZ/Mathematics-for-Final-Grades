@@ -1,26 +1,35 @@
 
+function showLog(msg, isError = false) {
+    const statusDiv = document.getElementById('debug-status');
+    if (statusDiv) {
+        statusDiv.style.backgroundColor = isError ? "#f8d7da" : "#d1ecf1";
+        statusDiv.style.color = isError ? "#721c24" : "#0c5460";
+        statusDiv.innerHTML = (isError ? "⚠️ خطأ: " : "ℹ️ نظام: ") + msg;
+    }
+}
+
+
+
 
 function drawLimitsGraph() {
-    const container = document.getElementById('graph-limits');
-    if (!container) return;
-
-    // 1. تحديد الوضع بدقة
-    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-    
-    // 2. مصفوفة الألوان الصارمة
-    const colors = {
-        axis: isDark ? '#888' : '#333',
-        grid: isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.05)',
-        line: isDark ? '#66b2ff' : '#0d6efd',
-        helper: isDark ? '#ffaaaa' : '#dc3545',
-        text: isDark ? '#eee' : '#333',
-        bg: isDark ? '#1a1a1a' : '#ffffff'
-    };
-
-    container.innerHTML = '';
-
+function drawLimitsGraph() {
     try {
-        const instance = functionPlot({
+        const container = document.getElementById('graph-limits');
+        if (!container) throw new Error("لم يتم العثور على حاوية الرسم graph-limits");
+
+        const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+        const colors = {
+            axis: isDark ? '#888' : '#333',
+            grid: isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.05)',
+            line: isDark ? '#66b2ff' : '#0d6efd',
+            helper: isDark ? '#ffaaaa' : '#dc3545',
+            text: isDark ? '#eee' : '#333',
+            bg: isDark ? '#1a1a1a' : '#ffffff'
+        };
+
+        container.innerHTML = '';
+
+        functionPlot({
             target: "#graph-limits",
             width: container.offsetWidth - 20,
             height: 400,
@@ -46,41 +55,25 @@ function drawLimitsGraph() {
             ],
             annotations: [
                 { y: 0.5, color: colors.helper, text: 'y = 0.5' },
-                { x: 0, color: colors.helper },
+                { x: 0, color: colors.helper }
             ]
         });
 
-        // --- التعديل اليدوي الإجباري بعد الرسم لضمان الظهور ---
+        // تحسين الـ SVG يدوياً
         const svg = container.querySelector('svg');
         if (svg) {
-            // أ. إظهار خطوط الشبكة (Grid)
-            svg.querySelectorAll('.grid line').forEach(l => {
-                l.style.stroke = colors.grid;
-                l.style.strokeOpacity = "1";
-            });
-
-            // ب. إظهار النصوص (Labels) وتلوينها حسب الوضع
-            svg.querySelectorAll('text').forEach(t => {
-                t.style.fill = colors.text;
-                t.style.fontSize = "12px";
-            });
-
-            // ج. تقطيع الخطوط المساعدة (Annotations)
+            svg.querySelectorAll('.grid line').forEach(l => l.style.stroke = colors.grid);
+            svg.querySelectorAll('text').forEach(t => t.style.fill = colors.text);
             svg.querySelectorAll('.annotations line').forEach(l => {
                 l.setAttribute('stroke-dasharray', '5,5');
-                l.setAttribute('stroke', colors.helper);
                 l.setAttribute('opacity', '0.7');
             });
-
-            // د. تصحيح نصوص المساعدة
-            svg.querySelectorAll('.annotations text').forEach(t => {
-                t.style.fill = colors.helper;
-                t.setAttribute('x', '15'); // إزاحة عن المحور
-            });
         }
-    } catch (e) { console.error(e); }
+        showLog("تم رسم البيان وتحديث النظام بنجاح.");
+    } catch (e) {
+        showLog("فشل الرسم: " + e.message, true);
+    }
 }
-
 // مراقبة تغيير الوضع (Dark/Light) لإعادة الرسم تلقائياً
 const themeObserver = new MutationObserver(() => drawLimitsGraph());
 themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
@@ -136,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(document.documentElement, { attributes: true });
 });
 
-function verify(exerciseID) {
+/*function verify(exerciseID) {
     
     const res = getExerciseResults(exerciseID);
     let score=0;
@@ -150,7 +143,30 @@ function verify(exerciseID) {
     if (res.errorCount === 0) { score = res.correctCount * 6;}
     updateScores(exerciseID, score);
     
+}*/
+
+ function verify(exerciseID) {
+    try {
+        if (typeof getExerciseResults !== 'function') throw new Error("دالة getExerciseResults غير معرفة! تأكد من ملف script.js");
+
+        const res = getExerciseResults(exerciseID);
+        let score = 0;
+        
+        const successMsg = "ممتاز! لقد استوعبت مفهوم تقارب الصور f(x) عندما يقترب x من الصفر.";
+        const errorMsg = "تأمل جيداً في الرسم.. عندما يقترب x من 0، أين تستقر قيمة f(x)؟";
+
+        display_universal_validation(res, 'hint-ex', successMsg, errorMsg);
+        
+        if (res.errorCount === 0 && res.correctCount === res.totalExpected) { 
+            score = res.correctCount * 6;
+        }
+        updateScores(exerciseID, score);
+        showLog("تم التحقق وتحديث النقاط.");
+    } catch (e) {
+        showLog("خطأ في التحقق: " + e.message, true);
+    }
 }
+
 
 
 
