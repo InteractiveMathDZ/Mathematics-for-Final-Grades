@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             if (mutation.attributeName === 'data-bs-theme') {
-                initGraphExercise1();
+                drawLimitsGraph();
             }
         });
     });
