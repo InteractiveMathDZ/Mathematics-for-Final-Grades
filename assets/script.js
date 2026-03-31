@@ -88,9 +88,9 @@ function evaluateQuizSelections(allOptionIds, correctOptionIds) {
  * @param {string} inputName - قيمة السمة name لعناصر الـ radio
  * @returns {object} {correctCount, errorCount, checkedCount}
  */
-function getExerciseResults(inputName) {
-    // جلب كل الخيارات التي تحمل نفس الاسم
-    const inputs = document.querySelectorAll(`input[name="${inputName}"]`);
+function getExerciseResults(exerciseID) {
+    // جلب كل الخيارات التي تحمل نفس الاسم class 
+    const inputs = document.querySelectorAll(`input.${exerciseID}`);
     let stats = { totalExpected: 0, correctCount: 0, errorCount: 0, checkedCount: 0};
 
     inputs.forEach(input => {
@@ -110,7 +110,6 @@ function getExerciseResults(inputName) {
 
  return stats 
 }
-
 
 
 /*function calculate_results(allAnswers, correctAnswers) */
