@@ -91,20 +91,19 @@ function evaluateQuizSelections(allOptionIds, correctOptionIds) {
 function getExerciseResults(inputName) {
     // جلب كل الخيارات التي تحمل نفس الاسم
     const inputs = document.querySelectorAll(`input[name="${inputName}"]`);
-    let stats = { totalExpected = 0, correctCount =0, errorCount = 0, checkedCount = 0};
+    let stats = { totalExpected: 0, correctCount: 0, errorCount: 0, checkedCount: 0};
 
     inputs.forEach(input => {
+        if (input.value === "1"){
+                    stats.totalExpected++
+        }
         if (input.checked) {
-            tstats.checkedCount++; // التلميذ اختار هذا الخيار
+            stats.checkedCount++; // التلميذ اختار هذا الخيار
             // إذا كانت القيمة 1 فهي صحيحة، وإلا فهي خاطئة
             if (input.value === "1") {
                 stats.correctCount++;
-                stats.totalExpected++;
             } else {
                 stats.errorCount++;
-                if (input.value ==="1"){
-                    stats.totalExpected++
-                }
             }
         }
     });
