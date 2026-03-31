@@ -117,7 +117,7 @@ function verify(inputName) {
     let score=0;
     display_universal_validation(
         res, 
-        'hint-2-1-1',
+        'hint-ex',
         "لقد فهمت التكافؤ بين الكتابة $\\mathbb{R}^*$ و اتحاد المجالات.",
         "انتبه إلى اتجاه المعقوفتين وإقصاء الصفر."
     );
