@@ -108,13 +108,18 @@ function drawLimitsGraph() {
                 y: 0.5,
                 color: '#dc3545',
                 fill: isDark ? '#1a1a1a' : '#ffffff', // نفس لون الخلفية لتبدو فارغة
-                radius: 5,
+                radius: 20,
                 type: 'circle',
                 text: 'فجوة (غير معرفة)'
             },
             // 2. خط مساعدة يوضح التقارب
             {
                 y: 0.5,
+                color: 'rgba(220, 53, 69, 0.3)',
+                dash: [5, 5]
+            }
+            {
+                x: 0,
                 color: 'rgba(220, 53, 69, 0.3)',
                 dash: [5, 5]
             }
