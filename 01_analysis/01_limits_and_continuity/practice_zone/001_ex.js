@@ -1,75 +1,4 @@
-// دالة رسم منحنى الدالة f(1) = (sqrt(x+1)-1)/x
-/*function drawLimitsGraph() {
-    const container = document.getElementById('graph-limits');
-    if (!container) return;
-
-    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-    
-    // إعدادات الألوان المحسنة
-    const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : '#eee'; // شبكة مرئية في الظلام
-    const axisColor = isDark ? '#888' : '#333';
-    const lineColor = isDark ? '#66b2ff' : '#0d6efd';
-
-    container.innerHTML = '';
-
-    functionPlot({
-        target: "#graph-limits",
-        width: container.offsetWidth - 20,
-        height: 400,
-        grid: true,
-        xAxis: { 
-            domain: [-1.2, 2], // وسعنا المجال قليلاً لرؤية ما بعد 1
-            color: axisColor 
-        },
-        yAxis: { 
-            domain: [-0.2, 1.5], 
-            color: axisColor 
-        },
-        data: [
-            {
-                // رسم الدالة مع استثناء الصفر برمجياً لتجنب الخط الرأسي
-                fn: "(sqrt(x + 1) - 1) / x",
-                color: lineColor,
-                strokeWidth: 3,
-                sampler: 'builtIn',
-                graphType: 'polyline',
-                // السر في فصل المنحنى:
-                skipTip: true,
-                attr: { "stroke-linecap": "round" }
-            }
-        ],
-        annotations: [
-            // 1. رسم الدائرة الفارغة عند (0, 0.5)
-            {
-                x: 0,
-                y: 0.5,
-                color: '#dc3545',
-                fill: isDark ? '#1a1a1a' : '#ffffff', // نفس لون الخلفية لتبدو فارغة
-                radius: 20,
-                type: 'circle',
-                text: 'فجوة (غير معرفة)'
-            },
-            // 2. خط مساعدة يوضح التقارب
-            {
-                y: 0.5,
-                color: 'rgba(220, 53, 69, 0.3)',
-                dash: [5, 5]
-            },
-            {
-                x: 0,
-                color: 'rgba(220, 53, 69, 0.3)',
-                dash: [5, 5]
-            }
-        ]
-    });
-
-    // تحسين ظهور أرقام المحاور في الوضع القاتم
-    if (isDark) {
-        const labels = container.querySelectorAll('text');
-        labels.forEach(l => l.style.fill = '#aaa');
-    }
-}
-*/
+// دالة رسم منحنى
 function drawLimitsGraph() {
     const container = document.getElementById('graph-limits');
     if (!container) return;
@@ -104,7 +33,7 @@ function drawLimitsGraph() {
                 graphType: 'scatter',
                 color: '#dc3545',
                 attr: {
-                    "r": 5,
+                    "r": 3,
                     "fill": isDark ? "#1a1a1a" : "#ffffff",
                     "stroke": "#dc3545",
                     "stroke-width": 2
@@ -114,7 +43,8 @@ function drawLimitsGraph() {
         annotations: [
             // سنستخدم الـ annotations للخطوط فقط وسنقوم بتقطيعها برمجياً أسفل الكود
             { y: 0.5, color: '#dc3545', text: 'y = 0.5' },
-            { x: 0, color: '#dc3545' }
+            { x: 0, color: '#dc3545', text: 'y = 0' },
+            { y: 0, color: '#dc3545', text: 'x = 0' },
         ]
     });
 
