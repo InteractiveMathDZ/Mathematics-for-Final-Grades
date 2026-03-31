@@ -1,5 +1,5 @@
 // دالة رسم منحنى
-function drawLimitsGraph() {
+/*function drawLimitsGraph() {
     const container = document.getElementById('graph-limits');
     if (!container) return;
 
@@ -73,6 +73,92 @@ function drawLimitsGraph() {
         }
     }
 }
+*/
+
+function drawLimitsGraph() {
+    const container = document.getElementById('graph-limits');
+    if (!container) return;
+
+    // 1. تحديد الوضع بدقة
+    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    
+    // 2. مصفوفة الألوان الصارمة
+    const colors = {
+        axis: isDark ? '#888' : '#333',
+        grid: isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.05)',
+        line: isDark ? '#66b2ff' : '#0d6efd',
+        helper: isDark ? '#ffaaaa' : '#dc3545',
+        text: isDark ? '#eee' : '#333',
+        bg: isDark ? '#1a1a1a' : '#ffffff'
+    };
+
+    container.innerHTML = '';
+
+    try {
+        const instance = functionPlot({
+            target: "#graph-limits",
+            width: container.offsetWidth - 20,
+            height: 400,
+            grid: true,
+            xAxis: { domain: [-1.2, 2], color: colors.axis },
+            yAxis: { domain: [-0.2, 1.5], color: colors.axis },
+            data: [
+                {
+                    fn: "(sqrt(x + 1) - 1) / x",
+                    color: colors.line,
+                    strokeWidth: 3,
+                    sampler: 'builtIn',
+                    graphType: 'polyline',
+                    skipTip: true
+                },
+                {
+                    points: [[0, 0.5]],
+                    fnType: 'points',
+                    graphType: 'scatter',
+                    color: colors.helper,
+                    attr: { r: 5, fill: colors.bg, stroke: colors.helper, "stroke-width": 2 }
+                }
+            ],
+            annotations: [
+                { y: 0.5, color: colors.helper, text: 'y = 0.5' },
+                { x: 0, color: colors.helper }
+            ]
+        });
+
+        // --- التعديل اليدوي الإجباري بعد الرسم لضمان الظهور ---
+        const svg = container.querySelector('svg');
+        if (svg) {
+            // أ. إظهار خطوط الشبكة (Grid)
+            svg.querySelectorAll('.grid line').forEach(l => {
+                l.style.stroke = colors.grid;
+                l.style.strokeOpacity = "1";
+            });
+
+            // ب. إظهار النصوص (Labels) وتلوينها حسب الوضع
+            svg.querySelectorAll('text').forEach(t => {
+                t.style.fill = colors.text;
+                t.style.fontSize = "12px";
+            });
+
+            // ج. تقطيع الخطوط المساعدة (Annotations)
+            svg.querySelectorAll('.annotations line').forEach(l => {
+                l.setAttribute('stroke-dasharray', '5,5');
+                l.setAttribute('stroke', colors.helper);
+                l.setAttribute('opacity', '0.7');
+            });
+
+            // د. تصحيح نصوص المساعدة
+            svg.querySelectorAll('.annotations text').forEach(t => {
+                t.style.fill = colors.helper;
+                t.setAttribute('x', '15'); // إزاحة عن المحور
+            });
+        }
+    } catch (e) { console.error(e); }
+}
+
+// مراقبة تغيير الوضع (Dark/Light) لإعادة الرسم تلقائياً
+const themeObserver = new MutationObserver(() => drawLimitsGraph());
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
 
 
 
