@@ -125,7 +125,7 @@ function getExerciseResults(inputName) {
  * @param {string} successMsg - Message de succès (HTML/LaTeX)
  * @param {string} errorMsg - Message d'erreur (HTML/LaTeX)
  */
-function display_universal_validation(stats, totalExpected, hintBoxId, successMsg, errorMsg) {
+function display_universal_validation(stats, hintBoxId, successMsg, errorMsg) {
     const hintBox = document.getElementById(hintBoxId);
     if (!hintBox) return;
 
@@ -135,10 +135,10 @@ function display_universal_validation(stats, totalExpected, hintBoxId, successMs
     }
 
     // Vérification : toutes les bonnes réponses cochées ET aucune erreur
-    if (stats.score === totalExpected && stats.errors === 0) {
+    if (stats.correctCount === stats.totalExpected && stats.errorCount === 0) {
         hintBox.className = "hint-box alert alert-success shadow-sm";
         hintBox.innerHTML = `<b>ممتاز !</b> ${successMsg}`;
-    } else if (stats.score < totalExpected && stats.errors === 0)  {
+    } else if (stats.correctCount < stats.totalExpected && stats.errorCount === 0)  {
         hintBox.className = "hint-box alert alert-danger shadow-sm";
         hintBox.innerHTML = `<b>إجابة جزئية، إختر جميع الإجابات الصحيحة.</b> ${errorMsg}`;
     } else {
