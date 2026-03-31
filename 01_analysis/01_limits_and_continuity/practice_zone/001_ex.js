@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function verify(inputName) {
     
     const res = getExerciseResults(inputName);
-    
+    let score=0;
     display_universal_validation(
         res, 
         'hint-2-1-1',
@@ -122,7 +122,7 @@ function verify(inputName) {
         "انتبه إلى اتجاه المعقوفتين وإقصاء الصفر."
     );
     
-    if (res.errorCount === 0) {let score = res.correctCount * 6;}
+    if (res.errorCount === 0) { score = res.correctCount * 6;}
     updateScores(inputName, score);
     
 }
