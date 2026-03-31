@@ -1,5 +1,5 @@
 // دالة رسم منحنى الدالة f(1) = (sqrt(x+1)-1)/x
-function drawLimitsGraph() {
+/*function drawLimitsGraph() {
     const container = document.getElementById('graph-limits');
     if (!container) return;
 
@@ -69,6 +69,81 @@ function drawLimitsGraph() {
         labels.forEach(l => l.style.fill = '#aaa');
     }
 }
+*/
+function drawLimitsGraph() {
+    const container = document.getElementById('graph-limits');
+    if (!container) return;
+
+    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    const axisColor = isDark ? '#888' : '#333';
+    const lineColor = isDark ? '#66b2ff' : '#0d6efd';
+
+    container.innerHTML = '';
+
+    const plot = functionPlot({
+        target: "#graph-limits",
+        width: container.offsetWidth - 20,
+        height: 400,
+        grid: true,
+        xAxis: { domain: [-1.2, 2], color: axisColor },
+        yAxis: { domain: [-0.2, 1.5], color: axisColor },
+        data: [
+            {
+                // 1. رسم المنحنى الأساسي
+                fn: "(sqrt(x + 1) - 1) / x",
+                color: lineColor,
+                strokeWidth: 3,
+                sampler: 'builtIn',
+                graphType: 'polyline',
+                skipTip: true
+            },
+            {
+                // 2. رسم الدائرة المفرغة كـ "نقطة" مستقلة
+                points: [[0, 0.5]],
+                fnType: 'points',
+                graphType: 'scatter',
+                color: '#dc3545',
+                attr: {
+                    "r": 5,
+                    "fill": isDark ? "#1a1a1a" : "#ffffff",
+                    "stroke": "#dc3545",
+                    "stroke-width": 2
+                }
+            }
+        ],
+        annotations: [
+            // سنستخدم الـ annotations للخطوط فقط وسنقوم بتقطيعها برمجياً أسفل الكود
+            { y: 0.5, color: '#dc3545', text: 'y = 0.5' },
+            { x: 0, color: '#dc3545' }
+        ]
+    });
+
+    // --- السحر البرمجي لإصلاح الـ Dash والوضوح ---
+    const svg = container.querySelector('svg');
+    if (svg) {
+        // 1. جعل خطوط الـ annotations متقطعة
+        const lines = svg.querySelectorAll('.annotations line');
+        lines.forEach(line => {
+            line.setAttribute('stroke-dasharray', '5,5');
+            line.setAttribute('opacity', '0.5');
+        });
+
+        // 2. إصلاح مكان النصوص (labels) لتجنب التصادم في الأعلى
+        const texts = svg.querySelectorAll('.annotations text');
+        texts.forEach(text => {
+            text.setAttribute('x', '10'); // إزاحة النص قليلاً عن المحور y
+            text.style.fill = isDark ? '#ffaaaa' : '#dc3545';
+            text.style.fontSize = "12px";
+        });
+
+        // 3. تحسين ألوان الشبكة في الوضع القاتم
+        if (isDark) {
+            svg.querySelectorAll('.grid line').forEach(l => l.style.stroke = 'rgba(255,255,255,0.1)');
+            svg.querySelectorAll('.axis text').forEach(t => t.style.fill = '#aaa');
+        }
+    }
+}
+
 
 
 function getAllandCorrectAnswers(exerciseId, totalQuestions) {
