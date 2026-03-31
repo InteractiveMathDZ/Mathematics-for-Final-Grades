@@ -83,6 +83,36 @@ function evaluateQuizSelections(allOptionIds, correctOptionIds) {
 
     return stats;
 }
+/**
+ * دالة لحساب نتائج تمرين معين بناءً على سمة الاسم (name)
+ * @param {string} inputName - قيمة السمة name لعناصر الـ radio
+ * @returns {object} {correctCount, errorCount, checkedCount}
+ */
+function getExerciseResults(inputName) {
+    // جلب كل الخيارات التي تحمل نفس الاسم
+    const inputs = document.querySelectorAll(`input[name="${inputName}"]`);
+    let stats = { totalExpected = 0, correctCount =0, errorCount = 0, checkedCount = 0};
+
+    inputs.forEach(input => {
+        if (input.checked) {
+            tstats.checkedCount++; // التلميذ اختار هذا الخيار
+            // إذا كانت القيمة 1 فهي صحيحة، وإلا فهي خاطئة
+            if (input.value === "1") {
+                stats.correctCount++;
+                stats.totalExpected++;
+            } else {
+                stats.errorCount++;
+                if (input.value ==="1"){
+                    stats.totalExpected++
+                }
+            }
+        }
+    });
+
+ return stats 
+}
+
+
 
 /*function calculate_results(allAnswers, correctAnswers) */
 
