@@ -49,7 +49,7 @@ function drawLimitsGraph() {
             x: 0,
             y: 0.5,
             color: '#ff4d4d',
-            text: 'y = 0.5'
+            text: 'x = 0'
         }]
     });
 
