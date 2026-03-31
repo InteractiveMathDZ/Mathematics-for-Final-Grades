@@ -116,7 +116,7 @@ function drawLimitsGraph() {
                     fnType: 'points',
                     graphType: 'scatter',
                     color: colors.helper,
-                    attr: { r: 5, fill: colors.bg, stroke: colors.helper, "stroke-width": 2 }
+                    attr: { r: 3, fill: colors.bg, stroke: colors.helper, "stroke-width": 2 }
                 }
             ],
             annotations: [
