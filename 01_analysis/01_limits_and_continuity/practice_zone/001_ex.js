@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function verify(inputName) {
     
-    const res = getExerciseResults(inputName);
+    const res = getExerciseResults(exerciseID);
     let score=0;
     display_universal_validation(
         res, 
@@ -223,7 +223,7 @@ function verify(inputName) {
     );
     
     if (res.errorCount === 0) { score = res.correctCount * 6;}
-    updateScores(inputName, score);
+    updateScores(exerciseID, score);
     
 }
 
