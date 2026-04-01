@@ -50,10 +50,10 @@
     <div class="lesson-card">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-primary h5">التطبيق 01: التخمين والحساب الدقيق</h3>
-            <span class="badge bg-info" id="math-anal-limits-pra-ex001-val">0%</span>
+            <span id="anal-limits-pra-ex001-val" class="badge bg-info">0%</span>
         </div>
         <div class="progress mb-4" style="height: 10px;">
-            <div id="math-anal-limits-pra-ex001-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+            <div id="anal-limits-pra-ex001-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
         </div>
 
         <div id="part1" class="mb-3">
@@ -125,20 +125,21 @@
         </div>
         
         <div class="d-flex gap-2 mt-4">
-            <button id="anal-limits-pra-ex001-btnVerify" 
-                     class="btn btn-primary flex-grow-1 py-2 fw-bold shadow-sm" 
-                     onclick="verify('anal-limits-pra-ex001')">
-                     تحقق <i class="bi bi-check2-circle ms-1"></i>
-            </button>
-
             <button id="anal-limits-pra-ex001-btnRetry" 
                 class="btn btn-outline-secondary flex-grow-1 py-2 fw-bold shadow-sm" 
                 onclick="resetPart('anal-limits-pra-ex001')" 
                 disabled>
                 أعد المحاولة <i class="bi bi-arrow-counterclockwise ms-1"></i>
             </button>
+            
+            <button id="anal-limits-pra-ex001-btnVerify" 
+                class="btn btn-outline-secondary flex-grow-2 py-2 fw-bold shadow-sm" 
+                onclick="verify('anal-limits-pra-ex001')">
+                تحقق <i class="bi bi-check2-circle ms-1"></i>
+            </button>
 
-            <button class="btn btn-outline-primary py-2 fw-bold shadow-sm" 
+            <button id="anal-limits-pra-ex001-btnNext"
+                class="btn btn-outline-secondary flex-grow-1 py-1 fw-bold shadow-sm" 
                 onclick="nextExercise('anal-limits-pra-ex002')">
                 التالي <i class="bi bi-chevron-left ms-1"></i>
             </button>
