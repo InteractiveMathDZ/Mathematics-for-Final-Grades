@@ -168,31 +168,46 @@ function syncWithLocalStorage(exerciseID, attemptScore) {
  * 4. التغذية الراجعة البصرية (Rendering)
  * إظهار التلميحات، تلوين الأجزاء، وتحديث شريط التقدم
  */
+
 function renderVisualFeedback(exerciseID, evaluation, averageScore) {
-    // أ. تحديث شريط التقدم والنسبة المئوية في الأعلى (المعدل التراكمي)
+    // 1. تحديث شريط التقدم (بأمان)
     const progressBar = document.getElementById(`${exerciseID}-bar`);
     const progressVal = document.getElementById(`${exerciseID}-val`);
 
-    if (progressBar) progressBar.style.width = `${averageScore}%`;
-    if (progressVal) progressVal.innerText = `${Math.round(averageScore)}%`;
+    if (progressBar) progressBar.style.width = averageScore + "%";
+    if (progressVal) progressVal.innerText = Math.round(averageScore) + "%";
 
-    // ب. معالجة التلميحات والألوان لكل جزء (Part)
-    evaluation.details.forEach(part => {
-        const successHint = document.getElementById(`${exerciseID}-${part.name}-hintSuccess`);
-        const errorHint = document.getElementById(`${exerciseID}-${part.name}-hintError`);
+    // 2. تلوين الأجزاء وإظهار التلميحات
+    if (evaluation && evaluation.details) {
+        evaluation.details.forEach(part => {
+            // جلب عناصر التلميحات
+            const successHint = document.getElementById(`${exerciseID}-${part.name}-hintSuccess`);
+            const errorHint = document.getElementById(`${exerciseID}-${part.name}-hintError`);
 
-        if (part.isCorrect) {
-            // حالة الإجابة الصحيحة
-            if (successHint) successHint.classList.remove('d-none');
-            if (errorHint) errorHint.classList.add('d-none');
-            highlightPart(exerciseID, part.name, 'success');
-        } else {
-            // حالة الإجابة الخاطئة
-            if (errorHint) errorHint.classList.remove('d-none');
-            if (successHint) successHint.classList.add('d-none');
-            highlightPart(exerciseID, part.name, 'danger');
-        }
-    });
+            if (part.isCorrect) {
+                if (successHint) successHint.classList.remove('d-none');
+                if (errorHint) errorHint.classList.add('d-none');
+            } else {
+                if (errorHint) errorHint.classList.remove('d-none');
+                if (successHint) successHint.classList.add('d-none');
+            }
+
+            // تلوين العناصر نفسها (Inputs & Labels)
+            const inputs = document.querySelectorAll(`[name="${exerciseID}-${part.name}"]`);
+            inputs.forEach(el => {
+                if (el.type === 'number') {
+                    el.classList.add(part.isCorrect ? 'is-valid' : 'is-invalid');
+                } else {
+                    // تلوين النص (Label) المرتبط بالراديو أو التشيك بوكس
+                    const label = document.querySelector(`label[for="${el.id}"]`);
+                    if (label) {
+                        label.style.color = part.isCorrect ? '#198754' : '#dc3545'; // ألوان Bootstrap
+                        label.classList.add('fw-bold');
+                    }
+                }
+            });
+        });
+    }
 }
 
 /**
