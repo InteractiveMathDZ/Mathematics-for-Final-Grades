@@ -340,6 +340,41 @@ function finalizeExerciseState(exerciseID) {
 }
 
 */
+/**
+ * وظيفة الاسترجاع (Hydration): تعيد الحياة للتمرين من الذاكرة
+ */
+function hydrateExercise(exerciseID) {
+    try {
+        const data = localStorage.getItem('userProfile');
+        if (!data) return;
+
+        const profile = JSON.parse(data);
+        const record = profile.records ? profile.records[exerciseID] : null;
+
+        if (record && record.isLocked) {
+            // 1. تقييم سريع لتحديد الألوان بناءً على الاختيارات الحالية
+            const evaluation = evaluateAnswers(exerciseID);
+            
+            // 2. تلوين الواجهة وتحديث شريط التقدم
+            renderVisualFeedback(exerciseID, evaluation, record.avg);
+            
+            // 3. قفل الأزرار وتحرير زر "أعد المحاولة"
+            finalizeExerciseState(exerciseID);
+        }
+    } catch (e) {
+        console.error("خطأ في استرجاع البيانات: ", e);
+    }
+}
+
+/**
+ * صيد الحدث (Event Catch): تشغيل الاسترجاع فور تحميل الصفحة
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    // ضع هنا الـ ID الخاص بالتمرين (يمكنك تكرار السطر لتمارين أخرى)
+    const currentEx = "anal-limits-pra-ex001"; 
+    
+    hydrateExercise(currentEx);
+});
 
 
 
