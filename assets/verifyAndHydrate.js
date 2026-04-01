@@ -167,6 +167,47 @@ function syncWithLocalStorage(exerciseID, attemptScore) {
  * إظهار التلميحات، تلوين الأجزاء، وتحديث شريط التقدم
  */
 
+/*function renderVisualFeedback(exerciseID, evaluation, averageScore) {
+    // 1. تحديث شريط التقدم (بأمان)
+    const progressBar = document.getElementById(`${exerciseID}-bar`);
+    const progressVal = document.getElementById(`${exerciseID}-val`);
+
+    if (progressBar) progressBar.style.width = averageScore + "%";
+    if (progressVal) progressVal.innerText = Math.round(averageScore) + "%";
+
+    // 2. تلوين الأجزاء وإظهار التلميحات
+    if (evaluation && evaluation.details) {
+        evaluation.details.forEach(part => {
+            // جلب عناصر التلميحات
+            const successHint = document.getElementById(`${exerciseID}-${part.name}-hintSuccess`);
+            const errorHint = document.getElementById(`${exerciseID}-${part.name}-hintError`);
+
+            if (part.isCorrect) {
+                if (successHint) successHint.classList.remove('d-none');
+                if (errorHint) errorHint.classList.add('d-none');
+            } else {
+                if (errorHint) errorHint.classList.remove('d-none');
+                if (successHint) successHint.classList.add('d-none');
+            }
+
+            // تلوين العناصر نفسها (Inputs & Labels)
+            const inputs = document.querySelectorAll(`[name="${exerciseID}-${part.name}"]`);
+            inputs.forEach(el => {
+                if (el.type === 'number') {
+                    el.classList.add(part.isCorrect ? 'is-valid' : 'is-invalid');
+                } else {
+                    // تلوين النص (Label) المرتبط بالراديو أو التشيك بوكس
+                    const label = document.querySelector(`label[for="${el.id}"]`);
+                    if (label) {
+                        label.style.color = part.isCorrect ? '#198754' : '#dc3545'; // ألوان Bootstrap
+                        label.classList.add('fw-bold');
+                    }
+                }
+            });
+        });
+    }
+}*/
+
 function renderVisualFeedback(exerciseID, evaluation, averageScore) {
     // 1. تحديث شريط التقدم (بأمان)
     const progressBar = document.getElementById(`${exerciseID}-bar`);
@@ -208,6 +249,7 @@ function renderVisualFeedback(exerciseID, evaluation, averageScore) {
     }
 }
 
+
 /**
  * وظيفة مساعدة لتلوين العناصر (تغيير الحدود أو الخلفية)
  */
@@ -236,6 +278,41 @@ function highlightPart(exerciseID, partName, status) {
  * 5. إدارة الحالة النهائية (Finalization)
  * قفل المدخلات وتبديل حالة الأزرار (Inhiber/Désinhiber)
  */
+/**
+ * 5. إدارة الحالة النهائية (النسخة الصافية)
+ */
+function finalizeExerciseState(exerciseID) {
+    // أ. قفل كافة المدخلات في التمرين
+    const inputs = document.querySelectorAll(`.${exerciseID}`);
+    inputs.forEach(input => {
+        input.disabled = true;
+    });
+
+    // ب. الوصول للأزرار باستخدام المعرفات (IDs)
+    const btnVerify = document.getElementById(`${exerciseID}-btnVerify`);
+    const btnRetry = document.getElementById(`${exerciseID}-btnRetry`);
+
+    // ج. تعطيل زر "تحقق" وتغيير مظهره
+    if (btnVerify) {
+        btnVerify.disabled = true;
+        btnVerify.classList.add('opacity-50');
+        btnVerify.innerHTML = `تم التحقق <i class="bi bi-check-all"></i>`;
+    }
+
+    // د. تحرير زر "أعد المحاولة" (Inhiber -> Activer)
+    if (btnRetry) {
+        btnRetry.disabled = false; // تفعيل الزر برمجياً
+        btnRetry.classList.remove('d-none', 'disabled'); // إزالة كلاسات التعطيل
+        btnRetry.classList.add('btn-primary', 'shadow-sm'); // تلوينه ليكون جذاباً
+        
+        // إضافة مستمع حدث (Event Listener) للزر إذا لم يكن موجوداً
+        // ليقوم بتحديث الصفحة أو تصفير التمرين عند الضغط عليه
+        btnRetry.onclick = function() {
+            location.reload(); // أبسط طريقة لإعادة المحاولة حالياً هي تحديث الصفحة
+        };
+    }
+}
+/*
 function finalizeExerciseState(exerciseID) {
     // أ. قفل كافة المدخلات (Inputs) لمنع التلاعب بعد التصحيح
     const inputs = document.querySelectorAll(`.${exerciseID}`);
@@ -260,7 +337,7 @@ function finalizeExerciseState(exerciseID) {
     }
 }
 
-
+*/
 
 
 
