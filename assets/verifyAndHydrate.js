@@ -276,9 +276,9 @@ function finalizeExerciseState(exerciseID) {
         
         // إضافة مستمع حدث (Event Listener) للزر إذا لم يكن موجوداً
         // ليقوم بتحديث الصفحة أو تصفير التمرين عند الضغط عليه
-        btnRetry.onclick = function() {
+        /*btnRetry.onclick = function() {
             location.reload(); // أبسط طريقة لإعادة المحاولة حالياً هي تحديث الصفحة
-        };
+        };*/
     }
 }
 /*
