@@ -271,7 +271,7 @@ function finalizeExerciseState(exerciseID) {
     // د. تحرير زر "أعد المحاولة" (Inhiber -> Activer)
     if (btnRetry) {
         btnRetry.disabled = false; // تفعيل الزر برمجياً
-        btnRetry.classList.remove('d-none', 'disabled'); // إزالة كلاسات التعطيل
+        btnRetry.classList.remove('disabled'); // إزالة كلاسات التعطيل
         btnRetry.classList.add('shadow-sm'); // تلوينه ليكون جذاباً
         
         // إضافة مستمع حدث (Event Listener) للزر إذا لم يكن موجوداً
