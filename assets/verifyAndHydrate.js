@@ -4,8 +4,6 @@
  */
 function verify(exerciseID) {
     
-    alert("المحطة 1: تم استدعاء الدالة للمعّرف: " + exerciseID);
-    
     // 2. تقييم الإجابات (صواب/خطأ) بناءً على القيم المدخلة
     const evaluation = evaluateAnswers(exerciseID);
     
@@ -312,8 +310,6 @@ function finalizeExerciseState(exerciseID) {
  * دالة إعادة المحاولة: تصفير التمرين برمجياً وبصرياً
  */
 function resetPart(exerciseID) {
-    try {
-    alert("in resetPart ");
     // 1. جلب كافة العناصر والمدخلات
     const allElements = document.querySelectorAll(`.${exerciseID}`);
     const btnVerify = document.getElementById(`${exerciseID}-btnVerify`);
@@ -356,11 +352,7 @@ function resetPart(exerciseID) {
         profile.records[exerciseID].isLocked = false;
         localStorage.setItem('userProfile', JSON.stringify(profile));
     }
-    } catch(e){
-        alert(e);
-    }
 
-    alert("تمت إعادة تهيئة التمرين، يمكنك المحاولة الآن.");
 }
 
 
@@ -387,7 +379,7 @@ function hydrateExercise(exerciseID) {
             finalizeExerciseState(exerciseID);
         }
     } catch (e) {
-        console.error("خطأ في استرجاع البيانات: ", e);
+        alert("خطأ في استرجاع البيانات: ", e);
     }
 }
 
