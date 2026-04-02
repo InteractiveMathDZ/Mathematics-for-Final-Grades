@@ -7,9 +7,9 @@ function verify(exerciseID) {
     // 2. تقييم الإجابات (صواب/خطأ) بناءً على القيم المدخلة
     const evaluation = evaluateAnswers(exerciseID);
     alert('خرجنا من evaluateAnswers ');
-    if (evaluation.noAnswer){
-        alert("أجب أولا");
-        return;
+    if (evaluation && evaluation.noAnswer === true) {
+        alert("أجب أولا من فضلك...");
+        return; // التوقف هنا وعدم إكمال الهيدرة (Hydration) أو التلوين
     }
     // 3. تحديث قاعدة البيانات المحلية (LocalStorage) بالنتائج الجديدة
     const updatedRecord = syncWithLocalStorage(exerciseID, evaluation.score);
@@ -97,7 +97,8 @@ function evaluateAnswers(exerciseID) {
      */
     return {
         score: attemptScore,
-        details: details
+        details: details,
+        noAnswer: false
     };
 }
 
