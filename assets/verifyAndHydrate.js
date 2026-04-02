@@ -317,6 +317,7 @@ function resetPart(exerciseID) {
     const btnVerify = document.getElementById(`${exerciseID}-btnVerify`);
     const btnRetry = document.getElementById(`${exerciseID}-btnRetry`);
 
+    alert(" in restPart");
     // 2. تصفير المدخلات وإعادة تفعيلها
     allElements.forEach(el => {
         el.disabled = false; // فك القفل
