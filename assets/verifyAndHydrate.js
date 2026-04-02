@@ -41,18 +41,18 @@ function evaluateAnswers(exerciseID) {
     const totalParts = Object.keys(partsMap).length;
     let correctPartsCount = 0;
     const details = [];
+    let isAnythingAnswered = false;
 
     // 2. تقييم كل جزء على حدة
     for (const partName in partsMap) {
         const elements = partsMap[partName];
         let partIsCorrect = true;
-        let hadAnswered = false;
 
         for (const el of elements) {
             if (el.type === 'radio' || el.type === 'checkbox') {
                 // القاعدة: (مختار وصحيح) أو (غير مختار وخاطئ) -> هذا هو الصواب
                 const shouldBeSelected = el.value === "1";
-                if (el.checked) hadAnswered = true;
+                if (el.checked) isAnythingAnswered = true;
                 if (el.checked !== shouldBeSelected) {
                     partIsCorrect = false;
                     break; 
@@ -60,7 +60,7 @@ function evaluateAnswers(exerciseID) {
             } else if (el.type === 'number') {
                 const correctAnswer = parseFloat(el.getAttribute('data-answer'));
                 const userVal = parseFloat(el.value);
-                if (el.value !== '') hadAnswered = true;
+                if (el.value.trim() !== '') isAnythingAnswered = true;
                 if (isNaN(userVal) || Math.abs(userVal - correctAnswer) >= 0.01) {
                     partIsCorrect = false;
                     break;
@@ -77,8 +77,8 @@ function evaluateAnswers(exerciseID) {
         });
     }
     
-    if(!hadAnswered) return {
-        noAnswer: hadAnswered;
+    if(!isAnythingAnswered) return {
+        noAnswer: true
     };
     
     const attemptScore = totalParts > 0 ? (correctPartsCount / totalParts) * 100 : 0;
