@@ -189,8 +189,8 @@ function renderVisualFeedback(exerciseID, evaluation, averageScore) {
     if (evaluation && evaluation.details) {
         evaluation.details.forEach(part => {
             // جلب عناصر التلميحات
-            const successHint = document.getElementById(`${exerciseID}-${part.name}-hintSuccess`);
-            const errorHint = document.getElementById(`${exerciseID}-${part.name}-hintError`);
+            const successHint = document.getElementById(`${part.name}-hintSuccess`);
+            const errorHint = document.getElementById(`${part.name}-hintError`);
 
             if (part.isCorrect) {
                 if (successHint) successHint.classList.remove('d-none');
@@ -201,7 +201,7 @@ function renderVisualFeedback(exerciseID, evaluation, averageScore) {
             }
 
             // تلوين العناصر نفسها (Inputs & Labels)
-            const inputs = document.querySelectorAll(`[name="${exerciseID}-${part.name}"]`);
+            const inputs = document.querySelectorAll(`[name="${part.name}"]`);
             inputs.forEach(el => {
                 if (el.type === 'number') {
                     el.classList.add(part.isCorrect ? 'is-valid' : 'is-invalid');
