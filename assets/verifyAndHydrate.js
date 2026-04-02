@@ -148,7 +148,8 @@ function evaluateAnswers(/*userInputs,*/ exerciseID) {
     const attemptScore = totalParts > 0 ? (correctPartsCount / totalParts) * 100 : 0;
 
     // --- كود فحص هيكل الـ details المحول ---
-    let partsReport = `score : ${attemptScore}\n`;
+    let partsReport = "score : ";
+    partsReport += `${attemptScore}\n`;
     partsReport += "تفاصيل التصحيح (details):\n";
 
     for (const part in details) {
