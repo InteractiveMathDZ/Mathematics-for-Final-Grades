@@ -312,12 +312,12 @@ function finalizeExerciseState(exerciseID) {
  * دالة إعادة المحاولة: تصفير التمرين برمجياً وبصرياً
  */
 function resetPart(exerciseID) {
+    alert("in resetPart ");
     // 1. جلب كافة العناصر والمدخلات
     const allElements = document.querySelectorAll(`.${exerciseID}`);
     const btnVerify = document.getElementById(`${exerciseID}-btnVerify`);
     const btnRetry = document.getElementById(`${exerciseID}-btnRetry`);
 
-    alert(" in restPart");
     // 2. تصفير المدخلات وإعادة تفعيلها
     allElements.forEach(el => {
         el.disabled = false; // فك القفل
