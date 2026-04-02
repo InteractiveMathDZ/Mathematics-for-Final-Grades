@@ -209,7 +209,7 @@ function renderVisualFeedback(exerciseID, evaluation, averageScore) {
                     // تلوين النص (Label) المرتبط بالراديو أو التشيك بوكس
                     const label = document.querySelector(`label[for="${el.id}"]`);
                     if (label) {
-                        label.style.color = part.isCorrect ? '#198754' : '#dc3545'; // ألوان Bootstrap
+                        label.style.color = part.isCorrect ? /*'#198754'*/ 'green': /*'#dc3545'*/'red'; // ألوان Bootstrap
                         label.classList.add('fw-bold');
                     }
                 }
