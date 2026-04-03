@@ -5,14 +5,14 @@
 }
     
 /* تنسيق المعادلات الرياضية للوضع الليلي */
-[data-bs-theme="dark"] .MathJax {
+/*[data-bs-theme="dark"] .MathJax {
     color: #ffffff !important;
 }
 
 .MathJax {
     color: #ffffff !important;
 }
-    
+    */
 /* تنسيق عام للقائمة الجانبية لضمان التباين */
 .offcanvas {
     transition: background-color 0.3s ease;
