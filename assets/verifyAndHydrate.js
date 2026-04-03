@@ -255,7 +255,6 @@ function finalizeExerciseState(exerciseID) {
  * دالة إعادة المحاولة: تصفير التمرين برمجياً وبصرياً
  */
 function resetExercise(exerciseID){
-    alert("resetExercice ");
     // 1. جلب كافة العناصر والمدخلات
     const allElements = document.querySelectorAll(`.${exerciseID}`);
     const btnVerify = document.getElementById(`${exerciseID}-btnVerify`);
@@ -282,6 +281,7 @@ function resetExercise(exerciseID){
     const hints = document.querySelectorAll('.hint');
     hints.forEach(h => h.classList.add('d-none'));
 
+    alert(`${hints.length} hints trouvé`);
     // 4. إدارة الأزرار
     if (btnVerify) {
         btnVerify.disabled = false;
