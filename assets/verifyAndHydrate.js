@@ -254,7 +254,7 @@ function finalizeExerciseState(exerciseID) {
 /**
  * دالة إعادة المحاولة: تصفير التمرين برمجياً وبصرياً
  */
-function resetExercice(exerciseID){
+function resetExercise(exerciseID){
     alert("resetExercice ");
     // 1. جلب كافة العناصر والمدخلات
     const allElements = document.querySelectorAll(`.${exerciseID}`);
