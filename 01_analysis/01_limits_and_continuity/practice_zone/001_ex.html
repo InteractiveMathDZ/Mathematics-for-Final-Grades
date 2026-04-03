@@ -47,39 +47,45 @@
     <h1 class="text-center mb-5 text-primary fw-bold">تطبيقات</h1>
 
     
-    <div class="container py-1">
+    <div class="container py-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-primary h5">التطبيق 01: التخمين والحساب الدقيق</h3>
             <span id="anal-limits-pra-ex001-val" class="badge bg-info">0%</span>
         </div>
-        <div class="progress mb-4" style="height: 10px;">
+        <div class="progress mb-4 py-3" style="height: 10px;">
             <div id="anal-limits-pra-ex001-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
         </div>
 
-        <div id="part1" class="container">
+        <div id="part1" class="container py-3">
             <p class="fw-bold text-secondary">1. وضع تخمين (بصري):</p>
             <p>نعتبر الدالة $f$ المعرفة بـ: $f(x) = \frac{\sqrt{x+1}-1}{x}$. لاحظ أنها غير معرفة عند $0$.</p>
 
-            <div id="graph-limits" class="border rounded bg-white shadow-sm mb-3 text-center math-block">
+            <div id="graph-limits" class="border rounded bg-white shadow-sm mb-3 py-3 text-center math-block">
             </div>
             <p class="text-body-secondary small text-center mb-4"><strong>تفاعل:</strong> استخدم عجلة الفأرة للـ Zoom، أو اسحب لتحريك الرسم.</p>
 
         
-            <div class="container">
+            <div class="container py-3">
                 <p class="small mb-2 text-muted"><i class="fas fa-search-plus me-1"></i>  من خلال صور الشاشة (Zoom) حول النقطة $0$، نلاحظ أن المنحنى يمر من القيمة $0.5$.</p>
                 <p class="fw-bold">السؤال: خمن قيمة $\lim\limits_{x \to 0} f(x)$ من خلال الرسم؟</p>
                 <div class="choices" dir="ltr">
                     <div class="form-check mb-2">
+                        <tr><td>✅</td><td>
                         <input type="radio" name="anal-limits-pra-ex001-p1" id="anal-limits-pra-ex001-a" value="1" data-answer="1" class="form-check-input anal-limits-pra-ex001 correct-node"> 
                         <label class="form-check-label" for="anal-limits-pra-ex001-a">$0.5$</label>
+                        </td></tr>
                     </div>
                     <div class="form-check mb-2">
+                        <tr><td>✅</td><td>
                         <input type="radio" name="anal-limits-pra-ex001-p1" id="anal-limits-pra-ex001-b" value="0" data-answer="0" class="form-check-input anal-limits-pra-ex001">
                         <label class="form-check-label" for="anal-limits-pra-ex001-b">$1$</label>
+                        </td></tr>
                     </div>
                     <div class="form-check mb2">
+                        <tr><td>✅</td><td>
                         <input type="radio" name="anal-limits-pra-ex001-p1" id="anal-limits-pra-ex001-c" value="0" data-answer="0" class="form-check-input anal-limits-pra-ex001">
                         <label class="form-check-label" for="anal-limits-pra-ex001-c">$0$</label>
+                        </td></tr>
                     </div)
                 </div> 
             </div>
@@ -104,16 +110,22 @@
                 <p class="text-muted small italic">(تلميح: مشتقة $\sqrt{u}$ هي $\frac{u'}{2\sqrt{u}}$)</p>
                 <div class="choices" dir="ltr">
                     <div class="form-check mb-2">
+                        <tr><td>✅</td><td>
                         <input type="radio" name="anal-limits-pra-ex001-p2" id="anal-limits-pra-ex001-d" value="0" data-answer="0" class="form-check-input anal-limits-pra-ex001"> 
                         <label class="form-check-label" for="anal-limits-pra-ex001-d">$g'(0)$</label>
+                        </td></tr>
                     </div>
                     <div class="form-check mb-2">
+                        <tr><td>✅</td><td>
                         <input type="radio" name="anal-limits-pra-ex001-p2" id="anal-limits-pra-ex001-e" value="1" data-answer="1" class="form-check-input anal-limits-pra-ex001 correct-node">
                         <label class="form-check-label" for="anal-limits-pra-ex001-e">$g'(0) = \frac{1}{2}$</label>
+                        </td></tr>
                     </div>
                     <div class="form-check mb2">
+                        <tr><td>✅</td><td>
                         <input type="radio" name="anal-limits-pra-ex001-p2" id="anal-limits-pra-ex001-f" value="0" data-answer="0" class="form-check-input anal-limits-pra-ex001">
                         <label class="form-check-label" for="anal-limits-pra-ex001-f">$0$</label>
+                        </td></tr>
                     </div)
                 </div>
             </div>
