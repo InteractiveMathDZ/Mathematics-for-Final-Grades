@@ -279,7 +279,7 @@ function resetExercise(exerciseID){
     });
 
     // 3. إخفاء التلميحات (Hints)
-    const hints = document.querySelectorAll(`[id^="${exerciseID}"][id$="HintSuccess"], [id^="${exerciseID}"][id$="HintError"]`);
+    const hints = document.querySelectorAll('.hint');
     hints.forEach(h => h.classList.add('d-none'));
 
     // 4. إدارة الأزرار
