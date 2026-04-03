@@ -232,16 +232,16 @@ function finalizeExerciseState(exerciseID) {
 
     // ج. تعطيل زر "تحقق" وتغيير مظهره
     if (btnVerify) {
-        btnVerify.disabled = true;
-        btnVerify.classList.add('opacity-50');
-        btnVerify.innerHTML = `تم التحقق <i class="bi bi-check-all"></i>`;
+        btnVerify.classList.add('d-none');
+       // btnVerify.classList.add('opacity-50');
+        //btnVerify.innerHTML = `تم التحقق <i class="bi bi-check-all"></i>`;
     }
 
     // د. تحرير زر "أعد المحاولة" (Inhiber -> Activer)
     if (btnRetry) {
-        btnRetry.disabled = false; // تفعيل الزر برمجياً
-        btnRetry.classList.remove('disabled'); // إزالة كلاسات التعطيل
-        btnRetry.classList.add('shadow-sm'); // تلوينه ليكون جذاباً
+       // btnRetry.disabled = false; // تفعيل الزر برمجياً
+        btnRetry.classList.remove('d-none'); // إزالة كلاسات التعطيل
+       // btnRetry.classList.add('shadow-sm'); // تلوينه ليكون جذاباً
         
         // إضافة مستمع حدث (Event Listener) للزر إذا لم يكن موجوداً
         // ليقوم بتحديث الصفحة أو تصفير التمرين عند الضغط عليه
@@ -284,12 +284,12 @@ function resetExercise(exerciseID){
     alert(`${hints.length} hints trouvés`);
     // 4. إدارة الأزرار
     if (btnVerify) {
-        btnVerify.disabled = false;
-        btnVerify.classList.remove('opacity-50');
-        btnVerify.innerHTML = `تحقق <i class="bi bi-check-circle ms-1"></i>`;
+        //btnVerify.disabled = false;
+        btnVerify.classList.remove('d-none');
+       // btnVerify.innerHTML = `تحقق <i class="bi bi-check-circle ms-1"></i>`;
     }
     if (btnRetry) {
-        btnRetry.disabled = true; // يعود للتعطيل حتى يتم الحل مجدداً
+        btnRetry.classList.add('d-none'); // يعود للتعطيل حتى يتم الحل مجدداً
     }
 
     // 5. تحديث الذاكرة (فتح القفل برمجياً)
