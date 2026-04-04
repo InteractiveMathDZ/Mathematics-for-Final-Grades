@@ -150,9 +150,10 @@ function renderVisualFeedback(exerciseID, evaluation, averageScore) {
     // 1. تحديث شريط التقدم (بأمان)
     const progressBar = document.getElementById(`${exerciseID}-bar`);
     const progressVal = document.getElementById(`${exerciseID}-val`);
-
+    alert("بروقرس بار ويدث قبل التغيير: " + progressBar.style.width);
     if (progressBar) progressBar.style.width = averageScore + "%";
     if (progressVal) progressVal.innerText = Math.round(averageScore) + "%";
+    alert("بروقرس بار ويدث بعد التغيير: " + progressBar.style.width);
 
     // 2. تلوين الأجزاء وإظهار التلميحات
     if (evaluation && evaluation.details) {
