@@ -22,7 +22,6 @@ function verify(exerciseID) {
     
 }
 
-
 /**
  * 2. تقييم الإجابات (Evaluation - All or Nothing)
  * تقيم كل جزء (p1, p2...) ككتلة واحدة صائبة أو خاطئة
@@ -322,10 +321,170 @@ document.addEventListener('DOMContentLoaded', () => {
     
    // hydrateExercise(currentEx);
 });
+//___________________________________________________
+//___________________________________________________
+/**
+ * تحديث سجل تمرين معين داخل الملف الشخصي
+ * @param {string} exID - معرف التمرين (مثل anal_lim_ex001)
+ * @param {string} valuesStr - القيم مضغوطة (مثل "1-0-0,2,6.5")
+ * @param {number} score - العلامة المحصل عليها
+ * @param {number} version - نسخة التمرين الحالية
+ */
+function updateExerciseRecord(exID, valuesStr, score, version) {
+    // 1. جلب الملف الحالي
+    let profile = getOrCreateProfile();
+    
+    // 2. التحقق من وجود سجل سابق لهذا التمرين لجلب عدد المحاولات
+    let prevRecord = profile.r[exID] || { n: 0 };
+    let attemptCount = prevRecord.n + 1;
+
+    // 3. الحصول على التاريخ الحالي بصيغة YYMMDD
+    const now = new Date();
+    const dateStr = now.toISOString().slice(2, 10).replace(/-/g, '');
+
+    // 4. تحديث سجل التمرين (المحاولة الأخيرة)
+    profile.r[exID] = {
+        v: valuesStr,
+        s: score,
+        d: parseInt(dateStr), // تخزينه كرقم يوفر مساحة أكبر من النص
+        n: attemptCount,
+        ver: version
+    };
+
+    // 5. حفظ التغييرات في المتصفح
+    localStorage.setItem('userProfile', JSON.stringify(profile));
+    
+    console.log(`تم حفظ التمرين ${exID} بنجاح. المحاولة رقم: ${attemptCount}`);
+}
+//____________________________
 
 
+/**
+ * جلب الملف الشخصي للمستخدم أو إنشاؤه ببنية أولية إذا كان أول دخول
+ */
+function getOrCreateProfile(storageKey = 'userProfile') {
+    let profile = localStorage.getItem(storageKey);
 
+    if (!profile) {
+        // البنية الأولية الهرمية (المستوى العام -> المحاور -> السجلات)
+        const initialProfile = {
+            s: { t: 0, c: {} }, // s: stats, t: total, c: categories
+            r: {}               // r: records (التمارين)
+        };
+        localStorage.setItem(storageKey, JSON.stringify(initialProfile));
+        return initialProfile;
+    }
 
+    return JSON.parse(profile);
+}
+
+//____________________________________________
+
+/**
+ * استرجاع حالة التمرين من الذاكرة وتعبئة العناصر
+ * @param {string} exID - معرف التمرين
+ */
+function hydrateExercise(exID) {
+    // 1. جلب الملف الشخصي (قراءة أو إنشاء)
+    const profile = getOrCreateProfile();
+    const record = profile.r[exID];
+
+    // إذا لم يكن هناك سجل سابق، لا داعي لإكمال العملية
+    if (!record || !record.v) return;
+
+    // 2. تفكيك القيم المخزنة (مثال: "1-0-1,2,6.5" تصبح مصفوفة)
+    const valuesArray = record.v.split(',');
+    
+    // 3. جلب كافة عناصر التمرين بنفس الترتيب الذي جُمعت به
+    const allElements = document.querySelectorAll(`.${exID}`);
+
+    // سنستخدم عداداً داخلياً لمتابعة مكاننا في المصفوفة المنفصلة
+    let valueIndex = 0;
+
+    // 4. توزيع القيم على الأجزاء (Parts)
+    // ملاحظة: التحدي هنا أن الأجزاء قد تحتوي على عدة عناصر (مثل Checkbox)
+    // لذا سنعتمد على منطق المجموعات (PartsMap) الذي استخدمناه في التصحيح
+    const partsMap = {};
+    allElements.forEach(el => {
+        if (!partsMap[el.name]) partsMap[el.name] = [];
+        partsMap[el.name].push(el);
+    });
+
+    // 5. عملية التعبئة الفعلية
+    Object.keys(partsMap).forEach((partName) => {
+        const elements = partsMap[partName];
+        const storedValue = valuesArray[valueIndex];
+
+        if (storedValue !== undefined) {
+            const firstEl = elements[0];
+
+            if (firstEl.type === 'checkbox') {
+                // تفكيك حالة الـ checkbox (مثال: "1-0-1")
+                const cbStates = storedValue.split('-');
+                elements.forEach((cb, i) => {
+                    cb.checked = cbStates[i] === '1';
+                });
+            } 
+            else if (firstEl.type === 'radio') {
+                // اختيار الراديو بناءً على الترتيب (مثال: "2")
+                const radioIdx = parseInt(storedValue) - 1;
+                if (elements[radioIdx]) elements[radioIdx].checked = true;
+            } 
+            else if (firstEl.type === 'number') {
+                // وضع القيمة الرقمية مباشرة
+                firstEl.value = storedValue;
+            }
+        }
+        valueIndex++; // ننتقل للقيمة التالية في السجل المخزن
+    });
+
+    console.log(`تم إنعاش التمرين ${exID} بنجاح من محاولة تاريخها: ${record.d}`);
+}
+
+//___________________________________________
+
+/**
+ * جمع إجابات التلميذ من الواجهة وتحويلها إلى سلسلة نصية مضغوطة
+ * @param {string} exID - معرف التمرين
+ * @returns {string} - السلسلة الناتجة (مثل "1-0-1,2,6.5")
+ */
+function getExerciseValues(exID) {
+    const allElements = document.querySelectorAll(`.${exID}`);
+    const partsMap = {};
+    const finalValues = [];
+
+    // 1. تنظيم العناصر في مجموعات حسب الاسم (الأسئلة)
+    allElements.forEach(el => {
+        if (!partsMap[el.name]) partsMap[el.name] = [];
+        partsMap[el.name].push(el);
+    });
+
+    // 2. المرور على كل سؤال وجمع قيمته
+    Object.keys(partsMap).forEach(partName => {
+        const elements = partsMap[partName];
+        const firstEl = elements[0];
+        let partValue = "";
+
+        if (firstEl.type === 'checkbox') {
+            // نجمع حالات الاختيار: "1" للمختار و "0" للفارغ، ونفصل بـ "-"
+            partValue = elements.map(cb => cb.checked ? "1" : "0").join('-');
+        } 
+        else if (firstEl.type === 'radio') {
+            // نجد ترتيب الخيار المختار (من 1 إلى ن)
+            const selectedIdx = elements.findIndex(rb => rb.checked);
+            partValue = selectedIdx !== -1 ? (selectedIdx + 1).toString() : "0";
+        } 
+        else if (firstEl.type === 'number') {
+            // نأخذ القيمة المكتوبة مباشرة، وإذا كانت فارغة نضع علامة تدل على ذلك
+            partValue = firstEl.value !== "" ? firstEl.value : "null";
+        }
+
+        finalValues.push(partValue);
+    });
+
+    // 3. دمج كل النتائج بفاصلة لإنتاج السلسلة النهائية
+    return finalValues.join(',');
+}
 
 
 
