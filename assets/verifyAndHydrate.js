@@ -12,7 +12,7 @@ function verify(exID, isInitialLoad = false) {
     alert('دخول فيرفاي');
     // 1. حساب النتيجة بناءً على ما هو موجود في الحقول حالياً
     const evaluation = evaluateAnswers(exID);
-    alert(
+    alert('الخروج من افاليايتآنسر');
     // 2. تطبيق الألوان والرسائل (الجزء البصري)
     applyVisuals(exID, evaluation);
 
