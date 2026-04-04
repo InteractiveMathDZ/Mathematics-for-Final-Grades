@@ -3,16 +3,17 @@
         --bs-body-bg: #121212;
         --bs-body-color: #e0e0e0;
 }
-    
-/* تنسيق المعادلات الرياضية للوضع الليلي */
-/*[data-bs-theme="dark"] .MathJax {
-    color: #ffffff !important;
+
+/* هذا التنسيق يضمن توافق الخلفية مع الثيم المختار فوراً */
+.progress {
+    background-color: var(--bs-tertiary-bg) !important;
 }
 
-.MathJax {
-    color: #ffffff !important;
+/* لضمان نعومة الانتقال ومنع القفزات البصرية */
+.progress, .progress-bar {
+    transition: background-color 0.3s ease;
 }
-    */
+
 /* تنسيق عام للقائمة الجانبية لضمان التباين */
 .offcanvas {
     transition: background-color 0.3s ease;
