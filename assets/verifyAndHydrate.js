@@ -11,6 +11,10 @@
 function verify(exID, isInitialLoad = false) {
     // 1. حساب النتيجة بناءً على ما هو موجود في الحقول حالياً
     const evaluation = evaluateAnswers(exID);
+    if (evaluation && evaluation.noAnswer === true) {
+        alert("أجب أولا من فضلك...");
+        return; // التوقف هنا وعدم إكمال الهيدرة (Hydration) أو التلوين
+    }
     // 2. تطبيق الألوان والرسائل (الجزء البصري)
     applyVisuals(exID, evaluation);
 
