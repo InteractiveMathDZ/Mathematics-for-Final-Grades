@@ -324,6 +324,28 @@ document.addEventListener('DOMContentLoaded', () => {
 //___________________________________________________
 //___________________________________________________
 /**
+ * الدالة المركزية للتحقق، تعمل في حالتين: 
+ * 1. عند النقر (حفظ + تلوين)
+ * 2. عند التحميل (تلوين فقط)
+ */
+function verify(exID, isInitialLoad = false) {
+    // 1. حساب النتيجة بناءً على ما هو موجود في الحقول حالياً
+    const evaluation = evaluateAnswers(exID);
+
+    // 2. تطبيق الألوان والرسائل (الجزء البصري)
+    applyVisuals(exID, evaluation);
+
+    // 3. الحفظ في الذاكرة يحدث فقط إذا لم يكن "تحميل أولي"
+    if (!isInitialLoad) {
+        const currentValues = getExerciseValues(exID);
+        // نمرر نسخة التمرين (مثلاً 1)
+        updateExerciseRecord(exID, currentValues, evaluation.score, 1);
+    }
+}
+
+
+
+/**
  * مسح الصفحة بحثاً عن كل "علامات التمارين" وتفعيلها
  */
 function scanAndHydrate() {
@@ -515,6 +537,136 @@ function getExerciseValues(exID) {
     // 3. دمج كل النتائج بفاصلة لإنتاج السلسلة النهائية
     return finalValues.join(',');
 }
+
+//____________________________
+
+/**
+ * 2. تقييم الإجابات (Evaluation - All or Nothing)
+ * تقيم كل جزء (p1, p2...) ككتلة واحدة صائبة أو خاطئة
+ */
+function evaluateAnswers(exerciseID) {
+    // 1. تجميع العناصر حسب "الجزء" (p1, p2...)
+    const partsMap = {};
+    const allElements = document.querySelectorAll(`.${exerciseID}`);
+    
+    allElements.forEach(el => {
+        if (!partsMap[el.name]) partsMap[el.name] = [];
+        partsMap[el.name].push(el);
+    });
+
+    const totalParts = Object.keys(partsMap).length;
+    let correctPartsCount = 0;
+    const details = [];
+    let isAnythingAnswered = false;
+
+    // 2. تقييم كل جزء على حدة
+    for (const partName in partsMap) {
+        const elements = partsMap[partName];
+        let partIsCorrect = true;
+
+        for (const el of elements) {
+            if (el.type === 'radio' || el.type === 'checkbox') {
+                // القاعدة: (مختار وصحيح) أو (غير مختار وخاطئ) -> هذا هو الصواب
+                const shouldBeSelected = el.value === "1";
+                if (el.checked) isAnythingAnswered = true;
+                if (el.checked !== shouldBeSelected) {
+                    partIsCorrect = false;
+                    break; 
+                }
+            } else if (el.type === 'number') {
+                const correctAnswer = parseFloat(el.getAttribute('data-answer'));
+                const userVal = parseFloat(el.value);
+                if (el.value.trim() !== '') isAnythingAnswered = true;
+                if (isNaN(userVal) || Math.abs(userVal - correctAnswer) >= 0.01) {
+                    partIsCorrect = false;
+                    break;
+                }
+            }
+        }
+
+        if (partIsCorrect) correctPartsCount++;
+        
+        details.push({
+            name: partName,
+            isCorrect: partIsCorrect,
+            type: elements[0].type // نوع الجزء بناءً على أول عنصر فيه
+        });
+    }
+    
+    if(!isAnythingAnswered) return {
+        noAnswer: true
+    };
+    
+    const attemptScore = totalParts > 0 ? (correctPartsCount / totalParts) * 100 : 0;
+    /*
+    // --- كود فحص هيكل الـ details (للمصفوفات) ---
+    let partsReport = "score : " + attemptScore + "\n";
+    partsReport += `تفاصيل التصحيح (details):\n`;
+
+    // استخدم for...of للمصفوفات للوصول للكائن مباشرة
+    for (const part of details) {
+        partsReport += `\n📦 القسم [${part.name}] | صحيح: (${part.isCorrect}) | نوعه: ${part.type}\n`;
+    }
+
+    alert(partsReport);
+    // ---------------------------------------
+     */
+    return {
+        score: attemptScore,
+        details: details,
+        noAnswer: false
+    };
+}
+//_____________________________________
+/**
+ * 3. تطبيق التأثيرات البصرية (Visuals)
+ * تلوين الحقول وقفلها بناءً على نتائج التقييم
+ */
+function applyVisuals(exID, evaluation) {
+    // إذا لم تكن هناك إجابة، لا نفعل شيئاً (أو نمسح الألوان القديمة)
+    if (evaluation.noAnswer) return;
+
+    const allElements = document.querySelectorAll(`.${exID}`);
+    
+    // أولاً: تنظيف أي كلاسات ألوان سابقة لضمان التحديث الصحيح
+    allElements.forEach(el => {
+        el.classList.remove('is-valid', 'is-invalid');
+    });
+
+    // ثانياً: المرور على التفاصيل (details) وتلوين كل جزء
+    evaluation.details.forEach(part => {
+        const partElements = document.querySelectorAll(`.${exID}[name="${part.name}"]`);
+        
+        partElements.forEach(el => {
+            if (part.isCorrect) {
+                el.classList.add('is-valid');
+            } else {
+                el.classList.add('is-invalid');
+            }
+            
+            // قفل العناصر (Disabled) لكي لا يتم التعديل بعد التحقق
+            // ملاحظة: يمكنك تفعيل هذا السطر إذا أردت منع التلميذ من تغيير رأيه
+            // el.disabled = true; 
+        });
+    });
+
+    // ثالثاً: إظهار النتيجة النهائية (اختياري) في عنصر مخصص
+    const scoreDisplay = document.getElementById(`score-${exID}`);
+    if (scoreDisplay) {
+        scoreDisplay.textContent = `النتيجة: ${evaluation.score.toFixed(1)}%`;
+        scoreDisplay.className = `badge ${evaluation.score === 100 ? 'bg-success' : 'bg-warning text-dark'}`;
+    }
+}
+
+//_______________________________
+document.addEventListener('DOMContentLoaded', () => {
+    // السلحفاة تمسح الصفحة وتنعش التمارين القديمة آلياً
+    scanAndHydrate();
+});
+
+
+
+
 
 
 
