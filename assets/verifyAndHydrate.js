@@ -324,6 +324,36 @@ document.addEventListener('DOMContentLoaded', () => {
 //___________________________________________________
 //___________________________________________________
 /**
+ * مسح الصفحة بحثاً عن كل "علامات التمارين" وتفعيلها
+ */
+function scanAndHydrate() {
+    // نلتقط كل العناصر التي تحمل كلاس العلامة
+    const markers = document.querySelectorAll('.exercise-marker');
+
+    markers.forEach(marker => {
+        // استخراج المعرف من الـ data attribute
+        const trueExID = marker.getAttribute('data-ex-id');
+
+        if (trueExID) {
+            console.log(`[السلحفاة]: وجدت تمريناً بصمة هويته: ${trueExID}`);
+            
+            // 1. إنعاش المدخلات (القيم)
+            hydrateExercise(trueExID);
+
+            // 2. التحقق من وجود سجل سابق (التلوين البصري)
+            const profile = getOrCreateProfile();
+            if (profile.r[trueExID]) {
+                // استدعاء verify بوضعية "التحميل الأولي" (بدون حفظ محاولة جديدة)
+                verify(trueExID, true); 
+            }
+        }
+    });
+}
+
+//_______________________________<______
+
+
+/**
  * تحديث سجل تمرين معين داخل الملف الشخصي
  * @param {string} exID - معرف التمرين (مثل anal_lim_ex001)
  * @param {string} valuesStr - القيم مضغوطة (مثل "1-0-0,2,6.5")
