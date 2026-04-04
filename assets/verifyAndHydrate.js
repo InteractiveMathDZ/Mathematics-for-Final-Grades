@@ -9,10 +9,8 @@
  * 2. عند التحميل (تلوين فقط)
  */
 function verify(exID, isInitialLoad = false) {
-    alert('دخول فيرفاي');
     // 1. حساب النتيجة بناءً على ما هو موجود في الحقول حالياً
     const evaluation = evaluateAnswers(exID);
-    alert('الخروج من افاليايتآنسر');
     // 2. تطبيق الألوان والرسائل (الجزء البصري)
     applyVisuals(exID, evaluation);
 
@@ -22,6 +20,7 @@ function verify(exID, isInitialLoad = false) {
         // نمرر نسخة التمرين (مثلاً 1)
         updateExerciseRecord(exID, currentValues, evaluation.score, 1);
     }
+    finalizeExerciseState(exerciseID);
 }
 
 
@@ -391,6 +390,31 @@ function resetExercise(exerciseID){
         localStorage.setItem('userProfile', JSON.stringify(profile));
     }
 
+}
+/___________________________________________
+
+
+/**
+ * 5. إدارة الحالة النهائية (Finalization)
+ * قفل المدخلات وتبديل حالة الأزرار (Inhiber/Désinhiber)
+ */
+function finalizeExerciseState(exerciseID) {
+    // أ. قفل كافة المدخلات في التمرين
+    const inputs = document.querySelectorAll(`.${exerciseID}`);
+    inputs.forEach(input => {
+        input.disabled = true;
+    });
+
+    // ب. الوصول للأزرار باستخدام المعرفات (IDs)
+    const btnVerify = document.getElementById(`${exerciseID}-btnVerify`);
+    const btnRetry = document.getElementById(`${exerciseID}-btnRetry`);
+
+    // ج. تعطيل زر "تحقق" وتغيير مظهره
+    if (btnVerify) btnVerify.classList.add('d-none');
+
+    // د. تحرير زر "أعد المحاولة" (Inhiber -> Activer)
+    if (btnRetry) btnRetry.classList.remove('d-none'); 
+       
 }
 
 
