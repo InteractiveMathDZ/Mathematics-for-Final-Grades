@@ -79,9 +79,9 @@ function evaluateAnswers(exerciseID) {
     if(!isAnythingAnswered) return {
         noAnswer: true
     };
-    /*
-    const attemptScore = totalParts > 0 ? (correctPartsCount / totalParts) * 100 : 0;
     
+    const attemptScore = totalParts > 0 ? (correctPartsCount / totalParts) * 100 : 0;
+    /*
     // --- كود فحص هيكل الـ details (للمصفوفات) ---
     let partsReport = "score : " + attemptScore + "\n";
     partsReport += `تفاصيل التصحيح (details):\n`;
