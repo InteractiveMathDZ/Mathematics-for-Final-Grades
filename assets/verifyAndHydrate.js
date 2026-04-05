@@ -457,10 +457,10 @@ function resetExercise(exID){
     });
 
     // 3. إخفاء التلميحات (Hints)
-    const hints = document.getElementById(`${exID}-hintSuccess`);
+    let hints = document.getElementById(`${exID}-hintSuccess`);
     hints.forEach(h => h.classList.add('d-none'));
 
-    const hints = document.getElementById(`${exID}-hintError`);
+    hints = document.getElementById(`${exID}-hintError`);
     hints.forEach(h => h.classList.add('d-none'));
     
     // 4. إدارة الأزرار
