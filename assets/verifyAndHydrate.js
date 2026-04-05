@@ -407,14 +407,14 @@ function applyVisuals(exID, evaluation) {
             if (part.isCorrect) {
                 // إظهار تلميح الصح  الخاص بالقسم(Hints)
                 const hint = document.getElementById(`${exID}-hintSuccess`);
-                if (hint) hint.classList.remove('d-none'));
+                if (hint) hint.classList.remove('d-none');
     
                 el.classList.add('is-valid');
                 
             } else {
                 // إظهار تلميح الخطأ الخاص بالقسم(Hints)
                 const hint = document.getElementById(`${exID}-hintError`);
-                if (hint) hint.classList.remove('d-none'));
+                if (hint) hint.classList.remove('d-none');
     
                 el.classList.add('is-invalid');
             }
@@ -461,7 +461,7 @@ function resetExercise(exID){
     if (hint) hint.classList.add('d-none');
 
     hint = document.getElementById(`${exID}-hintError`);
-    if (hint) hint.classList.add('d-none'));
+    if (hint) hint.classList.add('d-none');
     
     // 4. إدارة الأزرار
     if (btnVerify) {
