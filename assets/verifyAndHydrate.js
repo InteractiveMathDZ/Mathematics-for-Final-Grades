@@ -19,7 +19,7 @@ function verify(exID, isInitialLoad = false) {
         return;
     }
     // 1. حساب النتيجة بناءً على ما هو موجود في الحقول حالياً
-    const evaluation = evaluateAnswers(exID);
+    const evaluation = evaluateAnswers(exID, allElements);
 
     // 2. تطبيق الألوان والرسائل (الجزء البصري)
     applyVisuals(exID, evaluation);
@@ -313,10 +313,9 @@ function getExerciseValues(exID) {
  * 2. تقييم الإجابات (Evaluation - All or Nothing)
  * تقيم كل جزء (p1, p2...) ككتلة واحدة صائبة أو خاطئة
  */
-function evaluateAnswers(exID) {
+function evaluateAnswers(exID,  allElements) {
     // 1. تجميع العناصر حسب "الجزء" (p1, p2...)
     const partsMap = {};
-    const allElements = document.querySelectorAll(`.${exID}`);
     
     allElements.forEach(el => {
         if (!partsMap[el.name]) partsMap[el.name] = [];
