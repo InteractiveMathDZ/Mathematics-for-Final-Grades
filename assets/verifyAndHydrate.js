@@ -108,6 +108,50 @@ function getOrCreateProfile(storageKey = 'userProfile') {
 
     return JSON.parse(profile);
 }
+//____________________________
+
+
+/**
+ * جلب أو إنشاء ملفك تقييم المادة، ومحاورها
+ */
+function getOrCreateProgressResume(storageKey = 'progressResume') {
+    let progressResume = localStorage.getItem(storageKey);
+
+    if (!progressResume) {
+        const vect = ['maths', 
+                      'analy', 'limit', 'conti', 'deriv', 'logFu', 'expFu', 'groCo', 'priFu', 'intCa',
+                      'algeb', 'seque', 'diviZ', 'congZ', 'primN', 'compN',
+                      'proSt', 'conPr', 'proDi'
+                      'plGeo', 'dirSi', 'scaPr',
+                      'soGeo',
+                      'bacSo'
+                      ];
+                      
+        // البنية نحفظ لكل للمادة،مجموع كل النقاط الممكن الحصول عليها بإنجاز الأمثلة أو التمارين. نعتمد التصحيح من عشرة لكل تمرين.
+        const initialProgressresume= {
+            maths:{
+                maxScore: 10, // maxScore هو ببساطة عدد التمرينات المقترحة في الموقع ككل مضروب في 10
+                score:0      // مجموع النقاط المحصل عليها في المادة ككل
+            },
+            limits:{
+                maxScore: 10, //  هو ببساطة عدد التمرينات المقترحة حول النهايات مضروب في 10
+                score:0.      //مجموع النقاط المحصل عليها في محور النهايات
+            },
+            deriv:{
+                maxScore: 10, // maxScore هو ببساطة عدد التمرينات المقترحة حول الإشتقاقية مضروب في 10
+                score:0.      // مجموع النقاط المحصل عليها في محور الإشتقاقية.
+            },
+            limits:{
+                maxScore: 10, //  هو ببساطة عدد التمرينات المقترحة حول النهايات مضروب في 10
+                score:0}; //مجموع النقاط المحصل عليها محور النهايات
+            };
+            
+        localStorage.setItem(storageKey, JSON.stringify(initialProfile));
+        return initialProfile;
+    }
+
+    return JSON.parse(profile);
+}
 
 //____________________________________________
 
