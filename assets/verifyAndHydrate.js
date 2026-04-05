@@ -457,8 +457,8 @@ function resetExercise(exID){
     });
 
     // 3. إخفاء التلميحات (Hints)
-    let hints = document.querySelectorAll(`${exID}-hint`);
-    if (hints) hints.foreach(hint => {hint.classList.add('d-none')});
+    let hints = document.querySelectorAll(`.${exID}-hint`);
+    hints.forEach(hint => {hint.classList.add('d-none')});
     
     // 4. إدارة الأزرار
     if (btnVerify) {
