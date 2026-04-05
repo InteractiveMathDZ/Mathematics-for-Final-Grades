@@ -116,16 +116,16 @@ function getOrCreateProfile(storageKey = 'userProfile') {
  */
 function getOrCreateProgressResume(storageKey = 'progressResume') {
     let progressResume = localStorage.getItem(storageKey);
-
+    const totalScoreDefinition = {
+            ['maths'/*mathematics*/, 10], ['analy'/*analysis*/, 0], ['limit'/*limits*/, 0], ['conti'/*continuity*/, 0], ['deriv'/*derivatives*/, 0], ['logFu'/*logarithmic function*/, 0], ['expFu'/*exponential function*/, 0], ['groCo'/*growth comparesion*/, 0], ['priFu'/*primitive functions*/, 0], ['intCa'/*integral calculus*/, 0],
+            ['algeb'/*algebra*/, 0], ['seque'/*sequences*/, 0], ['diviZ'/*division in Z*/, 0], ['congZ'/*congruence in Z*/, 0], ['primN'/*primary numbers*/, 0], ['compN'/*complexe numbers*/, 0],
+            ['proSt'/*probabilities and statistics*/, 0], ['conPr'/*conditionalprobabilities*/, 0], ['proDi'/*probability distribution*/, 0],
+            ['plGeo'/*plane geometry*/, 0], ['dirSi'/*direct similitude in the plane*/, 0], ['scaPr'/*scalar product*/, 0],
+            ['soGeo'/*solid geometry*/, 0], ['liPlS'/*lines and planes in the space*/, 0], ['plSeS'/*planar sections of surfaces*/, 0],
+            ['bacSo'/*BAC solutions*/, 0], ['expSc'/*experimental sciences*/, 0], ['mathe'/*mathematics*/, 0], ['tecMat'/*technical mathematics*/, 0],
+        }
     if (!progressResume) {
-        const vect = ['maths', 
-                      'analy', 'limit', 'conti', 'deriv', 'logFu', 'expFu', 'groCo', 'priFu', 'intCa',
-                      'algeb', 'seque', 'diviZ', 'congZ', 'primN', 'compN',
-                      'proSt', 'conPr', 'proDi'
-                      'plGeo', 'dirSi', 'scaPr',
-                      'soGeo',
-                      'bacSo'
-                      ];
+        
                       
         // البنية نحفظ لكل للمادة،مجموع كل النقاط الممكن الحصول عليها بإنجاز الأمثلة أو التمارين. نعتمد التصحيح من عشرة لكل تمرين.
         const initialProgressresume= {
