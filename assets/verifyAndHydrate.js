@@ -38,6 +38,7 @@ function verify(exID, isInitialLoad = false, version = 1) {
         const currentValues = getExerciseValues(exID, allElements);
         // نمرر نسخة التمرين (مثلاً 1)
         updateExerciseRecord(exID, currentValues, evaluation, version);
+        updateParentsScore(exID, evaluation.delta);
         
     }
     finalizeExerciseState(exID, allElements);
@@ -379,7 +380,7 @@ function evaluateAnswers(exID,  allElements) {
     // 4. معادلة المتوسط التراكمي (Moving Average Formula)
     // المعدل الجديد = ((المعدل القديم * عدد المرات) + النتيجة الحالية) / العدد الكلي
     const newCumulativeAverage = ((oldAverage * oldCount) + attemptScore) / newCount;
-    
+    const delta = newCumulativeAverage - oldAverage;
     // --- كود فحص هيكل الـ details (للمصفوفات) ---
     let partsReport = "score : " + attemptScore + "\n";
     partsReport += `تفاصيل التصحيح (details):\n`;
@@ -396,7 +397,8 @@ function evaluateAnswers(exID,  allElements) {
         score: attemptScore,
         avgScore: parseFloat(newCumulativeAverage.toFixed(2)), // المعدل الذي سيظهر في الواجهة ويحفظ
         details: details,
-        attempts: newCount
+        attempts: newCount,
+        delta : delta
     };
 }
 //_____________________________________
@@ -523,42 +525,35 @@ function finalizeExerciseState(exID, inputs) {
 /**
  * تحديث شجرة التقدم مع تجاهل الوسوم التقنية (pra, exem)
  */
+
 function updateParentsScore(exID, deltaPercent) {
-    let profile = getOrCreateProfile();
-    const path = exID.split('-'); // ["maths", "analy", "limit", "pra", "ex001"]
+    // 1. جلب لوحة الأهداف
+    let resume = getOrCreateProgressResume(); 
     
-    // الكلمات التي يجب تجاهلها لأنها ليست عقداً في الشجرة
-    const tagsToIgnore = ['pra', 'exem', 'test'];
+    // 2. تفكيك المسار إلى قطع
+    const path = exID.split('-'); 
 
-    // 1. استخراج الآباء الفعليين فقط (الذين يوجدون في totalScoreDefinition)
-    const validParents = path.filter(key => 
-        profile.pr[key] && !tagsToIgnore.includes(key)
-    );
+    // 3. المرور على كل قطعة في المسار
+    path.forEach(key => {
+        // إذا كانت القطعة موجودة في لوحة الأهداف (وليست وسماً تقنياً)
+        if (resume[key]) {
+            // إضافة الفرق (النسبة المئوية) مباشرة
+            resume[key][1] += deltaPercent;
 
-    // 2. تحديد وزن التمرين بناءً على نوعه (الموجود في المعرف)
-    let exerciseWeight = 5; // القيمة الافتراضية
-    if (exID.includes('-pra-')) exerciseWeight = 10;  // التمرين التطبيقي أثقل
-    if (exID.includes('-exem-')) exerciseWeight = 2; // المثال المحلول أخف
+            // حماية السقف (لا تتجاوز الحد الأقصى) والقاع
+            if (resume[key][1] > resume[key][0] && resume[key][0] > 0) {
+                resume[key][1] = resume[key][0];
+            }
+            if (resume[key][1] < 0) resume[key][1] = 0;
 
-    const pointsDelta = exerciseWeight * (deltaPercent / 100);
-
-    // 3. التحديث المتسلسل للآباء الحقيقيين
-    validParents.forEach(key => {
-        let [maxPoints, currentPoints] = profile.pr[key];
-        
-        currentPoints += pointsDelta;
-
-        // حماية السقف والقاع
-        if (currentPoints > maxPoints) currentPoints = maxPoints;
-        if (currentPoints < 0) currentPoints = 0;
-
-        profile.pr[key][1] = parseFloat(currentPoints.toFixed(2));
+            // تقريب لكسرين عشريين للنظافة
+            resume[key][1] = parseFloat(resume[key][1].toFixed(2));
+        }
     });
 
-    localStorage.setItem('userProfile', JSON.stringify(profile));
+    // 4. حفظ اللوحة المحدثة
+    localStorage.setItem('progressResume', JSON.stringify(resume));
 }
-
-
 
 
 
