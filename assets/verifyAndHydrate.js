@@ -49,28 +49,34 @@ function verify(exID, isInitialLoad = false, version = 1) {
 /**
  * مسح الصفحة بحثاً عن كل "علامات التمارين" وتفعيلها
  */
+
 function scanAndHydrate() {
-    // نلتقط كل العناصر التي تحمل كلاس العلامة
+    // التقاط كل التمارين الموجودة في الصفحة الحالية
     const markers = document.querySelectorAll('.exercise-marker');
+    
+    // جلب البروفايل لمرة واحدة (خارج الحلقة) للأداء
+    const profile = getOrCreateProfile();
 
     markers.forEach(marker => {
-        // استخراج المعرف من الـ data attribute
         const trueExID = marker.getAttribute('data-ex-id');
 
         if (trueExID) {
-            
-            // 1. إنعاش المدخلات (القيم)
-            hydrateExercise(trueExID);
+            // 1. إذا كان التمرين مسجلاً سابقاً في "ex"
+            if (profile.ex && profile.ex[trueExID]) {
+                
+                // أ. إعادة ملء الخانات بالقيم المخزنة (Hydrate)
+                // المصفوفة: [0:score, 1:date, 2:values, 3:count, 4:version]
+                const savedValues = profile.ex[trueExID][2]; 
+                hydrateExercise(trueExID, savedValues);
 
-            // 2. التحقق من وجود سجل سابق (التلوين البصري)
-            const profile = getOrCreateProfile();
-            if (profile.r[trueExID]) {
-                // استدعاء verify بوضعية "التحميل الأولي" (بدون حفظ محاولة جديدة)
+                // ب. استدعاء verify بوضعية "التحميل الأولي"
+                // هذا سيقوم بتلوين الخانات، إظهار التلميحات، وقفل التمرين
                 verify(trueExID, true); 
             }
         }
     });
 }
+
 
 //_____________________________________
 
@@ -208,62 +214,49 @@ function getOrCreateProgressResume(storageKey = 'progressResume') {
  * استرجاع حالة التمرين من الذاكرة وتعبئة العناصر
  * @param {string} exID - معرف التمرين
  */
-function hydrateExercise(exID) {
-    // 1. جلب الملف الشخصي (قراءة أو إنشاء)
-    const profile = getOrCreateProfile();
-    const record = profile.r[exID];
 
-    // إذا لم يكن هناك سجل سابق، لا داعي لإكمال العملية
-    if (!record || !record.v) return;
+function hydrateExercise(exID, valuesStr) {
+    if (!valuesStr || valuesStr === "") return;
 
-    // 2. تفكيك القيم المخزنة (مثال: "1-0-1,2,6.5" تصبح مصفوفة)
-    const valuesArray = record.v.split(',');
-    
-    // 3. جلب كافة عناصر التمرين بنفس الترتيب الذي جُمعت به
     const allElements = document.querySelectorAll(`.${exID}`);
-
-    // سنستخدم عداداً داخلياً لمتابعة مكاننا في المصفوفة المنفصلة
-    let valueIndex = 0;
-
-    // 4. توزيع القيم على الأجزاء (Parts)
-    // ملاحظة: التحدي هنا أن الأجزاء قد تحتوي على عدة عناصر (مثل Checkbox)
-    // لذا سنعتمد على منطق المجموعات (PartsMap) الذي استخدمناه في التصحيح
+    const partsArray = valuesStr.split(','); // تفكيك الأسئلة
+    
+    // تجميع العناصر حسب الاسم (نفس منطق التجميع السابق)
     const partsMap = {};
     allElements.forEach(el => {
         if (!partsMap[el.name]) partsMap[el.name] = [];
         partsMap[el.name].push(el);
     });
 
-    // 5. عملية التعبئة الفعلية
-    Object.keys(partsMap).forEach((partName) => {
-        const elements = partsMap[partName];
-        const storedValue = valuesArray[valueIndex];
+    const partNames = Object.keys(partsMap);
 
-        if (storedValue !== undefined) {
-            const firstEl = elements[0];
+    partNames.forEach((name, index) => {
+        const elements = partsMap[name];
+        const val = partsArray[index]; // القيمة المخزنة لهذا السؤال
 
-            if (firstEl.type === 'checkbox') {
-                // تفكيك حالة الـ checkbox (مثال: "1-0-1")
-                const cbStates = storedValue.split('-');
-                elements.forEach((cb, i) => {
-                    cb.checked = cbStates[i] === '1';
-                });
-            } 
-            else if (firstEl.type === 'radio') {
-                // اختيار الراديو بناءً على الترتيب (مثال: "2")
-                const radioIdx = parseInt(storedValue) - 1;
-                if (elements[radioIdx]) elements[radioIdx].checked = true;
-            } 
-            else if (firstEl.type === 'number') {
-                // وضع القيمة الرقمية مباشرة
-                firstEl.value = storedValue;
+        if (!val || val === "null") return;
+
+        const firstEl = elements[0];
+
+        if (firstEl.type === 'checkbox') {
+            const cbStates = val.split('-'); // تفكيك 1-0-1
+            elements.forEach((cb, i) => {
+                cb.checked = (cbStates[i] === "1");
+            });
+        } 
+        else if (firstEl.type === 'radio') {
+            const selectedIdx = parseInt(val) - 1; // تحويل "2" إلى الفهرس 1
+            if (selectedIdx >= 0 && elements[selectedIdx]) {
+                elements[selectedIdx].checked = true;
             }
+        } 
+        else {
+            // للنصوص والأرقام
+            firstEl.value = val;
         }
-        valueIndex++; // ننتقل للقيمة التالية في السجل المخزن
     });
-
-    console.log(`تم إنعاش التمرين ${exID} بنجاح من محاولة تاريخها: ${record.d}`);
 }
+
 
 //___________________________________________
 
