@@ -359,8 +359,23 @@ function evaluateAnswers(exID,  allElements) {
             type: elements[0].type // نوع الجزء بناءً على أول عنصر فيه
         });
     }
+
     
-    const attemptScore = totalParts > 0 ? (correctPartsCount / totalParts) * 100 : 0;
+    // 2. نتيجة المحاولة الحالية (Current Attempt)
+    const attemptScore = (correctPartsCount === totalParts) ? 10 : 0;
+
+    // 3. جلب السجل القديم لحساب "المتوسط التراكمي"
+    const profile = getOrCreateProfile();
+    // تذكر: مصفوفة التوفير [Score, Date, Values, Count]
+    const oldRecord = profile.ex[exID] || [0, 0, "", 0]; 
+    
+    const oldAverage = oldRecord[0]; // المعدل السابق
+    const oldCount = oldRecord[3];   // عدد المحاولات السابقة
+    const newCount = oldCount + 1;   // المحاولة الحالية
+
+    // 4. معادلة المتوسط التراكمي (Moving Average Formula)
+    // المعدل الجديد = ((المعدل القديم * عدد المرات) + النتيجة الحالية) / العدد الكلي
+    const newCumulativeAverage = ((oldAverage * oldCount) + attemptScore) / newCount;
     
     // --- كود فحص هيكل الـ details (للمصفوفات) ---
     let partsReport = "score : " + attemptScore + "\n";
@@ -376,8 +391,9 @@ function evaluateAnswers(exID,  allElements) {
      
     return {
         score: attemptScore,
+        avgScore: parseFloat(newCumulativeAverage.toFixed(2)), // المعدل الذي سيظهر في الواجهة ويحفظ
         details: details,
-        noAnswer: false
+        attempts: newCount
     };
 }
 //_____________________________________
