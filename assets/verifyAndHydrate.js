@@ -107,10 +107,10 @@ function getOrCreateProfile(storageKey = 'userProfile') {
     let profile = localStorage.getItem(storageKey);
 
     if (!profile) {
-        // البنية الأولية الهرمية (المستوى العام -> المحاور -> السجلات)
+        // البنية الأولية 
         const initialProfile = {
-            s: { t: 0, c: {} }, // s: stats, t: total, c: course
-            r: {}               // r: records (التمارين)
+            jDate: Date.now(), // لحظة الانفجار العظيم (تاريخ التسجيل بالطريقة الطويلة)
+            ex: {}             // مستودع التمارين (خالٍ حالياً)
         };
         localStorage.setItem(storageKey, JSON.stringify(initialProfile));
         return initialProfile;
