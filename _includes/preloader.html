@@ -1,0 +1,16 @@
+<div id="loader-wrapper" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; justify-content: center; align-items: center;">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">جاري التحميل...</span>
+    </div>
+</div>
+
+<script>
+    // عندما ينتهي المتصفح من تحميل "كل شيء" (بما في ذلك الصور والمكتبات)
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('loader-wrapper');
+        loader.style.opacity = '0'; // تلاشي تدريجي
+        setTimeout(() => {
+            loader.style.display = 'none'; // اختفاء كامل
+        }, 500); 
+    });
+</script>
