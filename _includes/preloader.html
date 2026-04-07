@@ -8,9 +8,31 @@
     // عندما ينتهي المتصفح من تحميل "كل شيء" (بما في ذلك الصور والمكتبات)
     window.addEventListener('load', function() {
         const loader = document.getElementById('loader-wrapper');
-        loader.style.opacity = '0'; // تلاشي تدريجي
+    
+        // 1. أولاً: نجعل الدوامة تتلاشى (Opacity)
+        loader.style.opacity = '0'; 
+
+        // 2. ثانياً: ننتظر قليلاً حتى ينتهي التلاشي (مثلاً 500ms)
         setTimeout(() => {
-            loader.style.display = 'none'; // اختفاء كامل
+            // 3. ثالثاً: نخفي حاوية الدوامة تماماً
+            loader.style.display = 'none'; 
+
+            // 4. أخيراً: نكشف عن الصفحة كاملة (هنا يوضع السطر)
+            document.body.style.visibility = 'visible'; 
         }, 500); 
     });
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
