@@ -1,34 +1,21 @@
 ---
 layout: exercise
-title: "التطبيق 01: التخمين والحساب الدقيق"
-exID: "maths-analy-limit-pra-ex002"
+title: "التطبيق 02: استمرارية دالة"
+exID: "maths-analy-cont-pra-ex002"
 mathJax: true
-graph: true
+graph: false
+exPosition: none # تمرين بيني
 sections:
   - pID: "p1"
-    title: "1. وضع تخمين (بصري):"
+    title: "بحث الاستمرارية:"
     paragraphs:
-      - "نعتبر الدالة $f$ المعرفة بـ: $f(x) = \\frac{\\sqrt{x+1}-1}{x}$."
-      - "خمن قيمة النهاية من خلال الرسم؟"
-    graph_id: "graph-limits"
-    graph_note: "تفاعل: استخدم عجلة الفأرة للـ Zoom"
+      - "لتكن الدالة $f$ المعرفة بـ: $f(x) = \frac{x^2-1}{x-1}$ عند $x \neq 1$ و $f(1)=2$."
+      - "هل الدالة $f$ مستمرة عند $x=1$؟"
     choices:
-      - label: "$\\lim = 0.5$"
+      - label: "نعم، لأن $\lim_{x \to 1} f(x) = f(1)$"
         correct: true
-      - label: "$\\lim = 1$"
+      - label: "لا، الدالة غير معرفة عند 1"
         correct: false
-    success_msg: "رائع! قراءتك للتمثيل البياني سليمة."
-    error_msg: "راجع الرسم: لاحظ تقارب التراتيب عند الصفر."
-
-  - pID: "p2"
-    title: "2. الإثبات الرياضي (العدد المشتق):"
-    paragraphs:
-      - "ما هو العدد المشتق $g'(0)$ للدالة $g(x) = \\sqrt{x+1}$؟"
-    choices:
-      - label: "$g'(0) = 1/2$"
-        correct: true
-      - label: "$g'(0) = 0$"
-        correct: false
-    success_msg: "ممتاز! النهاية هي فعلاً العدد المشتق."
-    error_msg: "تذكر مشتقة الدالة الجذرية."
+    success_msg: "أحسنت! أزلت حالة عدم التعيين بنجاح."
+    error_msg: "حلل البسط واختزل لتجد النهاية."
 ---
