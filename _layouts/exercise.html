@@ -50,13 +50,28 @@ layout: default
     {% endfor %}
 
     <div class="d-flex gap-2 mt-4">
-        <button id="{{ page.exID }}-btnRetry" class="btn btn-outline-primary fw-bold flex-grow-1 d-none" onclick="resetExercise('{{ page.exID }}')">
+        
+        <button id="{{ page.exID }}-btnPrev" 
+            class="btn btn-outline-secondary fw-bold flex-grow-1 shadow-sm" 
+            onclick="prevExercise('{{ page.exID }}')">
+            <i class="bi bi-chevron-right me-1"></i> السابق
+        </button>
+        
+        <button id="{{ page.exID }}-btnRetry" 
+            class="btn btn-outline-primary fw-bold flex-grow-1 d-none" 
+            onclick="resetExercise('{{ page.exID }}')">
             أعد المحاولة <i class="bi bi-arrow-counterclockwise"></i>
         </button>
-        <button id="{{ page.exID }}-btnVerify" class="btn btn-outline-primary fw-bold flex-grow-1" onclick="verify('{{ page.exID }}')">
+        
+        <button id="{{ page.exID }}-btnVerify" 
+            class="btn btn-outline-primary fw-bold flex-grow-1" 
+            onclick="verify('{{ page.exID }}')">
             تحقق <i class="bi bi-check2-circle"></i>
         </button>
-        <button id="{{ page.exID }}-btnNext" class="btn btn-outline-primary fw-bold flex-grow-1" onclick="nextExercise('{{ page.exID }}')">
+        
+        <button id="{{ page.exID }}-btnNext" 
+            class="btn btn-outline-primary fw-bold flex-grow-1" 
+            onclick="nextExercise('{{ page.exID }}')">
             التالي <i class="bi bi-chevron-left"></i>
         </button>
     </div>
