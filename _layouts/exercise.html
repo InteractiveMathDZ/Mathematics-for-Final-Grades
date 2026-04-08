@@ -30,11 +30,12 @@ layout: default
             {% for choice in part.choices %}
             <div class="form-check mb-2">
                 <input type="radio" 
+                       id="{{ page.exID }}-{{ part.pID }}-choice{{ forloop.index }}"
                        name="{{ page.exID }}-{{ part.pID }}" 
                        class="form-check-input {{ page.exID }} {% if choice.correct %}correct-node{% endif %}" 
                        value="{% if choice.correct %}1{% else %}0{% endif %}" 
                        data-answer="{% if choice.correct %}1{% else %}0{% endif %}">
-                <label class="form-check-label">{{ choice.label }}</label>
+                <label for="{{ page.exID }}-{{ part.pID }}-choice{{ forloop.index }}" class="form-check-label">{{ choice.label }}</label>
             </div>
             {% endfor %}
         </div>
