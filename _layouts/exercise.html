@@ -50,12 +50,13 @@ layout: default
     {% endfor %}
 
     <div class="d-flex gap-2 mt-4">
-        
+        {% unless page.exPosition == "first" %}
         <button id="{{ page.exID }}-btnPrev" 
             class="btn btn-outline-secondary fw-bold flex-grow-1 shadow-sm" 
             onclick="prevExercise('{{ page.exID }}')">
             <i class="bi bi-chevron-right me-1"></i> السابق
         </button>
+        {% endunless %}
         
         <button id="{{ page.exID }}-btnRetry" 
             class="btn btn-outline-primary fw-bold flex-grow-1 d-none" 
@@ -68,11 +69,13 @@ layout: default
             onclick="verify('{{ page.exID }}')">
             تحقق <i class="bi bi-check2-circle"></i>
         </button>
-        
+
+        {% unless page.exPosition == "last" %}
         <button id="{{ page.exID }}-btnNext" 
             class="btn btn-outline-primary fw-bold flex-grow-1" 
             onclick="nextExercise('{{ page.exID }}')">
             التالي <i class="bi bi-chevron-left"></i>
         </button>
+        {% endunless %}
     </div>
 </div>
