@@ -161,6 +161,35 @@
     .math-block { font-size: 1.1rem; }
 }
 
+/* S'applique uniquement si le parent .choices est explicitement en RTL */
+.choices[dir="rtl"] .form-check {
+    display: flex !important;
+    flex-direction: row; /* En RTL, le premier élément du flux est à droite */
+    align-items: center;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    gap: 12px;
+    text-align: right;
+}
+
+.choices[dir="rtl"] .form-check-input {
+    position: static !important;
+    margin: 0 !important;
+    float: none !important;
+    flex-shrink: 0;
+    /* Ajustement pour l'alignement avec les formules mathématiques */
+    width: 1.15em;
+    height: 1.15em;
+}
+
+.choices[dir="rtl"] .form-check-label {
+    margin: 0;
+    cursor: pointer;
+    /* Assure que le texte ne revient pas à gauche si la ligne est courte */
+    width: 100%; 
+}
+
+
 
 
 
