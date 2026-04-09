@@ -37,8 +37,7 @@ layout: default
                     data-answer="{% if choice.correct %}1{% else %}0{% endif %}"
                     dir="{{part.dir}}">
                 <label for="{{ page.exID }}-{{ part.pID }}-choice{{ forloop.index }}" 
-                    class="form-check-label"
-                    dir="{{part.dir}}">
+                    class="form-check-label">
                     {{ choice.label }}
                 </label>
             </div>
