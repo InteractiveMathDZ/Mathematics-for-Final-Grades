@@ -18,8 +18,16 @@ layout: default
             {% if el.text %}{{ el.text }}{% endif %}</h3>
     {% endif %}
 
-    {% if el == "parag" %}
-        <p>{{ el }}</p>
+    {% if el == "parags" %}
+        {% for parag in el %}
+            {% if parag == "ltr" %}
+            <p dir="ltr">{{ el.ltr }}</p>
+            {% elseif parag == "center" %}
+            <p class="text-center" dir="ltr">{{ el.center }}
+            {% else %}
+            <p>{{ el.rtl }}</p>
+            {% endif %}
+        {% endfor %}
     {% endif %}
 
     {% if el == "tableLines" %}
@@ -39,33 +47,36 @@ layout: default
         </div>
     {% endif %} 
 
-    {% if el == "note" %}
-        <p class="text-body-secondary small">
-            <strong>تنبيه:</strong>{{ el }}</p>
+    {% if el == "notes" %}
+        <div class="text-body-secondary small">
+            <p><strong>تنبيه:</strong></p>
+            {% for note in el %}
+                {% if note == "ltr" %}
+                <p dir="ltr">{{ el.ltr }}</p>
+                {% elseif nb == "center" %}
+                <p class="text-center" dir="ltr">{{ el.center }}
+                {% else %}
+                <p>{{ el.rtl }}</p>
+                {% endif %}
+            {% endfor %}
+            {{ el }}
+        </div>
     {% endif %}
 
-    
-   
-    
-
-    
-<h1 id="exemples"class="text-primary mb-4">2.أمثلة.</h1>
-    
-<div class="mb-3">
-    <div class="d-flex justify-content-between small mb-1">
-        <span>درجة الإتقان</span>
-        <span id="math-anal-limits-exem-val" class="fw-bold text-primary">0 / 12</span>
-    </div>
-    <div class="progress" style="height: 10px;">
-        <div id="math-anal-limits-exem-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%; transition: width 1s;"></div>
-    </div>
-</div>
-    
-<div class="alert alert-info mt-3" role="alert">
-    <strong>فائدة</strong>
-    <p>في المثال الموالي سنرى الحالات: </p>
-    <p dir="ltr">$\frac{l}{-\infty}=0^-$; $\frac{l}{0^-}=-\infty$; $\frac{l}{0+}=+\infty$; $\frac{l}{+\infty}=0^+$</p>
-</div>
+    {% if el == "N.B." %}
+        <div class="alert alert-info mt-3" role="alert">
+            <strong>فائدة</strong>
+            {% for nb in el %}
+                {% if nb == "ltr" %}
+                <p dir="ltr">{{ el }}</p>
+                {% elseif nb == "center" %}
+                <p class="text-center" dir="ltr">{{ el }}
+                {% else %}
+                <p>{{ el }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
     
 <h1 class="text-primary mb-4">1.2.الدالة $f(x)=\frac{1}{x}$.</h1>
     
