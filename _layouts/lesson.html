@@ -22,7 +22,7 @@ layout: default
         {% for parag in el %}
             {% if parag == "ltr" %}
             <p dir="ltr">{{ el.ltr }}</p>
-            {% elseif parag == "center" %}
+            {% else if parag == "center" %}
             <p class="text-center" dir="ltr">{{ el.center }}
             {% else %}
             <p>{{ el.rtl }}</p>
@@ -53,7 +53,7 @@ layout: default
             {% for note in el %}
                 {% if note == "ltr" %}
                 <p dir="ltr">{{ el.ltr }}</p>
-                {% elseif nb == "center" %}
+                {% else if nb == "center" %}
                 <p class="text-center" dir="ltr">{{ el.center }}
                 {% else %}
                 <p>{{ el.rtl }}</p>
@@ -69,7 +69,7 @@ layout: default
             {% for nb in el %}
                 {% if nb == "ltr" %}
                 <p dir="ltr">{{ el }}</p>
-                {% elseif nb == "center" %}
+                {% else if nb == "center" %}
                 <p class="text-center" dir="ltr">{{ el }}
                 {% else %}
                 <p>{{ el }}</p>
