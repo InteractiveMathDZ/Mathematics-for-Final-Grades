@@ -66,13 +66,13 @@ layout: default
         </div>
     {% endif %}
 
-    {% if el.N.B. %}
+    {% if el.NB %}
     <div class="alert alert-warning border-0 shadow-sm mt-3" role="alert">
         <div class="d-flex align-items-center mb-2">
             <i class="bi bi-lightbulb-fill me-2 text-warning fs-4"></i>
             <strong class="text-dark">فائدة (Nota Bene):</strong>
         </div>
-        {% for item in el.N.B. %}
+        {% for item in el.NB %}
              {% if item.ltr %}
                 <p dir="ltr" class="mb-1">{{ item.ltr }}</p>
             {% elsif item.center %}
