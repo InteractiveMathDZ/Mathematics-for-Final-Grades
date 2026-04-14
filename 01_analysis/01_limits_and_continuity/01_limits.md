@@ -3,6 +3,7 @@ layout: lesson
 title: "منصة التميز في الرياضيات - النهايات"
 mathJax: true
 graph: true
+lessonID: "limit"
 elements:
   - h3:
       - id: "operations-on-limits"
