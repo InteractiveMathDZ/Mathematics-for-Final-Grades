@@ -26,7 +26,7 @@ layout: default
         {% for parag in el.parags %}
             {% if parag.ltr %}
                 <p dir="ltr">{{ parag.ltr }}</p>
-            {% elseif parag.center %}
+            {% elsif parag.center %}
                 <p class="text-center" dir="ltr">{{ parag.center }}</p>
             {% else %}
                 <p>{{ parag.rtl }}</p>
@@ -57,7 +57,7 @@ layout: default
             {% for note in el.notes %}
                 {% if note.ltr %}
                     <p dir="ltr">{{ note.ltr }}</p>
-                {% elseif note.center %}
+                {% elsif note.center %}
                     <p class="text-center" dir="ltr">{{ note.center }}</p>
                 {% else %}
                     <p>{{ note.rtl }}</p>
