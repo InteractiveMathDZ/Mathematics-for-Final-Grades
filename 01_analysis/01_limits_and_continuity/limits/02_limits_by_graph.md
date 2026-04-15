@@ -6,7 +6,6 @@ mathJax: true
 graph: true
 lessonID: "limit"
 
-# روابط التنقل
 previous_title: "مفهوم الاقتراب"
 previous_url: "/limits_concept/"
 next_title: "نهايات الدوال المرجعية"
