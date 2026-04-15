@@ -7,7 +7,7 @@ graph: true
 lessonID: "limit"
 
 previous_title: "مفهوم الاقتراب"
-previous_url: "/limits_concept/"
+previous_url: "/limit_concept/"
 next_title: "نهايات الدوال المرجعية"
 next_url: "/reference_limits/"
 
