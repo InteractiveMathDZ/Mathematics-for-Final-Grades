@@ -11,6 +11,15 @@ layout: default
 
 {% for el in page.elements %}
 
+    {% if el.graph %}
+        <div 
+            id="{{ el.graph.id }}" 
+            class="{{ el.graph.class }}" 
+            data-graph-config='{{ el.graph | jsonify }}'
+            style="width: 100%; min-height: 400px; margin: 20px 0;">
+        </div>
+    {% endif %}
+
     {% if el.h3 %}
         <h3 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary mt-4 mb-4">
             {% if el.h3.text %}
