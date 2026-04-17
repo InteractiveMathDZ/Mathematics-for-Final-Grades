@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             })) : [];
 
+            console.log("البيانات الممررة للرسم:", config);
+            console.log("نقاط التشتت المحضرة:", scatterData);
+
+
             functionPlot({
                 target: "#" + container.id,
                 width: container.offsetWidth || 400,
@@ -50,9 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         graphType: 'scatter',
                         color: colors.helper
                     },*/
-                    console.log("البيانات الممررة للرسم:", config);
-                    console.log("نقاط التشتت المحضرة:", scatterData);
-
+                    
                     ...scatterData
                 ],
                 annotations: config.annotations || []
