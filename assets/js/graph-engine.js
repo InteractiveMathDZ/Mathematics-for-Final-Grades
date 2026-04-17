@@ -15,18 +15,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 helper: '#dc3545',
                 bg: isDark ? '#1a1a1a' : '#ffffff'
             };
-
-            const scatterData = config.points ? config.points.map(p => ({
+            
+            const scatterData = config.points ? config.points.map((p, i) => ({
+                id: `point-${i}`, // إضافة معرف فريد لكل نقطة
                 points: [[p.x, p.y]],
                 fnType: 'points',
                 graphType: 'scatter',
                 attr: {
-                    r: p.r,                     // القطر
-                    fill: colors.bg,          // مفرغة (تأخذ لون الخلفية)
-                    stroke: p.color || 'red', // لون الإطار من اليامل
+                    r: p.r || 6,
+                    fill: colors.bg,
+                    stroke: p.color || 'red',
                     "stroke-width": 2
                 }
             })) : [];
+
 
             console.log("البيانات الممررة للرسم:", config);
             console.log("نقاط التشتت المحضرة:", scatterData);
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     },*/
                     
                     ...scatterData
-                ],
+                ].filter(Boolean),
                 annotations: config.annotations || []
             });
         } catch (e) {
