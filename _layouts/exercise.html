@@ -26,7 +26,11 @@ layout: default
             {% endif %}
         {% endfor %}
     {% endif %}
-
+    
+    {% if part.note %}
+        <p class="small text-muted">{{ part.note }}</p>
+    {% endif %}
+    
     {% if part.graph %}
         <div 
             id="{{ part.graph.id }}" 
