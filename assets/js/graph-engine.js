@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 fnType: 'points',
                 graphType: 'scatter',
                 attr: {
-                    r: 6,                     // القطر
+                    r: p.r,                     // القطر
                     fill: colors.bg,          // مفرغة (تأخذ لون الخلفية)
                     stroke: p.color || 'red', // لون الإطار من اليامل
                     "stroke-width": 2
