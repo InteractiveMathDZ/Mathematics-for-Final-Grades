@@ -12,7 +12,8 @@
 
 <script>
   // التحقق من وجود وسم الآدمن قبل تحميل وتشغيل الكونسول
-if (localStorage.getItem('role') === 'admin') {
+
+ // if (localStorage.getItem('role') === 'admin') {
     // 1. إنشاء عنصر سكريبت لتحميل المكتبة ديناميكياً
     var script = document.createElement('script');
     script.src = "https://unpkg.com/vconsole@latest/dist/vconsole.min.js";
@@ -23,7 +24,7 @@ if (localStorage.getItem('role') === 'admin') {
     };
     
     document.head.appendChild(script);
-  }
+ // }
 </script>
 
 
