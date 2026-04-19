@@ -14,9 +14,10 @@ layout: default
 {% for part in page.sections %}
 <div id="{{ part.pID }}" class="container py-4 border-bottom">
     {% if part.title %}<p class="fw-bold">{{ part.title }}</p>{% endif %}
-        
-    {% if part.paragraphs %}
-        {% for parag in part.paragraphs %}
+
+    {% for content in part.contents %}
+      {% if content.paragraphs %}
+        {% for parag in content.paragraphs %}
             {% if parag.ltr %}
                 <p dir="ltr">{{ parag.ltr }}</p>
             {% elsif parag.center %}
@@ -25,23 +26,24 @@ layout: default
                 <p>{{ parag.rtl }}</p>
             {% endif %}
         {% endfor %}
-    {% endif %}
+      {% endif %}
     
-    {% if part.graph %}
+      {% if content.graph %}
         <div 
-            id="{{ part.graph.id }}" 
-            class="{{ part.graph.class }}" 
-            data-graph-config='{{ part.graph | jsonify }}'
+            id="{{ content.graph.id }}" 
+            class="{{ content.graph.class }}" 
+            data-graph-config='{{ content.graph | jsonify }}'
             style="width: 100%; min-height: 400px; margin: 20px 0;">
         </div>
-    {% endif %}
+      {% endif %}
     
-    {% if part.note %}
+      {% if content.note %}
         <p class="small text-muted">{{ part.note }}</p>
-    {% endif %}
+      {% endif %}
 
-    <div class="choices ms-6" dir="{{ part.dir | default: 'ltr' }}">
-        {% for choice in part.choices %}
+      {%if content.choices %}
+      <div class="choices ms-6" dir="{{ part.dir | default: 'ltr' }}">
+        {% for choice in content.choices %}
         <div class="form-check my-3 mt-4">
             <input type="radio" 
                 id="{{ page.exID }}-{{ part.pID }}-choice{{ forloop.index }}"
@@ -55,12 +57,13 @@ layout: default
             </label>
         </div>
         {% endfor %}
-    </div>
-
-    {% if part.success_msg %}
+      </div>
+      {% endif %}
+    
+      {% if content.success_msg %}
         <div id="{{ page.exID }}-{{ part.pID }}-hintSuccess" class="{{ page.exID }}-hint alert alert-success d-none mt-5">
             <i class="bi bi-check-circle-fill"></i>
-            {% for parag in part.success_msg %}
+            {% for parag in content.success_msg %}
                 {% if parag.ltr %}
                     <p dir="ltr">{{ parag.ltr }}</p>
                 {% elsif parag.center %}
@@ -70,12 +73,12 @@ layout: default
                 {% endif %}
             {% endfor %}
         </div>
-    {% endif %}
+      {% endif %}
     
-    {% if part.error_msg %}
+      {% if content.error_msg %}
         <div id="{{ page.exID }}-{{ part.pID }}-hintError" class="{{ page.exID }}-hint alert alert-danger d-none mt-5">
             <i class="bi bi-x-circle-fill"></i>
-            {% for parag in part.error_msg %}
+            {% for parag in content.error_msg %}
                 {% if parag.ltr %}
                     <p dir="ltr">{{ parag.ltr }}</p>
                 {% elsif parag.center %}
@@ -85,8 +88,8 @@ layout: default
                 {% endif %}
             {% endfor %}
         </div>
-    {% endif %}
-    
+      {% endif %}
+    {% endfor %}
 </div>
 {% endfor %}
 
