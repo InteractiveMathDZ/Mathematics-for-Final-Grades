@@ -54,6 +54,19 @@ menuLinks.forEach(link => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // التحقق مما إذا كان المستخدم لديه صلاحية "آدمن" في التخزين المحلي
+    if (localStorage.getItem('role') === 'admin') {
+        // إظهار كل العناصر التي تحمل الكلاس admin-ui
+        const adminElements = document.querySelectorAll('.admin-ui');
+        adminElements.forEach(el => {
+            el.style.display = 'block'; // أو 'flex' حسب تصميمك
+        });
+        console.log("وضع الإدارة مفعل");
+    }
+});
+
+
 
 
 
