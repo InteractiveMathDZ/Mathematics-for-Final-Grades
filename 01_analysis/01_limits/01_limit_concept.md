@@ -20,7 +20,7 @@ elements:
 
   - h3: "2. دراسة الاقتراب من النقطة."
     id: "case-study"
-
+ 
   - parags:
       - rtl: "لتكن الدالة $f$ المعرفة على $\\mathbb{R} \\setminus \\{1\\}$ بـ:"
       - center: "$f(x) = \\frac{x^2 - 1}{x - 1}$"
