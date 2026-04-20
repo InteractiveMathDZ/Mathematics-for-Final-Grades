@@ -26,7 +26,7 @@ elements:
       - center: "$f(x) = \\frac{x^2 - 1}{x - 1}$"
       - rtl: "لاحظ أن الدالة غير معرفة عند $1$ (مقام معدوم). لنحاول استكشاف ما يحدث بجوار العدد $1$:"
 
-  - table:
+  - table_:
     dir: rtl
     lines:
       - - "$\\to 1$"
@@ -40,7 +40,7 @@ elements:
         - "1.9" 
         - "$f(x)$ النتيجة"
   
-  - table:
+  - table_:
     dir: rtl
     lines:
       - - "$\\to 1$"
@@ -64,7 +64,7 @@ elements:
   - parags:
       - rtl: "هنا نكسر أول خلط يقع فيه الكثيرون:"
 
-  - table:
+  - table_:
     dir: rtl
     lines:
       - - "النهاية $\\lim\\limits_{x \\to a} f(x)$"
