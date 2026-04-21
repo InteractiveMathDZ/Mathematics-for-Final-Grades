@@ -52,8 +52,11 @@ layout: default
                     {% for line in el.tableLines.lines %}
                     <tr>
                         {% for cel in line %}
-                        <th>{{ cel }}</th>
-                        {% endfor %}
+                        {% if cel.th %}
+                           <th>{{ cel.th }}</th>
+                        {% else %}
+                            <td>{{ cel.td }}</td>
+                        {% endif %}                        {% endfor %}
                     </tr>
                     {% endfor %}
                 </tbody>
