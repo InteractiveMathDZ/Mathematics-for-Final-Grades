@@ -1,6 +1,6 @@
 ---
 layout: lesson
-title: "المبحث السادس: نهاية كثيرات الحدود والدوال الناطقة"
+title: "نهايات الدوال كثيرات الحدود والدوال الناطقة"
 permalink: /polynomial_limits/
 mathJax: true
 graph: true
