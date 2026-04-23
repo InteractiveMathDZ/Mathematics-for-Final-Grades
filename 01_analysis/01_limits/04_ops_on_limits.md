@@ -117,7 +117,9 @@ elements:
           - td: "<strong>حالة عدم تعيين:</strong> من الأكبر فيهم؟"
 
   - NB:
-      - rtl: "نلخص حالات عدم التعيين الأربعة المشهورة: $(+\\infty - \\infty)$, $(0 \\times \\infty)$, $(\\frac{0}{0})$, $(\\frac{\\infty}{\\infty})$."
+      title: ":ملخص"
+      NBs:
+        - rtl: "نلخص حالات عدم عدم التعيين في أربع حالاتت مشهورة:  $(+\\infty - \\infty)$, $(0 \\times \\infty)$, $(\\frac{0}{0})$, $(\\frac{\\infty}{\\infty})$."
 
   - h3: "5. أمثلة توضيحية معمقة"
     id: "detailed-examples"
