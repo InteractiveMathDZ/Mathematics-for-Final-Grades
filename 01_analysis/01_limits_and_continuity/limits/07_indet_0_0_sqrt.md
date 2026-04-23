@@ -1,6 +1,6 @@
 ---
 layout: lesson
-title: "المبحث الثامن: حالة (0/0) - تقنية الضرب في المرافق"
+title: "حالة عدم التعيين (0/0) - تقنية الضرب في المرافق"
 permalink: /indet_0_0_sqrt/
 mathJax: true
 graph: true
