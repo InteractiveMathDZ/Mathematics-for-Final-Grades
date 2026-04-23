@@ -80,43 +80,61 @@ layout: default
     {% endif %}
 
     {% if el.NB %}
-    <div class="alert alert-warning border-0 shadow-sm mt-3" role="alert">
+    {% assign type = el.NB.type | default: 'warning' %}
+    
+    {% case type %}
+      {% when 'danger' %}  {% assign icon = 'bi-exclamation-octagon-fill' %}
+      {% when 'success' %} {% assign icon = 'bi-check-circle-fill' %}
+      {% when 'info' %}    {% assign icon = 'bi-info-circle-fill' %}
+      {% when 'primary' %} {% assign icon = 'bi-patch-question-fill' %}
+      {% else %}           {% assign icon = 'bi-lightbulb-fill' %}
+    {% endcase %}
+
+    <div class="alert alert-{{ type }} border-0 shadow-sm mt-3" role="alert">
         <div class="d-flex align-items-center mb-2">
-            <i class="bi bi-lightbulb-fill mx-3 text-warning fs-4"></i>
-            <span class="text-primary fw-bold">{% if el.NB.title %}{{ el.NB.title }}{% else %}تنبيه هام:{% endif %}</span>
+            <i class="bi {{ icon }} mx-3 text-{{ type }} fs-4"></i>
+            <span class="text-{{ type }} fw-bold">
+                {% if el.NB.title %}
+                    {{ el.NB.title }}
+                {% else %}
+                    {{ type | capitalize }}:
+                {% endif %}
+            </span>
         </div>
-        {% for item in el.NB.NBs %}
-             {% if item.ltr %}
-                <p dir="ltr" class="mb-1">{{ item.ltr }}</p>
-            {% elsif item.center %}
-                <p class="text-center dir-ltr mb-1">{{ item.center }}</p>
-            {% else %}
-                <p class="mb-1">{{ item.rtl }}</p>
-            {% endif %}
-        {% endfor %}
+        <div class="nb-content px-3">
+            {% for item in el.NB.NBs %}
+                {% if item.ltr %}
+                    <p dir="ltr" class="mb-1">{{ item.ltr }}</p>
+                {% elsif item.center %}
+                    <p class="text-center dir-ltr mb-1">{{ item.center }}</p>
+                {% else %}
+                    <p class="mb-1">{{ item.rtl }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    {% endif %}
+{% endif %}
+
 
 {% endfor %}
 
 <hr class="mt-5">
-<!--<div class="navigation-links d-flex justify-content-between align-items-center py-4">-->
-    <div class="previous-link mt-2">
-        {% if page.previous_url %}
-        <a href="{{ page.previous_url | relative_url }}" class="btn btn-outline-primary" style="width: 100%">
-            <i class="fas fa-arrow-right ml-2"></i> السابق: {{ page.previous_title }}
-        </a>
-        {% endif %}
-    </div>
 
-    <div class="next-link mt-2">
-        {% if page.next_url %}
-        <a href="{{ page.next_url | relative_url }}" class="btn btn-outline-primary" style="width: 100%;">
-            التالي: {{ page.next_title }} <i class="fas fa-arrow-left mr-2"></i>
-        </a>
-        {% endif %}
-    </div>
-<!--</div>-->
+<div class="previous-link mt-2">
+    {% if page.previous_url %}
+    <a href="{{ page.previous_url | relative_url }}" class="btn btn-outline-primary" style="width: 100%">
+        <i class="fas fa-arrow-right ml-2"></i> السابق: {{ page.previous_title }}
+    </a>
+    {% endif %}
+</div>
+
+<div class="next-link mt-2">
+    {% if page.next_url %}
+    <a href="{{ page.next_url | relative_url }}" class="btn btn-outline-primary" style="width: 100%;">
+        التالي: {{ page.next_title }} <i class="fas fa-arrow-left mr-2"></i>
+    </a>
+    {% endif %}
+</div>
 
 
 
