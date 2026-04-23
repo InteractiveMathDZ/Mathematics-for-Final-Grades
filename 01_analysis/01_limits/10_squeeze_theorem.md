@@ -54,7 +54,7 @@ elements:
         - - td: "2. بناء العبارة"
           - td: "بالقسمة على $x$ (الموجب): $\\frac{-1}{x} \\le \\frac{\\cos(x)}{x} \\le \\frac{1}{x}$"
         - - td: "3. حساب نهايات الأطراف"
-          - td: "$\\lim\\limits_{x \\to +\\infty} \\frac{-1}{x} = 0$ و $\\lim\\limits_{x \\to +\\infy} \\frac{1}{x} = 0$"
+          - td: "$\\lim\\limits_{x \\to +\\infty} \\frac{-1}{x} = 0$ و $\\lim\\limits_{x \\to +\\infty} \\frac{1}{x} = 0$"
         - - td: "4. النتيجة النهائية"
           - td: "حسب مبرهنة الحصر: $\\lim\\limits_{x \\to +\\infty} \\frac{\\cos(x)}{x} = 0$"
 
