@@ -10,6 +10,12 @@ layout: default
 </div>
   
 {% for el in page.elements %}
+    
+    {% if el.activity %}
+    <div class="activity-wrapper my-5 shadow-sm border rounded p-3">
+        {% include activity-core.html content=el.activity %}
+    </div>
+    {% endif %}
 
     {% if el.graph %}
         <div 
