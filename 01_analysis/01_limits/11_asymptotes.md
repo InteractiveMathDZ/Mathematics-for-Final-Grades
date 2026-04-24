@@ -8,7 +8,7 @@ lessonID: "asymp-limits"
 
 previous_title: "مبرهنة الحصر"
 previous_url: /squeeze_theorem/
-next_title: "الفهرس العام للنهايات"
+next_title: "مفهوم الإستمرارية"
 next_url: /continuity_concept/
 
 elements:
