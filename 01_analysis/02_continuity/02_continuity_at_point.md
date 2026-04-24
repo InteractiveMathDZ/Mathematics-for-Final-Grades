@@ -63,10 +63,10 @@ elements:
           - td: "$f(2) = 4$"
           - td: "موجودة"
         - - th: "حساب النهاية"
-          - td: "$\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = \\lim (x + 2) = 4$"
+          - td: "$\\lim\\limits_{x \\to 2} \\frac{x^2 - 4}{x - 2} = \\lim\\limits_{x \\to 2} (x + 2) = 4$"
           - td: "موجودة"
         - - td: "المقارنة"
-          - td: "$\\lim_{x \\to 2} f(x) = f(2) = 4$"
+          - td: "$\\lim\\limits_{x \\to 2} f(x) = f(2) = 4$"
           - td: "الشرط محقق"
 
   - NB:
