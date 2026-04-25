@@ -1,7 +1,7 @@
 ---
 layout: hub
 title: "خارطة طريق الاستمرارية - من المفهوم إلى الدالة العكسية"
-permalink: /continuity_index/
+permalink: /continuity_hub/
 mathJax: true
 description: "دليل شامل لفهم اتصال الدوال، مبرهنة القيم المتوسطة، وكيفية بناء الدوال العكسية هندسياً وحسابياً."
 
