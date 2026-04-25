@@ -21,7 +21,7 @@ sections:
       - title: "المبحث 1: مدخل إلى النهايات"
         url: "/limit_concept/"
         icon: "feather"
-      - title: "المبحث 2: القراءة البيانية لنهاية.
+      - title: "المبحث 2: القراءة البيانية لنهاية."
         url: "/limits_by_graph/"
         icon: "target"
       - title: "المبحث 3: معالجة بعض الدوال المرجعية"
@@ -50,7 +50,7 @@ sections:
       - title: "المبحث 8: حالة (0/0) - تقنية المرافق"
         url: "/indet_0_0_sqrt/"
         icon: "shield"
-      - title: "المبحث 9: حالة ($+\\infty-\\infty$ و $\\frac{\\infty}{\\infty}$)
+      - title: "المبحث 9: حالة ($+\\infty-\\infty$ و $\\frac{\\infty}{\\infty}$)"
         url: "/indet_inf_inf/"
         icon: "zap"
 
