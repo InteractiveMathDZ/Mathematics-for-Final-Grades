@@ -240,6 +240,30 @@ table tbody tr:hover {
     background-color: var(--bs-light); /* أو لون خفيف يبرز الأيقونة */
 }
 
+    
+/* استهداف الدارك مود فقط */
+@media (prefers-color-scheme: dark) {
+    /* عند الضغط أو التركيز على العنصر */
+    .list-group-item-action:active, 
+    .list-group-item-action:focus {
+        background-color: #ffffff !important; /* الخلفية بيضاء صريحة لتظهر كشافاً */
+        color: #000000 !important; /* النص أسود فاحم للتباين */
+    }
+
+    /* إجبار النص العريض (العناوين) داخل العنصر على التحول للأسود */
+    .list-group-item-action:active *, 
+    .list-group-item-action:focus * {
+        color: #000000 !important;
+    }
+    
+    /* الحفاظ على لون الأيقونة أو تغييرها لتناسب الخلفية البيضاء */
+    .list-group-item-action:active .icon-box,
+    .list-group-item-action:focus .icon-box {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        color: #000000 !important;
+    }
+}
+
 
 
 
