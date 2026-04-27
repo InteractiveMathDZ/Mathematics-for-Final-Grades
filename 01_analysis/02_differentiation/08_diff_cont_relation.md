@@ -6,6 +6,8 @@ mathJax: true
 graph: true
 lessonID: "diff-continuity-relation"
 
+previous_title: "الاشتقاقية: اشتقاق الدوال المركبة"
+previous_url: /chain_rule/
 next_title: "نقاط الانعطاف ونقاط عدم الاشتقاق"
 next_url: "/corner_points/"
 
