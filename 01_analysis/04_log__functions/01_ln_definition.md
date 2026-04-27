@@ -8,7 +8,7 @@ lessonID: "ln-intro"
 
 # روابط الاتصال (The Bridge)
 previous_title: "العودة إلى خارطة الطريق"
-previous_url: "/logarithm_hub/"
+previous_url: "/log_fn_hub/"
 
 next_title: "الخصائص الجبرية (قواعد الحساب)"
 next_url: "/ln_algebraic_properties/"
