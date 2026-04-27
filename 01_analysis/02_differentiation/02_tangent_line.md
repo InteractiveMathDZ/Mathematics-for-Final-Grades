@@ -6,6 +6,8 @@ mathJax: true
 graph: true
 lessonID: "tangent-geometry"
 
+previous_title: "الاشتقاقية: نسبة التغير والعدد المشتق"
+previous_url: "/diff_concept/"
 next_title: "قواعد الاشتقاق الأساسية"
 next_url: "/basic_derivatives/"
 
