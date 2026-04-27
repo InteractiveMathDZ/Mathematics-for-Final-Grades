@@ -6,6 +6,8 @@ mathJax: true
 graph: true
 lessonID: "singular-points"
 
+previous_title: "الاشتقاقية: العلاقة بين الاشتقاق والاستمرارية"
+previous_url: /diff_cont_relation/
 next_title: "إشارة المشتقة واتجاه التغير"
 next_url: "/derivative_sign/"
 
