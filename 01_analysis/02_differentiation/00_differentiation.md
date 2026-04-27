@@ -1,10 +1,10 @@
+---
 layout: hub
 title: "خارطة طريق الاشتقاقية - من المماس إلى المنحنى"
 permalink: /differentiation_hub/
 mathJax: true
 description: "دليل شامل للانتقال من مفهوم التغير اللحظي إلى إتقان أدوات الحساب وتطبيقاتها في رسم ورصد سلوك الدوال."
 
-# إحصائيات سريعة للمسار
 stats:
   - label: "المراحل التعليمية"
     value: 5
@@ -61,3 +61,4 @@ sections:
         url: "/concavity_inflection/"
       - title: "المبحث 14: المسائل الاستمثالية (Optimization)"
         url: "/optimization_problems/"
+---
