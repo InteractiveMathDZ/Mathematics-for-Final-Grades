@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "المفهوم الهندسي للاستمرارية"
+title: "الاستمرارية"
+subtitle: "المفهوم الهندسي"
 permalink: /continuity_concept/
 mathJax: true
 graph: true
