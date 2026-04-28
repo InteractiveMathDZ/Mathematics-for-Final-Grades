@@ -9,7 +9,7 @@ lessonID: "cont-inv"
 previous_title: "الاستمرارية وصورة مجال"
 previous_url: /cont_image/
 next_title: "فهرس درس الاستمرارية"
-next_url: /continuity_index/
+next_url: /differentiation_hub/
 
 elements:
   - h3: "1. مبرهنة الدالة العكسية"
