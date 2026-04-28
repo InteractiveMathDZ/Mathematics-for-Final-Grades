@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "النهايات المثلثية (الدوال الجيبية)"
+title: "النهايات المثلثية"
+subtitle: "الدوال الجيبية"
 permalink: /trig_limits/
 mathJax: true
 graph: true
