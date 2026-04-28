@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "النهايات: مفهوم الاقتراب، النهاية و الصورة"
+title: "النهايات:"
+subtitle: "مفوم الاقتراب، النهاية و الصورة"
 permalink: /limit_concept/
 mathJax: true
 graph: true
