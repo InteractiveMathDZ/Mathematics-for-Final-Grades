@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "نهايات الدوال كثيرات الحدود والدوال الناطقة"
+title: "نهايات الدوال كثيرات الحدود"
+subtitle: "والدوال الناطقة"
 permalink: /polynomial_limits/
 mathJax: true
 graph: true
