@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "حالة عدم التعيين (0/0) - تقنية الاختزال"
+title: "حالة عدم التعيين (0/0)"
+subtitle: "تقنية الاختزال"
 permalink: /indet_0_over_0/
 mathJax: true
 graph: true
