@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "مبرهنة القيم المتوسطة (حالة الحل الوحيد)"
+title: "مبرهنة القيم المتوسطة"
+subtitle: "حالة الحل الوحيد"
 permalink: /mvt_unique/
 mathJax: true
 graph: true
@@ -12,7 +13,7 @@ next_title: "تطبيقات المبرهنة والحصر"
 next_url: /mvt_apps/
 
 elements:
-  - h3: "1. قوة الرتابة (La Monotonie)"
+  - h3: "1. قوة الرتابة"
     id: "monotony-power"
 
   - parags:
