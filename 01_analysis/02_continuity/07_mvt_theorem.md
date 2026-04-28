@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "مبرهنة القيم المتوسطة (حالة الوجود)"
+title: "مبرهنة القيم المتوسطة"
+subtitle: "حالة الوجود"
 permalink: /mvt_theorem/
 mathJax: true
 graph: true
