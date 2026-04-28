@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "النهايات: القراءة البيانية."
+title: "النهايات:"
+subtitle: "القراءة البيانية."
 permalink: /limits_by_graph/
 mathJax: true
 graph: true
