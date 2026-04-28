@@ -11,7 +11,7 @@ previous_title: "الدوال الأصلية التي تشمل ln"
 previous_url: "/ln_primitives/"
 
 next_title: "خارطة طريق الدوال الأسية"
-next_url: "/exponential_hub/"
+next_url: "/exp_fn_hub/"
 
 elements:
   - h3: "1. هيكلية مسألة البكالوريا النموذجية"
