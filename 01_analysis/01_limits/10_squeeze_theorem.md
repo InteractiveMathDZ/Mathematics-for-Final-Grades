@@ -1,6 +1,7 @@
 ---
 layout: lesson
-title: "مبرهنة الحصر (مبرهنة الدرك)"
+title: "مبرهنة الحصر"
+subtitle: "(مبرهنة الدرك)"
 permalink: /squeeze_theorem/
 mathJax: true
 graph: true
