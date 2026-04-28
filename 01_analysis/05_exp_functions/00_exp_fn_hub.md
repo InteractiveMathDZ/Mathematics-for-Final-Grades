@@ -51,4 +51,6 @@ sections:
         url: "/exp_base_a/"
       - title: "المبحث 11: الدوال الأصلية التي تشمل exp"
         url: "/exp_primitives/"
+      - title: "المبحث 12: المسائل الشاملة (البكالوريات)"
+        url: "/exp_full_problems/"
 ---
