@@ -1,7 +1,7 @@
 ---
 layout: lesson
 title: "حالات (لانهاية ناقص لانهاية) و (لانهاية على لا نهاية)"
-subtle: "فن استخراج العامل المشترك"
+subtitle: "فن استخراج العامل المشترك"
 permalink: /indet_inf_inf/
 mathJax: true
 graph: true
