@@ -10,8 +10,8 @@ lessonID: "diff-06"
 previous_title: "المبحث 5: حل المعادلة y'' + ω²y = 0"
 previous_url: "/diff_second_order/"
 
-next_title: "بداية محور الجبر: المتتاليات والأعداد"
-next_url: "/algebra_start/"
+next_title: " المتتاليات العددية
+next_url: "/sequences_hub/"
 
 elements:
   - h3: "1. ما هي النمذجة؟"
