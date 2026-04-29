@@ -1,6 +1,6 @@
 ---
 layout: lesson
-title: "حالتا $\\infty-\\infty$ و $\\frac{\\infty}{\\infty}"
+title: "حالتا $\\infty-\\infty$ و $\\frac{\\infty}{\\infty}$"
 subtitle: "فن استخراج العامل المشترك"
 permalink: /indet_inf_inf/
 mathJax: true
