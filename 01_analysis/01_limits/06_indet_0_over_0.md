@@ -1,6 +1,6 @@
 ---
 layout: lesson
-title: "حالة عدم التعيين (0/0)"
+title: "حالة عدم التعيين $\\frac{0}{0}$"
 subtitle: "تقنية الاختزال"
 permalink: /indet_0_over_0/
 mathJax: true
@@ -9,11 +9,11 @@ lessonID: "indet-0-0"
 
 previous_title: "كثيرات الحدود والناطقة"
 previous_url: /polynomial_limits/
-next_title: "حالة (0/0) في الدوال الجذرية"
+next_title: "حالة $\\frac{0}{0}$ في الدوال الجذرية"
 next_url: /indet_0_0_sqrt/
 
 elements:
-  - h3: "1. متى تظهر الحالة (0/0)؟"
+  - h3: "1. متى تظهر الحالة $\\frac{0}{0}$؟ "
     id: "when-0-0"
 
   - parags:
@@ -43,7 +43,7 @@ elements:
     id: "example-0-0"
 
   - parags:
-      - rtl: "لنحسب النهاية: $\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1}$"
+      - rtl: "لنحسب النهاية: $\\lim\\limits_{x \\to 1} \\frac{x^2 - 1}{x - 1}$"
 
   - tableLines:
       dir: rtl
@@ -62,7 +62,7 @@ elements:
   - NB:
       title: "مجرد نصيحة:"
       NBs:
-        - rtl: " إذا وجدت $0/0$ عند تعويض العدد $a$، فابحث دائماً عن $(x-a)$ في البسط والمقام لتختزله."
+        - rtl: " إذا وجدت $\\frac{0}{0}$ عند تعويض العدد $a$، فابحث دائماً عن $(x-a)$ في البسط والمقام لتختزله."
 
   - h3: "4. مباحث مستقلة للتدريب"
     id: "ex-0-0-list"
