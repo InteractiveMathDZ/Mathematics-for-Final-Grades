@@ -2,7 +2,7 @@
 layout: hub
 title: "محور الدوال الأصلية"
 subtitle: "العودة إلى الجذور: فن إيجاد الدوال الأم"
-permalink: /primitive_functions_hub/
+permalink: /primitives_hub/
 mathJax: true
 description: "دليل شامل لفهم مفهوم الدوال الأصلية، قواعد استخراجها، والتقنيات اللازمة لترويض العمليات الجبرية المعقدة."
 
