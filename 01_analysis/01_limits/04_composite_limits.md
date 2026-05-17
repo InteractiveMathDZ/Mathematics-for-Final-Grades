@@ -39,8 +39,7 @@ elements:
       - rtl: "2. نطبق تغيير المتغير بوضع الدالة الداخلية: $X = \\sqrt{x}$."
       - rtl: "3. عندما يؤول $x$ إلى $0$ بقيم كبرى ($x \\to 0^+$)، فإن المتغير الجديد يؤول أيضاً إلى $0$ ($X \\to 0$)."
       - rtl: "4. تتحول النهاية ميكانيكياً إلى شكل مرجعي مباشر: $\\lim\\limits_{X \\to 0} \\cos(X) = \\cos(0) = 1$."
-  - 
-    - raw_html: |
+  - raw_html: |
         <div class="graph" style="text-align: center; margin: 30px 0;">
           <svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="background: transparent; max-width: 100%;">
             <style>
