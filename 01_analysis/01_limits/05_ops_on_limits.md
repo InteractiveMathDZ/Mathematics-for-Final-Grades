@@ -6,8 +6,8 @@ mathJax: true
 graph: true
 lessonID: "limit"
 
-previous_title: "الدوال المرجعية"
-previous_url: /reference_limits/
+previous_title: "نهاية الدالة المركبة وتغيير المتغيير"
+previous_url: /composite_limits/
 next_title: "كثيرات الحدود والناطقة"
 next_url: /polynomial_limits/
 
