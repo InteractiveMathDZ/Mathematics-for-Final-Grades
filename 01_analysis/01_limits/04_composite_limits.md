@@ -15,14 +15,14 @@ next_url: "/ops_limits/"
 elements:
   - h3: "1. مفهوم نهاية دالة مركبة (Limit of a Composite Function)"
   - parags:
-      - rtl: "عندما تتداخل دالتان لتشكيل دالة مركبة
-      - center: $(f \\circ g)(x) = f[g(x)]$"
+      - rtl: "عندما تتداخل دالتان لتشكيل دالة مركبة"
+      - center: "$(f \\circ g)(x) = f[g(x)]$"
       - rtl: "فإن حساب النهاية لا يتم دفعة واحدة، بل يتبع مساراً تتابعياً من خطوتين؛ حيث تعمل مخرجات الدالة الأولى كمدخلات للدالة الثانية."
       - rtl: "• <b>نص المبرهنة النظامية:</b> لتكن $f$ و $g$ دالتين عدديتين. إذا كانت نهاية الدالة $g$ عند القيمة $a$ هي $b$، وكانت نهاية الدالة $f$ عند القيمة $b$ هي $c$، فإن نهاية الدالة المركبة عند $a$ هي $c$. ونكتبها صراحة:"
-      - center: "$\\lim\\limits_{x \\to a} g(x) = b \\quad$"
-      - center: "\\text{and}"
-      - center: "\\quad \\lim\\limits_{x \\to b} f(x) = c "
-      - center: "\\implies \\lim\\limits_{x \\to a} f[g(x)] = c$"
+      - center: "$\\lim\\limits_{x \\to a} g(x) = b$"
+      - center: "$\\text{and}$"
+      - center: "$\\quad \\lim\\limits_{x \\to b} f(x) = c$ "
+      - center: "$\\implies \\lim\\limits_{x \\to a} f[g(x)] = c$"
       - rtl: "حيث يمكن أن تكون القيم $a$، $b$، و $c$ أعداداً حقيقية أو قيم لانهاية ($\\pm\\infty$)."
 
   - h3: "2. تقنية تغيير المتغير (Change of Variable Technique)"
