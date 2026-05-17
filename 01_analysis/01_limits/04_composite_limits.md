@@ -39,44 +39,49 @@ elements:
       - rtl: "2. نطبق تغيير المتغير بوضع الدالة الداخلية: $X = \\sqrt{x}$."
       - rtl: "3. عندما يؤول $x$ إلى $0$ بقيم كبرى ($x \\to 0^+$)، فإن المتغير الجديد يؤول أيضاً إلى $0$ ($X \\to 0$)."
       - rtl: "4. تتحول النهاية ميكانيكياً إلى شكل مرجعي مباشر: $\\lim\\limits_{X \\to 0} \\cos(X) = \\cos(0) = 1$."
+  - 
+    - raw_html:
+      text: |
+        <div class="graph" style="text-align: center; margin: 30px 0;">
+          <svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="background: transparent; max-width: 100%;">
+            <style>
+              text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 14px; fill: #eee; }
+              .box-title { font-weight: bold; font-size: 14px; fill: #fff; }
+              .step-num { font-size: 11px; fill: #aaa; }
+              .math-text { font-style: italic; font-weight: bold; }
+            </style>
 
-  - graph:
-      id: "composite-limit-flow"
-      class: "graph-container"
-      xDomain: [-1, 11]
-      yDomain: [-1, 5]
-      elements:
-        # مخطط تدفق يوضح مسار ترحيل النهايات في الدالة المركبة (Composite Function Limit Flowchart)
-        # 1. محطة المتغير الأصلي x ومآله إلى a
-        - { type: "line", points: [[0, 4], [2.5, 4]], color: "blue" }
-        - { type: "line", points: [[2.5, 4], [2.5, 2.5]], color: "blue" }
-        - { type: "line", points: [[2.5, 2.5], [0, 2.5]], color: "blue" }
-        - { type: "line", points: [[0, 2.5], [0, 4]], color: "blue" }
-        - { type: "text", content: "المرحلة 1: المتغير الأصلي", x: 0.1, y: 3.5, color: "blue" }
-        - { type: "text", content: "x → a", x: 0.8, y: 2.9, color: "blue" } 
-        # سهم المعالجة الأول عبر الدالة الداخلية g
-        - { type: "line", points: [[2.5, 3.25], [4.5, 3.25]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "الدالة g(x)", x: 2.9, y: 3.5, color: "orange" }
-        
-        # 2. محطة ترحيل الموضع إلى المتغير الوسيط X ومآله إلى b
-        - { type: "line", points: [[4.5, 4], [7.5, 4]], color: "orange" }
-        - { type: "line", points: [[7.5, 4], [7.5, 2.5]], color: "orange" }
-        - { type: "line", points: [[7.5, 2.5], [4.5, 2.5]], color: "orange" }
-        - { type: "line", points: [[4.5, 2.5], [4.5, 4]], color: "orange" }
-        - { type: "text", content: "المرحلة 2: تغيير المتغير", x: 4.7, y: 3.5, color: "orange" }
-        - { type: "text", content: "X = g(x) → b", x: 5.1, y: 2.9, color: "orange" }
-        
-        # سهم المعالجة الثاني عبر الدالة الخارجية f
-        - { type: "line", points: [[7.5, 3.25], [9.5, 3.25]], color: "#168574", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "الدالة f(X)", x: 7.9, y: 3.5, color: "#168574" }
-        
-        # 3. محطة النتيجة النهائية الصافية c
-        - { type: "point", x: 9.5, y: 3.25, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "النتيجة النهائية:", x: 8.2, y: 2.1, color: "#168574" }
-        - { type: "text", content: "الناتج = c", x: 8.5, y: 1.5, color: "#168574" }
-        
-        # نص توضيحي بيداغوجي ثابت سفلي
-        - { type: "text", content: "المخطط يوضح كيف ينتقل حساب النهاية تراتبياً عبر وسيط ثالث لتسهيل النفاذ إلى النتيجة الصافية دون تعقيد", x: -0.5, y: -0.6, color: "#eee" }
+            <defs>
+              <marker id="arrow-transition" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <polygon points="0 1, 7 4, 0 7" fill="#007bff"/>
+              </marker>
+            </defs>
+
+            <rect x="10" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#007bff" stroke-width="1.5" />
+            <text x="85" y="52" text-anchor="middle" class="step-num">المرحلة 1</text>
+            <text x="85" y="72" text-anchor="middle" class="box-title">المتغير الأصلي</text>
+            <text x="85" y="95" text-anchor="middle" fill="#007bff" class="math-text">x &rarr; a</text>
+
+            <path d="M165 70 L 210 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
+            <text x="190" y="60" text-anchor="middle" fill="#007bff" class="math-text">g(x)</text>
+
+            <rect x="220" y="30" width="160" height="80" rx="8" fill="#1e293b" stroke="#ffa500" stroke-width="1.5" />
+            <text x="300" y="52" text-anchor="middle" class="step-num">المرحلة 2</text>
+            <text x="300" y="72" text-anchor="middle" class="box-title" fill="#ffa500">تغيير المتغير</text>
+            <text x="300" y="95" text-anchor="middle" fill="#ffa500" class="math-text">X = g(x) &rarr; b</text>
+
+            <path d="M385 70 L 430 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
+            <text x="410" y="60" text-anchor="middle" fill="#168574" class="math-text">f(X)</text>
+
+            <rect x="440" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#168574" stroke-width="1.5" />
+            <text x="515" y="52" text-anchor="middle" class="step-num">النتيجة</text>
+            <text x="515" y="72" text-anchor="middle" class="box-title">الاستقرار النهائي</text>
+            <text x="515" y="95" text-anchor="middle" fill="#168574" class="math-text">الناتج = c</text>
+
+            <text x="300" y="145" text-anchor="middle" fill="#94a3b8" style="font-size: 13px;">مخطط التدفق التتابعي: ترحيل المآل الجبري من المحطة (x) إلى المحطة الوسيطة (X) لبلوغ الناتج الصافي</text>
+          </svg>
+        </div>
+
 
   - NB:
       title: "تنبيه حاسم عند حساب النهايات المركبة:"
