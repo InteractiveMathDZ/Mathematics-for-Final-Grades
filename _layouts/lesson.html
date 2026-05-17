@@ -22,6 +22,10 @@ layout: default
     </div>
     {% endif %}
 
+    {% if el.raw_html %}
+    {{ el.raw_html }}
+    {% endif %}
+
     {% if el.graph %}
         <div 
             id="{{ el.graph.id }}" 
