@@ -48,7 +48,7 @@ sections:
         url: "/indet_0_over_0/"
         icon: "scissors"
       - title: "المبحث 8: حالة صفر على صفر - تقنية العدد المشتق والمرافق"
-        url: "/indet_derived_number/"
+        url: "/indet_0_0_sqrt/"
         icon: "shield"
       - title: "المبحث 9: حالة اللانهاية على اللانهاية وظهور الجذور"
         url: "/indet_inf_inf/"
