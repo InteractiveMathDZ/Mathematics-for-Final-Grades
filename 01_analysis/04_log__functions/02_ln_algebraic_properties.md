@@ -4,7 +4,7 @@ title: "اللوغاريتم: الخصائص الجبرية (قواعد الحس
 permalink: /ln_algebraic_properties/
 mathJax: true
 graph: true
-lessonID: "ln-algebraic"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "تعريف الدالة ln ومجال تعريفها"
