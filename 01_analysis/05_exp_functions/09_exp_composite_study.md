@@ -4,7 +4,7 @@ title: "الأسية: دراسة دوال مركبة (كثير حدود + أسي
 permalink: /exp_composite_study/
 mathJax: true
 graph: true
-lessonID: "exp-composite-analysis"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "المنحنى الممثل للدالة exp"
