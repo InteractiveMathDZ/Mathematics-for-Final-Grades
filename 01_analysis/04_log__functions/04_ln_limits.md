@@ -4,7 +4,7 @@ title: "اللوغاريتم: النهايات المرجعية للدالة ln"
 permalink: /ln_limits/
 mathJax: true
 graph: true
-lessonID: "ln-limits-base"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "المعادلات والمتراجحات اللوغاريتمية"
