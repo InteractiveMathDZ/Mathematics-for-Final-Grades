@@ -4,7 +4,7 @@ title: "العمليات على الدوال المستمرة"
 permalink: /continuity_ops/
 mathJax: true
 graph: true
-lessonID: "cont-ops"
+lessonID: "conti"
 
 previous_title: "استمرارية الدوال المرجعية"
 previous_url: /continuity_ref/
