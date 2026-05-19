@@ -4,7 +4,7 @@ title: "اللوغاريتم: التزايد المقارن"
 permalink: /ln_growth_comparison/
 mathJax: true
 graph: true
-lessonID: "ln-growth"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "النهايات المرجعية للدالة ln"
