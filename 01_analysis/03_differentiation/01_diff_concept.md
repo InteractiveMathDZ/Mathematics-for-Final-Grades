@@ -5,7 +5,7 @@ subtirle: "نسبة التغير والعدد المشتق"
 permalink: /diff_concept/
 mathJax: true
 graph: true
-lessonID: "differentiation-intro"
+lessonID: "deriv"
 
 previous_title: "فهرس الإشتقاقية"
 previous_url: /differentiation_hub/
