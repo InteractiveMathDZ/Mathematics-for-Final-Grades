@@ -4,7 +4,7 @@ title: "الأسية: الخصائص الجبرية للدالة الأسية"
 permalink: /exp_algebraic_properties/
 mathJax: true
 graph: false
-lessonID: "exp-algebra"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "تعريف الدالة exp ومجال تعريفها"
