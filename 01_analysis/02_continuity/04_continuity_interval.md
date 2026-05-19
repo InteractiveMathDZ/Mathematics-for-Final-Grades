@@ -4,7 +4,7 @@ title: "الاستمرارية على مجال"
 permalink: /continuity_interval/
 mathJax: true
 graph: true
-lessonID: "cont-interval"
+lessonID: "conti"
 
 previous_title: "الاستمرارية يميناً ويساراً"
 previous_url: /continuity_side/
