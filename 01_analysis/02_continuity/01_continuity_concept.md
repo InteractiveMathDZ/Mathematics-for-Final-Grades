@@ -5,7 +5,7 @@ subtitle: "المفهوم الهندسي"
 permalink: /continuity_concept/
 mathJax: true
 graph: true
-lessonID: "cont-01"
+lessonID: "conti"
 
 previous_title: "الإستمرارية: خارطة الطريق"
 previous_url: /continuity_hub/
