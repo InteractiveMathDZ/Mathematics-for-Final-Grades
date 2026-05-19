@@ -5,7 +5,7 @@ subtitle: "التقريب التآلفي المحلي"
 permalink: /linear_approximation/
 mathJax: true
 graph: true
-lessonID: "linear-approx"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: الاشتقاق على اليمين وعلى اليسار"
 previous_url: /diff_at_point/
