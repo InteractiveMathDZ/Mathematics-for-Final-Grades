@@ -4,7 +4,7 @@ title: "الأسية: النهايات المرجعية للدالة exp"
 permalink: /exp_limits/
 mathJax: true
 graph: true
-lessonID: "exp-limits-base"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "المعادلات والمتراجحات الأسية"
