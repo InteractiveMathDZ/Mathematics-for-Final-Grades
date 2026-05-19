@@ -4,7 +4,7 @@ title: "الاستمرارية على اليمين وعلى اليسار"
 permalink: /continuity_side/
 mathJax: true
 graph: true
-lessonID: "cont-side"
+lessonID: "conti"
 
 previous_title: "الاستمرارية عند نقطة"
 previous_url: /continuity_at_point/
