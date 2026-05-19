@@ -4,7 +4,7 @@ title: "اللوغاريتم: المنحنى والخصائص الهندسية"
 permalink: /ln_graph/
 mathJax: true
 graph: true
-lessonID: "ln-geometry"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "اتجاه التغير وجدول تغيرات الدالة ln"
