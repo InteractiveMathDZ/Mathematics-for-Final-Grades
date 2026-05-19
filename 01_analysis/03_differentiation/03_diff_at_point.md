@@ -5,7 +5,7 @@ subtitle: "الاشتقاق على اليمين وعلى اليسار"
 permalink: /diff_at_point/
 mathJax: true
 graph: true
-lessonID: "diff-right-left"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: التفسير الهندسي ومعادلة المماس"
 previous_url: /tangent_line/
