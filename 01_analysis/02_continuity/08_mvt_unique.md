@@ -5,7 +5,7 @@ subtitle: "حالة الحل الوحيد"
 permalink: /mvt_unique/
 mathJax: true
 graph: true
-lessonID: "mvt-unique"
+lessonID: "conti"
 
 previous_title: "حالة الوجود"
 previous_url: /mvt_theorem/
