@@ -4,7 +4,7 @@ title: "التمثيل البياني والدالة العكسية"
 permalink: /cont_graph/
 mathJax: true
 graph: true
-lessonID: "cont-inv"
+lessonID: "conti"
 
 previous_title: "الاستمرارية وصورة مجال"
 previous_url: /cont_image/
