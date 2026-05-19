@@ -4,7 +4,7 @@ title: "الاشتقاقية: نقاط الزاوية ونقاط عدم الاش
 permalink: /corner_points/
 mathJax: true
 graph: true
-lessonID: "singular-points"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: العلاقة بين الاشتقاق والاستمرارية"
 previous_url: /diff_cont_relation/
