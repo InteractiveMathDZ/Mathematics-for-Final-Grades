@@ -4,7 +4,7 @@ title: "الاشتقاقية: المسائل الاستمثالية (Optimizatio
 permalink: /optimization_problems/
 mathJax: true
 graph: true
-lessonID: "optimization-final"
+lessonID: "deriv"
 
 # هذا هو المبحث الأخير، لذا نوجه الطالب للعودة للهوب أو المراجعة الشاملة
 previous_title: "الاشتقاقية: تقعر المنحنى ونقاط الانعطاف"
