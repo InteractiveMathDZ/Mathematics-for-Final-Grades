@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-bs-theme="auto">
 <head>
+    {% if page.url == "/" or page.url == "/index.html" %}
+    <link rel="canonical" href="https://interactivemathdz.github.io/Mathematics-for-Final-Grades/" />
+    {% else %}
+    <link rel="canonical" href="https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ page.url }}" />
+    {% endif %}
+
     {% include analytics.html %}
 
     <meta charset="UTF-8">
