@@ -4,7 +4,7 @@ title: "الاستمرارية وصورة مجال"
 permalink: /cont_image/
 mathJax: true
 graph: true
-lessonID: "cont-img"
+lessonID: "conti"
 
 previous_title: "تطبيقات الحصر"
 previous_url: /mvt_apps/
