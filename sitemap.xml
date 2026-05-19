@@ -12,7 +12,7 @@ layout: null
   {% for doc in site.documents %}
     {% if doc.url %}
     <url>
-      <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ doc.url | append: '.html' | replace: '//', '/' | replace: 'https:/i', 'https://i' }}</loc>
+      <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ doc.url }}.html</loc>
       <priority>0.8</priority>
     </url>
     {% endif %}
