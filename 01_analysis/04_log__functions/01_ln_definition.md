@@ -4,7 +4,7 @@ title: "اللوغاريتم: تعريف الدالة $\\ln$ ومجال تعري
 permalink: /ln_definition/
 mathJax: true
 graph: true
-lessonID: "ln-intro"
+lessonID: "logFu"
 
 # روابط الاتصال (The Bridge)
 previous_title: "العودة إلى خارطة الطريق"
