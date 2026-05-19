@@ -5,7 +5,7 @@ subtitle: "فن استخراج العامل المشترك"
 permalink: /indet_inf_inf/
 mathJax: true
 graph: true
-lessonID: "indet-inf"
+lessonID: "limit"
 
 previous_title: "تقنية المرافق"
 previous_url: /indet_0_0_sqrt/
