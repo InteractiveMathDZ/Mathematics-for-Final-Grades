@@ -5,7 +5,7 @@ subtitle: "تقنية الاختزال"
 permalink: /indet_0_over_0/
 mathJax: true
 graph: true
-lessonID: "indet-0-0"
+lessonID: "limit"
 
 previous_title: "كثيرات الحدود والناطقة"
 previous_url: /polynomial_limits/
