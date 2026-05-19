@@ -5,7 +5,7 @@ subtitle: "تفكيك الدوال المتداخلة عبر ميكانيكية 
 permalink: /composite_limits/
 mathJax: true
 graph: true
-lessonID: "lim-04"
+lessonID: "limit"
 
 previous_title: "نهايات الدوال المرجعية الأساسية"
 previous_url: "/reference_limits/"
