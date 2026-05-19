@@ -5,7 +5,7 @@ subtitle: "حالة الوجود"
 permalink: /mvt_theorem/
 mathJax: true
 graph: true
-lessonID: "mvt-exist"
+lessonID: "conti"
 
 previous_title: "العمليات على الاستمرارية"
 previous_url: /continuity_ops/
