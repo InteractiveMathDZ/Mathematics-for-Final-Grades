@@ -4,7 +4,7 @@ title: "الاشتقاقية: اشتقاق الدوال المركبة"
 permalink: /chain_rule/
 mathJax: true
 graph: true
-lessonID: "chain-rule-derivative"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: العمليات على المشتقات"
 previous_url: /derivative_ops/
