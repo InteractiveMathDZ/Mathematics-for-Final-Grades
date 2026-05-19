@@ -4,7 +4,7 @@ title: "اللوغاريتم: المعادلات والمتراجحات اللو
 permalink: /ln_equations/
 mathJax: true
 graph: true
-lessonID: "ln-eq-ineq"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "الخصائص الجبرية (قواعد الحساب)"
