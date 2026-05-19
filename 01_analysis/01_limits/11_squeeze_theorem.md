@@ -5,7 +5,7 @@ subtitle: "(مبرهنة الدرك)"
 permalink: /squeeze_theorem/
 mathJax: true
 graph: true
-lessonID: "squeeze-thm"
+lessonID: "limit"
 
 previous_title: "النهايات المثلثية"
 previous_url: /trig_limits/
