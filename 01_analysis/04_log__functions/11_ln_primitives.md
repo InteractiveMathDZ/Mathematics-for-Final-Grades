@@ -4,7 +4,7 @@ title: "اللوغاريتم: الدوال الأصلية التي تشمل ln"
 permalink: /ln_primitives/
 mathJax: true
 graph: true
-lessonID: "ln-primitives"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "اللوغاريتم العشري (log10) وتطبيقاته"
