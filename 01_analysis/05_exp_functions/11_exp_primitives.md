@@ -4,7 +4,7 @@ title: "الأسية: الدوال الأصلية التي تشمل exp"
 permalink: /exp_primitives/
 mathJax: true
 graph: false
-lessonID: "exp-primitives"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "الدوال الأسية ذات الأساس a"
