@@ -4,7 +4,7 @@ title: "الاشتقاقية: العمليات على المشتقات"
 permalink: /derivative_ops/
 mathJax: true
 graph: true
-lessonID: "derivative-operations"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: قواعد الاشتقاق (الدوال المرجعية والعمليات)"
 previous_url: /basic_derivatives/
