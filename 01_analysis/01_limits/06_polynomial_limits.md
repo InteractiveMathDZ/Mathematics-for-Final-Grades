@@ -5,7 +5,7 @@ subtitle: "والدوال الناطقة"
 permalink: /polynomial_limits/
 mathJax: true
 graph: true
-lessonID: "poly-limits"
+lessonID: "limit"
 
 previous_title: "العمليات على النهايات"
 previous_url: /ops_limits/
