@@ -5,7 +5,7 @@ subtitle: "(المستقيمات المقاربة)"
 permalink: /asymptotes/
 mathJax: true
 graph: true
-lessonID: "asymp-limits"
+lessonID: "limit"
 
 previous_title: "مبرهنة الحصر"
 previous_url: /squeeze_theorem/
