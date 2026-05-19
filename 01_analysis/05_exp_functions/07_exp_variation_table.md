@@ -4,7 +4,7 @@ title: "الأسية: اتجاه التغير وجدول تغيرات الدال
 permalink: /exp_variation_table/
 mathJax: true
 graph: true
-lessonID: "exp-variations"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "اشتقاق الدالة exp"
