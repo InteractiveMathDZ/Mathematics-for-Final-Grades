@@ -5,7 +5,7 @@ subtitle: "تقنية الضرب في المرافق"
 permalink: /indet_0_0_sqrt/
 mathJax: true
 graph: true
-lessonID: "indet-sqrt"
+lessonID: "limit"
 
 previous_title: "تقنية الاختزال"
 previous_url: /indet_0_over_0/
