@@ -257,6 +257,43 @@ function hydrateExercise(exID, valuesStr) {
     });
 }
 
+//________________________________________________
+/**
+ * دالة إنعاش شريط تقدم الدرس في رأس الصفحة
+ * تقرأ الاختصار الخماسي من مستودع التقدم وتغذي عناصر الواجهة
+ */
+function hydrateLessonProgress() {
+    // 1. جلب لوحة الأهداف (LMS Scoreboard)
+    const resume = getOrCreateProgressResume();
+    
+    // 2. البحث عن شريط التقدم في الصفحة بالاعتماد على كلاسات بوتستراب أو المعرف الجزئي
+    // نحن نعلم أن المعرف ينتهي بـ "-bar" و "-val"
+    const progressBar = document.querySelector('[id$="-bar"]');
+    const progressVal = document.querySelector('[id$="-val"]');
+
+    if (progressBar && progressVal) {
+        // استخراج الـ lessonID الفعلي من معرف العنصر (مثال: limit-bar تصبح limit)
+        const lessonID = progressBar.id.replace('-bar', '');
+
+        // 3. إذا كان هذا المعرف الخماسي مسجلاً في لوحة الأهداف
+        if (resume[lessonID]) {
+            const currentScore = resume[lessonID][1]; // النقاط المحققة حالياً
+            const maxScore = resume[lessonID][0];    // السقف الممكن (مثلاً 100)
+
+            // حساب النسبة المئوية الفعلية للمحور
+            const percentage = maxScore > 0 ? (currentScore / maxScore) * 100 : 0;
+            const finalPercentage = Math.min(Math.round(percentage), 100);
+
+            // 4. تحديث الواجهة بصمت وبدون نوافذ نطاطة
+            progressBar.style.width = finalPercentage + "%";
+            progressVal.innerText = finalPercentage + "%";
+            
+            console.log(`تم إنعاش تقدم المحور [${lessonID}] بنسبة: ${finalPercentage}%`);
+        }
+    }
+}
+
+
 
 //___________________________________________
 
@@ -441,6 +478,9 @@ function applyVisuals(exID, evaluation, allElements) {
 document.addEventListener('DOMContentLoaded', () => {
     // السلحفاة تمسح الصفحة وتنعش التمارين القديمة آلياً
     scanAndHydrate();
+     
+    // 2. الوظيفة الجديدة لتغذية شريط الرأس بناءً على معرف المحور
+    hydrateLessonProgress();
 });
 
 //__________________<_________<
