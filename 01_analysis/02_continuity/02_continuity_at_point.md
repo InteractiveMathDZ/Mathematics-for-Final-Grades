@@ -4,7 +4,7 @@ title: "الاستمرارية عند نقطة"
 permalink: /continuity_at_point/
 mathJax: true
 graph: true
-lessonID: "cont-pt"
+lessonID: "conti"
 
 previous_title: "المفهوم الهندسي"
 previous_url: /continuity_concept/
