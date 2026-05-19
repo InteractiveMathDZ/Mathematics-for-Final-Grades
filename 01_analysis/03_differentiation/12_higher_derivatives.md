@@ -4,7 +4,7 @@ title: "الاشتقاقية: المشتقات من الرتب العليا"
 permalink: /higher_derivatives/
 mathJax: true
 graph: true
-lessonID: "higher-order-diff"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: القيم الحدية المحلية والمطلقة"
 previous_url: /extremum_values/
