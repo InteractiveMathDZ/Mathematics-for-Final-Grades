@@ -4,7 +4,7 @@ title: "الأسية: التزايد المقارن"
 permalink: /exp_growth_comparison/
 mathJax: true
 graph: true
-lessonID: "exp-growth"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "النهايات المرجعية للدالة exp"
