@@ -4,7 +4,7 @@ title: "الأسية: المنحنى الممثل والتماثل مع اللو
 permalink: /exp_graph/
 mathJax: true
 graph: true
-lessonID: "exp-graph-symmetry"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "اتجاه التغير وجدول تغيرات الدالة exp"
