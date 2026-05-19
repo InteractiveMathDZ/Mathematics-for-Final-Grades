@@ -4,7 +4,7 @@ title: "الأسية: المعادلات والمتراجحات الأسية"
 permalink: /exp_equations/
 mathJax: true
 graph: true
-lessonID: "exp-solve"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "الخصائص الجبرية للدالة الأسية"
