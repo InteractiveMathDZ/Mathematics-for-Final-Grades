@@ -11,19 +11,28 @@ layout: null
   
   {% for doc in site.documents %}
     {% if doc.url %}
-    <url>
-      <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ doc.url }}.html</loc>
-      <priority>0.8</priority>
-    </url>
+      {% comment %} إزالة الشرطة المائلة من نهاية البرمالنك إن وجدت ثم إضافة امتداد html {% endcomment %}
+      {% assign clean_url = doc.url %}
+      {% if doc.url endswith '/' %}
+        {% assign clean_url = doc.url | replace_regexp: '\/$', '' %}
+      {% endif %}
+      <url>
+        <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ clean_url }}.html</loc>
+        <priority>0.8</priority>
+      </url>
     {% endif %}
   {% endfor %}
 
   {% for page in site.pages %}
     {% if page.url and page.url != "/404.html" and page.url != "/sitemap.xml" %}
-    <url>
-      <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ page.url }}</loc>
-      <priority>0.8</priority>
-    </url>
+      {% assign page_clean = page.url %}
+      {% if page.url endswith '/' %}
+        {% assign page_clean = page.url | replace_regexp: '\/$', '' %}
+      {% endif %}
+      <url>
+        <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ page_clean }}.html</loc>
+        <priority>0.8</priority>
+      </url>
     {% endif %}
   {% endfor %}
 
