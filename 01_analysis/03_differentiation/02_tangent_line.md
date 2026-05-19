@@ -5,7 +5,7 @@ subtitle: "التفسير الهندسي ومعادلة المماس"
 permalink: /tangent_line/
 mathJax: true
 graph: true
-lessonID: "tangent-geometry"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: نسبة التغير والعدد المشتق"
 previous_url: "/diff_concept/"
