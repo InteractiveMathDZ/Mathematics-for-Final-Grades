@@ -4,7 +4,7 @@ title: "الأسية: اشتقاق الدالة exp والدوال من الشك
 permalink: /exp_derivatives/
 mathJax: true
 graph: true
-lessonID: "exp-differentiation"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "التزايد المقارن"
