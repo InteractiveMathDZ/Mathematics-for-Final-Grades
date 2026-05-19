@@ -4,7 +4,7 @@ title: "اللوغاريتم: اللوغاريتم العشري (log10) وتطب
 permalink: /log_decimal/
 mathJax: true
 graph: true
-lessonID: "log-decimal"
+lessonID: "logFu"
 
 # روابط الاتصال
 previous_title: "دراسة دوال مركبة تشمل اللوغاريتم"
