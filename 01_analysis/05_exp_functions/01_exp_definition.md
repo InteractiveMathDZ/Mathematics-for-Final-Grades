@@ -4,7 +4,7 @@ title: "الأسية: تعريف الدالة exp ومجال تعريفها"
 permalink: /exp_definition/
 mathJax: true
 graph: true
-lessonID: "exp-intro"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "العودة إلى خارطة طريق الأسية"
