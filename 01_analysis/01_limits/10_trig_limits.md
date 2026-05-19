@@ -5,7 +5,7 @@ subtitle: "الدوال الجيبية"
 permalink: /trig_limits/
 mathJax: true
 graph: true
-lessonID: "trig-limits"
+lessonID: "limit"
 
 previous_title: "حالات اللانهاية"
 previous_url: /indet_inf_inf/
