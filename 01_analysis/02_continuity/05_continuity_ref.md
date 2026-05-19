@@ -4,7 +4,7 @@ title: "استمرارية الدوال المرجعية"
 permalink: /continuity_ref/
 mathJax: true
 graph: true
-lessonID: "cont-ref"
+lessonID: "conti"
 
 previous_title: "الاستمرارية على مجال"
 previous_url: /continuity_interval/
