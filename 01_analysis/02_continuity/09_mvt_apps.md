@@ -5,7 +5,7 @@ subtitle: "حصر الحل (طريقة التنصيف)"
 permalink: /mvt_apps/
 mathJax: true
 graph: true
-lessonID: "mvt-apps"
+lessonID: "conti"
 
 previous_title: "حالة الحل الوحيد"
 previous_url: /mvt_unique/
