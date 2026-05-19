@@ -4,7 +4,7 @@ title: "الأسية: الدوال الأسية ذات الأساس a"
 permalink: /exp_base_a/
 mathJax: true
 graph: true
-lessonID: "exp-base-a"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "دراسة دوال مركبة (كثير حدود + أسية)"
