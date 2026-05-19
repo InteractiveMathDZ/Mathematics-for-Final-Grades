@@ -4,7 +4,7 @@ title: "الاشتقاقية: مشتقات الدوال المرجعية"
 permalink: /basic_derivatives/
 mathJax: true
 graph: true
-lessonID: "reference-derivatives"
+lessonID: "deriv"
 
 previous_title: "الاشتقاقية: التقريب التآلفي المحلي"
 previous_url: /linear_approximation/
