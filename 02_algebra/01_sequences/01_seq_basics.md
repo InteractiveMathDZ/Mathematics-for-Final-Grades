@@ -4,7 +4,7 @@ title: "المفاهيم الأساسية والترميز"
 subtitle: "فك شفرة اللغة الجبرية للمتتاليات"
 permalink: /seq_basics/
 mathJax: true
-lessonID: "seq-01"
+lessonID: "seque"
 
 # روابط الاتصال
 previous_title: "خارطة طريق المتتاليات"
