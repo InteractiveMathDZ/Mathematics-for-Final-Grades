@@ -4,7 +4,7 @@ title: "تطبيقات فيزيائية للحساب التكاملي"
 subtitle: "محرك العلم: من تدفق اللحظة إلى حصيلة الطاقة"
 permalink: /physics_integrals/
 mathJax: true
-lessonID: "int-10"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 9: حساب حجوم الأجسام الدورانية"
