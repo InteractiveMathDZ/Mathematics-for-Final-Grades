@@ -5,7 +5,7 @@ subtitle: "المعادلات الخطية والقواسم المشتركة"
 permalink: /bezout_theorem/
 mathJax: true
 graph: true
-lessonID: "arith-07"
+lessonID: "diviZ"
 
 previous_title: "المبحث 6: الأعداد الأولية فيما بينها"
 previous_url: "/coprime_numbers/"
