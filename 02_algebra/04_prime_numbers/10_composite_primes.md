@@ -5,7 +5,7 @@ subtitle: "دمج الحساب والتحليل في المسائل الشامل
 permalink: /composite_primes/
 mathJax: true
 graph: true
-lessonID: "prime-10"
+lessonID: "primN"
 
 previous_title: "المبحث 9: الأعداد الأولية في المسائل اللوغاريتمية"
 previous_url: "/primes_log/"
