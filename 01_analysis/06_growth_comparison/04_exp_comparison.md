@@ -4,7 +4,7 @@ title: "التزايد المقارن في الأسية"
 subtitle: "سطوة الملكة: من يملك الكلمة الأخيرة؟"
 permalink: /exp_comparison/
 mathJax: true
-lessonID: "growth-04"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "المبحث 3: التزايد المقارن في اللوغاريتم"
