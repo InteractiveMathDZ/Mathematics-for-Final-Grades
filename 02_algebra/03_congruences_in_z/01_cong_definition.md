@@ -5,7 +5,7 @@ subtitle: "الأساس الرياضي للحساب النمطي"
 permalink: /cong_definition/
 mathJax: true
 graph: true
-lessonID: "cong-01"
+lessonID: "congZ"
 
 previous_title: "خارطة طريق حساب الموافقات"
 previous_url: "/congruences_hub/"
