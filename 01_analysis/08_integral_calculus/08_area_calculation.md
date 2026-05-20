@@ -4,7 +4,7 @@ title: "حساب المساحات تحت وبين المنحنيات"
 subtitle: "التجسيد الهندسي: تحويل التكامل إلى حيز ملموس"
 permalink: /area_calculation/
 mathJax: true
-lessonID: "int-08"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 7: حساب التكامل بتغيير المتغير"
