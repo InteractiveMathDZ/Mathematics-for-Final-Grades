@@ -5,7 +5,7 @@ subtitle: "علاقة القابلية وبنية الأعداد"
 permalink: /divisors_multiples/
 mathJax: true
 graph: true
-lessonID: "arith-02"
+lessonID: "diviZ"
 
 previous_title: "المبحث 1: القسمة الإقليدية في Z"
 previous_url: "/euclidean_division/"
