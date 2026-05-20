@@ -5,7 +5,7 @@ subtitle: "حجر الزاوية في نظرية الأعداد"
 permalink: /prime_definition/
 mathJax: true
 graph: true
-lessonID: "prime-01"
+lessonID: "primN"
 
 previous_title: "خارطة طريق الأعداد الأولية"
 previous_url: "/prime_numbers_hub/"
