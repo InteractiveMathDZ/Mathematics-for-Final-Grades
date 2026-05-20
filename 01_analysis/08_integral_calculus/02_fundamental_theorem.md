@@ -4,7 +4,7 @@ title: "المبرهنة الأساسية في الحساب التكاملي"
 subtitle: "الجسر الرابط: كيف تحول التكامل إلى طرح بسيط؟"
 permalink: /integral_fundamental_theorem/
 mathJax: true
-lessonID: "int-02"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 1: تعريف التكامل المحدد"
