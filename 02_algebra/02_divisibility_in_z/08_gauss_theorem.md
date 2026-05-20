@@ -5,7 +5,7 @@ subtitle: "الاستنتاج المنطقي للقواسم"
 permalink: /gauss_theorem/
 mathJax: true
 graph: true
-lessonID: "arith-08"
+lessonID: "diviZ"
 
 previous_title: "المبحث 7: مبرهنة بيزو (Bézout) والمعادلات"
 previous_url: "/bezout_theorem/"
