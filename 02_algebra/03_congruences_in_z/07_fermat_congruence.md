@@ -5,7 +5,7 @@ subtitle: "تبسيط القوى مع الترديدات الأولية"
 permalink: /fermat_congruence/
 mathJax: true
 graph: true
-lessonID: "cong-07"
+lessonID: "congZ"
 
 previous_title: "المبحث 6: حساب باقي قسمة أعداد ضخمة"
 previous_url: "/big_numbers_calc/"
