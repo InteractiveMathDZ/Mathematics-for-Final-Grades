@@ -5,7 +5,7 @@ subtitle: "ترويض الأسس العملاقة وسحق التعقيد الم
 permalink: /moivre_theorem/
 mathJax: true
 graph: true
-lessonID: "comp-05"
+lessonID: "compN"
 
 previous_title: "المبحث 4: الشكل المثلثي والشكل الأسّي"
 previous_url: "/complex_exponential/"
