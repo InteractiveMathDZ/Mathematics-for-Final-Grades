@@ -4,7 +4,7 @@ title: "الأسية: المسائل الشاملة (تطبيقات البكال
 permalink: /exp_full_problems/
 mathJax: true
 graph: true
-lessonID: "exp-master-problems"
+lessonID: "expFu"
 
 # روابط الاتصال
 previous_title: "الدوال الأصلية التي تشمل exp"
