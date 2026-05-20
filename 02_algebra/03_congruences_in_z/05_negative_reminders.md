@@ -5,7 +5,7 @@ subtitle: "استخدام القيم السالبة للتبسيط"
 permalink: /negative_reminders/
 mathJax: true
 graph: true
-lessonID: "cong-05"
+lessonID: "congZ"
 
 previous_title: "المبحث 4: دراسة دوريات بواقي القوى"
 previous_url: "/cong_cycles/"
