@@ -4,7 +4,7 @@ title: "حساب حجوم الأجسام الدورانية"
 subtitle: "البعد الثالث: عندما ترسم الدالة مجسماً"
 permalink: /volume_calculation/
 mathJax: true
-lessonID: "int-09"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 8: حساب المساحات"
