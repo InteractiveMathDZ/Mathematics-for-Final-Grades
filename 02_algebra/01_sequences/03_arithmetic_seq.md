@@ -4,7 +4,7 @@ title: "المتتالية الحسابية"
 subtitle: "الخطوة الثابتة والنمو المنتظم"
 permalink: /arithmetic_seq/
 mathJax: true
-lessonID: "seq-03"
+lessonID: "seque"
 
 previous_title: "تعريف المتتاليات بين الصراحة والتراجع"
 previous_url: "/seq_generation/"
