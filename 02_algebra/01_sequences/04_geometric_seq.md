@@ -4,7 +4,7 @@ title: "المتتالية الهندسية"
 subtitle: "النمو المتسارع والضرب المتكرر"
 permalink: /geometric_seq/
 mathJax: true
-lessonID: "seq-04"
+lessonID: "seque"
 
 previous_title: "المتتالية الحسابية"
 previous_url: "/arithmetic_seq/"
