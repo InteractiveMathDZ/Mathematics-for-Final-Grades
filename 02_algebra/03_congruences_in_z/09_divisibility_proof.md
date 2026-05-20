@@ -5,7 +5,7 @@ subtitle: "التعامل مع العبارات الجبرية المتغيرة"
 permalink: /divisibility_proof/
 mathJax: true
 graph: true
-lessonID: "cong-09"
+lessonID: "congZ"
 
 previous_title: "المبحث 8: حل المعادلات من الدرجة الأولى في الموافقات"
 previous_url: "/cong_equations/"
