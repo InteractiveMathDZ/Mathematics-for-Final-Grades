@@ -5,7 +5,7 @@ subtitle: "تفكيك العدد إلى لبناته الأساسية"
 permalink: /prime_factorization/
 mathJax: true
 graph: true
-lessonID: "arith-10"
+lessonID: "diviZ"
 
 previous_title: "المبحث 9: الأعداد الأولية ومبرهنة فيرما الصغرى"
 previous_url: "/prime_numbers_fermat/"
