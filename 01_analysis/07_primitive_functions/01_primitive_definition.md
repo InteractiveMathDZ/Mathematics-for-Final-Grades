@@ -4,7 +4,7 @@ title: "تعريف الدالة الأصلية"
 subtitle: "الرحلة العكسية: من المشتقة إلى الأصل"
 permalink: /primitive_definition/
 mathJax: true
-lessonID: "prim-01"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "محور الدوال الأصلية"
