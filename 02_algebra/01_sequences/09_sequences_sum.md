@@ -4,7 +4,7 @@ title: "حساب مجموع حدود متتابعة"
 subtitle: "تجميع الحدود من البداية إلى النهاية"
 permalink: /sequences_sum/
 mathJax: true
-lessonID: "seq-09"
+lessonID: "seque"
 
 previous_title: "المتتاليات المحدودة، الأعلى والأسفل"
 previous_url: "/bounded_sequences/"
