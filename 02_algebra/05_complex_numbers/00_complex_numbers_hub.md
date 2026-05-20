@@ -18,7 +18,7 @@ sections:
   - title: "المرحلة الأولى: الولادة والشكل الجبري"
     desc: "كسر حاجز الجذور السالبة المستحيلة ميكانيكياً والتعرف على بصمة الوحدة التخيلية $i$."
     lessons:
-      - title: "المبحث 1: تعريف المجموعة C والشكل الجبري للعدد المركب"
+      - title: "المبحث 1: تعريف المجموعة $\\mathbb{C}$ والشكل الجبري للعدد المركب"
         url: "/complex_definition/"
         icon: "plus-minus"
       - title: "المبحث 2: المرافق والمقلوب وخواصهما الحسابية (Inverse and Conjugate)"
@@ -41,7 +41,7 @@ sections:
       - title: "المبحث 5: دستور موآفر وتطبيقاته الجبرية (Moivre's Theorem)"
         url: "/moivre_theorem/"
         icon: "superscript"
-      - title: "المبحث 6: حل معادلات الدرجة الثانية والمقادير الشهيرة في C"
+      - title: "المبحث 6: حل معادلات الدرجة الثانية والمقادير الشهيرة في $\\mathbb{C}."
         url: "/complex_equations/"
         icon: "function"
 
