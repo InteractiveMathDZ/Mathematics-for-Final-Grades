@@ -4,7 +4,7 @@ title: "تقنية تغيير المتغير والمقارنة"
 subtitle: "فن المناورة: تحويل المستعصي إلى مألوف"
 permalink: /variable_change_growth/
 mathJax: true
-lessonID: "growth-05"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "المبحث 4: التزايد المقارن في الأسية"
