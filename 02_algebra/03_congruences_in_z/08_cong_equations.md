@@ -5,7 +5,7 @@ subtitle: "البحث عن المجهول x في Z"
 permalink: /cong_equations/
 mathJax: true
 graph: true
-lessonID: "cong-08"
+lessonID: "congZ"
 
 previous_title: "المبحث 7: مبرهنة فيرما الصغرى في الموافقات"
 previous_url: "/fermat_congruence/"
