@@ -5,7 +5,7 @@ subtitle: "نظام التكرار المنتظم للبواقي"
 permalink: /cong_cycles/
 mathJax: true
 graph: true
-lessonID: "cong-04"
+lessonID: "congZ"
 
 previous_title: "المبحث 3: تلاؤم الموافقات مع القوى"
 previous_url: "/cong_powers/"
