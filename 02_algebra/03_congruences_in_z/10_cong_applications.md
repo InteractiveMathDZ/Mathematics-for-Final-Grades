@@ -5,7 +5,7 @@ subtitle: "من الرياضيات النظرية إلى التكنولوجيا"
 permalink: /cong_applications/
 mathJax: true
 graph: true
-lessonID: "cong-10"
+lessonID: "congZ"
 
 previous_title: "المبحث 9: إثبات قابلية القسمة على عدد ثابت"
 previous_url: "/divisibility_proof/"
