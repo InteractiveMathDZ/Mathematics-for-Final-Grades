@@ -5,7 +5,7 @@ subtitle: "الاستقلالية التامة في القواسم"
 permalink: /coprime_numbers/
 mathJax: true
 graph: true
-lessonID: "arith-06"
+lessonID: "diviZ"
 
 previous_title: "المبحث 5: خوارزمية إقليدس والـ PGCD"
 previous_url: "/pgcd_algorithm/"
