@@ -4,7 +4,7 @@ title: "المبحث 4: المعادلة التفاضلية من الشكل y' =
 subtitle: "التوازن والتقارب: عندما يتدخل الثابت في المسار"
 permalink: /diff_linear_affine/
 mathJax: true
-lessonID: "diff-04"
+lessonID: "difEq"
 
 # روابط الاتصال
 previous_title: "المبحث 3: المعادلة التفاضلية y' = ay"
