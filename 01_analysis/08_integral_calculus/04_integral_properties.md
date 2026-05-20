@@ -4,7 +4,7 @@ title: "الخطيّة وعلاقة شال"
 subtitle: "فن التفكيك والوصل: المناورة داخل حدود التكامل"
 permalink: /integral_properties/
 mathJax: true
-lessonID: "int-04"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 3: القيمة المتوسطة لدالة"
