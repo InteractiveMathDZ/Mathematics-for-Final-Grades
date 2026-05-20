@@ -4,7 +4,7 @@ title: "حساب التكامل بتغيير المتغير"
 subtitle: "التبديل الذكي: تبسيط الرؤية للوصول للنتيجة"
 permalink: /integral_substitution/
 mathJax: true
-lessonID: "int-07"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 6: التكامل بالتجزئة"
