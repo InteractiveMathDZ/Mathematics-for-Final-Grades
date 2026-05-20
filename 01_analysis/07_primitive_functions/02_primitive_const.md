@@ -4,7 +4,7 @@ title: "مجموعة الدوال الأصلية"
 subtitle: "لغز الثابت (c): عائلة المنحنيات المتوازية"
 permalink: /primitive_const/
 mathJax: true
-lessonID: "prim-02"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 1: تعريف الدالة الأصلية"
