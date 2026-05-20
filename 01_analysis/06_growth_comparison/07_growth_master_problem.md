@@ -4,7 +4,7 @@ title: "المسألة الشاملة: تاج التزايد المقارن"
 subtitle: "الاختبار النهائي لقانون الغابة الرياضي"
 permalink: /growth_master_problem/
 mathJax: true
-lessonID: "growth-final"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "المبحث 6: القوى النونية والحالات المركبة"
