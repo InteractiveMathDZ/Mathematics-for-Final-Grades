@@ -4,7 +4,7 @@ title: "العمليات الجبرية والدوال الأصلية"
 subtitle: "فن التفكيك والتركيب: التعامل مع العبارات المركبة"
 permalink: /primitive_operations/
 mathJax: true
-lessonID: "prim-05"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 4: جدول الدوال الأصلية المرجعية"
