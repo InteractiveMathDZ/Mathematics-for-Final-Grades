@@ -5,7 +5,7 @@ subtitle: "تفكيك العدد إلى عوامله الأولية"
 permalink: /fundamental_theorem/
 mathJax: true
 graph: true
-lessonID: "prime-03"
+lessonID: "primN"
 
 previous_title: "المبحث 2: كيفية اختبار أولية عدد (غربال إراتوستين)"
 previous_url: "/primes_sieve/"
