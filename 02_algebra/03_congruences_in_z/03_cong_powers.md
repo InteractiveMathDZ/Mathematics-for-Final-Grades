@@ -5,7 +5,7 @@ subtitle: "التعامل مع الأسس الطبيعية"
 permalink: /cong_powers/
 mathJax: true
 graph: true
-lessonID: "cong-03"
+lessonID: "congZ"
 
 previous_title: "المبحث 2: الخواص الأساسية (الجمع والضرب)"
 previous_url: "/cong_properties/"
