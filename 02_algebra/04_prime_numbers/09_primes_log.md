@@ -5,7 +5,7 @@ subtitle: "تقدير التوزيع وتبسيط الجداءات الأسية"
 permalink: /primes_log/
 mathJax: true
 graph: true
-lessonID: "prime-09"
+lessonID: "primN"
 
 previous_title: "المبحث 8: لغز اللانهاية (برهان إقليدس)"
 previous_url: "/infinite_primes/"
