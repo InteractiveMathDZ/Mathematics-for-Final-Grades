@@ -4,7 +4,7 @@ title: "توظيف الدوال الأصلية في حل المشكلات"
 subtitle: "من النظرية إلى التطبيق: أين تسكن الدوال الأم؟"
 permalink: /primitive_apps/
 mathJax: true
-lessonID: "prim-08"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 7: دوال أصلية خاصة"
