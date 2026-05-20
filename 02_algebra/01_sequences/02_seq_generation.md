@@ -5,7 +5,7 @@ subtitle: "الفرق بين الصراحة والتراجع"
 permalink: /seq_generation/
 mathJax: true
 graph: true
-lessonID: "seq-02"
+lessonID: "seque"
 
 # روابط الاتصال
 previous_title: "المبحث 1: المفاهيم والترميز"
