@@ -5,7 +5,7 @@ subtitle: "قاعدة الاستنتاج الحاسمة في الجداءات"
 permalink: /gauss_primes/
 mathJax: true
 graph: true
-lessonID: "prime-06"
+lessonID: "primN"
 
 previous_title: "المبحث 5: الأعداد الأولية فيما بينها"
 previous_url: "/relatively_prime/"
