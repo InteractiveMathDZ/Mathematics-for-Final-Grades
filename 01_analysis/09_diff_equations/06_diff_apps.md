@@ -4,7 +4,7 @@ title: "النمذجة والتوظيف الميداني"
 subtitle: "من الواقع إلى المعادلة: فن صياغة القوانين"
 permalink: /diff_apps/
 mathJax: true
-lessonID: "diff-06"
+lessonID: "difEq"
 
 # روابط الاتصال
 previous_title: "المبحث 5: حل المعادلة y'' + ω²y = 0"
