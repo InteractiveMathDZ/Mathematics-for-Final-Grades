@@ -4,7 +4,7 @@ title: "الترتيب الهرمي للنمو"
 subtitle: "قانون الغابة: من يملك القوة عند اللانهاية؟"
 permalink: /growth_hierarchy/
 mathJax: true
-lessonID: "growth-01"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "فهرس محور التزايد المقارن"
