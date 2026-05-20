@@ -4,7 +4,7 @@ title: "مقارنة التكاملات والترتيب"
 subtitle: "التقدير المنطقي: الحكم على القيمة دون حسابها"
 permalink: /integral_comparison/
 mathJax: true
-lessonID: "int-05"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 4: الخطيّة وعلاقة شال"
