@@ -4,7 +4,7 @@ title: "تعريف التكامل المحدد"
 subtitle: "من الجمع المتناهي إلى الحيز المستمر"
 permalink: /integral_definition/
 mathJax: true
-lessonID: "int-01"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "محور الحساب التكاملي"
