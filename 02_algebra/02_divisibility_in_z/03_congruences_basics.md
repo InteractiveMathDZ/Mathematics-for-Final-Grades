@@ -5,7 +5,7 @@ subtitle: "لغة البواقي والحساب النمطي"
 permalink: /congruences_basics/
 mathJax: true
 graph: true
-lessonID: "arith-03"
+lessonID: "diviZ"
 
 previous_title: "المبحث 2: القواسم والمضاعفات وخواصها"
 previous_url: "/divisors_multiples/"
