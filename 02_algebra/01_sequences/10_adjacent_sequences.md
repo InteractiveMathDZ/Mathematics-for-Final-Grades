@@ -5,7 +5,7 @@ subtitle: "متتاليتان تتقاربان نحو نفس الهدف"
 permalink: /adjacent_sequences/
 mathJax: true
 graph: true
-lessonID: "seq-10"
+lessonID: "seque"
 
 previous_title: "حساب مجموع حدود متتابعة"
 previous_url: "/sequences_sum/"
