@@ -4,7 +4,7 @@ title: "الدالة الأصلية التي تأخذ قيمة معلومة"
 subtitle: "تحديد الهوية: البحث عن المنحنى الوحيد"
 permalink: /primitive_condition/
 mathJax: true
-lessonID: "prim-03"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 2: مجموعة الدوال الأصلية"
