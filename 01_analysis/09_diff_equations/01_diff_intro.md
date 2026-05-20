@@ -4,7 +4,7 @@ title: "المبحث 1: ماهية المعادلات التفاضلية"
 subtitle: "البحث عن الدالة المجهولة: لغة الحركة"
 permalink: /diff_definition/
 mathJax: true
-lessonID: "diff-01"
+lessonID: "difEq"
 
 # روابط الاتصال
 previous_title: "محور المعادلات التفاضلية"
