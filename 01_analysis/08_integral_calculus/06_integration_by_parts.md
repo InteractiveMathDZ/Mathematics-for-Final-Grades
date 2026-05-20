@@ -4,7 +4,7 @@ title: "التكامل بالتجزئة"
 subtitle: "فن التفكيك: حل معضلة الجداء المستعصي"
 permalink: /integration_by_parts/
 mathJax: true
-lessonID: "int-06"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 5: مقارنة التكاملات والترتيب"
