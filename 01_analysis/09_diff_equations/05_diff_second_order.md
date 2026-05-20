@@ -4,7 +4,7 @@ title: "المبحث 5: المعادلة التفاضلية y'' + ω²y = 0"
 subtitle: "الرتبة الثانية: لغة الاهتزاز والتناغم"
 permalink: /diff_second_order/
 mathJax: true
-lessonID: "diff-05"
+lessonID: "difEq"
 
 # روابط الاتصال
 previous_title: "المبحث 4: حل المعادلة y' = ay + b"
