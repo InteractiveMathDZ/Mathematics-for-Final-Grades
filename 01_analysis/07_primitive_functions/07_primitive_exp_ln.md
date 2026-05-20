@@ -4,7 +4,7 @@ title: "دوال أصلية خاصة (الأسية واللوغاريتمية)"
 subtitle: "قواعد التعامل مع القوى والكسور العميقة"
 permalink: /primitive_exp_ln/
 mathJax: true
-lessonID: "prim-07"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 6: دالة أصلية لمركب دالتين"
