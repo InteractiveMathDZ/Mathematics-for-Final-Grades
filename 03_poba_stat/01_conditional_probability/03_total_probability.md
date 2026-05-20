@@ -6,7 +6,7 @@ permalink: /total_probability/
 mathJax: true
 lessonID: "proSt"
 
-previous_title: "المبحث 2: شجرة الاحتمالات وقواعد رصف المسارات"
+previous_title: "المبحث 2: شجرة الاحتمالات وقواعد رسم المسارات"
 previous_url: "/probability_tree/"
 next_title: "خارطة طريق التحليل التوفيقي وأدوات العد الحسابي"
 next_url: "/combinatorics_hub/"
@@ -37,8 +37,8 @@ elements:
       - center: "$P_A(B_k) = \\frac{P(B_k \\cap A)}{P(A)} = \\frac{P(B_k) \\times P_{B_k}(A)}{P(B_1) \\times P_{B_1}(A) + \\dots + P(B_n) \\times P_{B_n}(A)}$"
 
   - NB:
-      title: "
-      type: "danger"
+      title: "فائدة:"
+      type: "info"
       NBs:
         - rtl: "في المسائل النموذجية لامتحانات البكالوريا، تكتشف سؤال بايز فوراً عندما تجد صيغة لغوية ارتدادية مثل: 'علماً أن القطعة المسحوبة معيبة، ما احتمال أن تكون من صنع الآلة الأولى؟'. هنا تدرك مباشرة أنك تسير بعكس فروع الشجرة، والبسط هو حاصل ضرب فروع المسار المستهدف والمقام هو الناتج الكلي الذي حسبته في السؤال السابق."
 ---
