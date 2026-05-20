@@ -4,7 +4,7 @@ title: "دالة أصلية لمركب دالتين"
 subtitle: "البحث عن المشتقة المختبئة: مفتاح الحل"
 permalink: /primitive_composite/
 mathJax: true
-lessonID: "prim-06"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 5: العمليات الجبرية والدوال الأصلية"
