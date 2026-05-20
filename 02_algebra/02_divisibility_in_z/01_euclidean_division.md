@@ -5,7 +5,7 @@ subtitle: "البنية الأساسية للأعداد الصحيحة"
 permalink: /euclidean_division/
 mathJax: true
 graph: true
-lessonID: "arith-01"
+lessonID: "diviZ"
 
 previous_title: "خارطة طريق الأعداد والحساب"
 previous_url: "/divisibility_in_Z_hub/"
