@@ -4,7 +4,7 @@ title: "التفسير الهندسي للصراع"
 subtitle: "عندما تتحدث المنحنيات: قراءة بصرية لقانون الغابة"
 permalink: /growth_geometry/
 mathJax: true
-lessonID: "growth-02"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "المبحث 1: الترتيب الهرمي للنمو"
