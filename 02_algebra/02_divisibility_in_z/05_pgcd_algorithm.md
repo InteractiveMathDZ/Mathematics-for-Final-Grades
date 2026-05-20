@@ -5,7 +5,7 @@ subtitle: "البحث عن القاسم المشترك الأكبر بنجاعة
 permalink: /pgcd_algorithm/
 mathJax: true
 graph: true
-lessonID: "arith-05"
+lessonID: "diviZ"
 
 previous_title: "المبحث 4: دوريات قوى عدد طبيعي وبواقي القسمة"
 previous_url: "/periodic_powers/"
