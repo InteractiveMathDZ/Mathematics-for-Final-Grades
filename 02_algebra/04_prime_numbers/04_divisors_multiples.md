@@ -5,7 +5,7 @@ subtitle: "استثمار التحليل في العمليات الحسابية"
 permalink: /divisors_multiples/
 mathJax: true
 graph: true
-lessonID: "prime-04"
+lessonID: "primN"
 
 previous_title: "المبحث 3: المبرهنة الأساسية في الحساب (التفكيك)"
 previous_url: "/fundamental_theorem/"
