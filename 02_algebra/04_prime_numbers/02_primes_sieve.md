@@ -5,7 +5,7 @@ subtitle: "خوارزمية الغربال والبحث الذكي"
 permalink: /primes_sieve/
 mathJax: true
 graph: true
-lessonID: "prime-02"
+lessonID: "primN"
 
 previous_title: "المبحث 1: تعريف العدد الأولي وخواصه"
 previous_url: "/prime_definition/"
