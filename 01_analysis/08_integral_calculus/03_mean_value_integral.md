@@ -4,7 +4,7 @@ title: "القيمة المتوسطة لدالة"
 subtitle: "مبدأ التسوية: البحث عن القيمة المركزية"
 permalink: /mean_value_integral/
 mathJax: true
-lessonID: "int-03"
+lessonID: "intCa"
 
 # روابط الاتصال
 previous_title: "المبحث 2: المبرهنة الأساسية"
