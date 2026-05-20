@@ -5,7 +5,7 @@ subtitle: "الجمع، الطرح، والضرب في Z"
 permalink: /cong_properties/
 mathJax: true
 graph: true
-lessonID: "cong-02"
+lessonID: "congZ"
 
 previous_title: "المبحث 1: تعريف الموافقة بترديد n"
 previous_url: "/cong_definition/"
