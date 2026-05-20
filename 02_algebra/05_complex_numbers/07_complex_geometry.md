@@ -5,7 +5,7 @@ subtitle: "تحويل المقادير الحسابية الصماء إلى أش
 permalink: /complex_geometry/
 mathJax: true
 graph: true
-lessonID: "comp-07"
+lessonID: "compN"
 
 previous_title: "المبحث 6: حل معادلات الدرجة الثانية في C"
 previous_url: "/complex_equations/"
