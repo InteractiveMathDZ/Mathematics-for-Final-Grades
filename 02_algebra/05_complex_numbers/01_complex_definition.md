@@ -1,6 +1,6 @@
 ---
 layout: lesson
-title: "المبحث 1: تعريف المجموعة C والشكل الجبري"
+title: "المبحث 1: تعريف المجموعة $\\mathbb{C}$والشكل الجبري"
 subtitle: "الولوج إلى البعد التخيلي حيث $i^2 = -1$"
 permalink: /complex_definition/
 mathJax: true
@@ -33,32 +33,9 @@ elements:
       - rtl: "• <b>الضرب والتوزيع الجبري:</b> نطبق نشر وتوزيع المقادير العادي، مع ضرورة الاختزال المباشر لكل تعبير يظهر فيه $i^2$ وتعويضه بالقيمة الحتمية $-1$ مغيرين إشارة المعامل."
       - rtl: "• <b>شرط التطابق والتساوي:</b> يتساوى عددان مركبان إذا وفقط إذا تساوى جزآهما الحقيقيان تماماً، وتساوى جزآهما التخيليان تماماً (وهي الأداة الحاكمة لحل جمل المعادلات المركبة)."
 
-  - graph:
-      id: "complex-structure-viz"
-      class: "graph-container"
-      xDomain: [-3, 11]
-      yDomain: [-1, 5]
-      elements:
-        # رسم هيكلي لاحتواء المجموعات العددية (Set Inclusion Framework)
-        # المجموعة الأم الشاملة C
-        - { type: "line", points: [[0, 0.5], [0, 4.5]], color: "blue" }
-        - { type: "line", points: [[0, 4.5], [9, 4.5]], color: "blue" }
-        - { type: "line", points: [[9, 4.5], [9, 0.5]], color: "blue" }
-        - { type: "line", points: [[9, 0.5], [0, 0.5]], color: "blue" }
-        - { type: "text", content: "المجموعة الأم C (حيث z = a + bi)", x: 0.3, y: 4.1, color: "blue" }
-        
-        # المجموعة الجزئية المحتواة بالكامل R (عندما يكون b = 0)
-        - { type: "line", points: [[1, 1], [1, 3.2]], color: "#168574" }
-        - { type: "line", points: [[1, 3.2], [5, 3.2]], color: "#168574" }
-        - { type: "line", points: [[5, 3.2], [5, 1]], color: "#168574" }
-        - { type: "line", points: [[5, 1], [1, 1]], color: "#168574" }
-        - { type: "text", content: "الأعداد الحقيقية R", x: 1.3, y: 2.8, color: "#168574" }
-        - { type: "text", content: "الشرط: Im(z) = 0", x: 1.3, y: 1.5, color: "#168574" }
-        
-        # حقل الأعداد التخيلية الصرفة (عندما يكون a = 0)
-        - { type: "point", x: 7, y: 2, strokeColor: "orange", fillColor: "orange", size: 3 }
-        - { type: "text", content: "تخيلية صرفة (Pure Imaginary)", x: 5.5, y: 2.6, color: "orange" }
-        - { type: "text", content: "مثال: 3i", x: 6.8, y: 1.3, color: "orange" }
+  - raw_html: |
+      "<div class='graph' style='text-align: center; margin: 25px 0;'><svg width='550' height='200' viewBox='0 0 550 200' xmlns='http://www.w3.org/2000/svg' style='background: transparent; max-width: 100%;'><style>text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 13px; fill: #000000; } .group-title { font-weight: bold; font-size: 14px; } .c-color { fill: #0056b3; } .r-color { fill: #168574; } .i-color { fill: #b45309; } .math-style { font-style: italic; }</style><rect x='10' y='10' width='530' height='180' rx='8' fill='none' stroke='#0056b3' stroke-width='2' /><text x='25' y='35' class='group-title c-color'>المجموعة الأم &mathbb;C (الأعداد المركبة)</text><text x='25' y='55' class='math-style' fill='#555555'>حيث: z = a + bi</text><rect x='30' y='75' width='240' height='100' rx='6' fill='none' stroke='#168574' stroke-width='1.5' /><text x='45' y='100' class='group-title r-color'>الأعداد الحقيقية &mathbb;R</text><text x='45' y='125' class='math-style' fill='#168574'>الشرط: Im(z) = 0</text><text x='45' y='150' fill='#666666'>أمثلة: 5 ، -2 ، &radic;3</text><rect x='290' y='75' width='230' height='100' rx='6' fill='none' stroke='#b45309' stroke-width='1.5' stroke-dasharray='4,4' /><text x='305' y='100' class='group-title i-color'>تخيلية صرفة (Pure Imaginary)</text><text x='305' y='125' class='math-style' fill='#b45309'>الشرط: Re(z) = 0</text><text x='305' y='150' fill='#666666'>أمثلة: 3i ، -i ، i&radic;2</text></svg></div>"
+
 
   - NB:
       title: "تنبيه:"
