@@ -5,7 +5,7 @@ subtitle: "تحديد المستقر النهائي للمتتالية"
 permalink: /sequence_limits/
 mathJax: true
 graph: true
-lessonID: "seq-08"
+lessonID: "seque"
 
 previous_title: "المتتالية الهندسية."
 previous_url: "/geometric_seq/"
