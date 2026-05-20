@@ -4,7 +4,7 @@ title: "المبحث 3: المعادلة التفاضلية من الشكل y' =
 subtitle: "التناسب الذاتي: عندما تشتق الدالة نفسها"
 permalink: /diff_linear_simple/
 mathJax: true
-lessonID: "diff-03"
+lessonID: "difEq"
 
 # روابط الاتصال
 previous_title: "المبحث 2: المعادلة التفاضلية من الشكل y' = f(x)"
