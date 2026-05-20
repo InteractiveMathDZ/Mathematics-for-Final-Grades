@@ -4,7 +4,7 @@ title: "جدول الدوال الأصلية المرجعية"
 subtitle: "مخزن الأدوات: القواعد الجاهزة."
 permalink: /primitive_table/
 mathJax: true
-lessonID: "prim-04"
+lessonID: "priFu"
 
 # روابط الاتصال
 previous_title: "المبحث 3: الدالة الأصلية التي تأخذ قيمة معلومة"
