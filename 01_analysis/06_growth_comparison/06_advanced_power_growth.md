@@ -4,7 +4,7 @@ title: "القوى النونية والحالات المركبة"
 subtitle: "تعميم القانون: السيادة المطلقة مهما كبر الأس"
 permalink: /advanced_power_growth/
 mathJax: true
-lessonID: "growth-06"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "المبحث 5: تقنية تغيير المتغير والمقارنة"
