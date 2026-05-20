@@ -159,6 +159,7 @@ function getOrCreateProgressResume(storageKey = 'progressResume') {
             ['groCo', 0],       // التزايد المقارن (Growth Comparison)
             ['priFu', 0],       // الدوال الأصلية (Primitive Functions)
             ['intCa', 0],       // حساب التكامل (Integral Calculus)
+            ['difEq', 0],       // المعادلات التفاضلية (differential equations)
 
             // --- فرع الجبر (Algebra) ---
             ['algeb', 0],       // الجبر (Algebra General)
