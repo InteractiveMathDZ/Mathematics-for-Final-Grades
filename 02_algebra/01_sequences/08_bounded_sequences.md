@@ -5,7 +5,7 @@ subtitle: "الأسوار الرياضية: القيد العلوي والقيد
 permalink: /bounded_sequences/
 mathJax: true
 graph: true
-lessonID: "seq-08"
+lessonID: "seque"
 
 previous_title: "البرهان بالتراجع"
 previous_url: "/induction_proof/"
