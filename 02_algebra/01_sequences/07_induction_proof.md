@@ -3,7 +3,7 @@ layout: lesson
 title: "البرهان بالتراجع"
 permalink: /induction_proof/
 mathJax: true
-lessonID: "seq-06"
+lessonID: "seque"
 
 previous_title: "المتتاليات، إتجاه التغير"
 previous_url: "/sequence_variation/"
