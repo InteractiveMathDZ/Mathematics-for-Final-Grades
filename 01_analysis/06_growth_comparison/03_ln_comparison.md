@@ -4,7 +4,7 @@ title: "التزايد المقارن في اللوغاريتم"
 subtitle: "ضعف السلحفاة أمام سطوة القوى"
 permalink: /ln_comparison/
 mathJax: true
-lessonID: "growth-03"
+lessonID: "groCo"
 
 # روابط الاتصال
 previous_title: "المبحث 2: التفسير الهندسي للصراع"
