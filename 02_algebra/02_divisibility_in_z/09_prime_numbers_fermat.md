@@ -5,7 +5,7 @@ subtitle: "اللبنات الأساسية للأعداد الصحيحة"
 permalink: /prime_numbers_fermat/
 mathJax: true
 graph: true
-lessonID: "arith-09"
+lessonID: "diviZ"
 
 previous_title: "المبحث 8: مبرهنة غوص (Gauss) وتطبيقاتها"
 previous_url: "/gauss_theorem/"
