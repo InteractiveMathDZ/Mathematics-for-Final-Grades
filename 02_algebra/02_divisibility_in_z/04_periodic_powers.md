@@ -5,7 +5,7 @@ subtitle: "اكتشاف التكرار المنتظم للبواقي"
 permalink: /periodic_powers/
 mathJax: true
 graph: true
-lessonID: "arith-04"
+lessonID: "diviZ"
 
 previous_title: "المبحث 3: الموافقات في Z (التعريف والخواص)"
 previous_url: "/congruences_basics/"
