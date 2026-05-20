@@ -5,7 +5,7 @@ subtitle: "القوة السحرية للأعداد الأولية في اختز
 permalink: /fermat_primes/
 mathJax: true
 graph: true
-lessonID: "prime-07"
+lessonID: "primN"
 
 previous_title: "المبحث 6: مبرهنة غوص (Gauss) للأعداد الأولية"
 previous_url: "/gauss_primes/"
