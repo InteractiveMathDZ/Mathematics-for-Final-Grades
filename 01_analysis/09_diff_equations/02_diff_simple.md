@@ -4,7 +4,7 @@ title: "المبحث 2: المعادلة من الشكل y' = f(x)"
 subtitle: "الحل بالعودة إلى الأصل: أبسط صور التفاضل"
 permalink: /diff_simple/
 mathJax: true
-lessonID: "diff-02"
+lessonID: "difEq"
 
 # روابط الاتصال
 previous_title: "المبحث 1: ماهية المعادلات التفاضلية"
