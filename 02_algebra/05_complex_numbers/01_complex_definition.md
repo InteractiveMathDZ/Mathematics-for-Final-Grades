@@ -5,7 +5,7 @@ subtitle: "الولوج إلى البعد التخيلي حيث $i^2 = -1$"
 permalink: /complex_definition/
 mathJax: true
 graph: true
-lessonID: "comp-01"
+lessonID: "compN"
 
 previous_title: "خارطة طريق الأعداد المركبة"
 previous_url: "/complex_numbers_hub/"
