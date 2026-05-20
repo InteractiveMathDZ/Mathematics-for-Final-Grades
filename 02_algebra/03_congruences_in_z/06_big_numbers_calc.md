@@ -5,7 +5,7 @@ subtitle: "منهجية التفكيك والتبسيط"
 permalink: /big_numbers_calc/
 mathJax: true
 graph: true
-lessonID: "cong-06"
+lessonID: "congZ"
 
 previous_title: "المبحث 5: البحث عن الباقي الصغير (القيم السالبة)"
 previous_url: "/negative_reminders/"
