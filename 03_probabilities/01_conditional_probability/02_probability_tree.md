@@ -6,9 +6,9 @@ permalink: /probability_tree/
 mathJax: true
 lessonID: "proSt"
 
-previous_title: "المبحث 1: الاحتمالات الشرطية واستقلال حوادث"
+previous_title: "الاحتمالات الشرطية واستقلال حوادث"
 previous_url: "/conditional_probability/"
-next_title: "المبحث 3: دستور الاحتمالات الكلية وتطبيقاته العكسية"
+next_title: "دستور الاحتمالات الكلية وتطبيقاته العكسية"
 next_url: "/total_probability/"
 
 elements:
