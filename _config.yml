@@ -1,0 +1,18 @@
+# إعدادات الهوية البرمجية للموقع
+title: "منصة التميز في الرياضيات"
+description: "منصة تعليمية تفاعلية مخصصة للرياضيات - الطور الثانوي"
+url: "https://interactivemathdz.github.io"
+baseurl: "/Mathematics-for-Final-Grades"
+
+# الحل الجذري للروابط الدائمة (Permalinks)
+# هذا السطر يجبر السيرفر على إضافة .html تلقائياً لكل الصفحات والدروس
+permalink: /:path.html
+
+# إعدادات بناء المحرك والتصنيفات
+markdown: kramdown
+theme: minima
+
+# استثناء ملفات التطوير المحلية من البناء على السيرفر
+exclude:
+  - README.md
+  - .gitignore
