@@ -12,11 +12,12 @@ layout: null
   {% for doc in site.documents %}
     {% if doc.url %}
     <url>
-      {% comment %} تنظيف الرابط لضمان انتهائه بشرطة مائلة واحدة فقط تماسكاً مع الـ Canonical {% endcomment %}
       {% assign doc_url_clean = doc.url | replace: '//', '/' %}
-      {% unless doc_url_clean text.endswith == '/' %}
+      {% comment %} التحقق من آخر حرف في الرابط باستخدام فلتر slice {% endcomment %}
+      {% assign last_char = doc_url_clean | slice: -1 %}
+      {% if last_char != '/' %}
         {% assign doc_url_clean = doc_url_clean | append: '/' %}
-      {% endunless %}
+      {% endif %}
       <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ doc_url_clean }}</loc>
       <priority>0.8</priority>
     </url>
@@ -30,7 +31,9 @@ layout: null
       {% if page_url_clean == '/' or page_url_clean == '' %}
         <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/</loc>
       {% else %}
-        {% unless page_url_clean text.endswith == '/' or page_url_clean contains '.html' %}
+        {% assign last_char_page = page_url_clean | slice: -1 %}
+        {% comment %} إذا كان الرابط لا ينتهي بشرطة ولا يحتوي على امتداد ملف، نضيف الشرطة المائلة {% endcomment %}
+        {% unless last_char_page == '/' or page_url_clean contains '.html' or page_url_clean contains '.xml' %}
           {% assign page_url_clean = page_url_clean | append: '/' %}
         {% endunless %}
         <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ page_url_clean }}</loc>
