@@ -1,0 +1,43 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/</loc>
+    <priority>1.0</priority>
+  </url>
+  
+  {% for doc in site.documents %}
+    {% if doc.url %}
+    <url>
+      {% comment %} تنظيف الرابط لضمان انتهائه بشرطة مائلة واحدة فقط تماسكاً مع الـ Canonical {% endcomment %}
+      {% assign doc_url_clean = doc.url | replace: '//', '/' %}
+      {% unless doc_url_clean text.endswith == '/' %}
+        {% assign doc_url_clean = doc_url_clean | append: '/' %}
+      {% endunless %}
+      <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ doc_url_clean }}</loc>
+      <priority>0.8</priority>
+    </url>
+    {% endif %}
+  {% endfor %}
+
+  {% for page in site.pages %}
+    {% if page.url and page.url != "/404.html" and page.url != "/sitemap.xml" and page.url != "/sitemap_v2.xml" and page.url != "/sitemap_grades.xml" %}
+    <url>
+      {% assign page_url_clean = page.url | replace: '//', '/' %}
+      {% if page_url_clean == '/' or page_url_clean == '' %}
+        <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/</loc>
+      {% else %}
+        {% unless page_url_clean text.endswith == '/' or page_url_clean contains '.html' %}
+          {% assign page_url_clean = page_url_clean | append: '/' %}
+        {% endunless %}
+        <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades{{ page_url_clean }}</loc>
+      {% endif %}
+      <priority>0.8</priority>
+    </url>
+    {% endif %}
+  {% endfor %}
+
+</urlset>
