@@ -53,13 +53,16 @@
     text-align: center; 
     color: #75b5ff !important;
     font-size: 1.3rem; 
-    /* الحل السحري للـ débordement */
-    overflow-x: auto; /* السماح بالتمرير الأفقي فقط عند الحاجة */
-    white-space: nowrap; /* منع انكسار المعادلة بشكل مشوه */
-    max-width: 100%; /* ضمان عدم خروج الصندوق عن حدود الأب */
-    scrollbar-width: auto;
-    scrollbar-color: #0d6efd #e9ecef;
+    
+    /* التعديل الجذري لمنع الخروج */
+    display: block;          /* إجبار العنصر على التصرف ككتلة مستقلة */
+    width: 100%;            /* ملء المساحة المتاحة فقط */
+    max-width: 100%;        /* منع تجاوزه للمساحة المتاحة بأي شكل */
+    overflow-x: auto !important; /* فرض السحاب قسرياً */
+    white-space: nowrap; 
+    box-sizing: border-box; /* حساب الحواف والـ padding ضمن العرض الكلي دون زيادة */
 }
+
 
 /* تحسين مظهر شريط التمرير ليكون ناعماً */
 .math-block::-webkit-scrollbar {
