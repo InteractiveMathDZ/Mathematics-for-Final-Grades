@@ -25,9 +25,10 @@
     {% include preloader.html %}
     {% include debug_header.html %}
 
-    <div class="container my-2 py-2" style="max-width:100%; width: 100%; unicode-bidi: isolate;">
-        {{ content }}
+    <div class="container my-2 py-2" style="max-width: 100%; width: 100%; box-sizing: border-box; overflow-x: hidden; unicode-bidi: isolate;">
+    {{ content }}
     </div>
+
 
     {% include sidebar.html %}
     {% include footer.html %}
