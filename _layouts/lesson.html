@@ -15,6 +15,12 @@ layout: default
 </div>
   
 {% for el in page.elements %}
+
+    {% if el.formula %}
+    <div class="math-wrapper">
+        {{ el.formula }}
+    </div>
+    {% endif %}
     
     {% if el.activity %}
     <div class="activity-wrapper my-5 shadow-sm border rounded p-3">
