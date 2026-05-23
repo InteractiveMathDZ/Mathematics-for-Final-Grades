@@ -1,14 +1,14 @@
 ---
 layout: lesson
-title: "المبحث 2: التوفيقات وخواصها الجبرية"
+title: "التوفيقات وخواصها الجبرية"
 subtitle: "دراسة التراكيب غير المرتبة وصيغ بسط الخواص التناظرية وعلاقة باسكال"
 permalink: /combinations/
 mathJax: true
 lessonID: "combCount"
 
-previous_title: "المبحث 1: المبادئ الأساسية للعد"
+previous_title: "المبادئ الأساسية للعد"
 previous_url: "/counting_principles/"
-next_title: "المبحث 3: النمذجة الرياضية لأنواع السحب"
+next_title: "النمذجة الرياضية لأنواع السحب"
 next_url: "/sampling_models/"
 
 elements:
@@ -33,7 +33,7 @@ elements:
 
   # هيكل مثلث باسكال الحسابي لعرض الآلية التراجعية بالتوافق مع التباين
   - raw_html:
-      text: "<div class='graph' style='text-align: center; margin: 20px 0;'><svg width='400' height='160' viewBox='0 0 400 160' xmlns='http://www.w3.org/2000/svg' style='background: transparent; max-width: 100%;'><style>text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 14px; fill: #000000; text-anchor: middle; } .row-t { fill: #888888; font-size: 11px; } .highlight-p { fill: #ef4444; font-weight: bold; } .highlight-res { fill: #0056b3; font-weight: bold; }</style><text x='40' y='25' class='row-t'>n = 0</text><text x='200' y='25'>1</text><text x='40' y='50' class='row-t'>n = 1</text><text x='175' y='50'>1</text><text x='225' y='50'>1</text><text x='40' y='75' class='row-t'>n = 2</text><text x='150' y='75'>1</text><text x='200' y='75'>2</text><text x='250' y='75'>1</text><text x='40' y='100' class='row-t'>n = 3</text><text x='125' y='100'>1</text><text x='175' y='100' class='highlight-p'>3</text><text x='225' y='100' class='highlight-p'>3</text><text x='275' y='100'>1</text><text x='40' y='125' class='row-t'>n = 4</text><text x='100' y='125'>1</text><text x='150' y='125'>4</text><text x='200' y='125' class='highlight-res'>6</text><text x='250' y='125'>4</text><text x='300' y='125'>1</text><path d='M 165,105 L 190,115 M 235,105 L 210,115' stroke='#ef4444' stroke-width='1' fill='none' /></svg></div>"
+      text: "<div class='graph' style='text-align: center; margin: 20px 0;'><svg width='400' height='160' viewBox='0 0 400 160' xmlns='http://www.w3.org/2000/svg' style='background: transparent; max-width: 100%;'><style>text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 14px; fill: #888888; text-anchor: middle; } .row-t { fill: #888888; font-size: 11px; } .highlight-p { fill: #ef4444; font-weight: bold; } .highlight-res { fill: #0056b3; font-weight: bold; }</style><text x='40' y='25' class='row-t'>n = 0</text><text x='200' y='25'>1</text><text x='40' y='50' class='row-t'>n = 1</text><text x='175' y='50'>1</text><text x='225' y='50'>1</text><text x='40' y='75' class='row-t'>n = 2</text><text x='150' y='75'>1</text><text x='200' y='75'>2</text><text x='250' y='75'>1</text><text x='40' y='100' class='row-t'>n = 3</text><text x='125' y='100'>1</text><text x='175' y='100' class='highlight-p'>3</text><text x='225' y='100' class='highlight-p'>3</text><text x='275' y='100'>1</text><text x='40' y='125' class='row-t'>n = 4</text><text x='100' y='125'>1</text><text x='150' y='125'>4</text><text x='200' y='125' class='highlight-res'>6</text><text x='250' y='125'>4</text><text x='300' y='125'>1</text><path d='M 165,105 L 190,115 M 235,105 L 210,115' stroke='#ef4444' stroke-width='1' fill='none' /></svg></div>"
 
 
 
