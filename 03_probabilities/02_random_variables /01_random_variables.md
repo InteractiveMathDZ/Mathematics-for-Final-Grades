@@ -8,7 +8,7 @@ lessonID: "randVar"
 
 previous_title: "خارطة طريق المتغيرات العشوائية والقوانين الاحتمالية"
 previous_url: "/random_variables_hub/"
-next_title: "المبحث 2: الأمل الرياضي، التباين والانحراف المعياري"
+next_title: "الأمل الرياضي، التباين والانحراف المعياري"
 next_url: "/statistical_indicators/"
 
 elements:
@@ -27,7 +27,7 @@ elements:
   - parags:
       - rtl: "تعريف <b>قانون الاحتمال</b> (أو التوزيع الاحتمالي) للمتغير العشوائي $X$ يعني حساب احتمال وقوع كل حادثة $(X = x_i)$ من مجموعة القيم الممكنة."
       - rtl: "نرمز لهذا الاحتمال بالرمز $p_i$ حيث: $p_i = P(X = x_i)$."
-      - rtl: "• <b>الشرط النظامي الحاسم:</b> لكي يكون قانون الاحتمال صحيحاً ومستوياً هندسياً، يجب أن يتحقق شرطان جبريان:"
+      - rtl: "• <b>الشرط النظامي:</b> لكي يكون قانون الاحتمال صحيحاً ومستوياً هندسياً، يجب أن يتحقق شرطان جبريان:"
       - rtl: "1. كل احتمال مصاحب هو عدد محصور بين الصفر والواحد: $0 \\le p_i \\le 1$ لكل $i$."
       - rtl: "2. المجموع الشامل للاحتمالات المصاحبة لكل القيم الممكنة يساوي واحداً تماماً بلا زيادة أو نقصان:"
       - center: "$\\sum_{i=1}^{n} p_i = p_1 + p_2 + \\dots + p_n = 1$"
@@ -38,7 +38,7 @@ elements:
 
   # جدول تنظيمي محايد لقانون الاحتمال متوافق مع معايير العرض
   - raw_html:
-      text: "<div style='overflow-x:auto; margin: 20px 0;'><table style='width:100%; border-collapse: collapse; text-align: center; font-size: 14px;' border='1' stroke='#888888'><thead style='background-color: rgba(136, 136, 136, 0.1);'><tr><th style='padding: 10px;'>$x_i$</th><th style='padding: 10px;'>$x_1$</th><th style='padding: 10px;'>$x_2$</th><th style='padding: 10px;'>$\\dots$</th><th style='padding: 10px;'>$x_n$</th><th style='padding: 10px;'>المجموع $\\sum$</th></tr></thead><tbody><tr><td style='padding: 10px; font-weight: bold;'>$P(X = x_i)$</td><td style='padding: 10px;'>$p_1$</td><td style='padding: 10px;'>$p_2$</td><td style='padding: 10px;'>$\\dots$</td><td style='padding: 10px;'>$p_n$</td><td style='padding: 10px; font-weight: bold;'>$1$</td></tr></tbody></table></div>"
+      text: "<div style='overflow-x:auto; margin: 20px 0;'><table style='width:100%; border-collapse: collapse; text-align: center; font-size: 14px;' border='1' stroke='#888888'><thead style='background-color: rgba(136, 136, 136, 0.1);'><tr><th style='padding: 10px;'>$x_i$</th><th style='padding: 10px;'>$x_1$</th><th style='padding: 10px;'>$x_2$</th><th style='padding: 10px;'>$\dots$</th><th style='padding: 10px;'>$x_n$</th><th style='padding: 10px;'>المجموع $\sum$</th></tr></thead><tbody><tr><td style='padding: 10px; font-weight: bold;'>$P(X = x_i)$</td><td style='padding: 10px;'>$p_1$</td><td style='padding: 10px;'>$p_2$</td><td style='padding: 10px;'>$\dots$</td><td style='padding: 10px;'>$p_n$</td><td style='padding: 10px; font-weight: bold;'>$1$</td></tr></tbody></table></div>"
 
   - NB:
       title: "قاعدة فحص:"
