@@ -1,12 +1,12 @@
 ---
 layout: lesson
-title: "المبحث 3: النمذجة الرياضية لأنواع السحب"
+title: "النمذجة الرياضية لأنواع السحب"
 subtitle: "الربط الجبري بين آلية سحب العناصر والأداة الحسابية المناسبة"
 permalink: /sampling_models/
 mathJax: true
 lessonID: "combCount"
 
-previous_title: "المبحث 2: التوفيقات وخواصها الجبرية"
+previous_title: "التوفيقات وخواصها الجبرية"
 previous_url: "/combinations/"
 next_title: "خارطة طريق المتغيرات العشوائية"
 next_url: "/random_variables_hub/"
@@ -14,7 +14,7 @@ next_url: "/random_variables_hub/"
 elements:
   - h3: "1. النمذجة الرياضية لعمليات السحب"
   - parags:
-      - rtl: "تعتمد حسابات الاحتمالات والتحليل التوفيقي في المسائل النموذجية (مثل سحب كرات من كيس أو صندوق) على تحديد آلية السحب بدقة. تحديد نوع السحب يحدد ميكانيكياً الفضاء العيني والنموذج الحسابي الواجب اتباعه (قائمة، ترتيبة، أو توفيقة)."
+      - rtl: "تعتمد حسابات الاحتمالات والتحليل التوفيقي في المسائل النموذجية (مثل سحب كرات من كيس أو صندوق) على تحديد آلية السحب بدقة. تحديد نوع السحب يحدد الفضاء العيني والنموذج الحسابي الواجب اتباعه (قائمة، ترتيبة، أو توفيقة)."
 
   - h3: "2. أنواع السحب الثلاثة والقوانين المرتبطة بها"
   - parags:
@@ -31,8 +31,8 @@ elements:
       - rtl: "يلخص الجدول التالي العلاقة الهيكلية المباشرة بين خصائص السحب والأداة الرياضية المستعملة:"
 
   # جدول تنظيمي محايد متوافق مع معايير الأرشفة والعرض
-  - raw_html:
-      text: "<div style='overflow-x:auto; margin: 20px 0;'><table style='width:100%; border-collapse: collapse; text-align: center; font-size: 14px;' border='1' stroke='#888888'><thead style='background-color: rgba(136, 136, 136, 0.1);'><tr><th style='padding: 10px;'>نوع السحب</th><th style='padding: 10px;'>الترتيب</th><th style='padding: 10px;'>التكرار</th><th style='padding: 10px;'>الأداة الرياضية</th><th style='padding: 10px;'>الصيغة الحسابية</th></tr></thead><tbody><tr><td style='padding: 10px; font-weight: bold;'>في آن واحد</td><td style='padding: 10px;'>غير مهم</td><td style='padding: 10px;'>ممنوع</td><td style='padding: 10px; font-weight: bold;'>توفيقة</td><td style='padding: 10px;'>$\\binom{n}{p}$</td></tr><tr><td style='padding: 10px; font-weight: bold;'>على التوالي وبإرجاع</td><td style='padding: 10px;'>مهم</td><td style='padding: 10px;'>مسموح</td><td style='padding: 10px; font-weight: bold;'>قائمة</td><td style='padding: 10px;'>$n^p$</td></tr><tr><td style='padding: 10px; font-weight: bold;'>على التوالي وبدون إرجاع</td><td style='padding: 10px;'>مهم</td><td style='padding: 10px;'>ممنوع</td><td style='padding: 10px; font-weight: bold;'>ترتيبة</td><td style='padding: 10px;'>$A_n^p$</td></tr></tbody></table></div>"
+  - raw_html: |
+      <div style='overflow-x:auto; margin: 20px 0;'><table style='width:100%; border-collapse: collapse; text-align: center; font-size: 14px;' border='1' stroke='#888888'><thead style='background-color: rgba(136, 136, 136, 0.1);'><tr><th style='padding: 10px;'>نوع السحب</th><th style='padding: 10px;'>الترتيب</th><th style='padding: 10px;'>التكرار</th><th style='padding: 10px;'>الأداة الرياضية</th><th style='padding: 10px;'>الصيغة الحسابية</th></tr></thead><tbody><tr><td style='padding: 10px; font-weight: bold;'>في آن واحد</td><td style='padding: 10px;'>غير مهم</td><td style='padding: 10px;'>ممنوع</td><td style='padding: 10px; font-weight: bold;'>توفيقة</td><td style='padding: 10px;'>$\\binom{n}{p}$</td></tr><tr><td style='padding: 10px; font-weight: bold;'>على التوالي وبإرجاع</td><td style='padding: 10px;'>مهم</td><td style='padding: 10px;'>مسموح</td><td style='padding: 10px; font-weight: bold;'>قائمة</td><td style='padding: 10px;'>$n^p$</td></tr><tr><td style='padding: 10px; font-weight: bold;'>على التوالي وبدون إرجاع</td><td style='padding: 10px;'>مهم</td><td style='padding: 10px;'>ممنوع</td><td style='padding: 10px; font-weight: bold;'>ترتيبة</td><td style='padding: 10px;'>$A_n^p$</td></tr></tbody></table></div>
 
   - h3: "4. معامل الترتيب (Permutation Factor)"
   - parags:
