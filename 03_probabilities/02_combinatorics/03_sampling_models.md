@@ -40,7 +40,7 @@ elements:
       - rtl: "• لحساب معامل الترتيب عند سحب $p$ عنصراً تتوزع إلى أصناف تكرارها:"
       - center: "$p_1, p_2, \\dots, p_k$"
       - rtl: "حيث:"
-      - center: "$p_1 + p_2 + \\dots + p_k = p$)"
+      - center: "$p_1 + p_2 + \\dots + p_k = p$"
       - rtl: "نطبق الصيغة التالية:"
       - center: "$\\text{Factor} = \\frac{p!}{p_1! \\times p_2! \\times \\dots \\times p_k!}$"
 
