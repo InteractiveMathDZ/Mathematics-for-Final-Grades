@@ -37,8 +37,8 @@ elements:
       - rtl: "يتم تلخيص قانون الاحتمال ميكانيكياً في جدول نظامي يربط كل قيمة بالاحتمال الصافي المطابق لها:"
 
   # جدول تنظيمي محايد لقانون الاحتمال متوافق مع معايير العرض
-  - raw_html:
-      text: "<div style='overflow-x:auto; margin: 20px 0;'><table style='width:100%; border-collapse: collapse; text-align: center; font-size: 14px;' border='1' stroke='#888888'><thead style='background-color: rgba(136, 136, 136, 0.1);'><tr><th style='padding: 10px;'>$x_i$</th><th style='padding: 10px;'>$x_1$</th><th style='padding: 10px;'>$x_2$</th><th style='padding: 10px;'>$\dots$</th><th style='padding: 10px;'>$x_n$</th><th style='padding: 10px;'>المجموع $\sum$</th></tr></thead><tbody><tr><td style='padding: 10px; font-weight: bold;'>$P(X = x_i)$</td><td style='padding: 10px;'>$p_1$</td><td style='padding: 10px;'>$p_2$</td><td style='padding: 10px;'>$\dots$</td><td style='padding: 10px;'>$p_n$</td><td style='padding: 10px; font-weight: bold;'>$1$</td></tr></tbody></table></div>"
+  - raw_html: |
+      <div style='overflow-x:auto; margin: 20px 0;'><table style='width:100%; border-collapse: collapse; text-align: center; font-size: 14px;' border='1' stroke='#888888'><thead style='background-color: rgba(136, 136, 136, 0.1);'><tr><th style='padding: 10px;'>$x_i$</th><th style='padding: 10px;'>$x_1$</th><th style='padding: 10px;'>$x_2$</th><th style='padding: 10px;'>$\dots$</th><th style='padding: 10px;'>$x_n$</th><th style='padding: 10px;'>المجموع $\sum$</th></tr></thead><tbody><tr><td style='padding: 10px; font-weight: bold;'>$P(X = x_i)$</td><td style='padding: 10px;'>$p_1$</td><td style='padding: 10px;'>$p_2$</td><td style='padding: 10px;'>$\dots$</td><td style='padding: 10px;'>$p_n$</td><td style='padding: 10px; font-weight: bold;'>$1$</td></tr></tbody></table></div>
 
   - NB:
       title: "قاعدة فحص:"
