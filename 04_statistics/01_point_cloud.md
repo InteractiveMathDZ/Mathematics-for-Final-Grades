@@ -2,9 +2,9 @@
 layout: lesson
 title: "السحابة النقطية والنقطة المتوسطة"
 subtitle: "التمثيل الهندسي للبيانات المقترنة ورصد مركز ثقل السلسلة الإحصائية"
-permalink: /stati/
+permalink: /point_cloud//
 mathJax: true
-lessonID: "statistics"
+lessonID: "stati"
 
 previous_title: "خارطة طريق الإحصاء ثنائي المتغير"
 previous_url: "/statistics_hub/"
@@ -63,7 +63,7 @@ elements:
         </table>
       </div>
 
-  - h3: "5. الحل الجبري والتمثيل الهندي للمركز"
+  - h3: "5. الحل الجبري والتمثيل الهندسي للمركز"
   - parags:
       - rtl: "• <b>حساب الوسط الحسابي لـ $X$:</b>"
       - center: "$\\bar{X} = \\frac{10 + 12 + 15 + 8 + 15}{5} = \\frac{60}{5} = 12$"
