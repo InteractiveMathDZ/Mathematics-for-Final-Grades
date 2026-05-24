@@ -8,8 +8,8 @@ lessonID: "randVar"
 
 previous_title: "الأمل الرياضي، التباين والانحراف المعياري"
 previous_url: "/statistical_indicators/"
-next_title: "خارطة طريق المحور القادم"
-next_url: "/next_hub/"
+next_title: "خارطة طريق المتغيرات العشوائية وقوانين الإحتمال"
+next_url: "/random_variables_hub/"
 
 elements:
   - h3: "1. اختبار برنولي (Bernoulli Trial)"
