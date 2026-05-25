@@ -13,7 +13,7 @@ next_title: "النهايات المثلثية"
 next_url: /trig_limits/
 
 elements:
-  - h3: "1. متى تشغل عقلك؟"
+  - h3: "1. الظهور:"
     id: "when-inf-inf"
 
   - parags:
