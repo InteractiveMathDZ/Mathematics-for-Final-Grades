@@ -19,7 +19,7 @@ elements:
   - parags:
       - rtl: "تظهر حالة $+\\infty - \\infty$ عندما نطرح مقدارين عظيمين من بعضهما. لا يمكننا القول أنها تساوي الصفر، لأننا لا نعرف أي اللانهايتين 'أقوى' وأسرع في النمو."
       - rtl: "أما حالة $\\frac{\\infty}{\\infty}$ فهي سباق سرعة؛ من سيصل للانهاية أولاً؟ البسط أم المقام؟"
-      - rtl: "حتى نوضح أكثر، القوة وسرعة النمو هي موضوع محور<a href='https://interactivemathdz.github.io/Mathematics-for-Final-Grades/growth_comparison_hub/'>التزايد المقارن</a>، باستطاعتك القفز إليه لأخذ فكرة."
+      - rtl: "حتى نوضح أكثر، القوة وسرعة النمو هي موضوع محور <a href='https://interactivemathdz.github.io/Mathematics-for-Final-Grades/growth_comparison_hub/'>التزايد المقارن</a>، باستطاعتك القفز إليه لأخذ فكرة."
 
   - h3: "2. الحل الأمثل: العامل المشترك ذو الدرجة الأكبر"
     id: "common-factor"
