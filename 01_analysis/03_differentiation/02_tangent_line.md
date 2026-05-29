@@ -7,9 +7,9 @@ mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "الاشتقاقية: نسبة التغير والعدد المشتق"
+previous_title: "الاشتقاقية، نسبة التغير والعدد المشتق"
 previous_url: "/diff_concept/"
-next_title: "الاشتقاقية: الاشتقاق على اليمين وعلى اليسار"
+next_title: "الاشتقاقية، الاشتقاق على اليمين وعلى اليسار"
 next_url: "/diff_at_point/"
 
 elements:
