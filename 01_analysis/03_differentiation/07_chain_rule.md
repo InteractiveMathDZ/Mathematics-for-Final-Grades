@@ -7,7 +7,7 @@ graph: true
 lessonID: "deriv"
 
 previous_title: "الاشتقاقية، العمليات على المشتقات"
-previous_url: /derivative_ops/
+previous_url: "/derivative_ops/"
 next_title: "العلاقة بين الاشتقاق والاستمرارية"
 next_url: "/diff_cont_relation/"
 
