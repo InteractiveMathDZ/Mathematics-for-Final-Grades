@@ -1,12 +1,12 @@
 ---
 layout: lesson
-title: "الاشتقاقية: اشتقاق الدوال المركبة"
+title: "الاشتقاقية، اشتقاق الدوال المركبة"
 permalink: /chain_rule/
 mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "الاشتقاقية: العمليات على المشتقات"
+previous_title: "الاشتقاقية، العمليات على المشتقات"
 previous_url: /derivative_ops/
 next_title: "العلاقة بين الاشتقاق والاستمرارية"
 next_url: "/diff_cont_relation/"
@@ -59,7 +59,7 @@ elements:
       lines:
         - - td: "1. تحديد الدالة الداخلية $u$"
           - td: "$u = x^2 + 3 \\implies u' = 2x$"
-        - - td: "2. تطبيق قانون الجدر"
+        - - td: "2. تطبيق قانون الجذر التربيعي
           - td: "$f'(x) = \\frac{u'}{2\\sqrt{u}} = \\frac{2x}{2\\sqrt{x^2 + 3}}$"
         - - td: "3. الاختزال"
           - td: "$f'(x) = \\frac{x}{\\sqrt{x^2 + 3}}$"
