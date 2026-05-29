@@ -9,7 +9,7 @@ lessonID: "limit"
 
 previous_title: "مبرهنة الحصر"
 previous_url: /squeeze_theorem/
-next_title: "الإستمرارية: خارطة الطريق"
+next_title: "الإستمرارية، خارطة الطريق"
 next_url: /continuity_hub/
 
 elements:
