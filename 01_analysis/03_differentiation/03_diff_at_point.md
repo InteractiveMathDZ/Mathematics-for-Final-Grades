@@ -7,7 +7,7 @@ mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "الاشتقاقية: التفسير الهندسي ومعادلة المماس"
+previous_title: "الاشتقاقية، التفسير الهندسي ومعادلة المماس"
 previous_url: /tangent_line/
 next_title: "التقريب التآلفي"
 next_url: "/linear_approximation/"
