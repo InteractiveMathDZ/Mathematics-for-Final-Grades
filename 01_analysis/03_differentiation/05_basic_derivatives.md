@@ -6,7 +6,7 @@ mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "الاشتقاقية: التقريب التآلفي المحلي"
+previous_title: "الاشتقاقية، التقريب التآلفي المحلي"
 previous_url: /linear_approximation/
 next_title: "العمليات على المشتقات"
 next_url: "/derivative_ops/"
