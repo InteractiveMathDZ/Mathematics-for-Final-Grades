@@ -7,7 +7,7 @@ mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "الاشتقاقية: الاشتقاق على اليمين وعلى اليسار"
+previous_title: "الاشتقاقية، الاشتقاق على اليمين وعلى اليسار"
 previous_url: /diff_at_point/
 next_title: "قواعد الاشتقاق الأساسية"
 next_url: "/basic_derivatives/"
@@ -38,7 +38,7 @@ elements:
       dir: rtl
       lines:
         - - th: "البيانات"
-          - td: "$f(1)=1$ ، $f'(1)=2$ ، $h=0.001$"
+          - td: "$f(1)=1$ ; $f'(1)=2$ ; $h=0.001$"
         - - th: "التطبيق"
           - td: "$(1+0.001)^2 \\approx 2(0.001) + 1$"
         - - th: "النتيجة"
