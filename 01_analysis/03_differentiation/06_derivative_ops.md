@@ -6,7 +6,7 @@ mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "الاشتقاقية: قواعد الاشتقاق (الدوال المرجعية والعمليات)"
+previous_title: "قواعد الاشتقاق (الدوال المرجعية والعمليات)"
 previous_url: /basic_derivatives/
 next_title: "اشتقاق الدوال المركبة"
 next_url: "/chain_rule/"
@@ -19,7 +19,7 @@ elements:
       - rtl: "الاشتقاق عملية 'خطية'؛ بمعنى أنها تتوزع بسهولة على الجمع والطرح، ولا تتأثر بالثوابت المضروبة."
 
   - tableLines:
-      dir: ltr
+      dir: rtl
       lines:
         - - th: "العملية"
           - th: "الدالة"
@@ -31,14 +31,14 @@ elements:
           - td: "$k \\cdot u$"
           - td: "$k \\cdot u'$"
 
-  - h3: "2. جداء وقسمة دالتين (القواعد الذهبية)"
+  - h3: "2. جداء وقسمة دالتين (قواعد العمل):"
     id: "product-quotient-rules"
 
   - parags:
       - rtl: "هنا يجب الحذر! مشتقة الجداء <strong>ليست</strong> جداء المشتقات، ومشتقة القسمة لها قانونها الخاص الذي يحفظ بدقة."
 
   - tableLines:
-      dir: ltr
+      dir: rtl
       lines:
         - - th: "العملية"
           - th: "الدالة"
@@ -54,7 +54,7 @@ elements:
           - td: "$\\frac{u'v - v'u}{v^2}$"
 
   - NB:
-      title: "تنبيه الصيانة:"
+      title: "تنبيه:"
       type: "danger"
       NBs:
         - rtl: "في قانون القسمة، نبدأ دائماً بمشتق البسط مضروباً في المقام ($u'v$) ثم نطرح العكس. ترتيب العناصر هنا مقدس لأن الطرح ليس تبديلياً."
