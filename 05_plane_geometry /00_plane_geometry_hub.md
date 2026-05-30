@@ -2,7 +2,7 @@
 layout: hub
 title: "خارطة طريق الهندسة المستوية والتحويلات النقطية"
 subtitle: "الهندسة الديناميكية: من المكتسبات الشعاعية إلى عمق المستوي المركب"
-permalink: /plane_geometry_hub/
+permalink: /pl_geometry_hub/
 mathJax: true
 description: "تفكيك التحويلات النقطية الأساسية والمتقدمة في المستوي، بدءاً من التعريف المتجهي الصافي، وصولاً إلى دساتيرها الجبرية في المستوي المركب واستخدامها في حل مسائل البكالوريا."
 
@@ -19,22 +19,22 @@ sections:
     desc: "بناء الرؤية البصرية والحركية للتحويلات النقطية في المستوي من الصفر المطلق."
     lessons:
       - title: "المبحث 1: الإنسحاب والتناظر (البناء المتجهي)"
-        url: "/geometry/translation/"
+        url: "/pl_geometry/translation/"
         icon: "arrow-right-arrows-left"
       - title: "المبحث 2: التحاكي (ميكانزم التكبير والقلب)"
-        url: "/geometry/homothety/"
+        url: "/pl_geometry/homothety/"
         icon: "maximize"
       - title: "المبحث 3: الدوران (حفظ الأطوال وتوجيه الزوايا)"
-        url: "/geometry/rotation/"
+        url: "/pl_geometry/rotation/"
         icon: "arrow-rotate-right"
 
   - title: "المرحلة 2: الذروة والربط الجبري"
     desc: "دمج التحويلات والانتقال الصارم إلى معالم المستوي المركب لاقتناص العلامة الكاملة."
     lessons:
       - title: "المبحث 4: التشابه المباشر (اندماج التحاكي والدوران)"
-        url: "/geometry/similitude/"
+        url: "/pl_geometry/similitude/"
         icon: "shapes"
       - title: "المبحث 5: العبارة المركبة وطبيعة التحويل"
-        url: "/geometry/complex_transformations/"
+        url: "/pl_geometry/complex_transformations/"
         icon: "calculator"
 ---
