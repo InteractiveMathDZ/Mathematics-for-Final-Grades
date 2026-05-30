@@ -170,7 +170,8 @@ function getOrCreateProgressResume(storageKey = 'progressResume') {
             ['compN', 0],       // الأعداد المركبة (Complex Numbers)
 
             // --- فرع الاحتمالات والإحصاء ---
-            ['proSt', 0],       // الاحتمالات والإحصاء (Probabilities and Statistics)
+            ['proba', 0],       // الاحتمالات (Probabilities)
+            ['stati', 0],       // الإحصاء (statistics)
             ['conPr', 0],       // الاحتمالات الشرطية (Conditional Probabilities)
             ['proDi', 0],       // التوزيع الاحتمالي (Probability Distribution)
 
