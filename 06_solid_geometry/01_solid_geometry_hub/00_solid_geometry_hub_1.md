@@ -1,8 +1,8 @@
 ---
 layout: hub
-title: "الأوضاع النسبية والمستويات"
+title: "الأوضاع النسبية والمستويات في الفضاء (Solid Geometry)"
 subtitle: "مكتسبات الأولى ثانوي: بناء التجريد البصري وتفكيك الفضاء ثلاثي الأبعاد"
-permalink: /space_geometry_hub_1/
+permalink: /solid_geometry_hub_1/
 mathJax: true
 description: "بناء الرصين لصاحب الهمة: من الورقة المسطحة إلى التجريد الفضائي الصرف. تفكيك شروط تعيين المستوي، والأوضاع النسبية للمستقيمات والمستويات دون زحام مفاهيمي."
 
@@ -19,19 +19,19 @@ sections:
     desc: "فهم كيفية ولادة المستوي وانفصاله كأرضية مستقلة داخل الفضاء اللامتناهي."
     lessons:
       - title: "المبحث 1: طرق تعيين مستوٍ في الفضاء (المحددات الثلاثة الصارمة)"
-        url: "/Space_geometry_1/plane_determination/"
+        url: "/Solid_geometry_1/plane_determination/"
         icon: "layer-group"
 
   - title: "المرحلة 2: حركية التقاطع والتوازي الفضائي"
     desc: "دراسة العلاقات الحاكمة والتموقعات النسبية للخطوط والأسطح في الفضاء."
     lessons:
       - title: "المبحث 2: الأوضاع النسبية لمستقيمين في الفضاء (التوازي، التقاطع، وعدم الانتماء)"
-        url: "/Space_geometry_1/two_lines_position/"
+        url: "/Solid_geometry_1/two_lines_position/"
         icon: "lines-leaning"
       - title: "المبحث 3: الأوضاع النسبية لمستقيم ومستوٍ (التوازي التام واختراق السطح)"
-        url: "/Space_geometry_1/line_plane_position/"
+        url: "/Solid_geometry_1/line_plane_position/"
         icon: "arrows-spin"
       - title: "المبحث 4: الأوضاع النسبية لمستويين (التوازي التام والتقاطع في مستقيم الفصل)"
-        url: "/Space_geometry_1/two_planes_position/"
+        url: "/Solid_geometry_1/two_planes_position/"
         icon: "box-tissue"
 ---
