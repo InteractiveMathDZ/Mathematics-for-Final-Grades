@@ -65,24 +65,55 @@ layout: default
     {% endif %}
 
     {% if el.tableLines %}
-        <div class="table-responsive math-wrapper mt-4">
-            <table class="table table-bordered text-center" 
-                   style="font-size:0.8rem;"
-                   dir="{{ el.tableLines.dir }}">                
-                <tbody>
-                    {% for line in el.tableLines.lines %}
-                    <tr>
-                        {% for cel in line %}
-                        {% if cel.th %}
-                           <th>{{ cel.th }}</th>
-                        {% else %}
-                            <td>{{ cel.td }}</td>
-                        {% endif %}                        {% endfor %}
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+        {% if el.tableLines.type == 'svg' %}
+        <div class="table-responsive math-wrapper mt-4" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            <svg width="100%" min-width="650" height="{{ el.tableLines.lines.size | plus: 1 | times: 45 }}" viewBox="0 0 700 {{ el.tableLines.lines.size | plus: 1 | times: 45 }}" style="background: #1e1e1e; border: 1px solid #333333; border-radius: 6px; font-family: sans-serif;">
+      
+            {% for line in el.tableLines.lines %}
+                {% assign y_pos = forloop.index0 | times: 45 %}
+        
+                {% if forloop.first %}
+                    <rect x="0" y="{{ y_pos }}" width="100%" height="45" fill="rgba(117, 181, 255, 0.1)"/>
+                {% else %}
+            <line x1="0" y1="{{ y_pos }}" x2="100%" y2="{{ y_pos }}" stroke="#333333" stroke-width="1"/>
+            {% endif %}
+
+            {% for cel in line %}
+                {% assign col_count = line.size %}
+                {% assign cell_width = 650 | divided_by: col_count %}
+                {% assign x_pos = forloop.index0 | times: cell_width | plus: 20 %}
+                {% assign text_y = y_pos | plus: 28 %}
+
+                {% if cel.th %}
+                 <text x="{{ x_pos }}" y="{{ text_y }}" fill="#75b5ff" font-weight="bold" font-size="14" direction="{{ el.tableLines.dir }}">{{ cel.th }}</text>
+                {% else %}
+                 <text x="{{ x_pos }}" y="{{ text_y }}" fill="#ffffff" font-size="13" direction="{{ el.tableLines.dir }}">{{ cel.td }}</text>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+      
+    </svg>
+  </div>
+{% else %}
+  <div class="table-responsive math-wrapper mt-4">
+    <table class="table table-bordered text-center" style="font-size:0.8rem;" dir="{{ el.tableLines.dir }}">                
+        <tbody>
+            {% for line in el.tableLines.lines %}
+            <tr>
+                {% for cel in line %}
+                {% if cel.th %}
+                   <th>{{ cel.th }}</th>
+                {% else %}
+                    <td>{{ cel.td }}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endif %}
+
     {% endif %} 
 
     {% if el.notes %}
