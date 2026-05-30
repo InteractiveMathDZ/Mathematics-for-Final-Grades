@@ -2,7 +2,7 @@
 layout: lesson
 title: " الإنسحاب والتناظر"
 subtitle: "التأسيس المتجهي للتحويل النقطي والحفاظ على التوجيه"
-permalink: /geometry_translation/
+permalink: /geometry/translation/
 mathJax: true
 graph: true
 lessonID: "plGeo"
@@ -10,7 +10,7 @@ lessonID: "plGeo"
 previous_title: " خارطة طريق الهندسة المستوية"
 previous_url: "/plane_geometry_hub/"
 next_title: "التحاكي"
-next_url: "/geometry_homothety/"
+next_url: "/geometry/homothety/"
 
 elements:
   - h3: "1. مفهوم التحويل النقطي (Transformation)"
@@ -24,7 +24,7 @@ elements:
     id: "translation-def"
 
   - parags:
-      - rtl: "ليكن $\\vec{u}$ شعاعاً ثابتاً من المستوي. الإنسحاب الذي شعاعه $\vec{u}$ هو التحويل النقطي الذي يرفق بكل نقطة $M$ النقطة $M'$ بحيث يتحقق الشرط المتجهي الحاسم والوحيد:"
+      - rtl: "ليكن $\\vec{u}$ شعاعاً ثابتاً من المستوي. الإنسحاب الذي شعاعه $\\vec{u}$ هو التحويل النقطي الذي يرفق بكل نقطة $M$ النقطة $M'$ بحيث يتحقق الشرط المتجهي الحاسم والوحيد:"
       - center: "$\\vec{MM'} = \\vec{u}$"
 
   # استخدام عنصر tableLines القياسي بمؤشر النوع المصبّي الجديد لحماية شاشة الهاتف
