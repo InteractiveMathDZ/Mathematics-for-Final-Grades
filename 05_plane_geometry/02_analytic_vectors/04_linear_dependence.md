@@ -4,7 +4,7 @@ title: "الارتباط الخطي لشعاعين والمحدد"
 permalink: /linear_dependence/
 mathJax: true
 graph: true
-lessonID: "plGeo_linear_dep"
+lessonID: "plGeo"
 
 previous_title: "الحساب الشعاعي في معلم"
 previous_url: /analytic_coordinates/
