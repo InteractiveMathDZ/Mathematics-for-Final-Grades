@@ -9,7 +9,7 @@ lessonID: "plGeo"
 previous_title: "حالات تقايس المثلثات"
 previous_url: /congruent_triangles/
 next_title: "الهندسة التحليلية والمقاطع المستوية"
-next_url: /analytic_geometry_and_sections/
+next_url: /analytic_vectors/
 
 elements:
   - h3: "1. مفهوم التشابه البنيوي"
