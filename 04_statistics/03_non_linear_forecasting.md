@@ -8,8 +8,8 @@ lessonID: "stati"
 
 previous_title: "التعديل الخطي بطريقة المربعات الدنيا"
 previous_url: "/linear_regression/"
-next_title: "خارطة طريق الإحصاء ثنائي المتغير"
-next_url: "/statistics_hub/"
+next_title: "الهندسة المستوية الإقليدية"
+next_url: "/pure_euclidean_pl_geo/"
 
 elements:
   - h3: "1. مفهوم التعديل غير الخطي (Non-linear Adjustment)"
