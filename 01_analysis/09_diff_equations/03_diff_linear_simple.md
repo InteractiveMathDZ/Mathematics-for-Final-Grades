@@ -52,8 +52,6 @@ elements:
       - center: "$ 5 = C \\cdot e^{3(0)} \\implies 5 = C \\cdot 1 \\implies C = 5 $"
       - rtl: "<b>صياغة الحل الخاص المقيد:</b> يستقر الدستور الدالي النهائي للنسق عند العبارة الحصيلة الصارمة: $f(x) = 5e^{3x}$."
 
-[Image showing the family of exponential curves for different values of C in y' = ay]
-
   - NB:
       title: "ضوابط الاتساق والتأويل الفيزيائي:"
       type: "success"
