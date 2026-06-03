@@ -9,7 +9,7 @@ lessonID: "deriv"
 
 previous_title: "حساب المشتقات لعمليات المجموع والجداء والحاصل الكسري"
 previous_url: "/derivative_ops/"
-next_title: "العلاقة التحليلية والتضمنية بين قابلية الاشتقاق واستمرارية الدوال"
+next_title: "العلاقة التحليلية والإستلزامية بين قابلية الاشتقاق واستمرارية الدوال"
 next_url: "/diff_cont_relation/"
 
 elements:
