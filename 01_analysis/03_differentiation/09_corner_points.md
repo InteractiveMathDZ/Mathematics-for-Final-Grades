@@ -7,7 +7,7 @@ mathJax: true
 graph: true
 lessonID: "deriv"
 
-previous_title: "العلاقة التحليلية والتضمنية بين قابلية الاشتقاق واستمرارية الدوال"
+previous_title: "العلاقة التحليلية والإستلزامية بين قابلية الاشتقاق واستمرارية الدوال"
 previous_url: /diff_cont_relation/
 next_title: "الأثر التحليلي لإشارة الدالة المشتقة في تعيين اتجاه تغير الدالة"
 next_url: /derivative_sign/
