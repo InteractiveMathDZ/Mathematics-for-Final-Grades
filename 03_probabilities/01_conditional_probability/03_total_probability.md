@@ -1,43 +1,55 @@
 ---
 layout: lesson
-title: "دستور الاحتمالات الكلية وتطبيقاته العكسية"
-subtitle: "تجميع مسارات الشجرة المتفرعة وحساب الاحتمالات الارتدادية العكسية"
+title: "المبحث 3: دستور الاحتمالات الكلية وتطبيقاته"
+subtitle: "تجميع المسارات وحساب الاحتمالات الارتدادية"
 permalink: /total_probability/
 mathJax: true
 lessonID: "proSt"
 
+# روابط الاتصال
 previous_title: "شجرة الاحتمالات وقواعد رسم المسارات"
 previous_url: "/probability_tree/"
-next_title: "خارطة طريق التحليل التوفيقي وأدوات العد الحسابي"
+next_title: "خارطة طريق التحليل التوفيقي"
 next_url: "/combinatorics_hub/"
 
 elements:
-  - h3: "1. مفهوم التجزئة التامة لفضاء العينات (Partition of a Sample Space)"
+  - h3: "1. التجزئة التامة للفضاء العيني"
+    id: "partition"
   - parags:
-      - rtl: "قبل بناء الدستور الكلي، يجب ضبط الأرضية النظرية: نقول عن مجموعة من الحوادث $B_1, B_2, \\dots, B_n$ أنها تشكل <b>تجزئة تامة</b> للفضاء العيني $\\Omega$ إذا حققت الشرطين التاليين:"
-      - rtl: "• <b>التنافي المثنى:</b> أي حادثتين مختلفتين هما متنافيتان تماماً ($B_i \\cap B_j = \\emptyset$ عند $i \\neq j$)."
-      - rtl: "• <b>الشمولية المطلقة:</b> اتحاد كل هذه الحوادث يعيد تشكيل الفضاء الكامل $\\Omega$ بلا أي فراغ:"
-      - center: "($B_1 \\cup B_2 \\cup \\dots \\cup B_n = \\Omega$)."
+      - rtl: "تشكل مجموعة الحوادث $(B_i)$ تجزئة تامة لـ $\\Omega$ إذا كانت متنافية مثنى مثنى، واتحادها يساوي $\\Omega$."
 
-  - h3: "2. دستور الاحتمالات الكلية (Law of Total Probability)"
+  - h3: "2. دستور الاحتمالات الكلية"
+    id: "total-probability"
   - parags:
-      - rtl: "إذا كانت لدينا حادثة عشوائية $A$ مستعرضة تتقاطع مع حوادث التجزئة التامة، فإن احتمال وقوعها الإجمالي يُحسب رياضيا بتجميع احتمالات تقاطعاتها الصافية مع كل جزء من التجزئة."
-      - rtl: "بلغة شجرة الاحتمالات، الاحتمال الكلي للحادثة $A$ هو <b>مجموع احتمالات جميع المسارات المنتهية بالحادثة $A$</b>:"
-  - formula: "$P(A) = \\sum_{i=1}^{n} P(A \\cap B_i) = P(B_1) \\times P_{B_1}(A) + P(B_2) \\times P_{B_2}(A) + \\dots + P(B_n) \\times P_{B_n}(A)$"
+      - rtl: "لحساب احتمال حادثة $A$ تتقاطع مع تجزئة $(B_i)$، نجمع احتمالات المسارات المنتهية بـ $A$:"
+      - center: "$P(A) = \\sum_{i=1}^{n} P(B_i) \\times P_{B_i}(A)$"
+      - rtl: "هذا الدستور هو التعبير الرياضي عن تجميع فروع الشجرة التي تنتهي بنفس النتيجة."
 
-  # رسم SVG نقي يوضح تقاطع الحادثة المستعرضة A مع التجزئة التامة متوافق مع الوضعين
-  - raw_html: |
-      <div class='graph' style='text-align: center; margin: 25px 0;'><svg width='500' height='160' viewBox='0 0 500 160' xmlns='http://www.w3.org/2000/svg' style='background: transparent; max-width: 100%;'><style>text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 18px; fill: #ef4444; } .label-bold { font-weight: bold; } .a-circle { stroke: #ef4444; stroke-width: 2.5; fill: none; } .blue-t { fill: #0056b3; } .gray-t { fill: #555555; }</style><rect x='10' y='10' width='480' height='140' rx='6' fill='none' stroke='#888888' stroke-width='1.5' /><line x1='160' y1='10' x2='160' y2='150' stroke='#888888' stroke-width='1' stroke-dasharray='4,4' /><line x1='320' y1='10' x2='320' y2='150' stroke='#888888' stroke-width='1' stroke-dasharray='4,4' /><text x='100' y='32' class='label-bold gray-t'>التجزئة B₁</text><text x='240' y='32' class='label-bold gray-t'>التجزئة B₂</text><text x='400' y='32' class='label-bold gray-t'>التجزئة B₃</text><path d='M 100,80 A 70,50 0 1,0 380,80 A 70,50 0 1,0 100,80' class='a-circle' /><text x='240' y='85' text-anchor='middle' fill='#ef4444' class='label-bold' style='font-size: 15px;'>الحادثة الكلية A</text><text x='160' y='80' fill='#0056b3' style='font-size: 18px;'>A &cap; B₁</text><text x='240' y='125' text-anchor='middle' fill='#0056b3' style='font-size: 18px;'>A &cap; B₂</text><text x='375' y='80' fill='#0056b3' style='font-size: 18px;'>A &cap; B₃</text></svg></div>
-
-  - h3: "3. التطبيقات العكسية: دستور بايز (Bayes' Theorem)"
+  - h3: "3. دستور بايز (الاحتمال الارتدادي)"
+    id: "bayes-theorem"
   - parags:
-      - rtl: "دستور بايز هو آلة حسابية ارتدادية تسير بعكس اتجاه الزمن في شجرة الاحتمالات. يُستخدم عندما تقع النتيجة النهائية $A$ بالفعل، ونريد حساب احتمال أن تكون قد نبعت من مسبب أو فرع محدد $B_k$ (الاحتمال البعدي - Posterior Probability)."
-      - rtl: "• <b>الصياغة الرياضية:</b> يُحسب احتمال المسبب $B_k$ علماً أن النتيجة $A$ محققة عبر كسر صافٍ: نضع احتمال المسار الخاص بالمسبب في البسط، ومجموع كل مسارات الاحتمال الكلي في المقام:"
-      - center: "$P_A(B_k) = \\frac{P(B_k \\cap A)}{P(A)} = \\frac{P(B_k) \\times P_{B_k}(A)}{P(B_1) \\times P_{B_1}(A) + \\dots + P(B_n) \\times P_{B_n}(A)}$"
+      - rtl: "يُستخدم لحساب احتمال مسبب $B_k$ بعد وقوع النتيجة $A$:"
+      - center: "$P_A(B_k) = \\frac{P(B_k \\cap A)}{P(A)} = \\frac{P(B_k) \\times P_{B_k}(A)}{P(A)}$"
+      - rtl: "المقام هو دائماً القيمة التي حسبناها في 'دستور الاحتمالات الكلية'."
+
+  # الرسم التوضيحي للتقاطع مع التجزئة
+  - graph:
+      id: "total-prob-viz"
+      class: "graph-container"
+      xDomain: [0, 3]
+      yDomain: [0, 2]
+      elements:
+        - { type: "line", points: [[1, 0], [1, 2]], color: "gray", strokeDash: "4,4" }
+        - { type: "line", points: [[2, 0], [2, 2]], color: "gray", strokeDash: "4,4" }
+        - { type: "text", content: "B₁", x: 0.5, y: 1 }
+        - { type: "text", content: "B₂", x: 1.5, y: 1 }
+        - { type: "text", content: "B₃", x: 2.5, y: 1 }
+        - { type: "line", points: [[0, 1], [3, 1]], color: "#ef4444", strokeWidth: 3 }
+        - { type: "text", content: "A", x: 0.2, y: 1.2, color: "#ef4444" }
 
   - NB:
-      title: "فائدة:"
+      title: "تنبيه:"
       type: "info"
       NBs:
-        - rtl: "في المسائل النموذجية لامتحانات البكالوريا، تكتشف سؤال بايز فوراً عندما تجد صيغة لغوية ارتدادية مثل: 'علماً أن القطعة المسحوبة معيبة، ما احتمال أن تكون من صنع الآلة الأولى؟'. هنا تدرك مباشرة أنك تسير بعكس فروع الشجرة، والبسط هو حاصل ضرب فروع المسار المستهدف والمقام هو الناتج الكلي الذي حسبته في السؤال السابق."
+        - rtl: "سؤال بايز يُعرف بـ 'الارتداد': إذا أعطيت النتيجة $A$ وسُئلت عن المسبب $B_k$، فاعلم أنك بصدد تطبيق دستور بايز باستخدام القيمة الكلية التي حسبتها مسبقاً."
 ---
