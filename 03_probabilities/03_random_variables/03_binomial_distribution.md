@@ -9,8 +9,8 @@ lessonID: "randVar"
 # روابط الاتصال
 previous_title: "الأمل الرياضي، التباين والانحراف المعياري"
 previous_url: "/statistical_indicators/"
-next_title: "خارطة طريق المتغيرات العشوائية"
-next_url: "/random_variables_hub/"
+next_title: "خارطة طريق الإحصاء ثنائي المتغير"
+next_url: "/statistics_hub/"
 
 elements:
   - h3: "1. اختبار برنولي"
