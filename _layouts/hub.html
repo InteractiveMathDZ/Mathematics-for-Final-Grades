@@ -9,13 +9,26 @@ layout: default
         <h2 class="text-primary fw-bold">{{ page.subtitle }}</h2>
         {% endif %}
         <p class="lead text-muted">{{ page.description }}</p>
-        
-        <div class="d-flex justify-content-center gap-4 mt-4">
+
+        <div class="roadmap-flex-container">
             {% for stat in page.stats %}
-            <div class="stat-card p-3 border rounded shadow-sm bg-light">
-                <div class="h3 fw-bold mb-0">{{ stat.value }}</div>
-                <div class="small text-uppercase text-muted">{{ stat.label }}</div>
-            </div>
+                {% if stat.value contains '،' or stat.label == "الرؤية والأداء" %}
+      
+                    {% assign sub_items = stat.value | split: "،" %}
+                    {% for item in sub_items %}
+                    <div class="roadmap-circle-item">
+                        <span class="circle-content">{{ item | strip }}</span>
+                    </div>
+                    {% endfor %}
+
+                {% else %}
+      
+                    <div class="roadmap-circle-item">
+                        <span class="circle-number">{{ stat.value }}</span>
+                        <p class="circle-text">{{ stat.label }}</p>
+                    </div>
+
+                {% endif %}
             {% endfor %}
         </div>
     </div>
