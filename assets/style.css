@@ -1,20 +1,116 @@
+/* ==========================================================================
+   1. الإعدادات العامة والمتغيرات (Global Settings & Theme Variables)
+   ========================================================================== */
 @media (prefers-color-scheme: dark) {
     :root {
         --bs-body-bg: #121212;
         --bs-body-color: #e0e0e0;
+        
+        /* متغيرات ألوان الدوائر المتمايزة */
+        --bg-card-dark: rgba(30, 41, 59, 0.7);
+        --border-dark: rgba(51, 65, 85, 0.8);
+        --text-white: #ffffff;
+        --text-muted: #cbd5e1;
+        
+        /* الألوان المميزة للتمايز البصري */
+        --accent-blue: #38bdf8;        /* للبيانات الرقمية */
+        --accent-emerald: #34d399;     /* للمفاهيم المتفككة */
+        --accent-amber: #fbbf24;       /* للأهداف والتوجيهات */
+    }
 }
 
+/* إلغاء بياض التركيز العشوائي في النظام */
+:focus {
+    outline: none !important;
+}
 
-/* تنسيق عام للقائمة الجانبية لضمان التباين */
+/* ==========================================================================
+   2. الحاوية والدوائر المتجانسة (Roadmap Circles Component)
+   ========================================================================== */
+/* حاوية الفليكس لترتيب الدوائر أفقياً مع الالتفاف التلقائي */
+.roadmap-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+/* الكلاس المشترك الموحد للأبعاد والهيكل الدائري */
+.roadmap-circle-item {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: var(--bg-card-dark);
+    border: 2px solid var(--border-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-circle-item:hover {
+    transform: translateY(-5px);
+}
+
+.roadmap-circle-item .circle-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-white);
+    line-height: 1.2;
+}
+
+.roadmap-circle-item .circle-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* كلاسات التمايز الثلاثة بناءً على الهدف البرمجي */
+.circle-type-stat {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+}
+.circle-type-stat .circle-number {
+    color: var(--accent-blue);
+}
+
+.circle-type-concept {
+    border-color: var(--accent-emerald);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.15);
+}
+.circle-type-concept .circle-text {
+    color: var(--text-white);
+    font-weight: 500;
+}
+
+.circle-type-objective {
+    border-color: var(--accent-amber);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
+}
+.circle-type-objective .circle-text {
+    color: var(--accent-amber);
+}
+
+/* ==========================================================================
+   3. القائمة الجانبية وعناصر التحكم (Sidebar & List Group)
+   ========================================================================== */
 .offcanvas {
     transition: background-color 0.3s ease;
     background-color: #1e1e1e !important;
     color: #e0e0e0 !important;
 }
 
-/* إزالة الألوان الثابتة من الروابط داخل القائمة */
 .offcanvas .list-group-item a {
-    color: inherit; /* يأخذ لون النص المعتمد في النظام */
+    color: inherit;
 }
      
 .list-group-item {
@@ -23,69 +119,44 @@
     border-color: #333 !important;
 }
 
-/* زر القائمة الجانبية المخصص */
 .btn-sidebar {
     background-color: var(--bs-body-bg);
     color: var(--bs-primary);
     border: 1px solid var(--bs-border-color);
 }
 
+.bi-list-ul {
+    color: #66b2ff !important;
+}
+
+/* معالجة بياض الأزرار النشطة وحالة التفاعل على الموبايل */
+.list-group-item-action:focus, 
+.list-group-item-action:active,
+.list-group-item-action.active {
+    background-color: #2c2c2c !important; 
+    color: #75b5ff !important; 
+    box-shadow: none !important;
+}
+
+@media (hover: none) {
+    .list-group-item-action:hover {
+        background-color: #1e1e1e !important;
+    }
+}
+
+/* ==========================================================================
+   4. مكونات بطاقات الدروس والأسئلة (Lesson Cards & Questions)
+   ========================================================================== */
 .lesson-card {
     background: #1e1e1e !important;
-    border-right-color: #3d8bfd !important;
-    border-radius:2 25px;
+    border-radius: 25px;
     padding: 25px;
     margin-bottom: 25px;
-    borborder-right: 8px solid #0d6efd;
+    border-right: 8px solid #0d6efd;
     color: #e0e0e0 !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
-
-/* تنسيق الرياضيات العالمي (يسار إلى يمين) */
-.math-block { 
-    direction: ltr; 
-    background: #252525 !important; 
-    padding: 20px; 
-    border: 1px solid #333 !important;
-    border-radius: 8px; 
-    margin: 15px 0; 
-    text-align: center; 
-    color: #75b5ff !important;
-    font-size: 1.3rem; 
-    
-    /* التعديل الجذري لمنع الخروج */
-    display: block;          /* إجبار العنصر على التصرف ككتلة مستقلة */
-    width: 100%;            /* ملء المساحة المتاحة فقط */
-    max-width: 100%;        /* منع تجاوزه للمساحة المتاحة بأي شكل */
-    overflow-x: auto !important; /* فرض السحاب قسرياً */
-    white-space: nowrap; 
-    box-sizing: border-box; /* حساب الحواف والـ padding ضمن العرض الكلي دون زيادة */
-    unicode-bidi: isolate;
-}
-
-
-/* تحسين مظهر شريط التمرير ليكون ناعماً */
-.math-block::-webkit-scrollbar {
-    height: 6px;
-}
-.math-block::-webkit-scrollbar-thumb {
-    background: #0d6efd;
-    border-radius: 10px;
-}
-
-/* جعل الشريط مرئياً دائماً في متصفحات Chrome و Safari */
-.math-block::-webkit-scrollbar {
-    height: 8px; /* سمك الشريط */
-    display: block !important;
-}
-
-.math-block::-webkit-scrollbar-track {
-    background: #e9ecef; /* لون خلفية المجرى */
-    border-radius: 10px;
-}
-
-/* تسميات الأسئلة */
 .question-label {
     font-weight: bold;
     display: block;
@@ -93,68 +164,19 @@
     font-size: 1.1rem;
 }
 
-/* أزرار التنقل السفلية */
-.nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.btn-next { 
-    background-color: #198754; 
-    color: white; flex: 1; 
-    font-weight: bold; 
-    padding: 12px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    text-align: center; 
-}
-
-.btn-back { 
-    background-color: #6c757d; 
-    color: white; 
-    flex: 1; 
-    font-weight: bold; 
-    padding: 12px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    text-align: center; 
-}
-
-.math-wrapper {
-    direction: ltr !important; 
-    padding: 15px; 
-    border-radius: 8px; 
-    margin: 15px 0; 
-    overflow-x: auto; 
-    -webkit-overflow-scrolling: touch;
-}
-
 .choices {
-    direction:"ltr"; 
-    margin-left:30px;
+    direction: ltr; 
+    margin-left: 30px;
 }
 
-.equation-line{
-    margin-right:30px;
+.equation-line {
+    margin-right: 30px;
 }
 
-.bi-list-ul {
-    color: #66b2ff !important;
-}
-
-/* تحسينات الشاشات الصغيرة (الهواتف) */
-@media (max-width: 600px) {
-    .lesson-card { padding: 15px; }
-    .nav-buttons { flex-direction: column; }
-    .math-block { font-size: 1.1rem; }
-}
-
-/* S'applique uniquement si le parent .choices est explicitement en RTL */
+/* معالجة خيارات الأسئلة المتعددة المتوافقة مع اتجاه الـ RTL */
 .choices[dir="rtl"] .form-check {
     display: flex !important;
-    flex-direction: row; /* En RTL, le premier élément du flux est à droite */
+    flex-direction: row; 
     align-items: center;
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -167,7 +189,6 @@
     margin: 0 !important;
     float: none !important;
     flex-shrink: 0;
-    /* Ajustement pour l'alignement avec les formules mathématiques */
     width: 1.15em;
     height: 1.15em;
 }
@@ -175,66 +196,60 @@
 .choices[dir="rtl"] .form-check-label {
     margin: 0;
     cursor: pointer;
-    /* Assure que le texte ne revient pas à gauche si la ligne est courte */
     width: 100%; 
 }
 
-
-/* تنسيق الجداول لتسهيل القراءة */
-table {
-    border-radius: 8px;
-    overflow: hidden; /* لمنع الزوايا الحادة */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* ظل خفيف لإعطاء عمق */
+/* ==========================================================================
+   5. الكتل الرياضية والرسوم البيانية (Math Blocks & Graphics)
+   ========================================================================== */
+.math-block { 
+    direction: ltr; 
+    background: #252525 !important; 
+    padding: 20px; 
+    border: 1px solid #333 !important;
+    border-radius: 8px; 
+    margin: 15px 0; 
+    text-align: center; 
+    color: #75b5ff !important;
+    font-size: 1.3rem; 
+    display: block;          
+    width: 100%;            
+    max-width: 100%;        
+    overflow-x: auto !important; 
+    white-space: nowrap; 
+    box-sizing: border-box; 
+    unicode-bidi: isolate;
 }
 
-table th {
-    background-color: #2c3e50 !important; /* لون داكن احترافي */
-    color: #0fffff !important;           /* نص أبيض واضح */
-    text-align: center;
-    padding: 12px !important;
-    border: none !important;
+.math-wrapper {
+    direction: ltr !important; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin: 15px 0; 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
 }
 
-table td {
-    vertical-align: middle;
-    text-align: center;
-    padding: 10px !important;
+/* شريط التمرير للكتل الرياضية */
+.math-block::-webkit-scrollbar {
+    height: 8px;
+    display: block !important;
+}
+.math-block::-webkit-scrollbar-thumb {
+    background: #0d6efd;
+    border-radius: 10px;
+}
+.math-block::-webkit-scrollbar-track {
+    background: #1e1e1e; /* تعديل الخلفية لتناسب النمط المظلم */
+    border-radius: 10px;
 }
 
-/* تلوين الصفوف الفردية بلون خفيف جداً */
-table tbody tr:nth-child(odd) {
-    background-color: #0cfcfc;
-}
-
-/* تمييز عند مرور الفأرة */
-table tbody tr:hover {
-    background-color: #01f4f9;
-}
-
-
-
-    /* حل مشكلة البياض التام عند الضغط أو العودة */
-.list-group-item-action:focus, 
-.list-group-item-action:active,
-.list-group-item-action.active {
-    /* نغير الخلفية للون داكن صريح بدلاً من الشفافية */
-    background-color: #2c2c2c !important; 
-    /* نضمن أن لون النص يظل رمادي فاتح أو أزرق */
-    color: #75b5ff !important; 
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-/* لمنع الـ Sticky Hover على الموبايل (الذي يسبب بقاء البياض) */
-@media (hover: none) {
-    .list-group-item-action:hover {
-        background-color: #1e1e1e !important;
-    }
-}
-
-/* تأكيد إضافي لكل العناصر التي قد تحمل حالة التركيز */
-:focus {
-    outline: none !important;
+/* النصوص الرياضية والرسومات */
+.math-label {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.5); /* تم توحيدها لتناسب الوضع الداكن الافتراضي للمنصة */
+    padding: 2px;
 }
 
 .graph-container {
@@ -246,25 +261,77 @@ table tbody tr:hover {
     border: 1px solid rgba(128, 128, 128, 0.2);
 }
 
-/* نمط النصوص الرياضية ليظهر كسبورة احترافية */
-.math-label {
-    font-family: 'Times New Roman', serif;
-    font-style: italic;
-    background: rgba(255, 255, 255, 0.7); /* خلفية خفيفة للنص في اللايت مود */
-    padding: 2px;
+/* ==========================================================================
+   6. الجداول المصفاة (Tables Layout)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
 }
 
-[data-bs-theme='dark'] .math-label {
-    background: rgba(0, 0, 0, 0.5);
+table th {
+    background-color: #1e293b !important; /* لون كحلي داكن متناسق مع النمط الليلي */
+    color: #38bdf8 !important;           /* نص أزرق سماوي مضيء */
+    text-align: center;
+    padding: 12px !important;
+    border: 1px solid #334155 !important;
 }
 
+table td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px !important;
+    color: #cbd5e1;
+    border: 1px solid #334155 !important;
+}
 
+/* تأثير التناوب والمرور متوافق مع العتمة وليس فوسفورياً */
+table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
 
+table tbody tr:hover {
+    background-color: rgba(56, 189, 248, 0.08); /* وهج أزرق خفيف عند المرور */
+}
 
+/* ==========================================================================
+   7. أزرار التنقل السفلية وشاشات الهواتف (Navigation & Responsiveness)
+   ========================================================================== */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
 
+.btn-next, .btn-back { 
+    flex: 1; 
+    font-weight: bold; 
+    padding: 12px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    text-align: center; 
+    color: white;
+}
 
+.btn-next { background-color: #198754; }
+.btn-back { background-color: #6c757d; }
 
-
-
-/**/
-
+/* تحسينات الموبايل الشاملة */
+@media (max-width: 600px) {
+    .lesson-card { padding: 15px; }
+    .nav-buttons { flex-direction: column; }
+    .math-block { font-size: 1.1rem; }
+    
+    /* تصغير حجم الدوائر قليلاً على الموبايل لكي تصطف بشكل ممتاز */
+    .roadmap-circle-item {
+        width: 140px;
+        height: 140px;
+        padding: 10px;
+    }
+    .roadmap-circle-item .circle-number { font-size: 1.5rem; }
+    .roadmap-circle-item .circle-text { font-size: 0.75rem; }
+}
