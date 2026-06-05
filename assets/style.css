@@ -1,22 +1,36 @@
 /* ==========================================================================
-   1. الإعدادات العامة والمتغيرات (Global Settings & Theme Variables)
+   1. الإعدادات العامة والمتغيرات الديناميكية (Global Settings & Themes)
    ========================================================================== */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bs-body-bg: #121212;
-        --bs-body-color: #e0e0e0;
-        
-        /* متغيرات ألوان الدوائر المتمايزة */
-        --bg-card-dark: rgba(30, 41, 59, 0.7);
-        --border-dark: rgba(51, 65, 85, 0.8);
-        --text-white: #ffffff;
-        --text-muted: #cbd5e1;
-        
-        /* الألوان المميزة للتمايز البصري */
-        --accent-blue: #38bdf8;        /* للبيانات الرقمية */
-        --accent-emerald: #34d399;     /* للمفاهيم المتفككة */
-        --accent-amber: #fbbf24;       /* للأهداف والتوجيهات */
-    }
+
+/* الوضع الافتراضي أو النمط الفاتح (Light Mode) */
+:root {
+    /* ألوان الدوائر في النمط الفاتح متناسقة مع بياض الخلفية */
+    --bg-card-circle: #f8fafc;
+    --border-circle: #e2e8f0;
+    --text-circle-main: #1e293b;
+    --text-circle-muted: #64748b;
+    
+    /* ألوان التمايز البصري للوضع الفاتح (داكنة لضمان التباين والقراءة) */
+    --accent-blue: #0284c7;        
+    --accent-emerald: #059669;     
+    --accent-amber: #d97706;       
+}
+
+/* النمط المظلم البرمجي (Dark Mode - يتم تفعيله عبر سمة بوتستراب) */
+[data-bs-theme='dark'] {
+    --bs-body-bg: #121212;
+    --bs-body-color: #e0e0e0;
+    
+    /* ألوان الدوائر الليليّة */
+    --bg-card-circle: rgba(30, 41, 59, 0.7);
+    --border-circle: rgba(51, 65, 85, 0.8);
+    --text-circle-main: #ffffff;
+    --text-circle-muted: #cbd5e1;
+    
+    /* ألوان التمايز البصري المضيئة للوضع الداكن */
+    --accent-blue: #38bdf8;        /* للبيانات الرقمية الإحصائية */
+    --accent-emerald: #34d399;     /* للمفاهيم المتفككة بناءً على الفاصلة */
+    --accent-amber: #fbbf24;       /* للأهداف والتوجيهات */
 }
 
 /* إلغاء بياض التركيز العشوائي في النظام */
@@ -27,7 +41,7 @@
 /* ==========================================================================
    2. الحاوية والدوائر المتجانسة (Roadmap Circles Component)
    ========================================================================== */
-/* حاوية الفليكس لترتيب الدوائر أفقياً مع الالتفاف التلقائي */
+/* حاوية الفليكس لترتيب الدوائر كسطر مع التفاف تلقائي مرن */
 .roadmap-flex-container {
     display: flex;
     flex-direction: row;
@@ -39,13 +53,13 @@
     width: 100%;
 }
 
-/* الكلاس المشترك الموحد للأبعاد والهيكل الدائري */
+/* الكلاس المشترك الموحد للأبعاد والهيكل الهندسي الدائري */
 .roadmap-circle-item {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background-color: var(--bg-card-dark);
-    border: 2px solid var(--border-dark);
+    background-color: var(--bg-card-circle);
+    border: 2px solid var(--border-circle);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,18 +77,18 @@
 .roadmap-circle-item .circle-number {
     font-size: 1.8rem;
     font-weight: bold;
-    color: var(--text-white);
+    color: var(--text-circle-main);
     line-height: 1.2;
 }
 
 .roadmap-circle-item .circle-text {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--text-circle-muted);
     margin-top: 4px;
     line-height: 1.4;
 }
 
-/* كلاسات التمايز الثلاثة بناءً على الهدف البرمجي */
+/* كلاسات التمايز الثلاثة للدوائر */
 .circle-type-stat {
     border-color: var(--accent-blue);
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
@@ -88,7 +102,7 @@
     box-shadow: 0 0 10px rgba(52, 211, 153, 0.15);
 }
 .circle-type-concept .circle-text {
-    color: var(--text-white);
+    color: var(--text-circle-main);
     font-weight: 500;
 }
 
@@ -103,7 +117,8 @@
 /* ==========================================================================
    3. القائمة الجانبية وعناصر التحكم (Sidebar & List Group)
    ========================================================================== */
-.offcanvas {
+/* تخصيص مظهر الأكورديون والقوائم ليعمل بالتناسق مع النمطين */
+[data-bs-theme='dark'] .offcanvas {
     transition: background-color 0.3s ease;
     background-color: #1e1e1e !important;
     color: #e0e0e0 !important;
@@ -113,7 +128,7 @@
     color: inherit;
 }
      
-.list-group-item {
+[data-bs-theme='dark'] .list-group-item {
     background-color: #1e1e1e !important;
     color: #e0e0e0 !important;
     border-color: #333 !important;
@@ -129,7 +144,7 @@
     color: #66b2ff !important;
 }
 
-/* معالجة بياض الأزرار النشطة وحالة التفاعل على الموبايل */
+/* معالجة بياض الأزرار النشطة وحالة التركيز على الهواتف */
 .list-group-item-action:focus, 
 .list-group-item-action:active,
 .list-group-item-action.active {
@@ -139,7 +154,7 @@
 }
 
 @media (hover: none) {
-    .list-group-item-action:hover {
+    [data-bs-theme='dark'] .list-group-item-action:hover {
         background-color: #1e1e1e !important;
     }
 }
@@ -147,7 +162,7 @@
 /* ==========================================================================
    4. مكونات بطاقات الدروس والأسئلة (Lesson Cards & Questions)
    ========================================================================== */
-.lesson-card {
+[data-bs-theme='dark'] .lesson-card {
     background: #1e1e1e !important;
     border-radius: 25px;
     padding: 25px;
@@ -173,7 +188,7 @@
     margin-right: 30px;
 }
 
-/* معالجة خيارات الأسئلة المتعددة المتوافقة مع اتجاه الـ RTL */
+/* معالجة خيارات الأسئلة المتعددة المتوافقة مع اتجاه الـ RTL وعرض المعادلات */
 .choices[dir="rtl"] .form-check {
     display: flex !important;
     flex-direction: row; 
@@ -230,7 +245,7 @@
     -webkit-overflow-scrolling: touch;
 }
 
-/* شريط التمرير للكتل الرياضية */
+/* شريط التمرير للكتل الرياضية لمنع الخروج عن الإطار */
 .math-block::-webkit-scrollbar {
     height: 8px;
     display: block !important;
@@ -239,8 +254,8 @@
     background: #0d6efd;
     border-radius: 10px;
 }
-.math-block::-webkit-scrollbar-track {
-    background: #1e1e1e; /* تعديل الخلفية لتناسب النمط المظلم */
+[data-bs-theme='dark'] .math-block::-webkit-scrollbar-track {
+    background: #1e1e1e; 
     border-radius: 10px;
 }
 
@@ -248,8 +263,10 @@
 .math-label {
     font-family: 'Times New Roman', serif;
     font-style: italic;
-    background: rgba(0, 0, 0, 0.5); /* تم توحيدها لتناسب الوضع الداكن الافتراضي للمنصة */
     padding: 2px;
+}
+[data-bs-theme='dark'] .math-label {
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 .graph-container {
@@ -262,25 +279,29 @@
 }
 
 /* ==========================================================================
-   6. الجداول المصفاة (Tables Layout)
+   6. الجداول المصفاة (Dynamic Tables Layout)
    ========================================================================== */
 table {
     width: 100%;
     border-radius: 8px;
     overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
 }
 
-table th {
-    background-color: #1e293b !important; /* لون كحلي داكن متناسق مع النمط الليلي */
-    color: #38bdf8 !important;           /* نص أزرق سماوي مضيء */
+[data-bs-theme='dark'] table {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme='dark'] table th {
+    background-color: #1e293b !important; 
+    color: #38bdf8 !important;           
     text-align: center;
     padding: 12px !important;
     border: 1px solid #334155 !important;
 }
 
-table td {
+[data-bs-theme='dark'] table td {
     vertical-align: middle;
     text-align: center;
     padding: 10px !important;
@@ -288,13 +309,12 @@ table td {
     border: 1px solid #334155 !important;
 }
 
-/* تأثير التناوب والمرور متوافق مع العتمة وليس فوسفورياً */
-table tbody tr:nth-child(odd) {
+/* تأثير التناوب اللوني والمرور الهادئ المناسب للعتمة */
+[data-bs-theme='dark'] table tbody tr:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.02);
 }
-
-table tbody tr:hover {
-    background-color: rgba(56, 189, 248, 0.08); /* وهج أزرق خفيف عند المرور */
+[data-bs-theme='dark'] table tbody tr:hover {
+    background-color: rgba(56, 189, 248, 0.08); 
 }
 
 /* ==========================================================================
@@ -320,13 +340,13 @@ table tbody tr:hover {
 .btn-next { background-color: #198754; }
 .btn-back { background-color: #6c757d; }
 
-/* تحسينات الموبايل الشاملة */
+/* تحسينات الموبايل الشاملة والتعديل على أبعاد الدوائر لضبط الاستجابة */
 @media (max-width: 600px) {
-    .lesson-card { padding: 15px; }
+    [data-bs-theme='dark'] .lesson-card { padding: 15px; }
     .nav-buttons { flex-direction: column; }
     .math-block { font-size: 1.1rem; }
     
-    /* تصغير حجم الدوائر قليلاً على الموبايل لكي تصطف بشكل ممتاز */
+    /* تقليص حجم الدوائر بمرونة على شاشات الهواتف لتصطف بشكل متوازن */
     .roadmap-circle-item {
         width: 140px;
         height: 140px;
