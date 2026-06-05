@@ -6,7 +6,7 @@ permalink: /limits_hub/
 mathJax: true
 description: "الدليل التحليلي الشامل للانتقال من القراءة البيانية للنهاية إلى إتقان طرق إزالة حالات عدم التعيين والتفسير الهندسي للمستقيمات المقاربة."
 
-mind_map:
+min_map:
   nodes:
     - type: "stat"
       value: "5"
