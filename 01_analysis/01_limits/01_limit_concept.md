@@ -34,7 +34,7 @@ elements:
           - td: "0.99"
           - td: "0.999"
           - td: "$\\to 1$"
-        - - th: "<span dir="rtl">الصور بواسطة $f(x)$</span>"
+        - - th: "<span dir='rtl'>الصور بواسطة $f(x)$</span>"
           - td: "1.9"
           - td: "1.99"
           - td: "1.999"
