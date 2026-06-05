@@ -10,27 +10,7 @@ layout: default
         {% endif %}
         <p class="lead text-muted">{{ page.description }}</p>
 
-        <div class="roadmap-flex-container">
-            {% for stat in page.stats %}
-                {% if stat.value contains '،' or stat.label == "الرؤية والأداء" %}
-            
-                    {% assign sub_items = stat.value | split: "،" %}
-                    {% for item in sub_items %}
-                        <div class="roadmap-circle-item circle-type-concept">
-                            <p class="circle-text">{{ item | strip }}</p>
-                        </div>
-                    {% endfor %}
-
-                {% else %}
-            
-                    <div class="roadmap-circle-item circle-type-stat">
-                       <span class="circle-number">{{ stat.value }}</span>
-                       <p class="circle-text">{{ stat.label }}</p>
-                    </div>
-
-                {% endif %}
-            {% endfor %}
-        </div>
+        {% include mindmap-engine.html %}
 
     </div>
 
