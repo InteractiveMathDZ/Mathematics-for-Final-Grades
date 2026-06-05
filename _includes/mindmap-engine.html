@@ -1,0 +1,99 @@
+{% if page.mind_map %}
+<div class="mindmap-engine-wrapper" style="margin: 45px auto; max-width: 950px; padding: 20px; box-sizing: border-box;">
+    
+    <div class="text-center mb-4" style="unicode-bidi: isolate;">
+        <h2 style="color: var(--accent-blue); font-weight: bold; margin-bottom: 8px;">{{ page.mind_map.title }}</h2>
+        <p class="text-muted" style="font-size: 0.95rem;">{{ page.mind_map.subtitle }}</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%" style="display: block; overflow: visible;">
+        
+        <style>
+            .map-board-bg { fill: transparent; }
+            .connector-branch { fill: none; stroke-width: 2.5; stroke-dasharray: 6,6; transition: stroke 0.3s ease; }
+            .line-blue { stroke: #0284c7; }
+            .line-emerald { stroke: #059669; }
+            .line-amber { stroke: #d97706; }
+            
+            .map-node rect { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2; transition: all 0.3s ease; }
+            .node-text-item { font-size: 0.85rem; fill: #1e293b; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+            .node-stat-number { font-size: 1.9rem; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .node-stat-label { font-size: 0.85rem; fill: #64748b; text-anchor: middle; }
+
+            /* تحولات الأنماط الليليّة البرمجية الصارمة */
+            [data-bs-theme='dark'] .line-blue { stroke: #38bdf8; }
+            [data-bs-theme='dark'] .line-emerald { stroke: #34d399; }
+            [data-bs-theme='dark'] .line-amber { stroke: #fbbf24; }
+            [data-bs-theme='dark'] .map-node rect { fill: rgba(30, 41, 59, 0.85); stroke: rgba(51, 65, 85, 0.9); }
+            [data-bs-theme='dark'] .node-text-item { fill: #ffffff; }
+            [data-bs-theme='dark'] .node-stat-number { fill: #ffffff; }
+            [data-bs-theme='dark'] .node-stat-label { fill: #cbd5e1; }
+            
+            /* تأثير الارتداد التفاعلي اللطيف عند مرور مؤشر الفأرة */
+            .map-node:hover rect { transform: scale(1.03); cursor: pointer; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+            .map-core-hub rect { fill: #0d6efd; filter: drop-shadow(0 4px 12px rgba(13,110,253,0.3)); }
+            .core-hub-text { fill: #ffffff; font-size: 1.05rem; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
+        </style>
+        
+        <rect width="100%" height="100%" rx="20" class="map-board-bg" />
+
+        {% assign nodes = page.mind_map.nodes %}
+        {% assign nodes_count = nodes | size %}
+
+        {% for node in nodes %}
+            {% assign step_y = 520 | divided_by: nodes_count %}
+            {% assign pos_y = forloop.index0 | times: step_y | plus: 80 %}
+            
+            {% assign modulo = forloop.index | modulus: 2 %}
+            {% if modulo == 0 %}
+                {% assign pos_x = 760 %}
+                {% assign ctrl_x = 630 %}
+                {% assign text_anchor_type = "start" %}
+            {% else %}
+                {% assign pos_x = 240 %}
+                {% assign ctrl_x = 370 %}
+                {% assign text_anchor_type = "end" %}
+            {% endif %}
+
+            {% if node.type == "concept" or node.value contains "،" %}
+                {% assign sub_items = node.value | split: "،" %}
+                {% assign sub_count = sub_items | size %}
+                
+                {% for item in sub_items %}
+                    {% assign sub_offset = forloop.index0 | times: 50 %}
+                    {% assign current_y = pos_y | plus: sub_offset | minus: 25 %}
+                    
+                    <path d="M 500 310 Q {{ ctrl_x }} {{ current_y }} {{ pos_x }} {{ current_y }}" class="connector-branch line-{{ node.color }}" />
+                    
+                    <g class="map-node node-concept" transform="translate({{ pos_x }}, {{ current_y }})">
+                        {% if modulo == 0 %}
+                            <rect x="-20" y="-22" width="220" height="44" rx="10" />
+                            <text x="90" y="2" class="node-text-item">{{ item | strip }}</text>
+                        {% else %}
+                            <rect x="-200" y="-22" width="220" height="44" rx="10" />
+                            <text x="-90" y="2" class="node-text-item">{{ item | strip }}</text>
+                        {% endif %}
+                    </g>
+                {% endfor %}
+
+            {% else %}
+                
+                <path d="M 500 310 L {{ pos_x }} {{ pos_y }}" class="connector-branch line-{{ node.color }}" />
+                
+                <g class="map-node node-stat" transform="translate({{ pos_x }}, {{ pos_y }})">
+                    <rect x="-70" y="-45" width="140" height="90" rx="15" />
+                    <text x="0" y="-10" class="node-stat-number">{{ node.value }}</text>
+                    <text x="0" y="22" class="node-stat-label">{{ node.label }}</text>
+                </g>
+
+            {% endif %}
+        {% endfor %}
+
+        <g class="map-core-hub" transform="translate(500, 310)">
+            <rect x="-95" y="-30" width="190" height="60" rx="30" />
+            <text x="0" y="2" class="core-hub-text">رؤية توجيهية</text>
+        </g>
+
+    </svg>
+</div>
+{% endif %}
