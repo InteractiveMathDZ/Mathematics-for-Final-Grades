@@ -1,127 +1,164 @@
 {% if page.mind_map %}
-{% assign nodes = page.mind_map.nodes %}
-{% assign nodes_count = nodes | size %}
-
-{% if nodes_count > 0 %}
-    {% if nodes_count <= 2 %}
-        {% assign node_width = 320 %}
-        {% assign node_height = 65 %}
-        {% assign font_size_main = "1.1rem" %}
-        {% assign font_size_stat = "2.5rem" %}
-        {% assign step_y = 150 %}
-    {% elsif nodes_count <= 5 %}
-        {% assign node_width = 250 %}
-        {% assign node_height = 55 %}
-        {% assign font_size_main = "0.95rem" %}
-        {% assign font_size_stat = "2.1rem" %}
-        {% assign step_y = 135 %}
-    {% else %}
-        {% assign node_width = 200 %}
-        {% assign node_height = 46 %}
-        {% assign font_size_main = "0.85rem" %}
-        {% assign font_size_stat = "1.8rem" %}
-        {% assign step_y = 120 %}
-    {% endif %}
-
-    {% assign last_node_index = nodes_count | minus: 1 %}
-    {% assign calculated_height = last_node_index | times: step_y | plus: 250 %}
-{% else %}
-    {% assign calculated_height = 300 %}
-{% endif %}
-
-<div class="mindmap-engine-outer" style="margin: 20px auto; max-width: 100%; width: 100%; padding: 5px; box-sizing: border-box; display: flex; justify-content: center; align-items: center; direction: ltr;">
+<div class="mindmap-hybrid-container" style="margin: 10px auto 25px auto; max-width: 100%; width: 100%; padding: 0 10px; box-sizing: border-box; direction: rtl;">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 {{ calculated_height }}" width="100%" height="{{ calculated_height }}" style="display: block; overflow: visible; margin: 0 auto;">
+    <style>
+        /* هندسة الشجرة النورونية المرتكزة يميناً */
+        .mindmap-tree-wrapper {
+            position: relative;
+            padding-right: 35px; /* مسافة حجز العمود الفقري الشاقولي في اليمين تماماً */
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* الفراغ المنظم والثابت بين الأسطر والمحطات المتتالية */
+            width: 100%;
+        }
+
+        /* [Ligne centrée] العمود الفقري الشاقولي ممتد في الجهة اليمنى بدقة متناهية */
+        .mindmap-tree-wrapper::before {
+            content: "";
+            position: absolute;
+            right: 15px;
+            top: 25px;
+            bottom: 20px;
+            width: 2.5px;
+            background-image: linear-gradient(to bottom, #64748b 50%, transparent 50%);
+            background-size: 2px 8px; /* تأثير الخط المقطع الرصين */
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        /* هندسة المحطة التفرعية */
+        .tree-branch-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* الغصن الأفقي القصير الناعم الواصل بين العمود والكبسولة */
+        .tree-branch-item::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            width: 20px;
+            height: 2px;
+            z-index: 1;
+        }
         
-        <style>
-            .map-spine-line { stroke: #64748b; stroke-width: 2.5; stroke-dasharray: 4,4; opacity: 0.5; }
-            .connector-branch { fill: none; stroke-width: 2.5; transition: stroke 0.3s ease; }
-            
-            /* ألوان الفروع النورونية المتمايزة تبعا للوضع الفاتح */
-            .line-blue { stroke: #0284c7; }
-            .line-emerald { stroke: #059669; }
-            .line-amber { stroke: #d97706; }
-            
-            /* هندسة الكبسولات المؤطرة بالفراغ السلبي المتزن */
-            .map-node rect { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2; transition: transform 0.2s ease, filter 0.2s ease; }
-            .node-text-item { fill: #1e293b; font-weight: bold; text-anchor: middle; dominant-baseline: middle; font-family: system-ui, -apple-system, sans-serif; }
-            .node-stat-number { font-weight: 900; fill: #1e293b; text-anchor: middle; dominant-baseline: middle; }
-            .node-stat-label { font-size: 0.85rem; font-weight: bold; fill: #64748b; text-anchor: middle; }
+        /* تمايز ألوان الأغصان النورونية تبعا للإدخال */
+        .branch-blue::after { background-color: #0284c7; }
+        .branch-emerald::after { background-color: #059669; }
+        .branch-amber::after { background-color: #d97706; }
 
-            /* القواعد الصارمة للتوافق مع النمط المظلم (Dark Theme Bootstrap) */
-            [data-bs-theme='dark'] .map-spine-line { stroke: #475569; opacity: 0.7; }
-            [data-bs-theme='dark'] .line-blue { stroke: #38bdf8; }
-            [data-bs-theme='dark'] .line-emerald { stroke: #34d399; }
-            [data-bs-theme='dark'] .line-amber { stroke: #fbbf24; }
-            [data-bs-theme='dark'] .map-node rect { fill: #1e293b; stroke: #334155; }
-            [data-bs-theme='dark'] .node-text-item { fill: #ffffff; }
-            [data-bs-theme='dark'] .node-stat-number { fill: #ffffff; }
-            [data-bs-theme='dark'] .node-stat-label { fill: #cbd5e1; }
-            
-            /* تفاعل الحوم المرن */
-            .map-node:hover rect { transform: scale(1.02); cursor: pointer; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
-            .map-core-node rect { fill: #0d6efd; filter: drop-shadow(0 4px 12px rgba(13,110,253,0.35)); }
-            .core-node-text { fill: #ffffff; font-size: 1.1rem; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
-        </style>
+        /* النواة العليا أو المحطة القائدة للرؤية التوجيهية */
+        .tree-master-hub {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0d6efd;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(13,110,253,0.3);
+            margin-right: -20px;
+            position: relative;
+            z-index: 2;
+            width: fit-content;
+        }
+
+        /* الهندسة المرنة والمستدامة للمربعات والكبسولات الجانبية */
+        .tree-node-box {
+            display: inline-block;
+            width: auto;
+            max-width: 90%; /* تترك مساحة أمان يسار شاشة الهاتف */
+            min-width: 140px;
+            background-color: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 12px 16px;
+            box-sizing: border-box;
+            z-index: 2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* حرية انسياب النصوص داخل المربعات وتعدد الأسطر الفطري */
+        .node-box-content {
+            color: #1e293b;
+            font-size: 0.98rem;
+            font-weight: bold;
+            line-height: 1.5;
+            text-align: right;
+            word-wrap: break-word;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* بنية كبسولات الإحصاء الرقمية الموزونة */
+        .stat-box-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .stat-box-number {
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: #1e293b;
+            line-height: 1;
+        }
+        .stat-box-label {
+            font-size: 0.88rem;
+            color: #64748b;
+            font-weight: bold;
+        }
+
+        /* القواعد الصارمة والاتزان التام للوضع المظلم البوتسترابي */
+        [data-bs-theme='dark'] .mindmap-tree-wrapper::before { background-image: linear-gradient(to bottom, #475569 50%, transparent 50%); opacity: 0.8; }
+        [data-bs-theme='dark'] .tree-node-box { background-color: #1e293b; border-color: #334155; }
+        [data-bs-theme='dark'] .node-box-content { color: #ffffff; }
+        [data-bs-theme='dark'] .stat-box-number { color: #ffffff; }
+        [data-bs-theme='dark'] .stat-box-label { color: #cbd5e1; }
+        [data-bs-theme='dark'] .branch-blue::after { background-color: #38bdf8; }
+        [data-bs-theme='dark'] .branch-emerald::after { background-color: #34d399; }
+        [data-bs-theme='dark'] .branch-amber::after { background-color: #fbbf24; }
+
+        .tree-node-box:hover { transform: scale(1.015); box-shadow: 0 4px 10px rgba(0,0,0,0.12); cursor: pointer; }
+    </style>
+
+    <div class="mindmap-tree-wrapper">
         
-        <rect width="100%" height="100%" fill="none" />
+        <div class="tree-master-hub-wrapper" style="width: 100%; text-align: right; margin-bottom: 5px;">
+            <div class="tree-master-hub">رؤية توجيهية</div>
+        </div>
 
-        {% assign spine_end_y = calculated_height | minus: 60 %}
-        <line x1="450" y1="50" x2="450" y2="{{ spine_end_y }}" class="map-spine-line" />
-
-        <g class="map-core-node" transform="translate(450, 50)">
-            <rect x="-90" y="-25" width="180" height="50" rx="25" />
-            <text x="0" y="2" class="core-node-text">رؤية توجيهية</text>
-        </g>
-
-        {% for node in nodes %}
+        {% for node in page.mind_map.nodes %}
             
-            {% assign current_node_y = forloop.index0 | times: step_y | plus: 150 %}
-            
-            {% assign modulo = forloop.index | modulus: 2 %}
-            {% if modulo == 0 %}
-                {% assign start_x = 450 %}
-                {% assign end_x = 450 | plus: 50 %}
-                {% assign node_x_position = end_x %}
-                {% assign ctrl_x = start_x | plus: 25 %}
-            {% else %}
-                {% assign start_x = 450 %}
-                {% assign end_x = 450 | minus: 50 %}
-                {% assign node_x_position = end_x | minus: node_width %}
-                {% assign ctrl_x = start_x | minus: 25 %}
-            {% endif %}
-
             {% if node.type == "concept" or node.value contains "،" %}
                 {% assign sub_items = node.value | split: "،" %}
-                
                 {% for item in sub_items %}
-                    {% assign sub_offset_y = forloop.index0 | times: 52 %}
-                    {% assign branch_y = current_node_y | plus: sub_offset_y %}
-                    
-                    <path d="M {{ start_x }} {{ branch_y }} C {{ ctrl_x }} {{ branch_y }} {{ ctrl_x }} {{ branch_y }} {{ end_x }} {{ branch_y }}" class="connector-branch line-{{ node.color }}" />
-                    
-                    <g class="map-node node-concept" transform="translate({{ node_x_position }}, {{ branch_y }})">
-                        <rect x="0" y="-22" width="{{ node_width }}" height="{{ node_height }}" rx="12" />
-                        <text x="{{ node_width | divided_by: 2 }}" y="2" class="node-text-item" style="font-size: {{ font_size_main }};">{{ item | strip }}</text>
-                    </g>
+                    <div class="tree-branch-item branch-{{ node.color }}">
+                        <div class="tree-node-box">
+                            <div class="node-box-content">
+                                {{ item | strip }}
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
 
             {% else %}
                 
-                <path d="M {{ start_x }} {{ current_node_y }} C {{ ctrl_x }} {{ current_node_y }} {{ ctrl_x }} {{ current_node_y }} {{ end_x }} {{ current_node_y }}" class="connector-branch line-{{ node.color }}" />
-                
-                <g class="map-node node-stat" transform="translate({{ node_x_position }}, {{ current_node_y }})">
-                    {% assign stat_box_height = node_height | plus: 30 %}
-                    <rect x="0" y="-35" width="{{ node_width }}" height="{{ stat_box_height }}" rx="16" />
-                    
-                    {% assign text_center_x = node_width | divided_by: 2 %}
-                    <text x="{{ text_center_x }}" y="-8" class="node-stat-number" style="font-size: {{ font_size_stat }};">{{ node.value }}</text>
-                    <text x="{{ text_center_x }}" y="22" class="node-stat-label" style="font-size: {{ font_size_main }};">{{ node.label }}</text>
-                </g>
+                <div class="tree-branch-item branch-{{ node.color }}">
+                    <div class="tree-node-box">
+                        <div class="node-box-content stat-box-layout">
+                            <span class="stat-box-number">{{ node.value }}</span>
+                            <span class="stat-box-label">{{ node.label }}</span>
+                        </div>
+                    </div>
+                </div>
 
             {% endif %}
         {% endfor %}
 
-    </svg>
+    </div>
 </div>
 {% endif %}
