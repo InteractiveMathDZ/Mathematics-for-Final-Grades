@@ -5,50 +5,51 @@
 {% if nodes_count > 0 %}
     {% if nodes_count <= 2 %}
         {% assign node_width = 320 %}
-        {% assign node_height = 70 %}
-        {% assign font_size_main = "1.15rem" %}
-        {% assign font_size_stat = "2.6rem" %}
-        {% assign step_y = 160 %}
+        {% assign node_height = 65 %}
+        {% assign font_size_main = "1.1rem" %}
+        {% assign font_size_stat = "2.5rem" %}
+        {% assign step_y = 150 %}
     {% elsif nodes_count <= 5 %}
-        {% assign node_width = 240 %}
+        {% assign node_width = 250 %}
         {% assign node_height = 55 %}
         {% assign font_size_main = "0.95rem" %}
         {% assign font_size_stat = "2.1rem" %}
-        {% assign step_y = 130 %}
+        {% assign step_y = 135 %}
     {% else %}
-        {% assign node_width = 190 %}
+        {% assign node_width = 200 %}
         {% assign node_height = 46 %}
-        {% assign font_size_main = "0.82rem" %}
-        {% assign font_size_stat = "1.7rem" %}
-        {% assign step_y = 110 %}
+        {% assign font_size_main = "0.85rem" %}
+        {% assign font_size_stat = "1.8rem" %}
+        {% assign step_y = 120 %}
     {% endif %}
 
-    {% assign calculated_height = nodes_count | times: step_y | plus: 180 %}
+    {% assign last_node_index = nodes_count | minus: 1 %}
+    {% assign calculated_height = last_node_index | times: step_y | plus: 250 %}
 {% else %}
-    {% assign calculated_height = 400 %}
+    {% assign calculated_height = 300 %}
 {% endif %}
 
-<div class="mindmap-engine-outer" style="margin: 40px auto; max-width: 100%; width: 100%; padding: 15px; box-sizing: border-box; display: flex; justify-content: center; align-items: center; direction: ltr;">
+<div class="mindmap-engine-outer" style="margin: 20px auto; max-width: 100%; width: 100%; padding: 5px; box-sizing: border-box; display: flex; justify-content: center; align-items: center; direction: ltr;">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 {{ calculated_height }}" width="100%" height="{{ calculated_height }}" style="display: block; overflow: visible; margin: 0 auto;">
         
         <style>
-            .map-spine-line { stroke: #64748b; stroke-width: 2; stroke-dasharray: 4,4; opacity: 0.6; }
-            .connector-branch { fill: none; stroke-width: 2.5; transition: stroke 0.3s ease, stroke-width 0.3s ease; }
+            .map-spine-line { stroke: #64748b; stroke-width: 2.5; stroke-dasharray: 4,4; opacity: 0.5; }
+            .connector-branch { fill: none; stroke-width: 2.5; transition: stroke 0.3s ease; }
             
             /* ألوان الفروع النورونية المتمايزة تبعا للوضع الفاتح */
             .line-blue { stroke: #0284c7; }
             .line-emerald { stroke: #059669; }
             .line-amber { stroke: #d97706; }
             
-            /* هندسة العقد والكبسولات المؤطرة بالفراغ السلبي */
-            .map-node rect { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2; transition: transform 0.25s ease, filter 0.25s ease; }
+            /* هندسة الكبسولات المؤطرة بالفراغ السلبي المتزن */
+            .map-node rect { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2; transition: transform 0.2s ease, filter 0.2s ease; }
             .node-text-item { fill: #1e293b; font-weight: bold; text-anchor: middle; dominant-baseline: middle; font-family: system-ui, -apple-system, sans-serif; }
             .node-stat-number { font-weight: 900; fill: #1e293b; text-anchor: middle; dominant-baseline: middle; }
             .node-stat-label { font-size: 0.85rem; font-weight: bold; fill: #64748b; text-anchor: middle; }
 
-            /* القواعد الصارمة للنمط المظلم لضمان الاتزان اللوني */
-            [data-bs-theme='dark'] .map-spine-line { stroke: #475569; opacity: 0.8; }
+            /* القواعد الصارمة للتوافق مع النمط المظلم (Dark Theme Bootstrap) */
+            [data-bs-theme='dark'] .map-spine-line { stroke: #475569; opacity: 0.7; }
             [data-bs-theme='dark'] .line-blue { stroke: #38bdf8; }
             [data-bs-theme='dark'] .line-emerald { stroke: #34d399; }
             [data-bs-theme='dark'] .line-amber { stroke: #fbbf24; }
@@ -57,67 +58,65 @@
             [data-bs-theme='dark'] .node-stat-number { fill: #ffffff; }
             [data-bs-theme='dark'] .node-stat-label { fill: #cbd5e1; }
             
-            /* التفاعل الحركي اللطيف عند الحوم */
-            .map-node:hover rect { transform: scale(1.02); cursor: pointer; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15)); }
+            /* تفاعل الحوم المرن */
+            .map-node:hover rect { transform: scale(1.02); cursor: pointer; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
             .map-core-node rect { fill: #0d6efd; filter: drop-shadow(0 4px 12px rgba(13,110,253,0.35)); }
             .core-node-text { fill: #ffffff; font-size: 1.1rem; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
         </style>
         
         <rect width="100%" height="100%" fill="none" />
 
+        {% assign spine_end_y = calculated_height | minus: 60 %}
+        <line x1="450" y1="50" x2="450" y2="{{ spine_end_y }}" class="map-spine-line" />
+
         <g class="map-core-node" transform="translate(450, 50)">
             <rect x="-90" y="-25" width="180" height="50" rx="25" />
             <text x="0" y="2" class="core-node-text">رؤية توجيهية</text>
         </g>
 
-        {% assign spine_end_y = calculated_height | minus: 50 %}
-        <line x1="450" y1="75" x2="450" y2="{{ spine_end_y }}" class="map-spine-line" />
-
         {% for node in nodes %}
             
-            {% assign current_node_y = forloop.index0 | times: step_y | plus: 140 %}
+            {% assign current_node_y = forloop.index0 | times: step_y | plus: 150 %}
             
             {% assign modulo = forloop.index | modulus: 2 %}
             {% if modulo == 0 %}
                 {% assign start_x = 450 %}
-                {% assign end_x = 450 | plus: 60 %}
+                {% assign end_x = 450 | plus: 50 %}
                 {% assign node_x_position = end_x %}
-                {% assign rect_sign_x = 0 %}
-                {% assign text_offset_x = node_width | divided_by: 2 %}
+                {% assign ctrl_x = start_x | plus: 25 %}
             {% else %}
                 {% assign start_x = 450 %}
-                {% assign end_x = 450 | minus: 60 %}
+                {% assign end_x = 450 | minus: 50 %}
                 {% assign node_x_position = end_x | minus: node_width %}
-                {% assign rect_sign_x = 0 %}
-                {% assign text_offset_x = node_width | divided_by: 2 %}
+                {% assign ctrl_x = start_x | minus: 25 %}
             {% endif %}
 
             {% if node.type == "concept" or node.value contains "،" %}
                 {% assign sub_items = node.value | split: "،" %}
-                {% assign sub_count = sub_items | size %}
                 
                 {% for item in sub_items %}
-                    {% assign sub_offset_y = forloop.index0 | times: 50 %}
+                    {% assign sub_offset_y = forloop.index0 | times: 52 %}
                     {% assign branch_y = current_node_y | plus: sub_offset_y %}
                     
-                    <path d="M {{ start_x }} {{ branch_y }} L {{ end_x }} {{ branch_y }}" class="connector-branch line-{{ node.color }}" />
+                    <path d="M {{ start_x }} {{ branch_y }} C {{ ctrl_x }} {{ branch_y }} {{ ctrl_x }} {{ branch_y }} {{ end_x }} {{ branch_y }}" class="connector-branch line-{{ node.color }}" />
                     
                     <g class="map-node node-concept" transform="translate({{ node_x_position }}, {{ branch_y }})">
                         <rect x="0" y="-22" width="{{ node_width }}" height="{{ node_height }}" rx="12" />
-                        <text x="{{ text_offset_x }}" y="2" class="node-text-item" style="font-size: {{ font_size_main }};">{{ item | strip }}</text>
+                        <text x="{{ node_width | divided_by: 2 }}" y="2" class="node-text-item" style="font-size: {{ font_size_main }};">{{ item | strip }}</text>
                     </g>
                 {% endfor %}
 
             {% else %}
                 
-                <path d="M {{ start_x }} {{ current_node_y }} L {{ end_x }} {{ current_node_y }}" class="connector-branch line-{{ node.color }}" />
+                <path d="M {{ start_x }} {{ current_node_y }} C {{ ctrl_x }} {{ current_node_y }} {{ ctrl_x }} {{ current_node_y }} {{ end_x }} {{ current_node_y }}" class="connector-branch line-{{ node.color }}" />
                 
                 <g class="map-node node-stat" transform="translate({{ node_x_position }}, {{ current_node_y }})">
                     {% assign stat_box_height = node_height | plus: 30 %}
                     <rect x="0" y="-35" width="{{ node_width }}" height="{{ stat_box_height }}" rx="16" />
                     
-                    <text x="{{ text_offset_x }}" y="-8" class="node-stat-number" style="font-size: {{ font_size_stat }};">{{ node.value }}</text>
-                    <text x="{{ text_offset_x }}" y="22" class="node-stat-label" style="font-size: {{ font_size_main }};">{{ node.label }}</text>
+                    {% assign text_center_x = node_width | divided_by: 2 %}
+                    <text x="{{ text_center_x }}" y="-8" class="node-stat-number" style="font-size: {{ font_size_stat }};">{{ node.value }}</text>
+                    <text x="{{ text_center_x }}" y="22" class="node-stat-label" style="font-size: {{ font_size_main }};">{{ node.label }}</text>
                 </g>
 
             {% endif %}
