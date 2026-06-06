@@ -150,9 +150,9 @@ function getOrCreateProgressResume(storageKey = 'progressResume') {
             ['maths', 100],      // المجموع العام للرياضيات (Mathematics Global)
             
             // --- فرع التحليل (Analysis) ---
-            ['analy', 70],       // التحليل الرياضي (Analysis General)
-            ['limit', 100],       // النهايات (Limits)
-            ['conti', 0],       // الاستمرارية (Continuity)
+            ['analy', 80],       // التحليل الرياضي (Analysis General)
+            ['limit', 70],       // النهايات (Limits)
+            ['conti', 10],       // الاستمرارية (Continuity)
             ['deriv', 0],       // الاشتقاق (Derivatives)
             ['logFu', 0],       // الدالة اللوغاريتمية (Logarithmic Function)
             ['expFu', 0],       // الدالة الأسية (Exponential Function)
@@ -398,7 +398,7 @@ function evaluateAnswers(exID,  allElements) {
 
     
     // 2. نتيجة المحاولة الحالية (Current Attempt)
-    const attemptScore = (correctPartsCount === totalParts) ? 100 : 0;
+    const attemptScore = (correctPartsCount === totalParts) ? 10 : 0;
 
     // 3. جلب السجل القديم لحساب "المتوسط التراكمي"
     const profile = getOrCreateProfile();
