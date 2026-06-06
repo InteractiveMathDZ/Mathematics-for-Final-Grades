@@ -150,7 +150,7 @@ function getOrCreateProgressResume(storageKey = 'progressResume') {
             ['maths', 100],      // المجموع العام للرياضيات (Mathematics Global)
             
             // --- فرع التحليل (Analysis) ---
-            ['analy', 100],       // التحليل الرياضي (Analysis General)
+            ['analy', 70],       // التحليل الرياضي (Analysis General)
             ['limit', 100],       // النهايات (Limits)
             ['conti', 0],       // الاستمرارية (Continuity)
             ['deriv', 0],       // الاشتقاق (Derivatives)
