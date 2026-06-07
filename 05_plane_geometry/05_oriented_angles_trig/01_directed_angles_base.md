@@ -19,6 +19,19 @@ elements:
       - rtl: "لتوجيه المستوي، نختار دائرة نصف قطرها $R=1$ مركزها مبدأ المعلم، ونحدد عليها اتجاهين للحركة:"
       - rtl: "- <strong>الاتجاه المباشر (الموجب):</strong> وهو عكس اتجاه دوران عقارب الساعة (الاتجاه المثلثي)."
       - rtl: "- <strong>الاتجاه غير المباشر (السالب):</strong> وهو الاتجاه الموافق لدوران عقارب الساعة."
+        
+  - simulation:
+      id: "trig_circle_sim"
+      class: "math-simulation-board"
+      type: "trigonometric-circle"
+      radius: 1
+      center: [0, 0]
+      interactive_point:
+        name: "M"
+        color: "#ff0000"
+        initial_angle: 45
+      show_angle_text: true
+      show_projections: true
 
   - h3: "2. مفهوم الزاوية الموجهة لشعاعين"
     id: "directed-angle-concept"
