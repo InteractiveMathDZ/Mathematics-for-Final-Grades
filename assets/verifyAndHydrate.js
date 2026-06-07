@@ -444,7 +444,7 @@ function applyVisuals(exID, evaluation, allElements) {
     const progressVal = document.getElementById(`${exID}-val`);
     console.log("بروقرس بار ويدث قبل التغيير: " + progressBar.style.width);
     if (progressBar) progressBar.style.width = evaluation.avgScore*10+ "%";
-    if (progressVal) progressVal.innerText = Math.round(evaluation.avgScore) + " نقطة";
+    if (progressVal) progressVal.innerText = Math.round(evaluation.avgScore) + "/10";
     console.log("بروقرس بار ويدث بعد التغيير: " + progressBar.style.width);
     
     // أولاً: تنظيف أي كلاسات ألوان سابقة لضمان التحديث الصحيح
