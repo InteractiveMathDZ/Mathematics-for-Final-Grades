@@ -7,23 +7,27 @@ function buildTrigonometricCircle(id, config) {
         return;
     }
 
-    // أ) التحقق التلقائي من المظهر الحالي للصفحة (Dark أو Light)
-    const isDarkMode = document.body.classList.contains('dark-theme') || 
-                       document.documentElement.getAttribute('data-bs-theme') === 'dark' ||
-                       window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // أ) الفحص الديناميكي الصارم للمظهر الحالي عند لحظة بناء اللوحة
+    // نتحقق من سمة Bootstrap 5 أو كلاسات الـ body أو الـ html
+    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
+                   document.documentElement.getAttribute('data-theme') === 'dark' ||
+                   document.body.classList.contains('dark-theme') ||
+                   document.body.classList.contains('dark') ||
+                   window.getComputedStyle(document.body).backgroundColor === 'rgb(26, 26, 26)'; // فحص لوني احتياطي
 
-    // ب) لوحة الألوان الذكية المتجاوبة لتنقية الخلفية وإبراز التدريجات
+    // ب) هندسة لوحة الألوان الذكية (أبيض ناصع في الداكن / أسود حاد في الفاتح)
     const theme = {
-        axisColor: isDarkMode ? '#888888' : '#333333',       // رمادي واضح في الداكن / أسود رصين في الفاتح
-        gridColor: isDarkMode ? '#2c2c2c' : '#e0e0e0',       // شبكة خافتة جداً في الخلفية لمنع التداخل البصري
-        textColor: isDarkMode ? '#ffffff' : '#1a1a1a',       // أرقام التدريجات والنصوص الديناميكية
-        circleColor: isDarkMode ? '#555555' : '#777777'      // خط محيط الدائرة المثلثية
+        axisColor: isDark ? '#ffffff' : '#111111',       // محاور بيضاء ناصعة في العتمة / سوداء حادة في الضياء
+        gridColor: isDark ? '#222222' : '#e5e5e5',       // شبكة خافتة جداً لمنع التداخل البصري مع أسطر الجداول
+        textColor: isDark ? '#ffffff' : '#111111',       // أرقام التدريجات والنصوص الديناميكية
+        circleColor: isDark ? '#555555' : '#888888',     // خط محيط الدائرة المثلثية
+        projectionLine: isDark ? '#cccccc' : '#444444'   // الخطوط المتقطعة للإسقاطات
     };
 
     // ج) تهيئة لوحة الرسم بنسب متوازنة مع حظر السحب والزوم للهواتف
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-1.5, 1.5, 1.5, -1.5], 
-        axis: false, // نخفي المحاور التلقائية الجافة لنبنيها يدوياً بالألوان الصحيحة
+        axis: false, // نخفي المحاور التلقائية الجافة لنبنيها يدوياً بالألوان الصحيحة الشاخصة
         grid: {
             strokeColor: theme.gridColor,
             strokeWidth: 0.5,
@@ -35,7 +39,7 @@ function buildTrigonometricCircle(id, config) {
         zoom: { enabled: false }              
     });
 
-    // د) بناء محاور المعلم يدوياً لفرض تلوين التدريجات (Ticks) والأرقام المختفية
+    // د) بناء محاور المعلم يدوياً لفرض تلوين التدريجات (Ticks) والأرقام بدقة
     // محور الفواصل (الأفقي)
     const xAxis = board.create('axis', [[0, 0], [1, 0]], {
         strokeColor: theme.axisColor,
@@ -44,7 +48,7 @@ function buildTrigonometricCircle(id, config) {
     });
     xAxis.defaultTicks.setAttribute({
         strokeColor: theme.axisColor,
-        labelColor: theme.textColor, // الأرقام تصبح بيضاء في المظلم وسوداء في المضيء
+        labelColor: theme.textColor, 
         strokeWidth: 1,
         majorHeight: 5,
         drawLabels: true,
@@ -88,7 +92,7 @@ function buildTrigonometricCircle(id, config) {
         color: interactive.color || '#ff0000',
         size: 5,
         withLabel: true,
-        label: { color: theme.textColor, offset: [10, 10], fontWeight: 'bold' } 
+        label: { color: theme.textColor, offset: [10, 10], fontWeight: 'bold', fontSize: 14 } 
     });
 
     // شعاع نصف القطر الموصل بالنقطة المتحركة
@@ -97,47 +101,35 @@ function buildTrigonometricCircle(id, config) {
         strokeWidth: 2.5
     });
 
-    // ز) النص الديناميكي لقيس الزاوية (يدعم الإشارات السالبة والموجبة للقياس الرئيسي)
+    // ز) النص الديناميكي لقيس الزاوية بالقياس الرئيسي الصارم
     if (config.show_angle_text) {
-        board.create('text', [-1.3, 1.2, function() {
-            // حساب الزاوية بالراديان مباشرة في المجال البرمجي الطبيعي ]-pi, pi]
+        board.create('text', [-1.3, 1.25, function() {
             let angleRad = Math.atan2(movingPoint.Y(), movingPoint.X()); 
-            
-            // التحويل للدرجات (ستنقلب سالبة تلقائياً بمجرد النزول تحت محور الفواصل)
             let angleDeg = angleRad * 180 / Math.PI;
-            
-            // حساب الكسر مع الحفاظ الصارم على إشارة الاتجاه غير المباشر
             let piFraction = (angleRad / Math.PI).toFixed(2);
             
             return 'θ = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
         }], { color: '#75b5ff', fontSize: 14, fontWeight: 'bold' });
     }
 
-    // ح) رسم إسقاطات الجيب والجيب تمام بألوان صارخة تبرز من العتمة
+    // ح) رسم إسقاطات الجيب والجيب تمام بألوان صارخة مستقلة عن المظهر
     if (config.show_projections) {
-        // إسقاط الجيب تمام (Cos) على محور الفواصل
+        // إسقاط الجيب تمام (Cos) على محور الفواصل (أزرق مخضر)
         const cosPoint = board.create('point', [function() { return movingPoint.X(); }, 0], { visible: false });
-        board.create('segment', [movingPoint, cosPoint], { strokeColor: isDarkMode ? '#ffffff' : '#333333', strokeWidth: 1, dash: 2 });
+        board.create('segment', [movingPoint, cosPoint], { strokeColor: theme.projectionLine, strokeWidth: 1, dash: 2 });
         board.create('segment', [center, cosPoint], { strokeColor: '#00ffcc', strokeWidth: 3.5, name: '' });
 
-        // إسقاط الجيب (Sin) على محور التراتيب
+        // إسقاط الجيب (Sin) على محور التراتيب (وردي فاقع)
         const sinPoint = board.create('point', [0, function() { return movingPoint.Y(); }], { visible: false });
-        board.create('segment', [movingPoint, sinPoint], { strokeColor: isDarkMode ? '#ffffff' : '#333333', strokeWidth: 1, dash: 2 });
+        board.create('segment', [movingPoint, sinPoint], { strokeColor: theme.projectionLine, strokeWidth: 1, dash: 2 });
         board.create('segment', [center, sinPoint], { strokeColor: '#ff0077', strokeWidth: 3.5, name: '' });
     }
 }
 
 // ==========================================================================
-// 2. الدالة المستقلة: الزاوية المحيطية (حاضنة فارغة جاهزة للتطوير مستقبلاً)
+// 2. الحاضن المركزي المشغل للمحاكاة (الموزع المركزي المعتمد على اليامل)
 // ==========================================================================
-function buildInscribedAngleSimulation(id, config) {
-    // سيصب منطق هندسة الزوايا المحيطية والمركزية هنا في وقته...
-}
-
-// ==========================================================================
-// 3. الحاضن المركزي المشغل للمحاكاة (الموزع المركزي المعتمد على اليامل)
-// ==========================================================================
-document.addEventListener("DOMContentLoaded", function () {
+function initAllSimulations() {
     const simElements = document.querySelectorAll('[data-simulation-config]');
 
     simElements.forEach(function (el) {
@@ -148,19 +140,33 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const config = JSON.parse(rawConfig);
             
-            // قراءة نوع المحاكاة من اليامل وتوجيهه ميكانيكياً للدالة المناسبة
+            // تنظيف الحاوية قبل إعادة الرسم لتفادي تكرار اللوحات عند تبديل الـ Theme
+            el.innerHTML = ''; 
+            
             switch (config.type) {
                 case 'trigonometric-circle':
                     buildTrigonometricCircle(simId, config);
                     break;
-                case 'inscribed-angle':
-                    buildInscribedAngleSimulation(simId, config);
-                    break;
                 default:
-                    console.warn("نوع المحاكاة غير مدرج في المحرك المركزي:", config.type);
+                    console.warn("نوع المحاكاة غير مدرج:", config.type);
             }
         } catch (e) {
-            console.error("خطأ في قراءة بيانات الجينات من الـ YAML للمحاكاة " + simId, e);
+            console.error("خطأ في قراءة بيانات المحاكاة " + simId, e);
+        }
+    });
+}
+
+// تشغيل ميكانيكي عند تحميل الصفحة لأول مرة
+document.addEventListener("DOMContentLoaded", initAllSimulations);
+
+// إدراك التغير الحركي للمظهر: إعادة بناء اللوحة تلقائياً إذا قام التلميذ بضغط زر التبديل
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.attributeName === "data-bs-theme" || mutation.attributeName === "class") {
+            // إعادة رسم المحاكاة فوراً بالألوان الجديدة المتوافقة
+            initAllSimulations();
         }
     });
 });
+observer.observe(document.documentElement, { attributes: true });
+observer.observe(document.body, { attributes: true });
