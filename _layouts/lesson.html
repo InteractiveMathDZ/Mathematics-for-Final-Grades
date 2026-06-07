@@ -41,12 +41,12 @@ layout: default
         </div>
     {% endif %}
 
-    {% if el.illustration %}
-        <div class="illustration-wrapper my-4 p-2 shadow-sm border rounded bg-dark">
+    {% if el.simulation %}
+        <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark">
             <div 
-                id="{{ el.illustration.id }}" 
-                class="jxgbox {{ el.illustration.class }}" 
-                data-illustration-config='{{ el.illustration | jsonify }}'
+                id="{{ el.simulation.id }}" 
+                class="jxgbox {{ el.simulation.class }}" 
+                data-simulation-config='{{ el.simulation | jsonify }}'
                 style="width: 100%; min-height: 400px; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
             </div>
         </div>
