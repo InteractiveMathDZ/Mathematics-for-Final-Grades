@@ -54,7 +54,7 @@ function buildDirectedAngle(id, config) {
     const vectorV = board.create('arrow', [O, B], { strokeColor: theme.vColor, strokeWidth: 3 });
 
     // قطاع زاوي حركي ذكي يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
-    board.create('sector', [O, A, B], {
+    /*board.create('sector', [O, A, B], {
         fillColor: 'transparent',
         strokeColor: theme.arcColor,
         strokeWidth: 2.5,
@@ -73,7 +73,30 @@ function buildDirectedAngle(id, config) {
                 strokeWidth: 2.5
             }
         }
+    });*/
+    // 1. القطاع المسؤول عن تلوين المساحة الداخلية (شبح لوني خفيف جداً)
+    board.create('sector', [O, A, B], {
+        fillColor: theme.arcColor, 
+        fillOpacity: 0.08,         // خفضنا النسبة إلى 8% ليكون التظليل خلفياً جداً ولا يبتلع السهم
+        strokeColor: 'transparent', 
+        withLabel: false,
+        selection: 'minor'         
     });
+
+    // 2. القوس الحركي مع السهم (بلون كامل السطوع وبدون شفافية ليتفوق بصرياً)
+    board.create('arc', [O, A, B], {
+        strokeColor: theme.arcColor, // اللون بكامل قوته وسطوعه ليتناقض مع الخلفية والتظليل
+        strokeWidth: 2.5,
+        selection: 'minor',        
+        withLabel: false,
+        lastArrow: {
+            type: 2,               
+            size: 5,               
+            strokeWidth: 2.5
+        },
+        firstArrow: false
+    });
+
 
 
     // النص الديناميكي الصافي عالي الأداء
