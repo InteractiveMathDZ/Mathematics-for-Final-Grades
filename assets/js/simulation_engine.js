@@ -62,11 +62,12 @@ function buildDirectedAngle(id, config) {
 
     // 2. نص الشعاع u الحر والمرتبط بالمنتصف ديناميكياً
     board.create('text', [
-        () => (O.X() + A.X()) / 2,         // منتصف محور الفواصل
+        () => (O.X() + A.X()) / 2 + 0.12,         // منتصف محور الفواصل
         () => (O.Y() + A.Y()) / 2 + 0.12,  // منتصف محور التراتيب مع رفعه قليلاً للأعلى
         '$\\vec{u}$'
     ], {
         color: theme.uColor,
+        fontSize: 20,
         useMathJax: true,
         fixed: true,
         anchorX: 'middle',
@@ -82,11 +83,12 @@ function buildDirectedAngle(id, config) {
 
     // 4. نص الشعاع v الحر والمرتبط بالمنتصف ديناميكياً
     board.create('text', [
-        () => (O.X() + B.X()) / 2,         // منتصف محور الفواصل
+        () => (O.X() + B.X()) / 2 - 0.12,         // منتصف محور الفواصل
         () => (O.Y() + B.Y()) / 2 - 0.12,  // منتصف محور التراتيب مع خفضه قليلاً للأسفل
         '$\\vec{v}$'
     ], {
         color: theme.vColor,
+        fontSize: 20,
         useMathJax: true,
         fixed: true,
         anchorX: 'middle',
