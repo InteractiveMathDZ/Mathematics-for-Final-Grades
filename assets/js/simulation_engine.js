@@ -59,7 +59,7 @@ function buildDirectedAngle(id, config) {
         withLabel: true,
         name: '$\\vec{u}$', // إضافة سهم الشعاع الرياضي هنا
         label: { color: theme.uColor,
-                offset: [12, -12],
+                offset: [30, -30],
                 fontSize: 20,
                 fontStyle: "bold",
                 useMathJax: true
@@ -72,7 +72,7 @@ function buildDirectedAngle(id, config) {
         withLabel: true,
         name: '$\\vec{v}$', // إضافة سهم الشعاع الرياضي هنا
         label: { color: theme.vColor,
-                offset: [12, 12],
+                offset: [30, 30],
                 fontSize: 20,
                 fontStyle: "bold",
                 useMathJax: true 
