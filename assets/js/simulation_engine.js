@@ -52,7 +52,48 @@ function buildDirectedAngle(id, config) {
         size: 5,
         label: { color: theme.vColor, offset: [12, -12], fontSize: 6, opacity: 0.01}
     });
+    
+    // 1. إنشاء الشعاع u (المثبت) بدون تسمية افتراضية تماماً
+    const arrowU = board.create('arrow', [O, A], {
+        strokeColor: theme.uColor,
+        strokeWidth: 3,
+        withLabel: false // الاستغناء التام عن الـ label الافتراضي
+    });
 
+    // 2. نص الشعاع u الحر والمرتبط بالمنتصف ديناميكياً
+    board.create('text', [
+        () => (O.X() + A.X()) / 2,         // منتصف محور الفواصل
+        () => (O.Y() + A.Y()) / 2 + 0.12,  // منتصف محور التراتيب مع رفعه قليلاً للأعلى
+        '$\\vec{u}$'
+    ], {
+        color: theme.uColor,
+        useMathJax: true,
+        fixed: true,
+        anchorX: 'middle',
+        anchorY: 'middle'
+    });
+
+    // 3. إنشاء الشعاع v (المتحرك) بدون تسمية افتراضية تماماً
+    const arrowV = board.create('arrow', [O, B], {
+        strokeColor: theme.vColor,
+        strokeWidth: 3,
+        withLabel: false // الاستغناء التام عن الـ label الافتراضي
+    });
+
+    // 4. نص الشعاع v الحر والمرتبط بالمنتصف ديناميكياً
+    board.create('text', [
+        () => (O.X() + B.X()) / 2,         // منتصف محور الفواصل
+        () => (O.Y() + B.Y()) / 2 - 0.12,  // منتصف محور التراتيب مع خفضه قليلاً للأسفل
+        '$\\vec{v}$'
+    ], {
+        color: theme.vColor,
+        useMathJax: true,
+        fixed: true,
+        anchorX: 'middle',
+        anchorY: 'middle'
+    });
+
+    /*
     const vectorU = board.create('arrow', [O, A], {
         strokeColor: theme.uColor,
         strokeWidth: 3,
