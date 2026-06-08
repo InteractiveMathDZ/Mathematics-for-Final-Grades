@@ -37,20 +37,20 @@ function buildDirectedAngle(id, config) {
     
     // الشعاع الأول u
     const A = board.create('glider', [1.3, 0, c1], {
-        opacity: 0.2,
+        opacity: 0.3,
         name: 'u',
         color: theme.uColor, 
         size: 5,
-        label: { color: theme.uColor, offset: [12, 12], fontStyle: 'bold', fontSize: 16 }
+        label: { color: theme.uColor, offset: [12, 12], fontSize: 6, opacity: 0.01}
     });
 
     // الشعاع الثاني v
     const B = board.create('glider', [0.8, -1.0, c1], {
-        opacity: 0.2,
+        opacity: 0.3,
         name: 'v', 
         color: theme.vColor, 
         size: 5,
-        label: { color: theme.vColor, offset: [12, -12], fontStyle: 'bold', fontSize: 16 }
+        label: { color: theme.vColor, offset: [12, -12], fontSize: 6, opacity: 0.01}
     });
 
     const vectorU = board.create('arrow', [O, A], {
@@ -59,7 +59,9 @@ function buildDirectedAngle(id, config) {
         withLabel: true,
         name: '$\\vec{u}$', // إضافة سهم الشعاع الرياضي هنا
         label: { color: theme.uColor,
-                offset: [10, 10],
+                offset: [12, 12],
+                fontSize: 16,
+                fontStyle: "bold",
                 useMathJax: true
                }
     });
@@ -70,7 +72,9 @@ function buildDirectedAngle(id, config) {
         withLabel: true,
         name: '$\\vec{v}$', // إضافة سهم الشعاع الرياضي هنا
         label: { color: theme.vColor,
-                offset: [10, 10],
+                offset: [12, 12],
+                fontSize: 16,
+                fontStyle: "bold",
                 useMathJax: true 
                }
     });
