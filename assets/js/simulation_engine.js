@@ -42,7 +42,6 @@ function buildTrigonometricCircle(id, config) {
     // د) بناء محاور المعلم يدوياً لفرض تلوين التدريجات (Ticks) والأرقام بدقة
     // محور الفواصل (الأفقي)
     const xAxis = board.create('axis', [[0, 0], [1, 0]], {
-    const xAxis = board.create('axis', [[0, 0], [1, 0]], {
         strokeColor: theme.axisColor,
         strokeWidth: 1.5,
         withLabel: false
