@@ -77,7 +77,7 @@ function buildDirectedAngle(id, config) {
     // 1. القطاع المسؤول عن تلوين المساحة الداخلية (شبح لوني خفيف جداً)
     board.create('sector', [O, A, B], {
         fillColor: theme.arcColor, 
-        fillOpacity: 0.08,         // خفضنا النسبة إلى 8% ليكون التظليل خلفياً جداً ولا يبتلع السهم
+        fillOpacity: 0.2,         // خفضنا النسبة إلى 8% ليكون التظليل خلفياً جداً ولا يبتلع السهم
         strokeColor: 'transparent', 
         withLabel: false,
         selection: 'minor'         
