@@ -58,8 +58,9 @@ function buildTrigonometricCircle(id, config) {
             strokeColor: theme.textColor, // هذا السطر سيجبر الأرقام (1, 0.5, -1) على البقاء بيضاء ناصعة
             fontSize: 12,
             cssClass: 'jxg-tick-label',   // لضمان عدم تداخل الـ CSS الخارجي للموقع معها
-            offset: [-5, -12],   // إزاحة خفيفة للأرقام الأفقية للأسفل واليسار لتجنب المركز
-            anchorX: 'right'
+            offset: [0, -10],   // إزاحة خفيفة للأرقام الأفقية للأسفل واليسار لتجنب المركز
+            anchorX: 'center',
+            anchorY: 'top'
         }
     });
 
@@ -81,7 +82,8 @@ function buildTrigonometricCircle(id, config) {
             fontSize: 12,
             cssClass: 'jxg-tick-label',
             offset: [-10, 0],   
-            anchorX: 'right'
+            anchorX: 'right',
+            anchorY: 'middle'
         }
     });
 
