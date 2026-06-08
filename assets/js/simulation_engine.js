@@ -132,7 +132,7 @@ function buildDirectedAngle(id, config) {
         let angleDeg = angleRad * 180 / Math.PI;
         let piFraction = (angleRad / Math.PI).toFixed(2);
         
-        return '($\\vec{u}, \\vec{v}$)' = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
+        return '($\\vec{u}, \\vec{v}$) = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
     }], { 
         color: theme.arcColor, 
         fontSize: 16,
