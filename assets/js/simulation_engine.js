@@ -83,8 +83,100 @@ function buildDirectedAngle(id, config) {
 
     // --------------------------------------------------------------------------
     // الحل الجذري للنص: حقن نص خارجي مدعوم بالكامل بـ MathJax فوق اللوحة مباشرة
+// ==========================================================================
+// 3. الدالة التنفيذية المستقرة: الزاوية الموجهة لشعاعين (إصلاح الانهيار)
+// ==========================================================================
+function buildDirectedAngle(id, config) {
+    if (typeof JXG === 'undefined') return;
+
+    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
+                   document.documentElement.getAttribute('data-theme') === 'dark' ||
+                   document.body.classList.contains('dark-theme');
+
+    const theme = {
+        axisColor: isDark ? '#444444' : '#dddddd', 
+        gridColor: isDark ? '#222222' : '#e5e5e5',
+        textColor: isDark ? '#ffffff' : '#222222',
+        uColor: '#00ffcc', 
+        vColor: '#ff0077', 
+        arcColor: '#75b5ff'
+    };
+
+    // تهيئة اللوحة مع حظر البان والزوم لمنع انزلاق المعلم
+    const board = JXG.JSXGraph.initBoard(id, {
+        boundingbox: [-2, 2, 2, -2], 
+        axis: false,
+        grid: { strokeColor: theme.gridColor, strokeWidth: 0.5, gridX: 0.2, gridY: 0.2 }, 
+        showCopyright: false,                 
+        pan: { enabled: false },               
+        zoom: { enabled: false }              
+    });
+
+    // رسم المحاور المرجعية الخفيفة
+    board.create('axis', [[0, 0], [1, 0]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
+    board.create('axis', [[0, 0], [0, 1]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
+
+    // نقطة المبدأ ثابتة
+    const O = board.create('point', [0, 0], { name: 'O', color: theme.textColor, size: 3, fixed: true, label: {color: theme.textColor, offset: [-15, -15]} });
+    
+    // دائرة المسار غير مرئية
+    const c1 = board.create('circle', [O, 1.3], { visible: false });
+    
+    // الشعاع الأول u (نستعمل السهم النصي الافتراضي الأنيق لـ JSXGraph المتوافق مع المتصفح)
+    const A = board.create('glider', [1.3, 0, c1], {
+        name: 'u', 
+        color: theme.uColor, 
+        size: 5,
+        label: { color: theme.uColor, offset: [12, 12], fontStyle: 'bold', fontSize: 16 }
+    });
+
+    // الشعاع الثاني v
+    const B = board.create('glider', [0.8, -1.0, c1], {
+        name: 'v', 
+        color: theme.vColor, 
+        size: 5,
+        label: { color: theme.vColor, offset: [12, -12], fontStyle: 'bold', fontSize: 16 }
+    });
+
+    const vectorU = board.create('arrow', [O, A], { strokeColor: theme.uColor, strokeWidth: 3 });
+    const vectorV = board.create('arrow', [O, B], { strokeColor: theme.vColor, strokeWidth: 3 });
+
     // --------------------------------------------------------------------------
-    const textElement = board.create('text', [-1.8, 1.6, function() {
+    // قطاع زاوي حركي ذكي: يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
+    // --------------------------------------------------------------------------
+    const angleSector = board.create('sector', [
+        O, 
+        function() {
+            let uAng = Math.atan2(A.Y(), A.X());
+            let vAng = Math.atan2(B.Y(), B.X());
+            let diff = vAng - uAng;
+            while (diff <= -Math.PI) diff += 2 * Math.PI;
+            while (diff > Math.PI) diff -= 2 * Math.PI;
+            return (diff < 0) ? B : A;
+        }, 
+        function() {
+            let uAng = Math.atan2(A.Y(), A.X());
+            let vAng = Math.atan2(B.Y(), B.X());
+            let diff = vAng - uAng;
+            while (diff <= -Math.PI) diff += 2 * Math.PI;
+            while (diff > Math.PI) diff -= 2 * Math.PI;
+            return (diff < 0) ? A : B;
+        }
+    ], {
+        fillColor: 'transparent', 
+        strokeColor: theme.arcColor,
+        strokeWidth: 2.5,
+        radius: 0.35, 
+        withLabel: false,
+        // تفعيل رأس سهم مصغر فخم لا ينهار ولا يختفي
+        lastArrow: { type: 1, size: 3, strokeWidth: 2.5 },
+        firstArrow: false
+    });
+
+    // --------------------------------------------------------------------------
+    // النص الديناميكي الصافي عالي الأداء (بدون التسبب في انهيار اللوحة)
+    // --------------------------------------------------------------------------
+    board.create('text', [-1.8, 1.6, function() {
         let alphaU = Math.atan2(A.Y(), A.X());
         let alphaV = Math.atan2(B.Y(), B.X());
         
@@ -95,19 +187,13 @@ function buildDirectedAngle(id, config) {
         let angleDeg = angleRad * 180 / Math.PI;
         let piFraction = (angleRad / Math.PI).toFixed(2);
         
-        return '$(\\vec{u}, \\vec{v}) = ' + angleDeg.toFixed(0) + '^{\\circ} \\quad | \\quad ' + piFraction + '\\pi \\text{ rad}$';
+        // تمثيل نصي قياسي فخم ونظيف جداً وسريع الاستجابة
+        return '(u, v) = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
     }], { 
         color: theme.arcColor, 
         fontSize: 16,
-        fixed: true,
-        display: 'html' // تفعيل وضع الـ HTML لكي يتمكن المتصفح من قراءته وتطبيق MathJax عليه
-    });
-
-    // تحديث وتنشيط ميكانيكي لـ MathJax عند الحركة لمنع التجمد
-    board.on('update', function() {
-        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
-            MathJax.typesetPromise([document.getElementById(id)]);
-        }
+        fontWeight: 'bold',
+        fixed: true
     });
 }
 
