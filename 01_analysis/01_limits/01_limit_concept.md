@@ -39,20 +39,7 @@ elements:
           - td: "1.99"
           - td: "1.999"
           - td: "$\\to 2$"
-  - graph:
-      id: "limit-concept-discontinuity"
-      class: "graph-container"
-      xDomain: [-1.5, 3.5]
-      yDomain: [-0.5, 4.5]
-      elements:
-        - { type: "function", fn: "(x**2 - 1) / (x - 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
-        - { type: "text", content: "$C_f$", x: 2.2, y: 3.5, color: "#00ffcc" }
-        - { type: "point", x: 1, y: 2, strokeColor: "#ff007f", fillColor: "transparent", size: 5 }
-        - { type: "line", points: [[1, 0], [1, 2]], color: "#666666", dash: 2, width: 1 }
-        - { type: "line", points: [[0, 2], [1, 2]], color: "#666666", dash: 2, width: 1 } 
-        - { type: "text", content: "$1$", x: 0.9, y: -0.3, color: "#ffffff" }
-        - { type: "text", content: "$2$", x: -0.2, y: 2, color: "#ffffff" }
-
+  
   - tableLines:
       dir: ltr
       lines:
@@ -66,6 +53,19 @@ elements:
           - td: "2.01"
           - td: "2.001"
           - td: "$\\to 2$"
+  - graph:
+      id: "limit-concept-discontinuity"
+      class: "graph-container"
+      xDomain: [-1.5, 3.5]
+      yDomain: [-0.5, 4.5]
+      elements:
+        - { type: "function", fn: "(x**2 - 1) / (x - 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "text", content: "C_f", x: 2.2, y: 3.5, color: "#00ffcc" }
+        - { type: "point", x: 1, y: 2, strokeColor: "#ff007f", fillColor: "transparent", size: 3 }
+        - { type: "line", points: [[1, 0], [1, 2]], color: "#666666", dash: 2, width: 1 }
+        - { type: "line", points: [[0, 2], [1, 2]], color: "#666666", dash: 2, width: 1 } 
+        - { type: "text", content: "x = 1", x: 0.9, y: 0.3, color: "#ffffff" }
+        - { type: "text", content: "y = 2", x: 0, y: 2.2, color: "#ffffff" }
 
   - NB:
       type: success
