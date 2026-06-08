@@ -20,6 +20,7 @@ function buildDirectedAngle(id, config) {
 
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-2, 2, 2, -2], 
+        keepAspectRatio: true,
         axis: false,
         grid: { strokeColor: theme.gridColor, strokeWidth: 0.5, gridX: 0.2, gridY: 0.2 }, 
         showCopyright: false,                 
@@ -142,6 +143,7 @@ function buildTrigonometricCircle(id, config) {
 
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-1.5, 1.5, 1.5, -1.5], 
+        keepAspectRatio: true,
         axis: false, 
         grid: { strokeColor: theme.gridColor, strokeWidth: 0.5, gridX: 0.2, gridY: 0.2 }, 
         showCopyright: false,                 
