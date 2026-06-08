@@ -37,7 +37,8 @@ function buildDirectedAngle(id, config) {
     
     // الشعاع الأول u
     const A = board.create('glider', [1.3, 0, c1], {
-        name: 'u', 
+        
+        name: 'u',
         color: theme.uColor, 
         size: 5,
         label: { color: theme.uColor, offset: [12, 12], fontStyle: 'bold', fontSize: 16 }
@@ -51,8 +52,21 @@ function buildDirectedAngle(id, config) {
         label: { color: theme.vColor, offset: [12, -12], fontStyle: 'bold', fontSize: 16 }
     });
 
-    const vectorU = board.create('arrow', [O, A], { strokeColor: theme.uColor, strokeWidth: 3 });
-    const vectorV = board.create('arrow', [O, B], { strokeColor: theme.vColor, strokeWidth: 3 });
+    const vectorU = board.create('arrow', [O, A], {
+        strokeColor: theme.uColor,
+        strokeWidth: 3,
+        withLabel: true,
+        name: 'u&#x20d7;', // إضافة سهم الشعاع الرياضي هنا
+        label: { color: theme.uColor, offset: [10, 10] }
+    });
+    
+    const vectorV = board.create('arrow', [O, B], {
+        strokeColor: theme.vColor,
+        strokeWidth: 3,
+        withLabel: true,
+        name: 'v&#x20d7;', // إضافة سهم الشعاع الرياضي هنا
+        label: { color: theme.vColor, offset: [10, 10] }
+    });
 
     // قطاع زاوي حركي ذكي يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
     /*board.create('sector', [O, A, B], {
