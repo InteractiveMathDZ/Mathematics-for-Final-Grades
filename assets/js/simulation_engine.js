@@ -4,22 +4,19 @@
 function buildDirectedAngle(id, config) {
     if (typeof JXG === 'undefined') return;
 
-    // أ) فحص المظهر الحالي (نعتمد على الفحص الصارم المطور سابقاً)
     const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
                    document.documentElement.getAttribute('data-theme') === 'dark' ||
-                   document.body.classList.contains('dark-theme') ||
-                   document.body.classList.contains('dark');
+                   document.body.classList.contains('dark-theme');
 
     const theme = {
-        axisColor: isDark ? '#555555' : '#cccccc',      // محاور خافتة لأن التركيز هنا على الأشعة الحرة
+        axisColor: isDark ? '#444444' : '#dddddd', 
         gridColor: isDark ? '#222222' : '#e5e5e5',
         textColor: isDark ? '#ffffff' : '#222222',
-        uColor: '#00ffcc',                               // لون الشعاع الأول u (أزرق مخضر)
-        vColor: '#ff0077',                               // لون الشعاع الثاني v (وردي فاقع)
-        arcColor: '#75b5ff'                              // لون السهم الدائري الموجه
+        uColor: '#00ffcc', // الأزرق المخضر للشعاع الأول
+        vColor: '#ff0077', // الوردي الفاقع للشعاع الثاني
+        arcColor: '#75b5ff'
     };
 
-    // ب) تهيئة لوحة رسم أوسع قليلاً للسماح بحرية حركة الأشعة
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-2, 2, 2, -2], 
         axis: false,
@@ -29,67 +26,79 @@ function buildDirectedAngle(id, config) {
         zoom: { enabled: false }              
     });
 
-    // ج) رسم محاور مرجعية خفيفة في الخلفية بدون أرقام لمنع التشتيت
+    // محاور مرجعية خافتة جداً في الخلفية
     board.create('axis', [[0, 0], [1, 0]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
     board.create('axis', [[0, 0], [0, 1]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
 
-    // د) إنشاء النقاط الهندسية
-    // المبدأ الثابت (مركز انطلاق الشعاعين)
     const O = board.create('point', [0, 0], { name: 'O', color: theme.textColor, size: 3, fixed: true, label: {color: theme.textColor, offset: [-15, -15]} });
     
-    // النقطة A المتحركة المقيدة بدائرة خفية (لتحديد اتجاه u بطول ثابت = 1.2 لجمالية الرسم)
-    const c1 = board.create('circle', [O, 1.2], { visible: false });
-    const A = board.create('glider', [1.2, 0, c1], {
+    // تحديد الدائرة الوهمية بنصف قطر ثابت = 1.3 لضبط تناسق الأشعة
+    const c1 = board.create('circle', [O, 1.3], { visible: false });
+    
+    // الشعاع الأول u (يبدأ أفقياً كمرجع افتراضي)
+    const A = board.create('glider', [1.3, 0, c1], {
         name: 'u', 
         color: theme.uColor, 
-        size: 4,
-        label: { color: theme.uColor, fontWeight: 'bold', fontSize: 14, offset: [10, 10] }
+        size: 5,
+        label: { color: theme.uColor, fontWeight: 'bold', fontSize: 15, offset: [12, 12] }
     });
 
-    // النقطة B المتحركة المقيدة بدائرة خفية (لتحديد اتجاه v بطول ثابت = 1.2)
-    const B = board.create('glider', [0, 1.2, c1], {
+    // الشعاع الثاني v
+    const B = board.create('glider', [0.7, 1.1, c1], {
         name: 'v', 
         color: theme.vColor, 
-        size: 4,
-        label: { color: theme.vColor, fontWeight: 'bold', fontSize: 14, offset: [10, 10] }
+        size: 5,
+        label: { color: theme.vColor, fontWeight: 'bold', fontSize: 15, offset: [12, 12] }
     });
 
-    // هـ) رسم الأشعة كمقبلات متجهة بأسهم شاحذة
     const vectorU = board.create('arrow', [O, A], { strokeColor: theme.uColor, strokeWidth: 3 });
     const vectorV = board.create('arrow', [O, B], { strokeColor: theme.vColor, strokeWidth: 3 });
 
-    // و) بناء السهم الدائري الموجه الذي ينطلق من u وينتهي عند v
-    // يحسب القوس ديناميكياً دائماً من الشعاع الأول إلى الثاني عكس عقارب الساعة أو معها حسب التوجيه
-    const angleArc = board.create('arc', [O, A, B], {
+    // --------------------------------------------------------------------------
+    // الحل الهندسي: بناء قطاع زاوي موجه يتبع الإشارة والمسافة الأقصر تلقائياً
+    // --------------------------------------------------------------------------
+    const angleSector = board.create('sector', [O, A, B], {
+        visible: true,
+        fillColor: 'transparent', // شفاف تماماً لكي لا يحجب الشبكة والمحاور
         strokeColor: theme.arcColor,
         strokeWidth: 2.5,
-        fillColor: 'transparent',
-        selection: 'none',
+        strokeOpacity: 0.8,
+        radius: 0.4, // حجم القوس متناسق وصغير (40% من طول الشعاع)
         withLabel: false,
-        hasInnerPoints: true,
-        firstArrow: false,
-        lastArrow: true // يضع سهم في نهاية القوس عند الشعاع v ليظهر اتجاه الحركة
+        // إعدادات السهم المطور المقاوم للتشوه
+        lastArrow: {
+            type: 1,         // سهم حاد وأنيق
+            size: 3,         // حجم ناعم ومتناسق جداً مع القوس
+            strokeWidth: 2.5
+        }
     });
 
-    // ز) النص الديناميكي لعرض القياس في الوقت الحقيقي بالراديان والدرجات مع الحلقات الدورية
+    // --------------------------------------------------------------------------
+    // النص الديناميكي المصحح برمز الفيكتور الصافي بدون تشويه الـ LaTeX
+    // --------------------------------------------------------------------------
     board.create('text', [-1.8, 1.7, function() {
-        // حساب زوايا النقاط بالنسبة للمبدأ
         let alphaU = Math.atan2(A.Y(), A.X());
         let alphaV = Math.atan2(B.Y(), B.X());
         
-        // حساب الزاوية الموجهة (v) - (u)
         let angleRad = alphaV - alphaU;
         
-        // ضبط القيس ليكون دائماً في المجال الرئيسي ]-pi, pi]
+        // فرض القياس الرئيسي الصارم في المجال ]-pi, pi]
         while (angleRad <= -Math.PI) angleRad += 2 * Math.PI;
         while (angleRad > Math.PI) angleRad -= 2 * Math.PI;
         
         let angleDeg = angleRad * 180 / Math.PI;
         let piFraction = (angleRad / Math.PI).toFixed(2);
         
-        return '(vec{u}, vec{v}) = ' + angleDeg.toFixed(0) + '° │ ' + piFraction + ' π rad';
-    }], { color: theme.arcColor, fontSize: 15, fontWeight: 'bold', useMathJax: false });
+        // استخدام الرومانية الموجهة الصافية المتوافقة بصرياً مع المتصفح
+        return '(بُّ, ڤّ) = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
+    }], { 
+        color: theme.arcColor, 
+        fontSize: 15, 
+        fontWeight: 'bold',
+        cssClass: 'jxg-dynamic-angle-text' // لضمان ثبات الخط
+    });
 }
+
 
 // ==========================================================================
 // 1. الدالة التنفيذية: الدائرة المثلثية (تتحكم في الهندسة والبصرية والقياس)
