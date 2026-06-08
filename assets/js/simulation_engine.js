@@ -42,17 +42,24 @@ function buildTrigonometricCircle(id, config) {
     // د) بناء محاور المعلم يدوياً لفرض تلوين التدريجات (Ticks) والأرقام بدقة
     // محور الفواصل (الأفقي)
     const xAxis = board.create('axis', [[0, 0], [1, 0]], {
+    const xAxis = board.create('axis', [[0, 0], [1, 0]], {
         strokeColor: theme.axisColor,
         strokeWidth: 1.5,
         withLabel: false
     });
+    
+    // الحل الألماني الصارم: نمرر الألوان بداخل كائن label مخصص للـ ticks
     xAxis.defaultTicks.setAttribute({
         strokeColor: theme.axisColor,
-        labelColor: theme.textColor, 
         strokeWidth: 1,
         majorHeight: 5,
         drawLabels: true,
-        insertLabels: true
+        insertLabels: true,
+        label: {
+            strokeColor: theme.textColor, // هذا السطر سيجبر الأرقام (1, 0.5, -1) على البقاء بيضاء ناصعة
+            fontSize: 12,
+            cssClass: 'jxg-tick-label'   // لضمان عدم تداخل الـ CSS الخارجي للموقع معها
+        }
     });
 
     // محور التراتيب (الشاقولي)
@@ -61,13 +68,18 @@ function buildTrigonometricCircle(id, config) {
         strokeWidth: 1.5,
         withLabel: false
     });
+    
     yAxis.defaultTicks.setAttribute({
         strokeColor: theme.axisColor,
-        labelColor: theme.textColor,
         strokeWidth: 1,
         majorHeight: 5,
         drawLabels: true,
-        insertLabels: true
+        insertLabels: true,
+        label: {
+            strokeColor: theme.textColor, // هنا أيضاً لتتحول أرقام المحور الشاقولي للأبيض الناصع
+            fontSize: 12,
+            cssClass: 'jxg-tick-label'
+        }
     });
 
     // هـ) صب الدائرة والمركز الثابت
