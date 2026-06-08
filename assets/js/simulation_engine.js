@@ -57,16 +57,22 @@ function buildDirectedAngle(id, config) {
         strokeColor: theme.uColor,
         strokeWidth: 3,
         withLabel: true,
-        name: 'u&#x20d7;', // إضافة سهم الشعاع الرياضي هنا
-        label: { color: theme.uColor, offset: [10, 10] }
+        name: '$\\vec{u}$', // إضافة سهم الشعاع الرياضي هنا
+        label: { color: theme.uColor,
+                offset: [10, 10],
+                useMathJax: true
+               }
     });
     
     const vectorV = board.create('arrow', [O, B], {
         strokeColor: theme.vColor,
         strokeWidth: 3,
         withLabel: true,
-        name: 'v&#x20d7;', // إضافة سهم الشعاع الرياضي هنا
-        label: { color: theme.vColor, offset: [10, 10] }
+        name: '$\\vec{v}$', // إضافة سهم الشعاع الرياضي هنا
+        label: { color: theme.vColor,
+                offset: [10, 10],
+                useMathJax: true 
+               }
     });
 
     // قطاع زاوي حركي ذكي يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
