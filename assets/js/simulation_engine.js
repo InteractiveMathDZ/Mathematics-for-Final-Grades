@@ -116,11 +116,11 @@ function buildTrigonometricCircle(id, config) {
 
     // تصحيح هندسة الألوان لتدعم التبديل اللحظي بدقة
     const theme = {
-        axisColor: isDark ? '#ffffff' : '#222222',       
-        gridColor: isDark ? '#444444' : '#e5e5e5',       
-        textColor: isDark ? '#ffffff' : '#222222',       
-        circleColor: isDark ? '#666666' : '#999999',     
-        projectionLine: isDark ? '#aaaaaa' : '#777777'   
+        axisColor: '#ffffff',       
+        gridColor: '#444444',       
+        textColor: '#ffffff',       
+        circleColor: '#666666',     
+        projectionLine: '#aaaaaa'   
     };
 
     const board = JXG.JSXGraph.initBoard(id, {
