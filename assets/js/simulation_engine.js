@@ -62,21 +62,17 @@ function buildDirectedAngle(id, config) {
         withLabel: false,
     
         // الدالة الموحدة التي تقرر شرط المرور للحالة الموافقة تلقائياً
-        selection: function() {
-            let uAng = Math.atan2(A.Y(), A.X());
-            let vAng = Math.atan2(B.Y(), B.X());
-            let diff = vAng - uAng;
-        
-            // ضبط الحسابات في الدائرة [pi , -pi]
-            while (diff <= -Math.PI) diff += 2 * Math.PI;
-            while (diff > Math.PI) diff -= 2 * Math.PI;
-        
-            // إذا كان الفارق سالباً يعكس القوس حالته فوراً (شرط المرور)
-            return (diff < 0) ? 'major' : 'minor';
-        },
+        selection: "minor",
     
-        lastArrow: { type: 1, size: 3, strokeWidth: 2.5 },
-        firstArrow: false
+        arc: {
+            strokeColor: theme.arcColor,
+            strokeWidth: 2.5,
+            lastArrow: {
+                type: 2,    // النوع 2 يعطي سهم مثلثي فخم وواضح على المنحنيات
+                size: 4,    // حجم مناسب للرؤية على الهواتف
+                strokeWidth: 2.5
+            }
+        }
     });
 
 
