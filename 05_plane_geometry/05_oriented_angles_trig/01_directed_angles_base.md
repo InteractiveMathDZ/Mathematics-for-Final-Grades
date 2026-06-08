@@ -39,7 +39,12 @@ elements:
   - parags:
       - rtl: "لتكن $\\vec{u}$ و $\\vec{v}$ ثنائية أشعة غير معدومة في مستوٍ موجه. تعين الثنائية $(\\vec{u}, \\vec{v})$ زاوية موجهة لشعاعين. قيس هذه الزاوية بالراديان ليس وحيداً، بل ترمز $\\theta$ إلى مجموعة من القياسات التي تختلف فيما بينها بعدد من الدورات الكاملة ($2\\pi$):"
       - center: "$$(\\vec{u}, \\vec{v}) = \\theta + 2k\\pi \\quad \\text{حيث } k \\in \\mathbb{Z}$$"
-
+        
+  - simulation:
+      id: "directed-vectors-sim"
+      type: "directed-angle"
+      class: "my-3"
+    
   - h3: "3. القياس الرئيسي لزاوية موجهة"
     id: "principal-value"
 
