@@ -1,5 +1,5 @@
 // ==========================================================================
-// 3. الدالة التنفيذية المحدثة: الزاوية الموجهة لشعاعين بالاعتماد على MathJax
+// 3. الدالة التنفيذية المستقرة: الزاوية الموجهة لشعاعين (حل مشكلة الاختفاء)
 // ==========================================================================
 function buildDirectedAngle(id, config) {
     if (typeof JXG === 'undefined') return;
@@ -12,12 +12,12 @@ function buildDirectedAngle(id, config) {
         axisColor: isDark ? '#444444' : '#dddddd', 
         gridColor: isDark ? '#222222' : '#e5e5e5',
         textColor: isDark ? '#ffffff' : '#222222',
-        uColor: '#00ffcc', // لون الشعاع u (أزرق مخضر)
-        vColor: '#ff0077', // لون الشعاع v (وردي فاقع)
+        uColor: '#00ffcc', 
+        vColor: '#ff0077', 
         arcColor: '#75b5ff'
     };
 
-    // تهيئة اللوحة مع إعداد مسبق لـ MathJax لمنع أي تأخير في العرض
+    // تهيئة اللوحة الأساسية
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-2, 2, 2, -2], 
         axis: false,
@@ -27,45 +27,40 @@ function buildDirectedAngle(id, config) {
         zoom: { enabled: false }              
     });
 
-    // محاور مرجعية خافتة
+    // رسم المحاور المرجعية الخفيفة
     board.create('axis', [[0, 0], [1, 0]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
     board.create('axis', [[0, 0], [0, 1]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
 
-    // مركز انطلاق الأشعة
     const O = board.create('point', [0, 0], { name: 'O', color: theme.textColor, size: 3, fixed: true, label: {color: theme.textColor, offset: [-15, -15]} });
     const c1 = board.create('circle', [O, 1.3], { visible: false });
     
-    // ١. الشعاع الأول u مع تسمية رياضية أصيلة باستخدام MathJax
+    // استخدام طريقة جي اس اكس جراف القياسية لكتابة المتجهات فوق الحروف بدقة وثبات
     const A = board.create('glider', [1.3, 0, c1], {
-        name: '$\\vec{u}$', 
+        name: 'u', 
         color: theme.uColor, 
         size: 5,
-        label: { color: theme.uColor, offset: [10, 10], display: 'internal' }
+        label: { color: theme.uColor, offset: [12, 12], fontStyle: 'bold' }
     });
 
-    // ٢. الشعاع الثاني v مع تسمية رياضية أصيلة باستخدام MathJax
-    const B = board.create('glider', [0.8, 1.0, c1], {
-        name: '$\\vec{v}$', 
+    const B = board.create('glider', [0.8, -1.0, c1], {
+        name: 'v', 
         color: theme.vColor, 
         size: 5,
-        label: { color: theme.vColor, offset: [10, 10], display: 'internal' }
+        label: { color: theme.vColor, offset: [12, -12], fontStyle: 'bold' }
     });
 
     const vectorU = board.create('arrow', [O, A], { strokeColor: theme.uColor, strokeWidth: 3 });
     const vectorV = board.create('arrow', [O, B], { strokeColor: theme.vColor, strokeWidth: 3 });
 
-    // ٣. السحر الميكانيكي: قطاع زاوي ديناميكي يعكس ترتيب النقاط تبعاً للإشارة لمنع التداخل والالتفاف الخاطئ
+    // القوس الديناميكي الذكي الموجه الذي يتبع الاتجاه الأقصر تلقائياً
     const angleSector = board.create('sector', [
         O, 
         function() {
-            // فحص إشارة الزاوية في الوقت الحقيقي
             let uAng = Math.atan2(A.Y(), A.X());
             let vAng = Math.atan2(B.Y(), B.X());
             let diff = vAng - uAng;
             while (diff <= -Math.PI) diff += 2 * Math.PI;
             while (diff > Math.PI) diff -= 2 * Math.PI;
-            
-            // إذا كانت الزاوية سالبة، نقلب المبدأ الهندي للقوس ليصبح منطلقه B بدلاً من A
             return (diff < 0) ? B : A;
         }, 
         function() {
@@ -74,22 +69,22 @@ function buildDirectedAngle(id, config) {
             let diff = vAng - uAng;
             while (diff <= -Math.PI) diff += 2 * Math.PI;
             while (diff > Math.PI) diff -= 2 * Math.PI;
-            
             return (diff < 0) ? A : B;
         }
     ], {
         fillColor: 'transparent', 
         strokeColor: theme.arcColor,
         strokeWidth: 2.5,
-        radius: 0.35, // حجم القوس متناسق جداً وقريب من المركز
+        radius: 0.4, 
         withLabel: false,
-        // معالجة رأس السهم بدقة ناعمة
         lastArrow: { type: 1, size: 3, strokeWidth: 2.5 },
         firstArrow: false
     });
 
-    // ٤. النص الديناميكي المعالج والمدعوم كلياً بالـ MathJax
-    const textElement = board.create('text', [-1.8, 1.7, function() {
+    // --------------------------------------------------------------------------
+    // الحل الجذري للنص: حقن نص خارجي مدعوم بالكامل بـ MathJax فوق اللوحة مباشرة
+    // --------------------------------------------------------------------------
+    const textElement = board.create('text', [-1.8, 1.6, function() {
         let alphaU = Math.atan2(A.Y(), A.X());
         let alphaV = Math.atan2(B.Y(), B.X());
         
@@ -100,18 +95,17 @@ function buildDirectedAngle(id, config) {
         let angleDeg = angleRad * 180 / Math.PI;
         let piFraction = (angleRad / Math.PI).toFixed(2);
         
-        // صياغة الكود الرياضي النظيف المحمي بـ MathJax
         return '$(\\vec{u}, \\vec{v}) = ' + angleDeg.toFixed(0) + '^{\\circ} \\quad | \\quad ' + piFraction + '\\pi \\text{ rad}$';
     }], { 
         color: theme.arcColor, 
         fontSize: 16,
-        fixed: true
+        fixed: true,
+        display: 'html' // تفعيل وضع الـ HTML لكي يتمكن المتصفح من قراءته وتطبيق MathJax عليه
     });
 
-    // إجبار المحرك على تمرير النص إلى MathJax فور حدوث أي حركة ميكانيكية
-    textElement.isRendered = false;
+    // تحديث وتنشيط ميكانيكي لـ MathJax عند الحركة لمنع التجمد
     board.on('update', function() {
-        if (typeof MathJax !== 'undefined') {
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
             MathJax.typesetPromise([document.getElementById(id)]);
         }
     });
