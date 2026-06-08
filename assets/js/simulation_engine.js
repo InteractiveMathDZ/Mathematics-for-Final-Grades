@@ -95,54 +95,6 @@ function buildDirectedAngle(id, config) {
         anchorY: 'middle'
     });
 
-    /*
-    const vectorU = board.create('arrow', [O, A], {
-        strokeColor: theme.uColor,
-        strokeWidth: 3,
-        withLabel: true,
-        name: '$\\vec{u}$', // إضافة سهم الشعاع الرياضي هنا
-        label: { color: theme.uColor,
-                offset: [30, -30],
-                fontSize: 20,
-                fontStyle: "bold",
-                useMathJax: true
-               }
-    });
-    
-    const vectorV = board.create('arrow', [O, B], {
-        strokeColor: theme.vColor,
-        strokeWidth: 3,
-        withLabel: true,
-        name: '$\\vec{v}$', // إضافة سهم الشعاع الرياضي هنا
-        label: { color: theme.vColor,
-                offset: [30, 30],
-                fontSize: 20,
-                fontStyle: "bold",
-                useMathJax: true 
-               }
-    });
-
-    // قطاع زاوي حركي ذكي يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
-    /*board.create('sector', [O, A, B], {
-        fillColor: 'transparent',
-        strokeColor: theme.arcColor,
-        strokeWidth: 2.5,
-        radius: 0.35,
-        withLabel: false,
-    
-        // الدالة الموحدة التي تقرر شرط المرور للحالة الموافقة تلقائياً
-        selection: "minor",
-    
-        arc: {
-            strokeColor: theme.arcColor,
-            strokeWidth: 2.5,
-            lastArrow: {
-                type: 2,    // النوع 2 يعطي سهم مثلثي فخم وواضح على المنحنيات
-                size: 4,    // حجم مناسب للرؤية على الهواتف
-                strokeWidth: 2.5
-            }
-        }
-    });*/
     // 1. القطاع المسؤول عن تلوين المساحة الداخلية (شبح لوني خفيف جداً)
     board.create('sector', [O, A, B], {
         fillColor: theme.arcColor, 
@@ -180,11 +132,12 @@ function buildDirectedAngle(id, config) {
         let angleDeg = angleRad * 180 / Math.PI;
         let piFraction = (angleRad / Math.PI).toFixed(2);
         
-        return 'θ = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
+        return '($\\vec{u}, \\vec{v}$)' = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
     }], { 
         color: theme.arcColor, 
         fontSize: 16,
         fontWeight: 'bold',
+        useMathJax: true,
         fixed: true
     });
 }
