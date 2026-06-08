@@ -37,7 +37,7 @@ function buildDirectedAngle(id, config) {
     
     // الشعاع الأول u
     const A = board.create('glider', [1.3, 0, c1], {
-        
+        fillOpacity: 0.2,
         name: 'u',
         color: theme.uColor, 
         size: 5,
@@ -46,6 +46,7 @@ function buildDirectedAngle(id, config) {
 
     // الشعاع الثاني v
     const B = board.create('glider', [0.8, -1.0, c1], {
+        fillOpacity: 0.2,
         name: 'v', 
         color: theme.vColor, 
         size: 5,
