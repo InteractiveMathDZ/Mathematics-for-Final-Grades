@@ -58,7 +58,7 @@ function buildTrigonometricCircle(id, config) {
             strokeColor: theme.textColor, // هذا السطر سيجبر الأرقام (1, 0.5, -1) على البقاء بيضاء ناصعة
             fontSize: 12,
             cssClass: 'jxg-tick-label',   // لضمان عدم تداخل الـ CSS الخارجي للموقع معها
-            offset: [0, -10],   // إزاحة خفيفة للأرقام الأفقية للأسفل واليسار لتجنب المركز
+            offset: [-5, -10],   // إزاحة خفيفة للأرقام الأفقية للأسفل واليسار لتجنب المركز
             anchorX: 'center',
             anchorY: 'top'
         }
@@ -81,7 +81,7 @@ function buildTrigonometricCircle(id, config) {
             strokeColor: theme.textColor, // هنا أيضاً لتتحول أرقام المحور الشاقولي للأبيض الناصع
             fontSize: 12,
             cssClass: 'jxg-tick-label',
-            offset: [-30, 0],   
+            offset: [-10, 0],   
             anchorX: 'right',
             anchorY: 'middle'
         }
