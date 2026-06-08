@@ -1,13 +1,13 @@
-
 // ==========================================================================
-// 3. الدالة التنفيذية المستقرة: الزاوية الموجهة لشعاعين (إصلاح الانهيار)
+// 1. الدالة التنفيذية المستقرة: الزاوية الموجهة لشعاعين (إصلاح الانهيار والأقصر مسافة)
 // ==========================================================================
 function buildDirectedAngle(id, config) {
     if (typeof JXG === 'undefined') return;
 
     const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
                    document.documentElement.getAttribute('data-theme') === 'dark' ||
-                   document.body.classList.contains('dark-theme');
+                   document.body.classList.contains('dark-theme') ||
+                   document.body.classList.contains('dark');
 
     const theme = {
         axisColor: isDark ? '#444444' : '#dddddd', 
@@ -18,7 +18,6 @@ function buildDirectedAngle(id, config) {
         arcColor: '#75b5ff'
     };
 
-    // تهيئة اللوحة مع حظر البان والزوم لمنع انزلاق المعلم
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-2, 2, 2, -2], 
         axis: false,
@@ -32,13 +31,10 @@ function buildDirectedAngle(id, config) {
     board.create('axis', [[0, 0], [1, 0]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
     board.create('axis', [[0, 0], [0, 1]], { strokeColor: theme.axisColor, strokeWidth: 1, withLabel: false, ticks: {visible: false} });
 
-    // نقطة المبدأ ثابتة
     const O = board.create('point', [0, 0], { name: 'O', color: theme.textColor, size: 3, fixed: true, label: {color: theme.textColor, offset: [-15, -15]} });
-    
-    // دائرة المسار غير مرئية
     const c1 = board.create('circle', [O, 1.3], { visible: false });
     
-    // الشعاع الأول u (نستعمل السهم النصي الافتراضي الأنيق لـ JSXGraph المتوافق مع المتصفح)
+    // الشعاع الأول u
     const A = board.create('glider', [1.3, 0, c1], {
         name: 'u', 
         color: theme.uColor, 
@@ -57,10 +53,8 @@ function buildDirectedAngle(id, config) {
     const vectorU = board.create('arrow', [O, A], { strokeColor: theme.uColor, strokeWidth: 3 });
     const vectorV = board.create('arrow', [O, B], { strokeColor: theme.vColor, strokeWidth: 3 });
 
-    // --------------------------------------------------------------------------
-    // قطاع زاوي حركي ذكي: يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
-    // --------------------------------------------------------------------------
-    const angleSector = board.create('sector', [
+    // قطاع زاوي حركي ذكي يحدد الأقصر مسافة تلقائياً لتفادي الالتفاف المقيت
+    board.create('sector', [
         O, 
         function() {
             let uAng = Math.atan2(A.Y(), A.X());
@@ -84,14 +78,11 @@ function buildDirectedAngle(id, config) {
         strokeWidth: 2.5,
         radius: 0.35, 
         withLabel: false,
-        // تفعيل رأس سهم مصغر فخم لا ينهار ولا يختفي
         lastArrow: { type: 1, size: 3, strokeWidth: 2.5 },
         firstArrow: false
     });
 
-    // --------------------------------------------------------------------------
-    // النص الديناميكي الصافي عالي الأداء (بدون التسبب في انهيار اللوحة)
-    // --------------------------------------------------------------------------
+    // النص الديناميكي الصافي عالي الأداء
     board.create('text', [-1.8, 1.6, function() {
         let alphaU = Math.atan2(A.Y(), A.X());
         let alphaV = Math.atan2(B.Y(), B.X());
@@ -103,7 +94,6 @@ function buildDirectedAngle(id, config) {
         let angleDeg = angleRad * 180 / Math.PI;
         let piFraction = (angleRad / Math.PI).toFixed(2);
         
-        // تمثيل نصي قياسي فخم ونظيف جداً وسريع الاستجابة
         return '(u, v) = ' + angleDeg.toFixed(0) + '°  │  ' + piFraction + ' π rad';
     }], { 
         color: theme.arcColor, 
@@ -113,57 +103,43 @@ function buildDirectedAngle(id, config) {
     });
 }
 
-
 // ==========================================================================
-// 1. الدالة التنفيذية: الدائرة المثلثية (تتحكم في الهندسة والبصرية والقياس)
+// 2. الدالة التنفيذية: الدائرة المثلثية (مصححة الألوان بالكامل للمظهرين)
 // ==========================================================================
 function buildTrigonometricCircle(id, config) {
-    if (typeof JXG === 'undefined') {
-        console.error("المحرك الألماني JSXGraph غير محمل في هذه الصفحة!");
-        return;
-    }
+    if (typeof JXG === 'undefined') return;
 
-    // أ) الفحص الديناميكي الصارم للمظهر الحالي عند لحظة بناء اللوحة
-    // نتحقق من سمة Bootstrap 5 أو كلاسات الـ body أو الـ html
     const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
                    document.documentElement.getAttribute('data-theme') === 'dark' ||
                    document.body.classList.contains('dark-theme') ||
-                   document.body.classList.contains('dark') ||
-                   window.getComputedStyle(document.body).backgroundColor === 'rgb(26, 26, 26)'; // فحص لوني احتياطي
+                   document.body.classList.contains('dark');
 
-    // ب) هندسة لوحة الألوان الذكية (أبيض ناصع في الداكن / أسود حاد في الفاتح)
+    // تصحيح هندسة الألوان لتدعم التبديل اللحظي بدقة
     const theme = {
-        axisColor: '#ffffff',       // محاور بيضاء ناصعة في العتمة / سوداء حادة في الضياء
-        gridColor: '#444444',       // شبكة خافتة جداً لمنع التداخل البصري مع أسطر الجداول
-        textColor: '#ffffff',       // أرقام التدريجات والنصوص الديناميكية
-        circleColor: '#555555',     // خط محيط الدائرة المثلثية
-        projectionLine: '#cccccc'   // الخطوط المتقطعة للإسقاطات
+        axisColor: isDark ? '#ffffff' : '#222222',       
+        gridColor: isDark ? '#444444' : '#e5e5e5',       
+        textColor: isDark ? '#ffffff' : '#222222',       
+        circleColor: isDark ? '#666666' : '#999999',     
+        projectionLine: isDark ? '#aaaaaa' : '#777777'   
     };
 
-    // ج) تهيئة لوحة الرسم بنسب متوازنة مع حظر السحب والزوم للهواتف
     const board = JXG.JSXGraph.initBoard(id, {
         boundingbox: [-1.5, 1.5, 1.5, -1.5], 
-        axis: false, // نخفي المحاور التلقائية الجافة لنبنيها يدوياً بالألوان الصحيحة الشاخصة
-        grid: {
-            strokeColor: theme.gridColor,
-            strokeWidth: 0.5,
-            gridX: 0.2,
-            gridY: 0.2
-        }, 
+        axis: false, 
+        grid: { strokeColor: theme.gridColor, strokeWidth: 0.5, gridX: 0.2, gridY: 0.2 }, 
         showCopyright: false,                 
         pan: { enabled: false },               
         zoom: { enabled: false }              
     });
 
-    // د) بناء محاور المعلم يدوياً لفرض تلوين التدريجات (Ticks) والأرقام بدقة
-    // محور الفواصل (الأفقي)
+    // محور الفواصل (الأفقي) مع إضافة السهم التوجيهي الصريح
     const xAxis = board.create('axis', [[0, 0], [1, 0]], {
         strokeColor: theme.axisColor,
         strokeWidth: 1.5,
-        withLabel: false
+        withLabel: false,
+        lastArrow: { type: 1, size: 3 }
     });
     
-    // الحل الألماني الصارم: نمرر الألوان بداخل كائن label مخصص للـ ticks
     xAxis.defaultTicks.setAttribute({
         strokeColor: theme.axisColor,
         strokeWidth: 1,
@@ -171,20 +147,21 @@ function buildTrigonometricCircle(id, config) {
         drawLabels: true,
         insertLabels: true,
         label: {
-            strokeColor: theme.textColor, // هذا السطر سيجبر الأرقام (1, 0.5, -1) على البقاء بيضاء ناصعة
+            strokeColor: theme.textColor, 
             fontSize: 12,
-            cssClass: 'jxg-tick-label',   // لضمان عدم تداخل الـ CSS الخارجي للموقع معها
-            offset: [-5, -10],   // إزاحة خفيفة للأرقام الأفقية للأسفل واليسار لتجنب المركز
+            cssClass: 'jxg-tick-label',   
+            offset: [-5, -10],   
             anchorX: 'center',
             anchorY: 'top'
         }
     });
 
-    // محور التراتيب (الشاقولي)
+    // محور التراتيب (الشاقولي) مع إضافة السهم التوجيهي الصريح
     const yAxis = board.create('axis', [[0, 0], [0, 1]], {
         strokeColor: theme.axisColor,
         strokeWidth: 1.5,
-        withLabel: false
+        withLabel: false,
+        lastArrow: { type: 1, size: 3 }
     });
     
     yAxis.defaultTicks.setAttribute({
@@ -194,7 +171,7 @@ function buildTrigonometricCircle(id, config) {
         drawLabels: true,
         insertLabels: true,
         label: {
-            strokeColor: theme.textColor, // هنا أيضاً لتتحول أرقام المحور الشاقولي للأبيض الناصع
+            strokeColor: theme.textColor, 
             fontSize: 12,
             cssClass: 'jxg-tick-label',
             offset: [-5, 0],   
@@ -203,7 +180,6 @@ function buildTrigonometricCircle(id, config) {
         }
     });
 
-    // هـ) صب الدائرة والمركز الثابت
     const centerPos = config.center || [0, 0];
     const radiusSize = config.radius || 1;
     
@@ -214,7 +190,6 @@ function buildTrigonometricCircle(id, config) {
         fixed: true
     });
 
-    // و) حقن النقطة المنزلقة المقيدة تماماً بمحيط الدائرة
     const interactive = config.interactive_point || {};
     const initAngleRad = (interactive.initial_angle || 0) * Math.PI / 180;
     const startX = radiusSize * Math.cos(initAngleRad);
@@ -228,13 +203,12 @@ function buildTrigonometricCircle(id, config) {
         label: { color: theme.textColor, offset: [10, 10], fontWeight: 'bold', fontSize: 14 } 
     });
 
-    // شعاع نصف القطر الموصل بالنقطة المتحركة
     board.create('segment', [center, movingPoint], {
         strokeColor: '#75b5ff',               
         strokeWidth: 2.5
     });
 
-    // ز) النص الديناميكي لقيس الزاوية بالقياس الرئيسي الصارم
+    // النص الديناميكي لقيس الزاوية بالقياس الرئيسي الصارم
     if (config.show_angle_text) {
         board.create('text', [-1.3, 1.25, function() {
             let angleRad = Math.atan2(movingPoint.Y(), movingPoint.X()); 
@@ -245,14 +219,12 @@ function buildTrigonometricCircle(id, config) {
         }], { color: '#75b5ff', fontSize: 14, fontWeight: 'bold' });
     }
 
-    // ح) رسم إسقاطات الجيب والجيب تمام بألوان صارخة مستقلة عن المظهر
+    // رسم إسقاطات الجيب والجيب تمام
     if (config.show_projections) {
-        // إسقاط الجيب تمام (Cos) على محور الفواصل (أزرق مخضر)
         const cosPoint = board.create('point', [function() { return movingPoint.X(); }, 0], { visible: false });
         board.create('segment', [movingPoint, cosPoint], { strokeColor: theme.projectionLine, strokeWidth: 1, dash: 2 });
         board.create('segment', [center, cosPoint], { strokeColor: '#00ffcc', strokeWidth: 3.5, name: '' });
 
-        // إسقاط الجيب (Sin) على محور التراتيب (وردي فاقع)
         const sinPoint = board.create('point', [0, function() { return movingPoint.Y(); }], { visible: false });
         board.create('segment', [movingPoint, sinPoint], { strokeColor: theme.projectionLine, strokeWidth: 1, dash: 2 });
         board.create('segment', [center, sinPoint], { strokeColor: '#ff0077', strokeWidth: 3.5, name: '' });
@@ -260,7 +232,7 @@ function buildTrigonometricCircle(id, config) {
 }
 
 // ==========================================================================
-// 2. الحاضن المركزي المشغل للمحاكاة (الموزع المركزي المعتمد على اليامل)
+// 3. الحاضن المركزي المشغل للمحاكاة (الموزع المركزي المعتمد على اليامل)
 // ==========================================================================
 function initAllSimulations() {
     const simElements = document.querySelectorAll('[data-simulation-config]');
@@ -272,8 +244,6 @@ function initAllSimulations() {
 
         try {
             const config = JSON.parse(rawConfig);
-            
-            // تنظيف الحاوية قبل إعادة الرسم لتفادي تكرار اللوحات عند تبديل الـ Theme
             el.innerHTML = ''; 
             
             switch (config.type) {
@@ -281,7 +251,7 @@ function initAllSimulations() {
                     buildTrigonometricCircle(simId, config);
                     break;
                 case 'directed-angle':
-                    buildDirectedAngle(simId, config); // تشغيل المحاكاة الجديدة للشعاعين
+                    buildDirectedAngle(simId, config); 
                     break;
                 default:
                     console.warn("نوع المحاكاة غير مدرج:", config.type);
@@ -292,14 +262,17 @@ function initAllSimulations() {
     });
 }
 
-// تشغيل ميكانيكي عند تحميل الصفحة لأول مرة
-document.addEventListener("DOMContentLoaded", initAllSimulations);
+// تشغيل ميكانيكي آمن
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAllSimulations);
+} else {
+    initAllSimulations();
+}
 
-// إدراك التغير الحركي للمظهر: إعادة بناء اللوحة تلقائياً إذا قام التلميذ بضغط زر التبديل
+// المراقبة الحركية لتبديل المظهر (Theme Switcher)
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         if (mutation.attributeName === "data-bs-theme" || mutation.attributeName === "class") {
-            // إعادة رسم المحاكاة فوراً بالألوان الجديدة المتوافقة
             initAllSimulations();
         }
     });
