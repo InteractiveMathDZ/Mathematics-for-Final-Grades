@@ -57,7 +57,9 @@ function buildTrigonometricCircle(id, config) {
         label: {
             strokeColor: theme.textColor, // هذا السطر سيجبر الأرقام (1, 0.5, -1) على البقاء بيضاء ناصعة
             fontSize: 12,
-            cssClass: 'jxg-tick-label'   // لضمان عدم تداخل الـ CSS الخارجي للموقع معها
+            cssClass: 'jxg-tick-label',   // لضمان عدم تداخل الـ CSS الخارجي للموقع معها
+            offset: [-5, -12],   // إزاحة خفيفة للأرقام الأفقية للأسفل واليسار لتجنب المركز
+            anchorX: 'right'
         }
     });
 
@@ -77,7 +79,9 @@ function buildTrigonometricCircle(id, config) {
         label: {
             strokeColor: theme.textColor, // هنا أيضاً لتتحول أرقام المحور الشاقولي للأبيض الناصع
             fontSize: 12,
-            cssClass: 'jxg-tick-label'
+            cssClass: 'jxg-tick-label',
+            offset: [-10, 0],   
+            anchorX: 'right'
         }
     });
 
