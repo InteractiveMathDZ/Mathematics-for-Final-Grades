@@ -94,7 +94,8 @@ const MathSovereign = {
                               anchorX: el.anchorX || 'left',
                               anchorY: el.anchorY || 'top',
                               isLabel: false,
-                              rotate: el.rotate || 0 // القيمة بالدرجات، الافتراضي 0 (أفقي)}); 
+                              rotate: el.rotate || 0 // القيمة بالدرجات، الافتراضي 0 (أفقي)
+                        }); 
                         } catch(e) { console.log('text drawing error :' + e ); };
                       
                 } else if (el.type === 'line') {
