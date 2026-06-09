@@ -31,16 +31,16 @@ const MathSovereign = {
         try { JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id)); } catch(e) {}
         
         const config = JSON.parse(c.getAttribute('data-graph-config'));
-        const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-        const axisColor = isDark ? '#ffffff' : '#333';
+        const axisColor = '#ffffff';
 
         const b = JXG.JSXGraph.initBoard(id, {
             boundingbox: [config.xDomain[0], config.yDomain[1], config.xDomain[1], config.yDomain[0]],
+            keepAspectRatio: true,
             axis: false, 
             showCopyright: false,
 
             grid: { 
-                strokeColor: isDark ? '#444' : '#eee', 
+                strokeColor: '#444', 
                 opacity: 0.2, 
                 majorStep: 1, // بدلاً من gridX
                 minorStep: 0.2 // (اختياري) للتحكم في الخطوط الثانوية
