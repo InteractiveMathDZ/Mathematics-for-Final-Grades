@@ -1,7 +1,7 @@
 <pre style="background: #222; color: #fff; padding: 15px;">{{ page | jsonify }}</pre>
 
 
-{% for el in elements %}
+{% for el in page.elements %}
 
     {% if el.formula %}
     <div class="math-block">
