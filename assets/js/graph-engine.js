@@ -91,16 +91,18 @@ const MathSovereign = {
                       
                 } else if (el.type === 'text') {
                     // نعتمد على النصوص اليدوية فقط للتحكم الكامل
-                    try { b.create('text', 
-                          [el.x, el.y, el.content], {
+                    try { const rotationAngle = el.rotate || 0;
+                          const cssTransform = rotationAngle !== 0 ? `transform: rotate(${rotationAngle}deg); transform-origin: top left;` : '';
+                          b.create('text', 
+                            [el.x, el.y, el.content], {
                               color: el.color || axisColor, 
                               fontSize: 16, 
                               fixed: el.fixed || true,
                               anchorX: el.anchorX || 'left',
                               anchorY: el.anchorY || 'top',
-                              withLabel: false
-                              //rotate: el.rotate || 0
-                        }); 
+                              withLabel: false,
+                              cssStyle: cssTransform
+                          }); 
                       } catch(e) { console.log('text drawing error :' + e )};
                 } else if (el.type === 'line') {
                     try { b.create('line', el.points, {
