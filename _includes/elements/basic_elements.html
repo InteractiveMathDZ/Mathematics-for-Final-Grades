@@ -3,12 +3,6 @@
         {{ el.formula }}
     </div>
 {% endif %}
-    
-{% if el.activity %}
-    <div class="activity-wrapper my-5 shadow-sm border rounded p-3">
-        {% include activity-core.html content=el.activity %}
-    </div>
-{% endif %}
 
 {% if el.raw_html %}
     {{ el.raw_html }}
