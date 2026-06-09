@@ -96,7 +96,10 @@ const MathSovereign = {
                               isLabel: false,
                               rotate: el.rotate || 0 // القيمة بالدرجات، الافتراضي 0 (أفقي)
                         }); 
-                        } catch(e) { console.log('text drawing error :' + e ); };
+                        } catch(e) { 
+                                     console.log('text drawing error :' + e ); 
+                                   };
+                  };
                       
                 } else if (el.type === 'line') {
                     try { b.create('line', el.points, {
