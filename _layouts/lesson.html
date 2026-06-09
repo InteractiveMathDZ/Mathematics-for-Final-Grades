@@ -1,0 +1,231 @@
+---
+layout: default
+---
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <div class="text-center flex-grow-1">
+        <h2 class="text-primary fw-bold">{{ page.title }}</h2>
+        {% if page.subtitle %}
+        <h3 class="text-primary fw-bold">{{ page.subtitle }}</h3>
+        {% endif %}
+    </div>
+    <span class="badge bg-info" id="{{ page.lessonID }}-val">لا محاولة بعد...</span>
+</div>
+<div class="progress" style="height: 10px;">
+        <div id="{{ page.lessonID }}-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+</div>
+  
+{% for el in page.elements %}
+
+    {% if el.formula %}
+    <div class="math-block">
+        {{ el.formula }}
+    </div>
+    {% endif %}
+    
+    {% if el.activity %}
+    <div class="activity-wrapper my-5 shadow-sm border rounded p-3">
+        {% include activity-core.html content=el.activity %}
+    </div>
+    {% endif %}
+
+    {% if el.raw_html %}
+    {{ el.raw_html }}
+    {% endif %}
+
+    {% if el.graph %}
+        <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark" dir="ltr">
+            <div 
+                id="{{ el.graph.id }}" 
+                class="{{ el.graph.class }}" 
+                data-graph-config='{{ el.graph | jsonify }}'
+                style="width: 100%; min-height: 400px; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
+            </div>
+        </div>
+    {% endif %}
+
+    {% if el.simulation %}
+        <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark" dir="ltr">
+            <div 
+                id="{{ el.simulation.id }}" 
+                class="jxgbox {{ el.simulation.class }}" 
+                data-simulation-config='{{ el.simulation | jsonify }}'
+                style="width: 100%; min-height: 400px; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
+            </div>
+        </div>
+    {% endif %}
+    {% if el.tableSlides %}
+        <div class="slider-wrapper" dir="rtl">
+            <div class="slides-container">
+                {% for slide in el.tableSlides.slides %}
+                    <div class="slide-card">
+                        <h3 class="text-primary mt-4 mb-4">
+                             {{ slide.title }}
+                        </h3>
+                        <div class="slide-body">
+                            <p class="interpretation">{{ slide.interpretation }}</p>
+                            <div class="math-formula">{{ slide.formula }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="scroll-hint"> اسحب أفقياً لرؤية الحالات الموالية </div>
+        </div>
+    {% endif %}
+
+    {% if el.h3 %}
+        <h3 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary mt-4 mb-4">
+            {% if el.h3.text %}
+                {{ el.h3.text }}
+            {% else %}
+                {{ el.h3 }}
+            {% endif %}
+        </h3>
+    {% endif %}
+
+
+    {% if el.parags %}
+        {% for parag in el.parags %}
+            {% if parag.ltr %}
+                <p dir="ltr">{{ parag.ltr }}</p>
+            {% elsif parag.center %}
+                <p class="text-center" dir="ltr">{{ parag.center }}</p>
+            {% else %}
+                <p>{{ parag.rtl }}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if el.tableLines %}
+        {% if el.tableLines.type == 'svg' %}
+        <div class="table-responsive math-wrapper mt-4" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            <svg width="100%" min-width="650" height="{{ el.tableLines.lines.size | plus: 1 | times: 45 }}" viewBox="0 0 700 {{ el.tableLines.lines.size | plus: 1 | times: 45 }}" style="background: #1e1e1e; border: 1px solid #333333; border-radius: 6px; font-family: sans-serif;">
+      
+            {% for line in el.tableLines.lines %}
+                {% assign y_pos = forloop.index0 | times: 45 %}
+        
+                {% if forloop.first %}
+                    <rect x="0" y="{{ y_pos }}" width="100%" height="45" fill="rgba(117, 181, 255, 0.1)"/>
+                {% else %}
+            <line x1="0" y1="{{ y_pos }}" x2="100%" y2="{{ y_pos }}" stroke="#333333" stroke-width="1"/>
+            {% endif %}
+
+            {% for cel in line %}
+                {% assign col_count = line.size %}
+                {% assign cell_width = 650 | divided_by: col_count %}
+                {% assign x_pos = forloop.index0 | times: cell_width | plus: 20 %}
+                {% assign text_y = y_pos | plus: 28 %}
+
+                {% if cel.th %}
+                 <text x="{{ x_pos }}" y="{{ text_y }}" fill="#75b5ff" font-weight="bold" font-size="14" direction="{{ el.tableLines.dir }}">{{ cel.th }}</text>
+                {% else %}
+                 <text x="{{ x_pos }}" y="{{ text_y }}" fill="#ffffff" font-size="13" direction="{{ el.tableLines.dir }}">{{ cel.td }}</text>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+      
+    </svg>
+  </div>
+{% else %}
+  <div class="table-responsive math-wrapper mt-4">
+    <table class="table table-bordered text-center" style="font-size:0.8rem;" dir="{{ el.tableLines.dir }}">                
+        <tbody>
+            {% for line in el.tableLines.lines %}
+            <tr>
+                {% for cel in line %}
+                {% if cel.th %}
+                   <th>{{ cel.th }}</th>
+                {% else %}
+                    <td>{{ cel.td }}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endif %}
+
+    {% endif %} 
+
+    {% if el.notes %}
+        <div class="text-body-secondary small border-start ps-3 my-3">
+            <p><strong>تنبيه:</strong></p>
+            {% for note in el.notes %}
+                {% if note.ltr %}
+                    <p dir="ltr">{{ note.ltr }}</p>
+                {% elsif note.center %}
+                    <p class="text-center" dir="ltr">{{ note.center }}</p>
+                {% else %}
+                    <p>{{ note.rtl }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if el.NB %}
+    {% assign type = el.NB.type | default: 'warning' %}
+    
+    {% case type %}
+      {% when 'danger' %}  {% assign icon = 'bi-exclamation-octagon-fill' %}
+      {% when 'success' %} {% assign icon = 'bi-check-circle-fill' %}
+      {% when 'info' %}    {% assign icon = 'bi-info-circle-fill' %}
+      {% when 'primary' %} {% assign icon = 'bi-patch-question-fill' %}
+      {% else %}           {% assign icon = 'bi-lightbulb-fill' %}
+    {% endcase %}
+
+    <div class="alert alert-{{ type }} border-0 shadow-sm mt-3" role="alert">
+        <div class="d-flex align-items-center mb-2">
+            <i class="bi {{ icon }} mx-3 text-{{ type }} fs-4"></i>
+            <span class="text-{{ type }} fw-bold">
+                {% if el.NB.title %}
+                    {{ el.NB.title }}
+                {% else %}
+                    {{ type | capitalize }}:
+                {% endif %}
+            </span>
+        </div>
+        <div class="nb-content px-3">
+            {% for item in el.NB.NBs %}
+                {% if item.ltr %}
+                    <p dir="ltr" class="mb-1">{{ item.ltr }}</p>
+                {% elsif item.center %}
+                    <p class="text-center dir-ltr mb-1">{{ item.center }}</p>
+                {% else %}
+                    <p class="mb-1">{{ item.rtl }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+
+{% endfor %}
+
+<hr class="mt-5">
+
+<div class="previous-link mt-2">
+    {% if page.previous_url %}
+    <a href="{{ page.previous_url | relative_url }}" class="btn btn-outline-primary" style="width: 100%">
+        <i class="fas fa-arrow-right ml-2"></i> السابق: {{ page.previous_title }}
+    </a>
+    {% endif %}
+</div>
+
+<div class="next-link mt-2">
+    {% if page.next_url %}
+    <a href="{{ page.next_url | relative_url }}" class="btn btn-outline-primary" style="width: 100%;">
+        التالي: {{ page.next_title }} <i class="fas fa-arrow-left mr-2"></i>
+    </a>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+
+                 
