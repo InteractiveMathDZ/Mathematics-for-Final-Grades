@@ -56,12 +56,16 @@ const MathSovereign = {
             config.elements.forEach(el => {
                 if (el.type === 'function') {
                     // التعطيل الصريح للـ label التلقائي المشوه
-                    b.create('functiongraph', [x => eval(el.fn.replace(/\^/g, '**').replace(/x/g, `(${x})`))], { 
-                        strokeColor: el.strokeColor || "blue", 
-                        strokeWidth: el.strokeWidth || 3,
-                        dash: el.dash || 0,
-                        withLabel: false // هذا سيحذف y=; فوراً
-                    });
+                    b.create(
+                        'functiongraph',
+                        [x => eval(el.fn.replace(/\^/g, '**').replace(/x/g, `(${x})`))],
+                          { 
+                            strokeColor: el.strokeColor || "blue", 
+                            strokeWidth: el.strokeWidth || 3,
+                            dash: el.dash || 0,
+                            withLabel: false
+                           }
+                    );
                 } else if (el.type === 'path') {
                     try {
                         let px = el.points.map(p => p[0]);
@@ -82,25 +86,22 @@ const MathSovereign = {
                           fillColor: el.fillColor || 'red', 
                           withLabel: false, 
                           fixed: el.fixed || true 
-                    }); } catch(e) { console.log('point drawing error :' + e ); };
+                          });
+                     } catch(e) { console.log('point drawing error :' + e ); };
                       
                 } else if (el.type === 'text') {
                     // نعتمد على النصوص اليدوية فقط للتحكم الكامل
                     try { b.create('text', 
-                        [el.x, el.y, el.content], {
+                          [el.x, el.y, el.content], {
                               color: el.color || axisColor, 
                               fontSize: 16, 
                               fixed: el.fixed || true,
                               anchorX: el.anchorX || 'left',
                               anchorY: el.anchorY || 'top',
                               isLabel: false,
-                              rotate: el.rotate || 0 // القيمة بالدرجات، الافتراضي 0 (أفقي)
+                              rotate: el.rotate || 0
                         }); 
-                        } catch(e) { 
-                                     console.log('text drawing error :' + e ); 
-                                   };
-                  };
-                      
+                      } catch(e) { console.log('text drawing error :' + e )};
                 } else if (el.type === 'line') {
                     try { b.create('line', el.points, {
                           strokeColor: el.color || "blue", 
