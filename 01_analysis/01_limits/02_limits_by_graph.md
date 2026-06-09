@@ -68,7 +68,7 @@ elements:
           formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
         - title: "6-نزول المنحنى عند الأطراف"
           interpretation: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
-          formula: "$$\\lim\\limits{x \\to \\pm\\infty} f(x) = -\\infty$$"
+          formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
 
   - parags:
       - rtl: "ونجملها في الجدول التالي:"
