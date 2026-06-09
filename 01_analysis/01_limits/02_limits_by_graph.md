@@ -71,7 +71,7 @@ elements:
           formula: "$$\\lim\\limits{x \\to \\pm\\infty} f(x) = -\\infty$$"
 
   - parags:
-      - rtl: "ونعملها في الجدول التالي:"
+      - rtl: "ونجملها في الجدول التالي:"
 
   - tableLines:
       dir: rtl
