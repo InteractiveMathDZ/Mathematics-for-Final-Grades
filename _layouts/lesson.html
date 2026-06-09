@@ -58,10 +58,9 @@ layout: default
             <div class="slides-container">
                 {% for slide in el.tableSlides.slides %}
                     <div class="slide-card">
-                        <div class="slide-header">
-                            <span class="badge-status">{{ loop.index }} / 6</span>
+                        <h3 class="text-primary mt-4 mb-4">
                              {{ slide.title }}
-                        </div>
+                        </h3>
                         <div class="slide-body">
                             <p class="interpretation">{{ slide.interpretation }}</p>
                             <div class="math-formula">{{ slide.formula }}</div>
