@@ -4,15 +4,10 @@
 function buildDirectedAngle(id, config) {
     if (typeof JXG === 'undefined') return;
 
-    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
-                   document.documentElement.getAttribute('data-theme') === 'dark' ||
-                   document.body.classList.contains('dark-theme') ||
-                   document.body.classList.contains('dark');
-
     const theme = {
-        axisColor: isDark ? '#444444' : '#dddddd', 
-        gridColor: isDark ? '#222222' : '#e5e5e5',
-        textColor: isDark ? '#ffffff' : '#222222',
+        axisColor: '#444444', 
+        gridColor: '#222222',
+        textColor: '#ffffff',
         uColor: '#00ffcc', 
         vColor: '#ff0077', 
         arcColor: '#75b5ff'
