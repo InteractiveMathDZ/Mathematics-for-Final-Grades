@@ -1,6 +1,6 @@
 {% for el in page.elements %}
 
-    {% include elements/elements.html %}
+    {% include elements/basic_elements.html %}
 
     {% if el.activity %}
         <div class="activity-wrapper my-5 shadow-sm border rounded p-3">
@@ -26,7 +26,7 @@
                 
                 {% for el in el.tableSlides.elements %}
                     <div class="slide-card">
-                        {% include elements/elements.html %}
+                        {% include elements/basic_elements.html %}
                     </div>
                 {% endfor %}
             </div>
