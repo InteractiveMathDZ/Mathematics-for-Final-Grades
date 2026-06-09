@@ -33,12 +33,13 @@ layout: default
     {% endif %}
 
     {% if el.graph %}
-        <div 
-            id="{{ el.graph.id }}" 
-            class="{{ el.graph.class }}" 
-            data-graph-config='{{ el.graph | jsonify }}'
-            style="width: 100%; min-height: 400px; margin: 20px 0;"
-            dir="ltr">
+        <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark" dir="ltr">
+            <div 
+                id="{{ el.graph.id }}" 
+                class="{{ el.graph.class }}" 
+                data-graph-config='{{ el.graph | jsonify }}'
+                style="width: 100%; min-height: 400px; margin: 20px 0;">
+            </div>
         </div>
     {% endif %}
 
