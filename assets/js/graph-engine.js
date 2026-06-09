@@ -90,7 +90,11 @@ const MathSovereign = {
                         [el.x, el.y, el.content], {
                               color: el.color || axisColor, 
                               fontSize: 16, 
-                              fixed: el.fixed || true }); 
+                              fixed: el.fixed || true,
+                              anchorX: el.anchorX || 'left',
+                              anchorY: el.anchorY || 'top',
+                              isLabel: false,
+                              rotate: el.rotate || 0 // القيمة بالدرجات، الافتراضي 0 (أفقي)}); 
                         } catch(e) { console.log('text drawing error :' + e ); };
                       
                 } else if (el.type === 'line') {
