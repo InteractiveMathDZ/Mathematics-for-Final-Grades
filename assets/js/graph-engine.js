@@ -98,7 +98,7 @@ const MathSovereign = {
                               fixed: el.fixed || true,
                               anchorX: el.anchorX || 'left',
                               anchorY: el.anchorY || 'top',
-                              isLabel: false,
+                              withLabel: false,
                               rotate: el.rotate || 0
                         }); 
                       } catch(e) { console.log('text drawing error :' + e )};
