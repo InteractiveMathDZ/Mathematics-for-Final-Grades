@@ -98,8 +98,8 @@ const MathSovereign = {
                               fixed: el.fixed || true,
                               anchorX: el.anchorX || 'left',
                               anchorY: el.anchorY || 'top',
-                              withLabel: false,
-                              rotate: el.rotate || 0
+                              withLabel: false
+                              //rotate: el.rotate || 0
                         }); 
                       } catch(e) { console.log('text drawing error :' + e )};
                 } else if (el.type === 'line') {
