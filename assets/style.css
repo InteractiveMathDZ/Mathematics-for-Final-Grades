@@ -340,6 +340,35 @@ table {
 .btn-next { background-color: #198754; }
 .btn-back { background-color: #6c757d; }
 
+.slider-wrapper {
+    margin: 20px 0;
+    width: 100%;
+}
+.slides-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+.slide-card {
+    flex: 0 0 85%; /* يضمن ظهور جزء من الكارت الموالية ليتنبه التلميذ */
+    scroll-snap-align: start;
+    background: #1e1e1e; /* يتوافق مع الـ bg-dark */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.scroll-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
 /* تحسينات الموبايل الشاملة والتعديل على أبعاد الدوائر لضبط الاستجابة */
 @media (max-width: 600px) {
     [data-bs-theme='dark'] .lesson-card { padding: 15px; }
