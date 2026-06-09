@@ -53,6 +53,25 @@ layout: default
             </div>
         </div>
     {% endif %}
+    {% if el.tableSlides %}
+        <div class="slider-wrapper" dir="rtl">
+            <div class="slides-container">
+                {% for slide in el.tableSlides.slides %}
+                    <div class="slide-card">
+                        <div class="slide-header">
+                            <span class="badge-status">{{ loop.index }} / 6</span>
+                            ### {{ slide.title }}
+                        </div>
+                        <div class="slide-body">
+                            <p class="interpretation">{{ slide.interpretation }}</p>
+                            <div class="math-formula">{{ slide.formula }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="scroll-hint"> اسحب أفقياً لرؤية الحالات الموالية </div>
+        </div>
+    {% endif %}
 
     {% if el.h3 %}
         <h3 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary mt-4 mb-4">
