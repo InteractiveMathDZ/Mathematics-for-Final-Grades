@@ -80,7 +80,7 @@ elements:
               title: "6-نزول المنحنى عند الأطراف"
               interpretation: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
               formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
-          - graph
+          - graph:
 
   - parags:
       - rtl: "ونجملها في الجدول التالي:"
