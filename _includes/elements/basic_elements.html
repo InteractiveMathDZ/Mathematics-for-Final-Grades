@@ -14,7 +14,7 @@
             id="{{ el.graph.id }}" 
             class="{{ el.graph.class }}" 
             data-graph-config='{{ el.graph | jsonify }}'
-            style="width: 100%; min-height: 400px; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
+            style="width: 100%; min-height: {% if el.graph.rect %}{{ el.graph.rect }};{% elsif %}400px;{% endif %} background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
         </div>
     </div>
 {% endif %}
