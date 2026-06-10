@@ -12,25 +12,15 @@
     {% if el.tableSlides %}
         <div class="slider-wrapper" dir="rtl">
             <div class="slides-container">
-                {% for slide in el.tableSlides.slides %}
+                {% for card in el.tableSlides.cards %}
                     <div class="slide-card">
-                        <h3 class="text-primary mt-4 mb-4">
-                             {{ slide.title }}
-                        </h3>
-                        <div class="slide-body">
-                            <p class="interpretation">{{ slide.interpretation }}</p>
-                            <div class="math-formula">{{ slide.formula }}</div>
-                        </div>
-                    </div>
-                {% endfor %}
-                
-                {% for el in el.tableSlides.elements %}
-                    <div class="slide-card">
-                        {% include elements/basic_elements.html %}
+                        {% for el in card %}
+                           {% include elements/basic_elements.html %}
+                        {% endfor %}
                     </div>
                 {% endfor %}
             </div>
-            <div class="scroll-hint"> اسحب أفقياً لرؤية الحالات الموالية </div>
+            <div class="scroll-hint">اسحب أفقياً لرؤية الموالي...</div>
         </div>
     {% endif %}
 {% endfor %}
