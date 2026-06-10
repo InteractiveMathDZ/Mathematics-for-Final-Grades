@@ -56,27 +56,29 @@ elements:
                 interpretation: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
                 formula: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
           - graph:
-      - - slid:
-            - title: "2-الامتداد اللانهائي صعوداً بجوار مستقيم"
+        - - slid:
+              title: "2-الامتداد اللانهائي صعوداً بجوار مستقيم"
               interpretation: "صعود المنحنى بشكل غير محدود نحو الأعلى بجوار مستقيم عمودي."
               formula: "$$\\lim\\limits_{x \\to a} f(x) = +\\infty$$"
-      card:
-        -slid:
-           - title: "3-الامتداد اللانهائي نزولاً بجوار مستقيم"
-             interpretation: "نزول المنحنى بشكل غير محدود نحو الأسفل بجوار مستقيم عمودي."
-             formula: "$$\\lim\\limits_{x \\to a} f(x) = -\\infty$$"
-        - graph:
-      card:
-        - slid:      
-            - title: "4-الاستقرار الأفقي عند الأطراف"
+          - graph:
+        - - slid:
+              title: "3-الامتداد اللانهائي نزولاً بجوار مستقيم"
+              interpretation: "نزول المنحنى بشكل غير محدود نحو الأسفل بجوار مستقيم عمودي."
+              formula: "$$\\lim\\limits_{x \\to a} f(x) = -\\infty$$"
+          - graph:
+        - - slid:      
+              title: "4-الاستقرار الأفقي عند الأطراف"
               interpretation: "استقرار المنحنى أفقيًا بجوار مستقيم موازٍ لمحور الفواصل كلما كبرت أو صغرت قيم $x$."
               formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = L$$"
-      
-        - title: "5-الصعود عند الأطراف"
-          interpretation: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
-          formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
-        - title: "6-نزول المنحنى عند الأطراف"
-          interpretation: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
+          - graph:
+        - - slid:
+              title: "5-الصعود عند الأطراف"
+              interpretation: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
+              formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
+          - graph:
+        - - slid:
+              title: "6-نزول المنحنى عند الأطراف"
+              interpretation: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
           formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
 
   - parags:
