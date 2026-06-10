@@ -63,8 +63,8 @@ elements:
               id: "limit-concept-discontinuity"
               class: "graph-container"
               rect: 200
-              xDomain: [-100, 100]
-              yDomain: [-100, 100]
+              xDomain: [-25, 25]
+              yDomain: [-25, 25]
               elements:
                 - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
                 - { type: "text", content: "C_f", x: 2.2, y: 3.7, color: "#00ffcc" }
