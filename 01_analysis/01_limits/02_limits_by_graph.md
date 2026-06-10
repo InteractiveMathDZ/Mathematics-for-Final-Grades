@@ -67,8 +67,8 @@ elements:
               yDomain: [-5, 5]
               elements:
                 - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
-                - { type: "text", content: "C_f", x: 5.2, y: 5, color: "#00ffcc" }
-                - { type: "line", points: [[0, 0], [1, 1]], color: "#666666", dash: 2, width: 1 }
+                - { type: "text", content: "C_f", x: 3, y: 4, color: "#00ffcc" }
+                - { type: "line", points: [[0, 0], [1, 1]], color: "red", dash: 2, width: 1.5 }
                 - { type: "text", content: "y = x", x: 1.95, y: 2, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
         - - h3: "3-الامتداد اللانهائي نزولاً بجوار مستقيم"
           - parags:
