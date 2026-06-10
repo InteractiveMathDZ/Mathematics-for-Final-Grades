@@ -30,16 +30,6 @@
     </div>
 {% endif %}
 
-{% if el.slid %}
-    <h3 class="text-primary mt-4 mb-4">
-        {{ el.slid.title }}
-    </h3>
-    <div class="slide-body">
-        <p class="interpretation">{{ el.slid.interpretation }}</p>
-        <div class="math-formula">{{ el.slid.formula }}</div>
-    </div>
-{% endif %}
-
 {% if el.h3 %}
     <h3 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary mt-4 mb-4">
         {% if el.h3.text %}
