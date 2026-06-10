@@ -52,9 +52,9 @@ elements:
   - tableSlides:
       cards:
         - - slid:
-              - title: "1-الفجوات والنقاط"
-                interpretation: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
-                formula: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
+              title: "1-الفجوات والنقاط"
+              interpretation: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
+              formula: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
           - graph:
         - - slid:
               title: "2-الامتداد اللانهائي صعوداً بجوار مستقيم"
