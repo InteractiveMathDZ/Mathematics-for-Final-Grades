@@ -67,11 +67,11 @@ elements:
               yDomain: [-5, 5]
               elements:
                 - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
-                - { type: "text", content: "C_f", x: 3, y: 4.3, color: "#00ffcc" }
+                - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
                 - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
                 - { type: "text", content: "y = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
                 - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
-                - { type: "text", content: "y = x", x: 2.1, y: 2, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
+                - { type: "text", content: "y = x", x: 2.1, y: 1.9, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
         - - h3: "3-الامتداد اللانهائي نزولاً بجوار مستقيم"
           - parags:
               - center: "نزول المنحنى بشكل غير محدود نحو الأسفل بجوار مستقيم عمودي."
