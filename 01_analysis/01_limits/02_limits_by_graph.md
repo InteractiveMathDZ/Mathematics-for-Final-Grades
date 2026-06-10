@@ -62,10 +62,11 @@ elements:
           - graph:
               id: "limit-concept-discontinuity"
               class: "graph-container"
+              rect: 200
               xDomain: [-1.5, 3.5]
               yDomain: [-0.5, 4.5]
               elements:
-                - { type: "function", fn: "(x**2 - 1) / (x - 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+                - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
                 - { type: "text", content: "C_f", x: 2.2, y: 3.7, color: "#00ffcc" }
                 - { type: "point", x: 1, y: 2, strokeColor: "#ff007f", fillColor: "black", size: 2 }
                 - { type: "line", points: [[1, 0], [1, 2]], color: "#666666", dash: 2, width: 1 }
