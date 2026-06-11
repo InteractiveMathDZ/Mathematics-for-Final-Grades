@@ -42,6 +42,16 @@
     </h3>
 {% endif %}
 
+{% if el.h4 %}
+    <h4 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary ms-4 mt-4 mb-4">
+        {% if el.h4.text %}
+            {{ el.h4.text }}
+        {% else %}
+            {{ el.h4 }}
+        {% endif %}
+    </h4>
+{% endif %}
+
 {% if el.parags %}
     {% for parag in el.parags %}
         {% if parag.ltr %}
