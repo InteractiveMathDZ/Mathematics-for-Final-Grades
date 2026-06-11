@@ -57,7 +57,7 @@ elements:
       - rtl: "مثال ذلك، النهاية التالية:"
       - center: "$\\lim\\limits_{ x \\to 1 } \\frac{x^3}{x}$"
       - rtl: "تأمل تمثيلها البياني في الشكل الموالي، تلاحظ ببساطة أن:"
-      - center: "$\\limm\\limits_{x \\to 0} \\frac{x^3}{x} = 0$"
+      - center: "$\\lim\\limits_{x \\to 0} \\frac{x^3}{x} = 0$"
   - graph:
       id: "limit-concept-discontinuity-1"
       class: "graph-container"
