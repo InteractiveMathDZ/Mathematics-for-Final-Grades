@@ -52,7 +52,23 @@ elements:
   - h4: "1-نهاية منتهية عندما يؤول $x$ إلى عدد حقيقي ثابت:"
   - parags:
       - rtl: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
-      - formula: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
+      - center: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
+      - rtl: "مثال ذلك، النهاية التالية:"
+      - center: "$\\lim\\limits_{ x \\to 1 } \\frac{x^2}{x-1}$"
+      - rtl: "تأمل تمثيلها البياني في الشكل الموالي:"
+  - graph:
+      id: "limit-concept-discontinuity-1"
+      class: "graph-container"
+      xDomain: [-5, 5]
+      yDomain: [-5, 5]
+      elements:
+        - { type: "function", fn: "(x**2 / x)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
+        - { type: "point", x: 0, y: 0, color: "red", fillColor: "black" size: 2 }
+        - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
+        - { type: "text", content: "y = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
+        - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
+        - { type: "text", content: "y = x", x: 2.1, y: 1.9, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
   - h3: "2- نهاية غير منتهية بجوار مستقيم عمودي"
   - parags:
       - rtl: "صعود المنحنى بشكل غير محدود نحو الأعلى بجوار مستقيم عمودي."
