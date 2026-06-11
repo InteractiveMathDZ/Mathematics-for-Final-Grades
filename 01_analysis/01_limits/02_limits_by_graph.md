@@ -49,13 +49,15 @@ elements:
 
   - parags:
       - rtl: "أثناء دراسة مآل المنحنى الممثل للدالة، نميز تحليلياً ست حالات رئيسية، نفصلها فيما يلي:"
+        
   - h4: "1-نهاية منتهية عندما يؤول $x$ إلى عدد حقيقي ثابت:"
   - parags:
       - rtl: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
       - center: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
       - rtl: "مثال ذلك، النهاية التالية:"
       - center: "$\\lim\\limits_{ x \\to 1 } \\frac{x^3}{x}$"
-      - rtl: "تأمل تمثيلها البياني في الشكل الموالي:"
+      - rtl: "تأمل تمثيلها البياني في الشكل الموالي، تلاحظ ببساطة أن:"
+      - center: "$\\limm\\limits_{x \\to 0} \\frac{x^3}{x} = 0$"
   - graph:
       id: "limit-concept-discontinuity-1"
       class: "graph-container"
@@ -66,10 +68,16 @@ elements:
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
         - { type: "point", x: 0, y: 0, color: "red", fillColor: "black", size: 2 }
       
-  - h3: "2- نهاية غير منتهية بجوار مستقيم عمودي"
+  - h4: "2- نهاية غير منتهية بجوار مستقيم عمودي"
   - parags:
       - rtl: "صعود أو نزول المنحنى بشكل غير محدود نحو الأعلى أو الأسفل بجوار مستقيم عمودي."
-  - formula: "$$\\lim\\limits_{x \\to a} f(x) = \\pm\\infty$$"
+      - center: "$$\\lim\\limits_{x \\to a} f(x) = \\pm\\infty$$"
+      - rtl: "مثال ذلك النهاية التالية:"
+      - center: "$\\lim\\limits_{x \\to 0} \\frac{x^2 + 1}{x}$"
+      - rtl: "التمثيل البياني لهذه الدالة يظهر أن:"
+      - center: "$\\lim\\limits_{x \\to 0^-} \\frac{x^2 + 1}{x} = -\\infty$"
+      - rtl: "و:"
+      - center: "$\\lim\\limits_{x \\to 0^+} \\frac{x^2 + 1}{x} = +\\infty$"
   - graph:
       id: "limit-concept-discontinuity"
       class: "graph-container"
@@ -79,17 +87,16 @@ elements:
         - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
         - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
-        - { type: "text", content: "y = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
+        - { type: "text", content: "x = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
         - { type: "text", content: "y = x", x: 2.1, y: 1.9, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
-  - h3: "3-الامتداد اللانهائي ن"
-  - parags:
-      - center: "نزول المنحنى بشكل غير محدود نحو الأسفل بجوار مستقيم عمودي."
-  - formula: "$$\\lim\\limits_{x \\to a} f(x) = -\\infty$$"
-  - h3: "4-الاستقرار الأفقي عند الأطراف"
+    
+  - h4: "3-الاستقرار الأفقي عند الأطراف"
   - parags:
       - center: "استقرار المنحنى أفقيًا بجوار مستقيم موازٍ لمحور الفواصل كلما كبرت أو صغرت قيم $x$."
-  - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = L$$"
+      - center: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = L$$"
+      - rtl: "مثاله:"
+      - center: ""
   - h3: "5-الصعود عند الأطراف"
   - parags:
       - center: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
