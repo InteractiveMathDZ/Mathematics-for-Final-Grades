@@ -64,7 +64,7 @@ elements:
       elements:
         - { type: "function", fn: "(x**2 / x)", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "point", x: 0, y: 0, color: "red", fillColor: "black" size: 2 }
+        - { type: "point", x: 0, y: 0, color: "red", fillColor: "black", size: 2 }
         - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
         - { type: "text", content: "y = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
