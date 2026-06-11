@@ -62,7 +62,6 @@ elements:
           - graph:
               id: "limit-concept-discontinuity"
               class: "graph-container"
-              rect: 250
               xDomain: [-5, 5]
               yDomain: [-5, 5]
               elements:
