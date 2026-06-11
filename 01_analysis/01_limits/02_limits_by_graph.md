@@ -101,7 +101,7 @@ elements:
       - center: "$\\lim\\limits_{x \\to \\pm\\infty} \\frac{2x+3}{x+1}$"
       - rtl: "قراءة التمثيل البياني لهذه الدالة، يعطينا:"
       - center: "$\\lim\\limits_{x \\to \\pm\\infty} \\frac{2x+3}{x+1} = 2$"
-    - graph:
+  - graph:
       id: "limit-concept-discontinuity-3"
       class: "graph-container"
       xDomain: [-5, 5]
