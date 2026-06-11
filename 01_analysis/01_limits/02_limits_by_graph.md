@@ -104,8 +104,8 @@ elements:
   - graph:
       id: "limit-concept-discontinuity-3"
       class: "graph-container"
-      xDomain: [-5, 5]
-      yDomain: [-5, 5]
+      xDomain: [-10, 10]
+      yDomain: [-10, 10]
       elements:
         - { type: "function", fn: "(2*x + 3) / (x + 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
