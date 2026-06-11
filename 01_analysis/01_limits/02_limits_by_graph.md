@@ -80,7 +80,7 @@ elements:
       - rtl: "و:"
       - center: "$\\lim\\limits_{x \\to 0^+} \\frac{x^2 + 1}{x} = +\\infty$"
   - graph:
-      id: "limit-concept-discontinuity"
+      id: "limit-concept-discontinuity-2"
       class: "graph-container"
       xDomain: [-5, 5]
       yDomain: [-5, 5]
@@ -94,11 +94,25 @@ elements:
     
   - h4: "3-الاستقرار الأفقي عند الأطراف"
   - parags:
-      - rtl: "استقرار المنحنى أفقيًا بجوار مستقيم موازٍ لمحور الفواصل كلما كبرت أو صغرت قيم $x$."
+      - rtl: "نتعرض هنا أيضا، إلى حالتين، عندما يؤول $x$إلى $\\pm\\infty$"
+      - rtl: "يمتد المنحنى أفقيًا بجوار مستقيم موازٍ لمحور الفواصل كلما كبرت أو صغرت قيم $x$."
       - center: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = L$"
       - rtl: "مثاله:"
-      - center: ""
-  - h3: "5-الصعود عند الأطراف"
+      - center: "$\\lim\\limits_{x \\to \\pm\\infty} \\frac{2x+3}{x+1}$"
+      - rtl: "قراءة التمثيل البياني لهذه الدالة، يعطينا:"
+      - center: "$\\lim\\limits_{x \\to \\pm\\infty} \\frac{2x+3}{x+1} = 2$"
+    - graph:
+      id: "limit-concept-discontinuity-3"
+      class: "graph-container"
+      xDomain: [-5, 5]
+      yDomain: [-5, 5]
+      elements:
+        - { type: "function", fn: "(2x + 3) / (x + 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
+        - { type: "line", points: [[0, 2], [0, 2]], color: "red", dash: 2, width: 1.5 }
+        - { type: "text", content: "x = 2", x: 1, y: 2.1, color: "red" }
+        
+  - h4: "5-الصعود عند الأطراف"
   - parags:
       - center: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
   - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
