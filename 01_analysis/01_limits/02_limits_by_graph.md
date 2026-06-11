@@ -110,7 +110,7 @@ elements:
         - { type: "function", fn: "(2*x + 3) / (x + 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
         - { type: "line", points: [[0, 2], [1, 2]], color: "red", dash: 2, width: 1.5 }
-        - { type: "text", content: "x = 2", x: 1, y: 2.1, color: "red" }
+        - { type: "text", content: "y = 2", x: 1, y: 2.1, color: "red" }
         
   - h4: "5-الصعود عند الأطراف"
   - parags:
