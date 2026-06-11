@@ -64,7 +64,7 @@ elements:
         - { type: "point", x: 1, y: 2, strokeColor: "#ff007f", fillColor: "black", size: 2 }
         - { type: "line", points: [[1, 0], [1, 2]], color: "#666666", dash: 2, width: 1 }
         - { type: "line", points: [[0, 2], [1, 2]], color: "#666666", dash: 2, width: 1 } 
-        - { type: "text", content: "x = 1", x: 1.05, y: 3, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: 90 }
+        - { type: "text", content: "x = 1", x: 1.05, y: 3, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         - { type: "text", content: "y = 2", x: 2.5, y: 2.1, color: "#ffffff"}
 
   - NB:
