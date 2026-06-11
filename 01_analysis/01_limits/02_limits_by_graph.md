@@ -112,7 +112,7 @@ elements:
         - { type: "line", points: [[0, 2], [1, 2]], color: "red", dash: 2, width: 1.5 }
         - { type: "text", content: "y = 2", x: 1, y: 2.1, color: "red" }
         - { type: "line", points: [[-1, 2], [-1, 0]], color: "#ffffff", dash: 2, width: 1.5 }
-        - { type: "text", content: "x = -1", x: -0.9, y: -4, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
+        - { type: "text", content: "x = -1", x: -0.97, y: -4, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         
   - h4: "5-الصعود عند الأطراف"
   - parags:
