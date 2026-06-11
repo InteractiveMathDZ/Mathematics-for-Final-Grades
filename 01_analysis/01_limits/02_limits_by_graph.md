@@ -48,45 +48,43 @@ elements:
     id: "graph-cases"
 
   - parags:
-      - rtl: "أثناء دراسة مآل المنحنى الممثل للدالة، نميز تحليلياً ست حالات رئيسية، نفصلها في شريط السحب الموالي:"
-  - tableSlides:
-      cards:
-        - - h3: "1-الفجوات والنقاط"
-          - parags:
-              - center: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
-          - formula: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
-        - - h3: "2-الامتداد اللانهائي صعوداً بجوار مستقيم"
-          - parags:
-              - center: "صعود المنحنى بشكل غير محدود نحو الأعلى بجوار مستقيم عمودي."
-          - formula: "$$\\lim\\limits_{x \\to a} f(x) = +\\infty$$"
-          - graph:
-              id: "limit-concept-discontinuity"
-              class: "graph-container"
-              xDomain: [-5, 5]
-              yDomain: [-5, 5]
-              elements:
-                - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
-                - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-                - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
-                - { type: "text", content: "y = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
-                - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
-                - { type: "text", content: "y = x", x: 2.1, y: 1.9, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
-        - - h3: "3-الامتداد اللانهائي نزولاً بجوار مستقيم"
-          - parags:
-              - center: "نزول المنحنى بشكل غير محدود نحو الأسفل بجوار مستقيم عمودي."
-          - formula: "$$\\lim\\limits_{x \\to a} f(x) = -\\infty$$"
-        - - h3: "4-الاستقرار الأفقي عند الأطراف"
-          - parags:
-              - center: "استقرار المنحنى أفقيًا بجوار مستقيم موازٍ لمحور الفواصل كلما كبرت أو صغرت قيم $x$."
-          - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = L$$"
-        - - h3: "5-الصعود عند الأطراف"
-          - parags:
-              - center: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
-          - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
-        - - h3: "6-نزول المنحنى عند الأطراف"
-          - parags:
-              - center: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
-          - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
+      - rtl: "أثناء دراسة مآل المنحنى الممثل للدالة، نميز تحليلياً ست حالات رئيسية، نفصلها فيما يلي:"
+  - h4: "1-نهاية منتهية عندما يؤول $x$ إلى عدد حقيقي ثابت:"
+  - parags:
+      - center: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
+      - formula: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
+  - h3: "2- نهاية غير منتهية بجوار مستقيم عمودي"
+  - parags:
+      - center: "صعود المنحنى بشكل غير محدود نحو الأعلى بجوار مستقيم عمودي."
+  - formula: "$$\\lim\\limits_{x \\to a} f(x) = +\\infty$$"
+  - graph:
+      id: "limit-concept-discontinuity"
+      class: "graph-container"
+      xDomain: [-5, 5]
+      yDomain: [-5, 5]
+      elements:
+        - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
+        - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
+        - { type: "text", content: "y = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
+        - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
+        - { type: "text", content: "y = x", x: 2.1, y: 1.9, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
+  - h3: "3-الامتداد اللانهائي ن"
+  - parags:
+      - center: "نزول المنحنى بشكل غير محدود نحو الأسفل بجوار مستقيم عمودي."
+  - formula: "$$\\lim\\limits_{x \\to a} f(x) = -\\infty$$"
+  - h3: "4-الاستقرار الأفقي عند الأطراف"
+  - parags:
+      - center: "استقرار المنحنى أفقيًا بجوار مستقيم موازٍ لمحور الفواصل كلما كبرت أو صغرت قيم $x$."
+  - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = L$$"
+  - h3: "5-الصعود عند الأطراف"
+  - parags:
+      - center: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
+  - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
+  - h3: "6-نزول المنحنى عند الأطراف"
+  - parags:
+      - center: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
+  - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
 
   - parags:
       - rtl: "ونجملها في الجدول التالي:"
