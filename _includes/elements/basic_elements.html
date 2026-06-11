@@ -9,23 +9,25 @@
 {% endif %}
 
 {% if el.graph %}
-    <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark" dir="ltr">
+    <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark display: flex; justify-content: center; align-content: center; align-items: center;" 
+         dir="ltr">
         <div 
             id="{{ el.graph.id }}" 
             class="{{ el.graph.class }}" 
             data-graph-config='{{ el.graph | jsonify }}'
-            style="{% if el.graph.rect %}width: {{ el.graph.rect }}px; height: {{ el.graph.rect }}px;{% else %}width: 100%; min-height: 400px;{% endif %} background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
+            style="width: 80%; aspect-ratio: 1 / 1; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
         </div>
     </div>
 {% endif %}
 
 {% if el.simulation %}
-    <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark" dir="ltr">
+    <div class="simulation-wrapper my-4 p-2 shadow-sm border rounded bg-dark display: flex; justify-content: center; align-content: center; align-items: center;" 
+         dir="ltr">
         <div 
             id="{{ el.simulation.id }}" 
             class="jxgbox {{ el.simulation.class }}" 
             data-simulation-config='{{ el.simulation | jsonify }}'
-            style="width: 100%; min-height: 400px; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
+            style="width: 80%; aspect-ratio: 1 / 1; background-color: #1a1a1a; border-radius: 6px; overflow: hidden; touch-action: none;">
         </div>
     </div>
 {% endif %}
