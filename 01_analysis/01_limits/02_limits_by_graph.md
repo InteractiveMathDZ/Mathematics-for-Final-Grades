@@ -114,7 +114,7 @@ elements:
         - { type: "line", points: [[-1, 2], [-1, 0]], color: "#ffffff", dash: 2, width: 1.5 }
         - { type: "text", content: "x = -1", x: -0.97, y: -4, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         
-  - h4: "5-الصعود عند الأطراف"
+  - h4: "4-الصعود عند الأطراف"
   - parags:
       - rtl: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
       - center: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
@@ -131,8 +131,8 @@ elements:
       elements:
         - { type: "function", fn: " x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "blue", strokeWidth: 3 }
-        - { type: "text", content: "C_g", x: 2.5, y: 4.3, color: "blue" }
+        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "yellow", strokeWidth: 3 }
+        - { type: "text", content: "C_g", x: 7, y: 4, color: "yellow" }
         
   - h3: "6-نزول المنحنى عند الأطراف"
   - parags:
