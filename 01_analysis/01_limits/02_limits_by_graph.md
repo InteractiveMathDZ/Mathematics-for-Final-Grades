@@ -131,8 +131,8 @@ elements:
       elements:
         - { type: "function", fn: " x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "yellow", strokeWidth: 3 }
-        - { type: "text", content: "C_g", x: 7, y: 4, color: "yellow" }
+        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "cyan", strokeWidth: 3 }
+        - { type: "text", content: "C_g", x: 7, y: 4.2, color: "cyan" }
         
   - h3: "6-نزول المنحنى عند الأطراف"
   - parags:
