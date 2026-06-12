@@ -118,7 +118,7 @@ elements:
   - parags:
       - rtl: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
       - center: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$$"
-      - هذا الامتداد إلى اللانهاية، يكون إما بإتجاه محور الفواصل أو بإتجاه محور التراتيب."
+      - rtl:هذا الامتداد إلى اللانهاية، يكون إما بإتجاه محور الفواصل أو بإتجاه محور التراتيب."
       - rtl: "نأخذ في الرسم الموالي مثالين، الدالة $f(x)$ ، والتي تتزايد إلى اللانهاية بإتجاه محور التراتيب ومعها الدالة $g(x)$  التي تتزايد إلى اللانهاية بإتجاه محور الفواصل."
       - center: "$f(x) = x^2$"
       - center: "$g(x) = \\frac{x}{\\sqrt{x+1}}$"
@@ -129,9 +129,9 @@ elements:
       xDomain: [-10, 10]
       yDomain: [-10, 10]
       elements:
-        - { type: "function", fn: "x**2", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "function", fn: " x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "function", fn: "x / ((x + 1)**(1/2))", strokeColor: "blue", strokeWidth: 3 }
+        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "blue", strokeWidth: 3 }
         - { type: "text", content: "C_g", x: 2.5, y: 4.3, color: "blue" }
         
   - h3: "6-نزول المنحنى عند الأطراف"
