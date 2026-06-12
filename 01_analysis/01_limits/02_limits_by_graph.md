@@ -121,10 +121,10 @@ elements:
       - هذا الامتداد إلى اللانهاية، يكون إما بإتجاه محور الفواصل أو بإتجاه محور التراتيب."
       - rtl: "نأخذ في الرسم الموالي مثالين، الدالة $f(x)$ ، والتي تتزايد إلى اللانهاية بإتجاه محور التراتيب ومعها الدالة $g(x)$  التي تتزايد إلى اللانهاية بإتجاه محور الفواصل."
       - center: "$f(x) = x^2$"
-      - center: "$g(x) = \\frac{x}{sqrt{x+1}}$"
+      - center: "$g(x) = \\frac{x}{\\sqrt{x+1}}$"
    
   - graph:
-      id: "limit-concept-discontinuity-3"
+      id: "limit-concept-discontinuity-4"
       class: "graph-container"
       xDomain: [-10, 10]
       yDomain: [-10, 10]
