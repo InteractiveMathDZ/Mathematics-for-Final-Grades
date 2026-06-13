@@ -137,8 +137,8 @@ elements:
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
         - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
         - { type: "text", content: "C_g", x: 7, y: 4.2, color: "orange" }
-        - { type: "line", points: [[-1,0],[-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
-        - { type: "text", content: "x = -1", x: -0.97, y: -4, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
+        - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
+        - { type: "text", content: "x = -1", x: -0.97, y: 6, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         
   - h3: "6-نزول المنحنى عند الأطراف"
   - parags:
