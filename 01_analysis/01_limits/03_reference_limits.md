@@ -34,6 +34,16 @@ elements:
         - - th: "$x \\mapsto x^n$ ($n$ عدد طبيعي فردي)"
           - td: "$\\lim\\limits_{x \\to -\\infty} x^n = -\\infty$"
           - td: "$\\lim\\limits_{x \\to +\\infty} x^n = +\\infty$"
+  - graph:
+      id: "ref-power-graph"
+      class: "graph-container"
+      xDomain: [-5, 5]
+      yDomain: [-2, 10]
+      elements:
+        - { type: "function", fn: "x^2", strokeColor: "#00ffcc", strokeWidth: 3 }
+        - { type: "text", content: "n زوجي (x²)", x: 2, y: 5, color: "#00ffcc" }
+        - { type: "function", fn: "x^3/5", strokeColor: "orange", strokeWidth: 2.5 }
+        - { type: "text", content: "n فردي (x³)", x: -2.5, y: -1, color: "orange" }
 
   - NB:
       type: success
@@ -63,6 +73,16 @@ elements:
           - td: "$\\lim\\limits_{\\substack{x \\to 0 \\\\ x < 0}} \\frac{1}{x} = -\\infty$"
           - td: "$\\lim\\limits_{\\substack{x \\to 0 \\\\ x > 0}} \\frac{1}{x} = +\\infty$"
 
+  - graph:
+      id: "ref-inverse-graph"
+      class: "graph-container"
+      xDomain: [-6, 6]
+      yDomain: [-6, 6]
+      elements:
+        - { type: "function", fn: "1/x", strokeColor: "#00ffcc", strokeWidth: 3 }
+        - { type: "text", content: "C_f", x: 2, y: 1.5, color: "#00ffcc" }
+        - { type: "line", points: [[0, -6], [0, 6]], color: "red", dash: 2, width: 1.5 }
+    
   - h3: "4. دالة الجذر التربيعي: $x \\mapsto \\sqrt{x}$"
     id: "sqrt-limits"
 
@@ -78,14 +98,51 @@ elements:
         - - th: "$x \\mapsto \\sqrt{x}$"
           - td: "$\\lim\\limits_{x \\to 0} \\sqrt{x} = 0$ (وهي صورتها المباشرة $f(0)$)"
           - td: "$\\lim\\limits_{x \\to +\\infty} \\sqrt{x} = +\\infty$"
+    
+  - graph:
+      id: "ref-sqrt-graph"
+      class: "graph-container"
+      xDomain: [-1, 10]
+      yDomain: [-1, 5]
+      elements:
+        - { type: "function", fn: "Math.sqrt(x)", strokeColor: "#00ffcc", strokeWidth: 3 }
+        - { type: "text", content: "y = √x", x: 5, y: 2.5, color: "#00ffcc" }
+    
+  - h3: "5. دالة القيمة المطلقة: $x \\mapsto |x|$"
+    id: "abs-limits"
 
-  - h3: "5. تطبيقات ومباحث نموذجية"
+  - parags:
+      - rtl: "دالة القيمة المطلقة معرفة على $\\mathbb{R}$ وتؤول قيمها دوماً نحو اللانهاية الموجبة عند الأطراف اللانهائية:"
+
+  - tableLines:
+      dir: rtl
+      lines:
+        - - th: "العبارة النموذجية"
+          - th: "عند $-\\infty$"
+          - th: "عند $+\\infty$"
+        - - th: "$x \\mapsto |x|$"
+          - td: "$\\lim\\limits_{x \\to -\\infty} |x| = +\\infty$"
+          - td: "$\\lim\\limits_{x \\to +\\infty} |x| = +\\infty$"
+
+  - h3: "6. دالتا الجيب وجيب التمام (السلوك الاهتزازي)"
+    id: "trig-limits"
+
+  - parags:
+      - rtl: "بسبب الطبيعة الدورية لكل من الدالتين $x \\mapsto \\sin x$ و $x \\mapsto \\cos x$، فإن قيمهما تظل تتأرجح بشكل مستمر ودوري بين $-1$ و $1$ كلما كبر المتغير $x$ أو صغر بلا حدود."
+
+  - NB:
+      type: danger
+      title: "تنبيه هام جداً:"
+      NBs:
+        - rtl: "النهايتان $\\lim\\limits_{x \\to \\pm\\infty} \\sin x$ و $\\lim\\limits_{x \\to \\pm\\infty} \\cos x$ **غير موجودتين**. هذا السلوك الدوري يُعد ممهداً رئيسياً لحساب النهايات باستخدام مبرهنات الحصر والمقارنة."
+
+  - h3: "7. تطبيقات ومباحث نموذجية"
     id: "ref-examples"
 
   - exemple:
-      title: "1.5. دراسة سلوك ونهاية دالة القوة الرابعة $x \\mapsto x^4$ عند أطراف مجال التعريف تحليلياً"
+      title: "1.7. دراسة سلوك ونهاية دالة القوة الرابعة $x \\mapsto x^4$ عند أطراف مجال التعريف تحليلياً"
       exemID: "ex-ref-001"
   - exemple:
-      title: "2.5. مبرهنة مآل مقلوب المقادير اللامتناهية في الكبر نحو القيمة الصفرية"
+      title: "2.7. مبرهنة مآل مقلوب المقادير اللامتناهية في الكبر نحو القيمة الصفرية"
       exemID: "ex-ref-002"
 ---
