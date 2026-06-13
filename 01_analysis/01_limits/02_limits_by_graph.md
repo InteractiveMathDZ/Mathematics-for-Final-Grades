@@ -48,7 +48,7 @@ elements:
     id: "graph-cases"
 
   - parags:
-      - rtl: "أثناء دراسة مآل المنحنى الممثل للدالة، نميز هندسيا سبع حالات رئيسية، نفصلها فيما يلي:"
+      - rtl: "أثناء دراسة مآل المنحنى الممثل للدالة، نميز هندسيا مجموعة حالات رئيسية، نفصلها فيما يلي:"
         
   - h4: "1-نهاية منتهية عندما يؤول $x$ إلى عدد حقيقي ثابت:"
   - parags:
@@ -68,10 +68,10 @@ elements:
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
         - { type: "point", x: 0, y: 0, color: "red", fillColor: "black", size: 2 }
       
-  - h4: "2- نهاية غير منتهية بجوار مستقيم عمودي"
+  - h4: "2- نهاية غير منتهية بجوار مستقيم عمودي أو مائل"
   - parags:
       - rtl: "نعالج تحت هذا العنوان، حالتي الصعود والنزول."
-      - rtl: "صعود أو نزول المنحنى بشكل غير محدود نحو الأعلى أو الأسفل بجوار مستقيم عمودي."
+      - rtl: "صعود أو نزول المنحنى بشكل غير محدود نحو الأعلى أو الأسفل بجوار مستقيم عمودي أو مائل."
       - center: "$$\\lim\\limits_{x \\to a} f(x) = \\pm\\infty$$"
       - rtl: "مثال ذلك النهاية التالية:"
       - center: "$\\lim\\limits_{x \\to 0} \\frac{x^2 + 1}{x}$"
@@ -122,7 +122,7 @@ elements:
       - rtl: "نأخذ في الرسم الموالي مثالين، الدالة $f(x)$ ، والتي تتزايد إلى اللانهاية بإتجاه محور التراتيب ومعها الدالة $g(x)$  التي تتزايد إلى اللانهاية بإتجاه محور الفواصل."
       - center: "$f(x) = x^2$"
       - center: "$g(x) = \\frac{x}{\\sqrt{x+1}}$"
-      - rtl: "عند قراءة الرسمين البيانيين للدالتينونجد أن:"
+      - rtl: "عند قراءة الرسمين البيانيين للدالتين نجد أن:"
       - center: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$"
       - rtl: "و:"
       - center: "$\\lim\\limits_{x \\to +\\infty} g(x) = +\\infty$"
@@ -140,11 +140,24 @@ elements:
         - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
         - { type: "text", content: "x = -1", x: -0.97, y: 6, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         
-  - h3: "6-نزول المنحنى عند الأطراف"
+  - h3: "5-نزول المنحنى عند الأطراف"
   - parags:
       - center: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
-  - formula: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
-
+      - center: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
+      - rtl: "مثال ذلك، من المثال ماذا لو أضفنا فقط إشارة سالب، للدالتين f و g... لنلاحظ:"
+      - center: "$f(x) = -x^2$"
+      - center: "$g(x) = -\\frac{x}{\\sqrt{x+1}}$"
+  - graph:
+      id: "limit-concept-discontinuity-4"
+      class: "graph-container"
+      xDomain: [-10, 10]
+      yDomain: [-10, 10]
+      elements:
+        - { type: "function", fn: " -x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
+        - { type: "function", fn: "-x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
+        - { type: "text", content: "C_g", x: 7, y: 4.2, color: "orange" }
+        - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
   - parags:
       - rtl: "ونجملها في الجدول التالي:"
 
