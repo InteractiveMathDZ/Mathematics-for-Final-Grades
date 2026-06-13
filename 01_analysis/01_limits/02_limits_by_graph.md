@@ -1,7 +1,7 @@
 ---
 layout: lesson
 title: "القراءة البيانية للنهايات"
-subtitle: "استنتاج نهايات دالة عدادية من تمثيلها البياني"
+subtitle: "استنتاج نهايات دالة عددية من تمثيلها البياني"
 permalink: /limits_by_graph/
 mathJax: true
 graph: true
@@ -55,7 +55,7 @@ elements:
       - rtl: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
       - center: "$$\\lim\\limits_{x \\to a} f(x) = L$$"
       - rtl: "مثال ذلك، النهاية التالية:"
-      - center: "$\\lim\\limits_{ x \\to 1 } \\frac{x^3}{x}$"
+      - center: "$\\lim\\limits_{ x \\to 0 } \\frac{x^3}{x}$"
       - rtl: "تأمل تمثيلها البياني في الشكل الموالي، تلاحظ ببساطة أن:"
       - center: "$\\lim\\limits_{x \\to 0} \\frac{x^3}{x} = 0$"
   - graph:
@@ -184,7 +184,7 @@ elements:
           - td: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$"
         - - th: "انحدار المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
           - td: "تؤول قيم الدالة نحو اللانهاية السالبة كلما تباعدت قيم المتغير $x$."
-          - td: "$\\lim\\limits{x \\to \\pm\\infty} f(x) = -\\infty$"
+          - td: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$"
 
   - NB:
       type: success
