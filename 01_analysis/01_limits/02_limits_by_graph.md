@@ -140,7 +140,7 @@ elements:
         - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
         - { type: "text", content: "x = -1", x: -0.97, y: 6, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         
-  - h3: "5-نزول المنحنى عند الأطراف"
+  - h4: "5-نزول المنحنى عند الأطراف"
   - parags:
       - center: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
       - center: "$$\\lim\\limits_{x \\to \\pm\\infty} f(x) = -\\infty$$"
@@ -148,7 +148,7 @@ elements:
       - center: "$f(x) = -x^2$"
       - center: "$g(x) = -\\frac{x}{\\sqrt{x+1}}$"
   - graph:
-      id: "limit-concept-discontinuity-4"
+      id: "limit-concept-discontinuity-5"
       class: "graph-container"
       xDomain: [-10, 10]
       yDomain: [-10, 10]
