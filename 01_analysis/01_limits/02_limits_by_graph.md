@@ -122,6 +122,10 @@ elements:
       - rtl: "نأخذ في الرسم الموالي مثالين، الدالة $f(x)$ ، والتي تتزايد إلى اللانهاية بإتجاه محور التراتيب ومعها الدالة $g(x)$  التي تتزايد إلى اللانهاية بإتجاه محور الفواصل."
       - center: "$f(x) = x^2$"
       - center: "$g(x) = \\frac{x}{\\sqrt{x+1}}$"
+      - rtl: "عند قراءة الرسمين البيانيين للدالتينونجد أن:"
+      - center: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$
+      - rtl: "و:"
+      - center: "$\\lim\\limits_{x \\to +\\infty} g(x) = +\\infty$
    
   - graph:
       id: "limit-concept-discontinuity-4"
@@ -131,8 +135,10 @@ elements:
       elements:
         - { type: "function", fn: " x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "cyan", strokeWidth: 3 }
-        - { type: "text", content: "C_g", x: 7, y: 4.2, color: "cyan" }
+        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
+        - { type: "text", content: "C_g", x: 7, y: 4.2, color: "orange" }
+        - { type: "line", point,[[-1,0],[-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
+        - { type: "text", content: "x = -1", x: -0.97, y: -4, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
         
   - h3: "6-نزول المنحنى عند الأطراف"
   - parags:
