@@ -153,9 +153,9 @@ elements:
       xDomain: [-10, 10]
       yDomain: [-10, 10]
       elements:
-        - { type: "function", fn: " -x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - { type: "function", fn: " -1*x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "function", fn: "-x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
+        - { type: "function", fn: "-1*x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
         - { type: "text", content: "C_g", x: 7, y: 4.2, color: "orange" }
         - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
   - parags:
