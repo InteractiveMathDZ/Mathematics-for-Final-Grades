@@ -123,9 +123,9 @@ elements:
       - center: "$f(x) = x^2$"
       - center: "$g(x) = \\frac{x}{\\sqrt{x+1}}$"
       - rtl: "عند قراءة الرسمين البيانيين للدالتينونجد أن:"
-      - center: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$
+      - center: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$"
       - rtl: "و:"
-      - center: "$\\lim\\limits_{x \\to +\\infty} g(x) = +\\infty$
+      - center: "$\\lim\\limits_{x \\to +\\infty} g(x) = +\\infty$"
    
   - graph:
       id: "limit-concept-discontinuity-4"
