@@ -1,7 +1,7 @@
 ---
 layout: lesson
 title: "نهايات الدوال المرجعية"
-subtitle: "النهايات النموذجية للدوال المألوفة عند أطراف مجالات التعريف"
+subtitle: "عند أطراف مجالات التعريف"
 permalink: /reference_limits/
 mathJax: true
 graph: true
@@ -18,7 +18,17 @@ elements:
 
   - parags:
       - rtl: "تُعد نهايات الدوال المرجعية (المألوفة) الركيزة الأساسية في حساب نهايات الدوال الأكثر تعقيداً. تُقبل هذه النهايات دون برهان في مرحلة التعليم الثانوي وتُعتمد كقواعد مرجعية مباشرة."
-
+  - tableSlides:
+      cards:
+        - - formula: "$\\lim\\limits_{x \\to -\\infty} x^2 = +\\infty$"
+          - formula: "$\\lim\\limits_{x \\to +\\infty} x^2 = +\\infty$"
+        - - formula: "$\\lim\\limits_{x \\to \\pm\\infty} \\frac{1}{x} = 0$"
+          - formula: "$\\lim\\limits_{x \\to 0^-} \\frac{1}{x} = -\\infty$"
+          - formula: "$\\lim\\limits_{x \\to 0^+} \\frac{1}{x} = +\\infty$"
+        - - formula: "$\\lim\\limits_{x \\to 0} \\sqrt{x} = 0$"
+          - formula: "$\\lim\\limits_{x \\to +\\infty} \\sqrt{x} = +\\infty$"
+        - - formula: "$\\lim\\limits_{x \\to \\pm\\infty} |x| = +\\infty$"
+    
   - h3: "2. دالة القوة: $x \\mapsto x^n$ (حيث $n \\in \\mathbb{N}^*$)"
     id: "power-limits"
 
@@ -47,7 +57,7 @@ elements:
 
   - NB:
       type: success
-      title: "قاعدة الإشارة الجبرية:"
+      title: "قاعدة:"
       NBs:
         - rtl: "إذا كان الأس $n$ زَوجيّاً ($n=2, 4, 6, \\dots$) فإن نهاية دالة القوة عند اللانهايتين تكون دائماً $+\\infty$. وإذا كان الأس $n$ فرديّاً ($n=1, 3, 5, \\dots$) فإن النهاية عند $-\\infty$ تؤول إلى $-\\infty$."
 
