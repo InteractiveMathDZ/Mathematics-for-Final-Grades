@@ -7,7 +7,7 @@ mathJax: true
 graph: true
 lessonID: "limit"
 
-next_title: "القراءة البيانية للنهايات من التمثيل البياني"
+next_title: "القراءة البيانية للنهايات"
 next_url: "/limits_by_graph/"
 
 elements:
