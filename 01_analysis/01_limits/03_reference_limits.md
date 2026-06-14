@@ -144,7 +144,7 @@ elements:
 
   - NB:
       type: danger
-      title: "تنبيه هام جداً:"
+      title: "تنبيه:"
       NBs:
         - rtl: "النهايتان $\\lim\\limits_{x \\to \\pm\\infty} \\sin x$ و $\\lim\\limits_{x \\to \\pm\\infty} \\cos x$ **غير موجودتين**. هذا السلوك الدوري يُعد ممهداً رئيسياً لحساب النهايات باستخدام مبرهنات الحصر والمقارنة."
 
