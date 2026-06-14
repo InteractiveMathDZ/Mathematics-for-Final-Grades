@@ -28,6 +28,8 @@ elements:
         - - formula: "$\\lim\\limits_{x \\to 0} \\sqrt{x} = 0$"
           - formula: "$\\lim\\limits_{x \\to +\\infty} \\sqrt{x} = +\\infty$"
         - - formula: "$\\lim\\limits_{x \\to \\pm\\infty} |x| = +\\infty$"
+        - - formula: "$\\lim\\limits_{x \\to \\pm\\infty} \\sin{x}$ غير موجودة"
+          - formula: "$\\lim\\limits_{x \\to \\pm\\infty} \\cos{x}$ غير موجودة"
     
   - h3: "2. دالة القوة: $x \\mapsto x^n$ (حيث $n \\in \\mathbb{N}^*$)"
     id: "power-limits"
