@@ -9,8 +9,8 @@ lessonID: "limit"
 
 previous_title: "القراءة البيانية للنهايات"
 previous_url: /limits_by_graph/
-next_title: "نهاية دالة مركبة وتغيير المتغير"
-next_url: /composite_limits/
+next_title: "مبرهنات العمليات على النهايات"
+next_url: "/ops_limits/"
 
 elements:
   - h3: "1. مآل ونهايات الدوال المألوفة"
