@@ -7,10 +7,12 @@ mathJax: true
 graph: true
 lessonID: "limit"
 
-previous_title: "نهايات الدوال المرجعية"
-previous_url: "/reference_limits/"
-next_title: "مبرهنات العمليات على النهايات"
-next_url: "/ops_limits/"
+previous_title: "مبرهنات العمليات على النهايات"
+previous_url: "/ops_limits/"
+next_title: "نهاية دالة كثير حدود ودالة ناطقة"
+next_url: "/polynomial_limits/"
+
+
 
 elements:
   - h3: "1. مبرهنة نهاية دالة مركبة"
