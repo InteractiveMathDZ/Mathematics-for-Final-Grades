@@ -6,10 +6,12 @@ mathJax: true
 graph: true
 lessonID: "limit"
 
-previous_title: "نهاية دالة مركبة وتغيير المتغير"
-previous_url: "/composite_limits/"
-next_title: "نهاية دالة كثير حدود ودالة ناطقة"
-next_url: "/polynomial_limits/"
+previous_title: "نهايات الدوال المرجعية"
+previous_url: "/reference_limits/"
+next_title: "نهاية دالة مركبة وتغيير المتغير"
+next_url: /composite_limits/
+
+
 
 elements:
   - h3: "1. القواعد الجبرية للعمليات على النهايات"
