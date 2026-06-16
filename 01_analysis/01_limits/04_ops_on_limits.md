@@ -110,9 +110,10 @@ elements:
       - rtl: "<strong>ب- السلوك الهندسي:</strong> يبين الرسم تضاؤل قيمة الكسر واقتراب منحنى دالة الحاصل من محور الفواصل (مستقيم مقارب أفقي معادلته $y=0$) كلما تزايد المقام دون حدود."
       - rtl: "<strong>ج- حالتا عدم التعيين في القسمة:</strong>"
       - rtl: "• <strong>حالة الكسر غير المنتهي ($\\frac{\\infty}{\\infty}$):</strong> عند بجوار $+\\infty$"
-      - rtl: "$$\\lim_{x \\to +\\infty} x^2 = +\\infty \\quad , \\quad \\lim_{x \\to +\\infty} x = +\\infty \\implies \\lim_{x \\to +\\infty} \\frac{x^2}{x} = \\frac{\\infty}{\\infty}$$"
-      - rtl: "• <strong>حالة الكسر الصغري ($\\frac{0}{0}$):</strong> عند اقتراب المتغير من القيمة $0$"
-      - rtl: "$$\\lim_{x \\to 0} 5x = 0 \\quad , \\quad \\lim_{x \\to 0} x = 0 \\implies \\lim_{x \\to 0} \\frac{5x}{x} = \\frac{0}{0}$$"
+  - formula: "$$\\lim_{x \\to +\\infty} x^2 = +\\infty \\quad , \\quad \\lim_{x \\to +\\infty} x = +\\infty \\implies \\lim_{x \\to +\\infty} \\frac{x^2}{x} = \\frac{\\infty}{\\infty}$$"
+  - parags:
+      - rtl: "• <strong>حالة الكسر الصفري ($\\frac{0}{0}$):</strong> عند اقتراب المتغير من القيمة $0$"
+  - formula: "$$\\lim_{x \\to 0} 5x = 0 \\quad , \\quad \\lim_{x \\to 0} x = 0 \\implies \\lim_{x \\to 0} \\frac{5x}{x} = \\frac{0}{0}$$"
 
   - h3: "9. تطبيقات عملية ونماذج حسابية مفسرة"
     id: "detailed-examples"
