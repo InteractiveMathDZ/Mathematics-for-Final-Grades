@@ -38,12 +38,12 @@ elements:
       xDomain: [0, 6]
       yDomain: [0, 7]
       elements:
-        - { type: "function", fn: "x", strokeColor: "#ff0055", strokeWidth: 1.5 }
-        - { type: "function", fn: "1/x", strokeColor: "#0055ff", strokeWidth: 1.5 }
-        - { type: "function", fn: "x + 1/x", strokeColor: "#00ffcc", strokeWidth: 3 }
+        - { type: "function", fn: "x", strokeColor: "#ff0055", strokeWidth: 3 }
+        - { type: "function", fn: "1/x", strokeColor: "#0055ff", strokeWidth: 3 }
+        - { type: "function", fn: "x + 1/x", strokeColor: "#00ffcc", strokeWidth: 1 }
 
   - parags:
-      - rtl: "<strong>ب- السلوك الهندسي:</strong> يظهر المعلم استقراء منحنى الدالة المجموع للمستقيم المقارب المائل $y=x$ بجوار اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
+      - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يظهر المعلم استقراء منحنى الدالة المجموع للمستقيم المقارب المائل $y=x$ بجوار اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
       - rtl: "<strong>ج- حالة عدم التعيين في المجموع:</strong>"
       - rtl: "نأخذ الدالة الثانية بالشكل: $g(x) = -x$"
       - rtl: "$$\\lim_{x \\to +\\infty} f(x) = +\\infty \\quad , \\quad \\lim_{x \\to +\\infty} g(x) = -\\infty$$"
