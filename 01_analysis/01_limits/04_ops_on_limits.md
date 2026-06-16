@@ -13,84 +13,106 @@ next_title: "نهاية دالة مركبة وتغيير المتغير"
 next_url: /composite_limits/
 
 elements:
-  - h3: "1. المقاربة التحليلية للعمليات على النهايات"
-    id: "analytical-approach"
+  - h3: "1. مقدمة عامة"
+    id: "general-introduction"
 
   - parags:
-      - rtl: "تخضع حسابات النهايات لمجموعة من المبرهنات الجبرية المحددة للعمليات الحسابية الأساسية (الجمع، الجداء، والقسمة). تُعامل قيم اللانهاية ($\\pm\\infty$) والمقادير الصفرية الجوارية وفق منطق المآل التحليلي والسلوك الحركي للمتغيرات، وليس كأعداد حقيقية ثابتة."
+      - rtl: "تخضع حسابات نهايات الدوال الناتجة عن عمليات جبرية لقواعد محددة تبنى على التعويض المباشر للنهايات المنتهية، وتستنتج منطقياً في الحالات غير المنتهية ما لم ينشأ تعارض بين المقادير يسمى حالة عدم تعيين."
 
-  - h3: "2. المآل الجبري لمجموع دالتين"
-    id: "sum-algebraic-limits"
-
-  - parags:
-      - rtl: "عند دراسة نهاية مجموع دالتين، يتحدد مآل العبارة الإجمالية بالقيم المستهدفة للطرفين. إذا كانت النهايتان منتهيتين ($l$ و $l'$)، فإن نهاية المجموع هي الحاصل المباشر ($l + l'$)."
-      - rtl: "أما إذا آلت إحدى الدالتين أو كلاهما إلى قيمة غير منتهية ($\\pm\\infty$) متوافقة في الإشارة، فإن اللانهاية تستوعب المقادير الثابتة وتحافظ على اتجاه تزايدها أو تناقصها الإجمالي."
-
-  - h3: "3. التنافس الجبري في المجموع: حالة عدم التعيين ($\\infty - \\infty$)"
-    id: "sum-indeterminate-form"
+  - h3: "2. عملية الجمع"
+    id: "operation-sum"
 
   - parags:
-      - rtl: "عندما يؤول أحد الطرفين إلى اللانهاية الموجبة ($+\\infty$) والآخر إلى اللانهاية السالبة ($-\\infty$)، ينشأ <strong>تنافس جبري</strong> متعاكس بين نزوع الطرف الأول للتزايد ونزوع الطرف الثاني للتناقص. هذا التنافس يمنع استنتاج النتيجة مباشرة، وتُصنف الوضعية كـ <strong>حالة عدم تعيين</strong> تتطلب تحويلاً تحليلياً للعبارة."
-
-  - h3: "4. المآل الجبري لجداء دالتين وقاعدة الإشارات"
-    id: "product-algebraic-limits"
-
-  - parags:
-      - rtl: "يخضع جداء نهايتي دالتين لقواعد الإشارات الجبرية الثنائية المألوفة. جداء مقدارين غير منتهيين، أو مقدار منتهٍ (غير معدوم) في مقدار غير منتهٍ، يؤول حتماً إلى لانهاية ($\\pm\\infty$) مع تحديد الإشارة النهائية بحاصل ضرب إشارتي الطرفين."
-
-  - h3: "5. التنافس الجبري في الجداء: حالة عدم التعيين ($0 \\times \\infty$)"
-    id: "product-indeterminate-form"
-
-  - parags:
-      - rtl: "تنشأ هذه الحالة عندما يؤول أحد المقادير إلى الصفر (الاقتراب الجواري من التلاشي) والمقدار الآخر إلى اللانهاية (التزايد أو التناقص غير المنتهي). النتيجة غير معينة جبرياً بسبب التنافس بين ميل الطرف الأول لتصفير القيمة وميل الطرف الثاني لتكبيرها بلا حدود."
-
-  - h3: "6. قسمة مقدار منتهٍ على مقدار غير منتهٍ: مآل التلاشي الصفري"
-    id: "division-by-infinity"
-
-  - parags:
-      - rtl: "تحليلياً، كلما تزايد مقام كسر بسطه ثابت دون حدود، تضاءلت القيمة الإجمالية للكسر مقتربة من الصفر. هندسياً، يترجم هذا السلوك باقتراب منحنى الدالة من محور الفواصل ليصبح مستقيماً مقارباً أفقياً بجوار اللانهاية."
+      - rtl: "<strong>أ- مثال حسابي مباشر:</strong>"
+      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\infty[$ كما يلي:"
+      - rtl: "$$f(x) = x \\quad , \\quad g(x) = \\frac{1}{x}$$"
+      - rtl: "نهاية كل دالة بجوار $+\\infty$:"
+      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = +\\infty$$"
+      - rtl: "$$\\lim_{x \\to +\\infty} g(x) = 0$$"
+      - rtl: "بالتعويض المباشر لنهاية المجموع:"
+      - rtl: "$$\\lim_{x \\to +\\infty} (f+g)(x) = +\\infty + 0 = +\\infty$$"
 
   - graph:
-      id: "asymptote-infinity-zero"
+      id: "combined-sum-graph"
       class: "graph-container"
-      xDomain: [-1, 10]
-      yDomain: [-1, 4]
+      xDomain: [0, 6]
+      yDomain: [0, 7]
       elements:
-        - { type: "function", fn: "2/x", strokeColor: "#00ffcc", strokeWidth: 3 }
-        - { type: "line", points: [[-1, 0], [10, 0]], color: "orange", dash: 2, width: 1.5 }
-        - { type: "text", content: "f(x) = 2/x", x: 4, y: 1, color: "#00ffcc" }
-        - { type: "text", content: "عندما x ➔ +∞ فإن f(x) ➔ 0", x: 4, y: 0.3, color: "orange" }
-
-  - h3: "7. مقلوب المقادير المقتربة من الصفر: التزايد والتناقص غير المنتهي"
-    id: "division-by-zero-behavior"
+        - { type: "function", fn: "x", strokeColor: "#ff0055", strokeWidth: 1.5 }
+        - { type: "function", fn: "1/x", strokeColor: "#0055ff", strokeWidth: 1.5 }
+        - { type: "function", fn: "x + 1/x", strokeColor: "#00ffcc", strokeWidth: 3 }
 
   - parags:
-      - rtl: "عندما يقترب مقام كسر بسطه مقدار ثابت غير معدوم من الصفر الجواري، تشهد القيمة الإجمالية للكسر تزايداً أو تناقصاً غير منتهٍ ($\\pm\\infty$). هندسياً، يترجم هذا السلوك بوجود مستقيم مقارب عمودي للمنحنى البياني عند القيمة الممنوعة للمقام."
+      - rtl: "<strong>ب- السلوك الهندسي:</strong> يظهر المعلم استقراء منحنى الدالة المجموع للمستقيم المقارب المائل $y=x$ بجوار اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
+      - rtl: "<strong>ج- حالة عدم التعيين في المجموع:</strong>"
+      - rtl: "نأخذ الدالة الثانية بالشكل: $g(x) = -x$"
+      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = +\\infty \\quad , \\quad \\lim_{x \\to +\\infty} g(x) = -\\infty$$"
+      - rtl: "حساب نهاية المجموع يعطي عبارة غير معينة جبرياً:"
+      - rtl: "$$\\lim_{x \\to +\\infty} (f+g)(x) = (+\\infty) + (-\\infty)$$"
+      - rtl: "النتيجة: حالة عدم تعيين من الشكل $\\infty - \\infty$."
+
+  - h3: "3. عملية الجداء (الضرب)"
+    id: "operation-product"
+
+  - parags:
+      - rtl: "<strong>أ- مثال حسابي مباشر:</strong>"
+      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $\\mathbb{R}$ كما يلي:"
+      - rtl: "$$f(x) = 2 \\quad , \\quad g(x) = x^2$$"
+      - rtl: "نهاية كل دالة بجوار $+\\infty$:"
+      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = 2$$"
+      - rtl: "$$\\lim_{x \\to +\\infty} g(x) = +\\infty$$"
+      - rtl: "بالتعويض وقاعدة الإشارات الجبرية:"
+      - rtl: "$$\\lim_{x \\to +\\infty} (f \\times g)(x) = 2 \\times (+\\infty) = +\\infty$$"
 
   - graph:
-      id: "vertical-asymptote-explosion"
+      id: "combined-product-graph"
       class: "graph-container"
-      xDomain: [-4, 4]
-      yDomain: [-5, 5]
+      xDomain: [-3, 3]
+      yDomain: [0, 8]
       elements:
-        - { type: "function", fn: "1/x", strokeColor: "#00ffcc", strokeWidth: 3 }
-        - { type: "line", points: [[0, -5], [0, 5]], color: "red", dash: 2, width: 1.5 }
-        - { type: "text", content: "x ➔ 0⁺  |  f(x) ➔ +∞", x: 0.4, y: 3.5, color: "#00ffcc" }
-        - { type: "text", content: "x ➔ 0⁻  |  f(x) ➔ -∞", x: -3, y: -3.5, color: "#00ffcc" }
-
-  - h3: "8. التنافس الجبري في الكسر: حالتا عدم التعيين ($\\frac{0}{0}$) و ($\\frac{\\infty}{\\infty}$)"
-    id: "fraction-indeterminate-forms"
+        - { type: "function", fn: "2", strokeColor: "#ff0055", strokeWidth: 1.5 }
+        - { type: "function", fn: "x^2", strokeColor: "#0055ff", strokeWidth: 1.5 }
+        - { type: "function", fn: "2 * x^2", strokeColor: "#00ffcc", strokeWidth: 3 }
 
   - parags:
-      - rtl: "تظهر حالتا عدم التعيين في البنية الكسرية نتيجة للتكافؤ التقاربي بين سلوك البسط وسلوك المقام:"
-      - rtl: "💡 <strong>حالة $\\frac{0}{0}$:</strong> يقترب البسط والمقام معاً من التلاشي الصفري، وتتوقف النهاية الإجمالية على سرعة اقتراب كل منهما بجوار القيمة المستهدفة."
-      - rtl: "💡 <strong>حالة $\\frac{\\infty}{\\infty}$:</strong> يتزايد أو يتناقص البسط والمقام معاً دون حدود، وتتحدد النتيجة النهائية بناءً على الدالة ذات التزايد الأسرع تحليلياً."
+      - rtl: "<strong>ب- السلوك الهندسي:</strong> يوضح الرسم تأثير المعامل الثابت الموجب في مضاعفة تراتيب منحنى دالة المربع دون تغيير اتجاه تزايدها غير المنتهي."
+      - rtl: "<strong>ج- حالة عدم التعيين في الجداء:</strong>"
+      - rtl: "نأخذ الدالتين بجوار $+\\infty$ بالشكل: $f(x) = \\frac{1}{x^2}$ و $g(x) = x$"
+      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = 0 \\quad , \\quad \\lim_{x \\to +\\infty} g(x) = +\\infty$$"
+      - rtl: "حساب نهاية الجداء يعطي عبارة غير معينة جبرياً:"
+      - rtl: "$$\\lim_{x \\to +\\infty} (f \\times g)(x) = 0 \\times (+\\infty)$$"
+      - rtl: "النتيجة: حالة عدم تعيين من الشكل $0 \\times \\infty$."
 
-  - NB:
-      type: danger
-      title: "حصيلة حالات عدم التعيين المنهجية:"
-      NBs:
-        - rtl: "تفرز المبرهنات السابقة أربع حالات نظامية فقط يتوقف فيها الاستنتاج الجبري المباشر وتستوجب تطبيق تقنيات الإزالة، وهي: $(\\infty - \\infty)$، و $(0 \\times \\infty)$، و $(\\frac{0}{0})$، و $(\\frac{\\infty}{\\infty})$."
+  - h3: "4. عملية القسمة"
+    id: "operation-quotient"
+
+  - parags:
+      - rtl: "<strong>أ- مثال حسابي مباشر:</strong>"
+      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\infty[$ كما يلي:"
+      - rtl: "$$f(x) = 3 \\quad , \\quad g(x) = x$$"
+      - rtl: "نهاية كل دالة بجوار $+\\infty$:"
+      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = 3$$"
+      - rtl: "$$\\lim_{x \\to +\\infty} g(x) = +\\infty$$"
+      - rtl: "بالتعويض المباشر لنهاية حاصل القسمة:"
+      - rtl: "$$\\lim_{x \\to +\\infty} \\left(\\frac{f}{g}\\right)(x) = \\frac{3}{+\\infty} = 0$$"
+
+  - graph:
+      id: "combined-quotient-graph"
+      class: "graph-container"
+      xDomain: [0, 8]
+      yDomain: [0, 5]
+      elements:
+        - { type: "function", fn: "3", strokeColor: "#ff0055", strokeWidth: 1.5 }
+        - { type: "function", fn: "x", strokeColor: "#0055ff", strokeWidth: 1.5 }
+        - { type: "function", fn: "3/x", strokeColor: "#00ffcc", strokeWidth: 3 }
+
+  - parags:
+      - rtl: "<strong>ب- السلوك الهندسي:</strong> يبين الرسم تضاؤل قيمة الكسر واقتراب منحنى دالة الحاصل من محور الفواصل (مستقيم مقارب أفقي معادلته $y=0$) كلما تزايد المقام دون حدود."
+      - rtl: "<strong>ج- حالتا عدم التعيين في القسمة:</strong>"
+      - rtl: "• <strong>حالة الكسر غير المنتهي ($\\frac{\\infty}{\\infty}$):</strong> عند بجوار $+\\infty$"
+      - rtl: "$$\\lim_{x \\to +\\infty} x^2 = +\\infty \\quad , \\quad \\lim_{x \\to +\\infty} x = +\\infty \\implies \\lim_{x \\to +\\infty} \\frac{x^2}{x} = \\frac{\\infty}{\\infty}$$"
+      - rtl: "• <strong>حالة الكسر الصغري ($\\frac{0}{0}$):</strong> عند اقتراب المتغير من القيمة $0$"
+      - rtl: "$$\\lim_{x \\to 0} 5x = 0 \\quad , \\quad \\lim_{x \\to 0} x = 0 \\implies \\lim_{x \\to 0} \\frac{5x}{x} = \\frac{0}{0}$$"
 
   - h3: "9. تطبيقات عملية ونماذج حسابية مفسرة"
     id: "detailed-examples"
