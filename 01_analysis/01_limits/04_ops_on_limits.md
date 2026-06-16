@@ -23,8 +23,8 @@ elements:
     id: "operation-sum"
 
   - parags:
-      - rtl: "<strong>أ- مثال حسابي مباشر:</strong>"
-      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\infty[$ كما يلي:"
+      - rtl: "<strong>أ- مثال:</strong>"
+      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\\infty[$ كما يلي:"
       - rtl: "$$f(x) = x \\quad , \\quad g(x) = \\frac{1}{x}$$"
       - rtl: "نهاية كل دالة بجوار $+\\infty$:"
       - rtl: "$$\\lim_{x \\to +\\infty} f(x) = +\\infty$$"
@@ -87,8 +87,8 @@ elements:
     id: "operation-quotient"
 
   - parags:
-      - rtl: "<strong>أ- مثال حسابي مباشر:</strong>"
-      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\infty[$ كما يلي:"
+      - rtl: "<strong>أ- مثال:</strong>"
+      - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\\infty[$ كما يلي:"
       - rtl: "$$f(x) = 3 \\quad , \\quad g(x) = x$$"
       - rtl: "نهاية كل دالة بجوار $+\\infty$:"
       - rtl: "$$\\lim_{x \\to +\\infty} f(x) = 3$$"
