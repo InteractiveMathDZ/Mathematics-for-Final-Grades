@@ -74,19 +74,19 @@ elements:
       yDomain: [0, 8]
       elements:
         - { type: "function", fn: "2", strokeColor: "#ff0055", strokeWidth: 1.5 }
-        - { type: "text", content: "$f(x) = 2$", x: 2, y: 1.7, color: "#ff0055"}
+        - { type: "text", content: "$f(x) = 2$", x: 2, y: 1.9, color: "#ff0055"}
         - { type: "function", fn: "x^2", strokeColor: "#0055ff", strokeWidth: 1.5 }
-        - { type: "text", content: "$g(x) = x^2$", x: 2, y: 3.5, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -70 }
+        - { type: "text", content: "$g(x) = x^2$", x: 2, y: 3.5, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -72 }
         - { type: "function", fn: "2 * x^2", strokeColor: "#00ffcc", strokeWidth: 3 }
-        - { type: "text", content: "$(f*g)(x)$", x: 1, y: 5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -80 }
+        - { type: "text", content: "$(f \\times g)(x)$", x: 1, y: 5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -80 }
 
   - parags:
       - rtl: "<strong>ب- السلوك الهندسي:</strong> يوضح الرسم تأثير المعامل الثابت الموجب في مضاعفة تراتيب منحنى دالة المربع دون تغيير اتجاه تزايدها غير المنتهي."
       - rtl: "<strong>ج- حالة عدم التعيين في الجداء:</strong>"
       - rtl: "نأخذ الدالتين بجوار $+\\infty$ بالشكل: $f(x) = \\frac{1}{x^2}$ و $g(x) = x$"
-      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = 0 \\quad , \\quad \\lim_{x \\to +\\infty} g(x) = +\\infty$$"
+      - rtl: "$$\\lim\\limits_{x \\to +\\infty} f(x) = 0 \\quad , \\quad \\lim\\limits_{x \\to +\\infty} g(x) = +\\infty$$"
       - rtl: "حساب نهاية الجداء يعطي عبارة غير معينة جبرياً:"
-      - rtl: "$$\\lim_{x \\to +\\infty} (f \\times g)(x) = 0 \\times (+\\infty)$$"
+      - rtl: "$$\\lim\\limits_{x \\to +\\infty} (f \\times g)(x) = 0 \\times (+\\infty)$$"
       - rtl: "النتيجة: حالة عدم تعيين من الشكل $0 \\times \\infty$."
 
   - h3: "4. عملية القسمة"
