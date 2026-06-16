@@ -95,6 +95,7 @@ const MathSovereign = {
                           const cssTransform = rotationAngle !== 0 ? `transform: rotate(${rotationAngle}deg); transform-origin: top left;` : '';
                           b.create('text', 
                             [el.x, el.y, el.content], {
+                              useMathJax: true,
                               color: el.color || axisColor, 
                               fontSize: 16, 
                               fixed: el.fixed || true,
@@ -153,6 +154,7 @@ const MathSovereign = {
                                    anchorY: 'bottom',
                                    strokeColor: el.labelColor || '#eee',
                                    fontSize: 14,
+                                   useMathJax: true,
                                    fixed: true
                               });
                           }
