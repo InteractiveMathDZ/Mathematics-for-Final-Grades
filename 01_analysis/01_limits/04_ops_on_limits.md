@@ -27,10 +27,10 @@ elements:
       - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $]0; +\\infty[$ كما يلي:"
       - rtl: "$$f(x) = x \\quad , \\quad g(x) = \\frac{1}{x}$$"
       - rtl: "نهاية كل دالة بجوار $+\\infty$:"
-      - rtl: "$$\\lim_{x \\to +\\infty} f(x) = +\\infty$$"
+      - rtl: "$$\\lim\\limits_{x \\to +\\infty} f(x) = +\\infty$$"
       - rtl: "$$\\lim_{x \\to +\\infty} g(x) = 0$$"
       - rtl: "بالتعويض المباشر لنهاية المجموع:"
-      - rtl: "$$\\lim_{x \\to +\\infty} (f+g)(x) = +\\infty + 0 = +\\infty$$"
+      - rtl: "$$\\lim\\limits_{x \\to +\\infty} (f+g)(x) = +\\infty + 0 = +\\infty$$"
 
   - graph:
       id: "combined-sum-graph"
@@ -39,9 +39,12 @@ elements:
       yDomain: [0, 7]
       elements:
         - { type: "function", fn: "x", strokeColor: "#ff0055", strokeWidth: 3 }
+        - { type: "text", content: "$f(x) = x$", x: 2.1, y: 1.9, color: "#ff0055", anchorX: 'left', anchorY: 'middle', rotate: -45 }
         - { type: "function", fn: "1/x", strokeColor: "#0055ff", strokeWidth: 3 }
+        - { type: "text", content: "$g(x) = \\frac{1}{x}$", x: 3.5, y: 0.7, color: "#0055ff" }
         - { type: "function", fn: "x + 1/x", strokeColor: "#00ffcc", strokeWidth: 1 }
-
+        - { type: "text", content: "$(f+g)*x)", x: 2.5, y: 3.5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -45 }
+    
   - parags:
       - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يظهر المعلم استقراء منحنى الدالة المجموع للمستقيم المقارب المائل $y=x$ بجوار اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
       - rtl: "<strong>ج- حالة عدم التعيين في المجموع:</strong>"
