@@ -1,6 +1,7 @@
 ---
 layout: lesson
 title: "مبرهنات العمليات على النهايات"
+subtitle: "السلوك التحليلي والهندسي للعمليات الجبرية عند أطراف مجالات التعريف"
 permalink: /ops_limits/
 mathJax: true
 graph: true
