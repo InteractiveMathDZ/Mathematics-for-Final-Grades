@@ -46,7 +46,7 @@ elements:
         - { type: "text", content: "$(f+g)(x)$", x: 2.5, y: 3.5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -45 }
     
   - parags:
-      - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يظهر المعلم استقراء منحنى الدالة المجموع للمستقيم المقارب المائل $y=x$ بجوار اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
+      - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يظهر المعلم استقرار منحنى الدالة المجموع عند المستقيم المقارب المائل $y=x$ بجوار اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
       - rtl: "<strong>ج- حالة عدم التعيين في المجموع:</strong>"
       - rtl: "نأخذ الدالة الثانية بالشكل: $g(x) = -x$"
       - rtl: "$$\\lim_{x \\to +\\infty} f(x) = +\\infty \\quad , \\quad \\lim_{x \\to +\\infty} g(x) = -\\infty$$"
@@ -58,7 +58,7 @@ elements:
     id: "operation-product"
 
   - parags:
-      - rtl: "<strong>أ- مثال حسابي مباشر:</strong>"
+      - rtl: "<strong>أ- مثال:</strong>"
       - rtl: "لتكن الدالتان $f$ و $g$ المعرفتان على $\\mathbb{R}$ كما يلي:"
       - rtl: "$$f(x) = 2 \\quad , \\quad g(x) = x^2$$"
       - rtl: "نهاية كل دالة بجوار $+\\infty$:"
@@ -74,8 +74,11 @@ elements:
       yDomain: [0, 8]
       elements:
         - { type: "function", fn: "2", strokeColor: "#ff0055", strokeWidth: 1.5 }
+        - { type: "text", content: "$f(x) = 2$", x: 2, y: 2.1 }
         - { type: "function", fn: "x^2", strokeColor: "#0055ff", strokeWidth: 1.5 }
+        - { type: "text", content: "$g(x) = x^2$", x: 2.5, y: 3.5, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -60 }
         - { type: "function", fn: "2 * x^2", strokeColor: "#00ffcc", strokeWidth: 3 }
+        - { type: "text", content: "$(f*g)(x)$", x: 1, y: 5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -75 }
 
   - parags:
       - rtl: "<strong>ب- السلوك الهندسي:</strong> يوضح الرسم تأثير المعامل الثابت الموجب في مضاعفة تراتيب منحنى دالة المربع دون تغيير اتجاه تزايدها غير المنتهي."
