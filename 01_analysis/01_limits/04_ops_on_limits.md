@@ -109,14 +109,14 @@ elements:
       yDomain: [0, 5]
       elements:
         - { type: "function", fn: "3", strokeColor: "#ff0055", strokeWidth: 1.5 }
-        - { type: "text", content: "$(f)(x) = 3$", x: 5, y: 3.1, color: "#ff0055" }
+        - { type: "text", content: "$f(x) = 3$", x: 5, y: 2.9, color: "#ff0055" }
         - { type: "function", fn: "x", strokeColor: "#0055ff", strokeWidth: 1.5 }
-        - { type: "text", content: "$(g)(x) = x$", x: 4.5, y: 4, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
+        - { type: "text", content: "$g(x) = x$", x: 4.5, y: 4, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
         - { type: "function", fn: "3/x", strokeColor: "#00ffcc", strokeWidth: 3 }
-        - { type: "text", content: "$(\\frac{f}{g})(x)$", x: 4, y: 1, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: 5 }
+        - { type: "text", content: "$\\left(\\frac{f}{g}\\right)(x)$", x: 4, y: 1.2, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: 5 }
 
   - parags:
-      - rtl: "<br><br><strong>ب- السلوك الهندسي:</strong> يبين الرسم تضاؤل قيمة الكسر واقتراب منحنى دالة الحاصل من محور الفواصل (مستقيم مقارب أفقي معادلته $y=0$) كلما تزايد المقام دون حدود."
+      - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يبين الرسم تضاؤل قيمة الكسر واقتراب منحنى دالة الحاصل من محور الفواصل (مستقيم مقارب أفقي معادلته $y=0$) كلما تزايد المقام دون حدود."
       - rtl: "<strong>ج- حالتا عدم التعيين في القسمة:</strong>"
       - rtl: "• <strong>حالة الكسر غير المنتهي ($\\frac{\\infty}{\\infty}$):</strong> عند بجوار $+\\infty$"
   - formula: "$$\\lim\\limits_{x \\to +\\infty} x^2 = +\\infty \\quad , \\quad \\lim\\limits_{x \\to +\\infty} x = +\\infty \\implies \\lim\\limits_{x \\to +\\infty} \\frac{x^2}{x} = \\frac{\\infty}{\\infty}$$"
