@@ -9,7 +9,7 @@
 {% endif %}
 
 {% if el.graph %}
-    <div class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark display: flex; justify-content: center; align-content: center; align-items: center;" 
+    <div class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark d-flex justify-content-center align-content-center align-items-center" 
          dir="ltr">
         <div 
             id="{{ el.graph.id }}" 
@@ -21,7 +21,7 @@
 {% endif %}
 
 {% if el.simulation %}
-    <div class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark display: flex; justify-content: center; align-content: center; align-items: center;" 
+    <div class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark d-flex justify-content-center align-content-center align-items-center" 
          dir="ltr">
         <div 
             id="{{ el.simulation.id }}" 
@@ -67,7 +67,7 @@
 {% if el.tableLines %}
     {% if el.tableLines.type == 'svg' %}
         <div class="table-responsive math-wrapper mt-4" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-            <svg width="100%" min-width="650" height="{{ el.tableLines.lines.size | plus: 1 | times: 45 }}" viewBox="0 0 700 {{ el.tableLines.lines.size | plus: 1 | times: 45 }}" style="background: #1e1e1e; border: 1px solid #333333; border-radius: 6px; font-family: sans-serif;">
+            <svg width="100%" height="{{ el.tableLines.lines.size | plus: 1 | times: 45 }}" viewBox="0 0 700 {{ el.tableLines.lines.size | plus: 1 | times: 45 }}" style="min-width: 650px; background: #1e1e1e; border: 1px solid #333333; border-radius: 6px; font-family: sans-serif;">
                 {% for line in el.tableLines.lines %}
                     {% assign y_pos = forloop.index0 | times: 45 %}
                     {% if forloop.first %}
@@ -154,7 +154,7 @@
                 {% if item.ltr %}
                     <p dir="ltr" class="mb-1">{{ item.ltr }}</p>
                 {% elsif item.center %}
-                    <p class="text-center dir-ltr mb-1">{{ item.center }}</p>
+                    <p class="text-center mb-1" dir="ltr">{{ item.center }}</p>
                 {% else %}
                     <p class="mb-1">{{ item.rtl }}</p>
                 {% endif %}
