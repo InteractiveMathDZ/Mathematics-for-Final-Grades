@@ -43,7 +43,7 @@
 {% endif %}
 
 {% if el.h4 %}
-    <h4 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary mr-4 mt-4 mb-4">
+    <h4 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary ms-4 mt-4 mb-4">
         {% if el.h4.text %}
             {{ el.h4.text }}
         {% else %}
@@ -83,7 +83,7 @@
                         {% assign text_y = y_pos | plus: 28 %}
 
                         {% if cel.th %}
-                            <text x="{{ x_pos }}" y="{{ text_y }}" fill="#75b5ff" font-weight="bold" font-size="14" direction="{{ el.tableLines.dir }}">{{ cel.th }}</text>
+                            <text x="{{ x_pos }}" y="{{ text_y }}" fill="#75b5ff" font-weight="bold" font-size="14" direction="{{ el.tableLines.dir }}" style="unicode-bidi: embed;">{{ cel.th }}</text>
                         {% else %}
                             <text x="{{ x_pos }}" y="{{ text_y }}" fill="#ffffff" font-size="13" direction="{{ el.tableLines.dir }}">{{ cel.td }}</text>
                         {% endif %}
