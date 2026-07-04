@@ -16,7 +16,3 @@ theme: minima
 exclude:
   - README.md
   - .gitignore
-#  تعريف قاعدة بيانات التمرينات
-collections:
-  exercises:
-    output: false
