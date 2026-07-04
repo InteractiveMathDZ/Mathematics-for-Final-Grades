@@ -1,5 +1,3 @@
----
-layout: exercise
 title: "تخمين نهاية دالة وحسابها تحليلياً"
 permalink: /maths-analy-limit-pra-ex001/
 next_url: /maths-analy-limit-pra-ex002/
@@ -72,4 +70,4 @@ sections:
           - rtl: "إجابة صحيحة. النهاية المحسوبة تتوافق مع التخمين البياني."
       - error_msg:
           - rtl: "إجابة خاطئة. احسب مشتقة الدالة الجذرية $g'(x) = \\frac{1}{2\\sqrt{x+1}}$ ثم عوض بقيمة $x=0$."
----
+
