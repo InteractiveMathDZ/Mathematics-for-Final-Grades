@@ -11,35 +11,12 @@
 {% for part in pageContent.sections %}
 <div id="{{ pageContent.exID }}-{{ part.pID }}" class="container py-4 border-bottom">
     {% if part.title %}<p class="fw-bold">{{ part.title }}</p>{% endif %}
-    {% for cont in part.contents %}
-      {% if cont.paragraphs %}
-        {% for parag in cont.paragraphs %}
-            {% if parag.ltr %}
-                <p dir="ltr">{{ parag.ltr }}</p>
-            {% elsif parag.center %}
-                <p class="text-center" dir="ltr">{{ parag.center }}</p>
-            {% else %}
-                <p>{{ parag.rtl }}</p>
-            {% endif %}
-        {% endfor %}
-      {% endif %}
-    
-      {% if cont.graph %}
-        <div 
-            id="{{ cont.graph.id }}" 
-            class="{{ cont.graph.class }}" 
-            data-graph-config='{{ cont.graph | jsonify }}'
-            style="width: 100%; min-height: 400px; margin: 20px 0;">
-        </div>
-      {% endif %}
-    
-      {% if cont.note %}
-        <p class="small text-muted">{{ cont.note }}</p>
-      {% endif %}
+    {% for el in part.contents %}
+      {% include elements/elements.html %}
 
-      {%if cont.choices %}
-      <div class="choices ms-6" dir="{{ cont.dir | default: 'ltr' }}">
-        {% for choice in cont.choices %}
+      {%if el.choices %}
+      <div class="choices ms-6" dir="{{ el.dir | default: 'ltr' }}">
+        {% for choice in el.choices %}
         <div class="form-check my-3 mt-4">
             <input type="radio" 
                 id="{{ pageContent.exID }}-{{ part.pID }}-choice{{ forloop.index }}"
@@ -56,9 +33,9 @@
       </div>
       {% endif %}
 
-      {% if cont.numbers %}
-      <div class="numbers-input ms-4" dir="{{ cont.dir | default: 'ltr' }}">
-        {% for number in cont.numbers %}
+      {% if el.numbers %}
+      <div class="numbers-input ms-4" dir="{{ el.dir | default: 'ltr' }}">
+        {% for number in el.numbers %}
             <div class="d-flex align-items-center flex-wrap my-3">
                 <div class="me-2 text-nowrap">
                     <label for="{{ pageContent.exID }}-{{ part.pID }}-number{{ forloop.index }}" class="mb-0">
@@ -80,12 +57,11 @@
       </div>
       {% endif %}
 
-
     
-      {% if cont.success_msg %}
+      {% if el.success_msg %}
         <div id="{{ pageContent.exID }}-{{ part.pID }}-hintSuccess" class="{{ pageContent.exID }}-hint alert alert-success d-none mt-5">
             <i class="bi bi-check-circle-fill"></i>
-            {% for parag in cont.success_msg %}
+            {% for parag in el.success_msg %}
                 {% if parag.ltr %}
                     <p dir="ltr">{{ parag.ltr }}</p>
                 {% elsif parag.center %}
@@ -97,10 +73,10 @@
         </div>
       {% endif %}
     
-      {% if cont.error_msg %}
+      {% if el.error_msg %}
         <div id="{{ pageContent.exID }}-{{ part.pID }}-hintError" class="{{ pageContent.exID }}-hint alert alert-danger d-none mt-5">
             <i class="bi bi-x-circle-fill"></i>
-            {% for parag in cont.error_msg %}
+            {% for parag in el.error_msg %}
                 {% if parag.ltr %}
                     <p dir="ltr">{{ parag.ltr }}</p>
                 {% elsif parag.center %}
