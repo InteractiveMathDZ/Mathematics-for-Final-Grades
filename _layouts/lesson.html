@@ -14,9 +14,9 @@ layout: default
         <div id="{{ page.lessonID }}-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
 </div>
 
-{% assign pageElements = page.elements %}
-
-{% include elements/elements.html %}
+{% for el in page.elements %}
+    {% include elements/elements.html %}
+{% endfor %}
 
 <hr class="mt-5">
 
