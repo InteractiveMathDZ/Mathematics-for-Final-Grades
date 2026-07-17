@@ -70,6 +70,7 @@ elements:
       yDomain: [0, 1.5]
       elements:
         - { type: "function", fn: "(Math.sqrt(x+1) - 1)/x", strokeColor: "#38bdf8", strokeWidth: 3 }
+        - { type: "point", x: 0, y: 0.5, strokeColor: "red", fillColor: "black", size: 2 }
         - { type: "line", points: [[0, 0], [0, 0.5]], color: "red", dash: 3, width: 1.2 }
         - { type: "line", points: [[-1, 0.5], [0, 0.5]], color: "red", dash: 3, width: 1.2 }
         - { type: "text", content: "فجوة عابرة عند (0، 0.5)", x: 0.3, y: 0.6, color: "orange" }
