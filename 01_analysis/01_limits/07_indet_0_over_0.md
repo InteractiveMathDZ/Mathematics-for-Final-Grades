@@ -68,7 +68,7 @@ elements:
       elements:
         - { type: "function", fn: "x + 1", strokeColor: "#00ffcc", strokeWidth: 3 }
         - { type: "line", points: [[1, 0], [1, 2]], color: "red", dash: 3, width: 1.2 }
-        - { type: "point", x: 0, y: 0.5, strokeColor: "red", fillColor: "transparent", size: 2 }
+        - { type: "point", x: 1, y: 2, strokeColor: "red", fillColor: "transparent", size: 2 }
         - { type: "line", points: [[0, 2], [1, 2]], color: "red", dash: 3, width: 1.2 }
         - { type: "text", content: "فجوة عابرة عند (1، 2) المنحنى يقترب منها دون لمسها", x: 1.2, y: 1.8, color: "orange" }
 
