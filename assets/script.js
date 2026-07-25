@@ -18,6 +18,7 @@ function applyAutoTheme() {
             document.documentElement.setAttribute('data-bs-theme', theme);
         }
     };
+    eval("console.log('test')");
 
     // التنفيذ الفوري
     setTheme(getPreferredTheme());
