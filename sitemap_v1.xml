@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/</loc>
-    <priority>1.0</priority>
-  </url><url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex001/</loc><priority>0.8</priority>
-  </url><url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-conti-pra-ex001/</loc><priority>0.8</priority>
-  </url><url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex002/</loc><priority>0.8</priority>
+  <url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/</loc><priority>1.0</priority></url>
+  <url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex001/</loc><priority>0.8</priority></url>
+  <url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-conti-pra-ex001/</loc><priority>0.8</priority></url>
+  <url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex002/</loc><priority>0.8</priority>
   </url><url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex003/</loc><priority>0.8</priority>
   </url><url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex004/</loc><priority>0.8</priority>
   </url><url><loc>https://interactivemathdz.github.io/Mathematics-for-Final-Grades/maths-analy-limit-pra-ex005/</loc><priority>0.8</priority>
