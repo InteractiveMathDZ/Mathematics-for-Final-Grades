@@ -30,7 +30,7 @@ const MathSovereign = {
         if (!c) return;
         try { 
               JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id)); 
-        } catch(e) {
+        } catch(err) {
               console.warn(`تعذر تنظيف أو بناء اللوحة للمعرف ${id}:`, err);
     
               // إظهار رسالة بسيطة وأنيقة في نفس مكان الرسم دون إيقاف باقي الصفحة
