@@ -28,7 +28,18 @@ const MathSovereign = {
     init: function(id) {
         const c = document.getElementById(id);
         if (!c) return;
-        try { JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id)); } catch(e) {}
+        try { 
+              JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id)); 
+        } catch(e) {
+              console.warn(`تعذر تنظيف أو بناء اللوحة للمعرف ${id}:`, err);
+    
+              // إظهار رسالة بسيطة وأنيقة في نفس مكان الرسم دون إيقاف باقي الصفحة
+              c.innerHTML = `
+                          <div class="d-flex align-items-center justify-content-center h-100 bg-light border text-muted p-3 text-center">
+                              <small>⚠️ تعذر تحميل الرسم التفاعلي حالياً، يرجى تحديث الصفحة.</small>
+                          </div>
+              `;
+        }
         
         const config = JSON.parse(c.getAttribute('data-graph-config'));
         const axisColor = '#ffffff';
