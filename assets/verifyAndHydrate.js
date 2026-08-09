@@ -1,4 +1,3 @@
-/* exported resetExercise */
 /*الترتيب المتفق عليه: 
 [0: score, 
  1: date, 
@@ -490,6 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * دالة إعادة المحاولة: تصفير التمرين برمجياً وبصرياً
  */
+// eslint-disable-next-line no-unused-vars
 function resetExercise(exID){
     // 1. جلب كافة العناصر والمدخلات
     const allElements = document.querySelectorAll(`.${exID}`);
