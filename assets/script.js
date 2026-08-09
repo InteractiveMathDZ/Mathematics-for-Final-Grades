@@ -1,7 +1,7 @@
 // وظيفة إدارة الوضع الليلي التلقائي
 function applyAutoTheme() {
     const getStoredTheme = () => localStorage.getItem('theme');
-    const setStoredTheme = theme => localStorage.setItem('theme', theme);
+    //const setStoredTheme = theme => localStorage.setItem('theme', theme);
 
     const getPreferredTheme = () => {
         const storedTheme = getStoredTheme();
@@ -18,7 +18,6 @@ function applyAutoTheme() {
             document.documentElement.setAttribute('data-bs-theme', theme);
         }
     };
-    eval("console.log('test')");
 
     // التنفيذ الفوري
     setTheme(getPreferredTheme());
@@ -47,7 +46,7 @@ const myOffcanvas = document.getElementById('sidebarMenu');
 const bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
 
 menuLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', function () {
         // 1. On laisse le navigateur naviguer vers l'ID
         // 2. On force la fermeture du volet
         bsOffcanvas.hide();
