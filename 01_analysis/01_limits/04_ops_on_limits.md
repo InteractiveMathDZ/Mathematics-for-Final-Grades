@@ -39,12 +39,46 @@ elements:
       yDomain: [0, 7]
       elements:
         - { type: "function", fn: "x", strokeColor: "#ff0055", strokeWidth: 3 }
-        - { type: "text", content: "$f(x) = x$", x: 2.1, y: 1.9, color: "#ff0055", anchorX: 'left', anchorY: 'middle', rotate: -45 }
-        - { type: "function", fn: "1/x", strokeColor: "#0055ff", strokeWidth: 3 }
-        - { type: "text", content: "$g(x) = \\frac{1}{x}$", x: 3.5, y: 0.7, color: "#0055ff" }
-        - { type: "function", fn: "x + 1/x", strokeColor: "#00ffcc", strokeWidth: 1 }
-        - { type: "text", content: "$(f+g)(x)$", x: 2.5, y: 3.5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -45 }
-    
+        - {
+            type: "text",
+            content: "$f(x) = x$",
+            x: 2.1,
+            y: 1.9,
+            color: "#ff0055",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -45,
+          }
+        - {
+            type: "function",
+            fn: "1/x",
+            strokeColor: "#0055ff",
+            strokeWidth: 3,
+          }
+        - {
+            type: "text",
+            content: "$g(x) = \\frac{1}{x}$",
+            x: 3.5,
+            y: 0.7,
+            color: "#0055ff",
+          }
+        - {
+            type: "function",
+            fn: "x + 1/x",
+            strokeColor: "#00ffcc",
+            strokeWidth: 1,
+          }
+        - {
+            type: "text",
+            content: "$(f+g)(x)$",
+            x: 2.5,
+            y: 3.5,
+            color: "#00ffcc",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -45,
+          }
+
   - parags:
       - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يظهر المعلم تقارب منحنى الدالة المجموع إلى المستقيم المقارب المائل $y=x$ عند اللانهاية كلما آلت الدالة المقلوب إلى الصفر."
       - rtl: "<strong>ج- حالة عدم التعيين في المجموع:</strong>"
@@ -73,12 +107,51 @@ elements:
       xDomain: [-3, 3]
       yDomain: [0, 8]
       elements:
-        - { type: "function", fn: "2", strokeColor: "#ff0055", strokeWidth: 1.5 }
-        - { type: "text", content: "$f(x) = 2$", x: 1.5, y: 1.9, color: "#ff0055"}
-        - { type: "function", fn: "x^2", strokeColor: "#0055ff", strokeWidth: 1.5 }
-        - { type: "text", content: "$g(x) = x^2$", x: 2, y: 3.5, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -74 }
-        - { type: "function", fn: "2 * x^2", strokeColor: "#00ffcc", strokeWidth: 3 }
-        - { type: "text", content: "$(f \\times g)(x)$", x: 1, y: 5, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: -80 }
+        - {
+            type: "function",
+            fn: "2",
+            strokeColor: "#ff0055",
+            strokeWidth: 1.5,
+          }
+        - {
+            type: "text",
+            content: "$f(x) = 2$",
+            x: 1.5,
+            y: 1.9,
+            color: "#ff0055",
+          }
+        - {
+            type: "function",
+            fn: "x^2",
+            strokeColor: "#0055ff",
+            strokeWidth: 1.5,
+          }
+        - {
+            type: "text",
+            content: "$g(x) = x^2$",
+            x: 2,
+            y: 3.5,
+            color: "#0055ff",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -74,
+          }
+        - {
+            type: "function",
+            fn: "2 * x^2",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
+        - {
+            type: "text",
+            content: "$(f \\times g)(x)$",
+            x: 1,
+            y: 5,
+            color: "#00ffcc",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -80,
+          }
 
   - parags:
       - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يوضح الرسم تأثير المعامل الثابت الموجب في مضاعفة تراتيب منحنى دالة المربع دون تغيير اتجاه تزايدها غير المنتهي."
@@ -108,12 +181,51 @@ elements:
       xDomain: [0, 8]
       yDomain: [0, 5]
       elements:
-        - { type: "function", fn: "3", strokeColor: "#ff0055", strokeWidth: 1.5 }
-        - { type: "text", content: "$f(x) = 3$", x: 5, y: 2.9, color: "#ff0055" }
-        - { type: "function", fn: "x", strokeColor: "#0055ff", strokeWidth: 1.5 }
-        - { type: "text", content: "$g(x) = x$", x: 4.5, y: 4, color: "#0055ff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
-        - { type: "function", fn: "3/x", strokeColor: "#00ffcc", strokeWidth: 3 }
-        - { type: "text", content: "$\\left(\\frac{f}{g}\\right)(x)$", x: 4, y: 1.2, color: "#00ffcc", anchorX: 'left', anchorY: 'middle', rotate: 5 }
+        - {
+            type: "function",
+            fn: "3",
+            strokeColor: "#ff0055",
+            strokeWidth: 1.5,
+          }
+        - {
+            type: "text",
+            content: "$f(x) = 3$",
+            x: 5,
+            y: 2.9,
+            color: "#ff0055",
+          }
+        - {
+            type: "function",
+            fn: "x",
+            strokeColor: "#0055ff",
+            strokeWidth: 1.5,
+          }
+        - {
+            type: "text",
+            content: "$g(x) = x$",
+            x: 4.5,
+            y: 4,
+            color: "#0055ff",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -45,
+          }
+        - {
+            type: "function",
+            fn: "3/x",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
+        - {
+            type: "text",
+            content: "$\\left(\\frac{f}{g}\\right)(x)$",
+            x: 4,
+            y: 1.2,
+            color: "#00ffcc",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: 5,
+          }
 
   - parags:
       - rtl: "<br><strong>ب- السلوك الهندسي:</strong> يبين الرسم تضاؤل قيمة الكسر واقتراب منحنى دالة الحاصل من محور الفواصل (مستقيم مقارب أفقي معادلته $y=0$) كلما تزايد المقام دون حدود."

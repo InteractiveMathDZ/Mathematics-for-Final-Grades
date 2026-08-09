@@ -52,11 +52,30 @@ elements:
         - { type: "line", points: [[-1, 0], [5, 0]], color: "gray" }
         - { type: "line", points: [[0, -3], [0, 3]], color: "gray" }
         # النقطتان z و مرافقها
-        - { type: "point", x: 3, y: 2, strokeColor: "blue", fillColor: "blue", size: 3 }
+        - {
+            type: "point",
+            x: 3,
+            y: 2,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
         - { type: "text", content: "z", x: 3.2, y: 2.2, color: "blue" }
-        - { type: "point", x: 3, y: -2, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 3,
+            y: -2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "z̄", x: 3.2, y: -2.2, color: "#168574" }
-        - { type: "line", points: [[3, 2], [3, -2]], color: "orange", strokeDash: "4,4" }
+        - {
+            type: "line",
+            points: [[3, 2], [3, -2]],
+            color: "orange",
+            strokeDash: "4,4",
+          }
 
   - NB:
       title: "ملاحظة:"

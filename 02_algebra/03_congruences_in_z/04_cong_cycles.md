@@ -32,7 +32,7 @@ elements:
   - table:
       headers: ["قيم الأس $n$", "$2k$", "$2k+1$"]
       rows:
-          - ["باقي $2^n$ على $3$", "$1$", "$2$"]
+        - ["باقي $2^n$ على $3$", "$1$", "$2$"]
 
   - h3: "3. منهجية التعامل مع الأسس"
     id: "methodology"
@@ -50,16 +50,60 @@ elements:
       yDomain: [-2, 2]
       elements:
         # تمثيل بياني لدورية البواقي
-        - { type: "point", x: -1.5, y: 0, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "باقي 1 (n = 2k)", x: -2.3, y: 0.4, color: "#168574" }
-        
-        - { type: "point", x: 1.5, y: 0, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "text", content: "باقي 2 (n = 2k+1)", x: 1.1, y: 0.4, color: "blue" }
-        
-        - { type: "line", points: [[-1.2, 0.3], [0, 0.8], [1.2, 0.3]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[1.2, -0.3], [0, -0.8], [-1.2, -0.3]], color: "green", arrowStart: false, arrowEnd: true }
-        
-        - { type: "text", content: "تمثيل تأرجح البواقي بين قيمتين بدلالة الدور k=2", x: -2.0, y: -1.4, color: "#eee" }
+        - {
+            type: "point",
+            x: -1.5,
+            y: 0,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "باقي 1 (n = 2k)",
+            x: -2.3,
+            y: 0.4,
+            color: "#168574",
+          }
+
+        - {
+            type: "point",
+            x: 1.5,
+            y: 0,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "باقي 2 (n = 2k+1)",
+            x: 1.1,
+            y: 0.4,
+            color: "blue",
+          }
+
+        - {
+            type: "line",
+            points: [[-1.2, 0.3], [0, 0.8], [1.2, 0.3]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[1.2, -0.3], [0, -0.8], [-1.2, -0.3]],
+            color: "green",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+
+        - {
+            type: "text",
+            content: "تمثيل تأرجح البواقي بين قيمتين بدلالة الدور k=2",
+            x: -2.0,
+            y: -1.4,
+            color: "#eee",
+          }
 
   - NB:
       title: "ملاحظة:"

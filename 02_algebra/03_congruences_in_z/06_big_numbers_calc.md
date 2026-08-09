@@ -42,22 +42,86 @@ elements:
       yDomain: [-1, 5]
       elements:
         # المخطط الانسيابي لخطوات الحساب
-        - { type: "line", points: [[0, 3.5], [3, 3.5], [3, 4.5], [0, 4.5], [0, 3.5]], color: "gray" }
-        - { type: "text", content: "1. اختزال الأساس", x: 0.3, y: 3.9, color: "blue" }
-        - { type: "line", points: [[1.5, 3.5], [1.5, 2.5]], color: "orange", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[0, 3.5], [3, 3.5], [3, 4.5], [0, 4.5], [0, 3.5]],
+            color: "gray",
+          }
+        - {
+            type: "text",
+            content: "1. اختزال الأساس",
+            x: 0.3,
+            y: 3.9,
+            color: "blue",
+          }
+        - {
+            type: "line",
+            points: [[1.5, 3.5], [1.5, 2.5]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
 
-        - { type: "line", points: [[0, 1.5], [3, 1.5], [3, 2.5], [0, 2.5], [0, 1.5]], color: "gray" }
-        - { type: "text", content: "2. اختيار الباقي الأمثل", x: 0.3, y: 1.9, color: "blue" }
-        - { type: "line", points: [[3, 2], [5, 2]], color: "orange", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[0, 1.5], [3, 1.5], [3, 2.5], [0, 2.5], [0, 1.5]],
+            color: "gray",
+          }
+        - {
+            type: "text",
+            content: "2. اختيار الباقي الأمثل",
+            x: 0.3,
+            y: 1.9,
+            color: "blue",
+          }
+        - {
+            type: "line",
+            points: [[3, 2], [5, 2]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
 
-        - { type: "line", points: [[5, 1.5], [8, 1.5], [8, 2.5], [5, 2.5], [5, 1.5]], color: "gray" }
-        - { type: "text", content: "3. البحث عن قوة توافق 1 أو -1", x: 5.3, y: 1.9, color: "orange" }
-        - { type: "line", points: [[6.5, 2.5], [6.5, 3.5]], color: "orange", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[5, 1.5], [8, 1.5], [8, 2.5], [5, 2.5], [5, 1.5]],
+            color: "gray",
+          }
+        - {
+            type: "text",
+            content: "3. البحث عن قوة توافق 1 أو -1",
+            x: 5.3,
+            y: 1.9,
+            color: "orange",
+          }
+        - {
+            type: "line",
+            points: [[6.5, 2.5], [6.5, 3.5]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
 
-        - { type: "line", points: [[5, 3.5], [8, 3.5], [8, 4.5], [5, 4.5], [5, 3.5]], color: "#168574" }
-        - { type: "text", content: "4. تفكيك الأس وحساب النتيجة", x: 5.4, y: 3.9, color: "#168574" }
+        - {
+            type: "line",
+            points: [[5, 3.5], [8, 3.5], [8, 4.5], [5, 4.5], [5, 3.5]],
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "4. تفكيك الأس وحساب النتيجة",
+            x: 5.4,
+            y: 3.9,
+            color: "#168574",
+          }
 
-        - { type: "text", content: "منهجية اختزال المقادير العددية الكبيرة", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "منهجية اختزال المقادير العددية الكبيرة",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "ملاحظة:"

@@ -41,42 +41,104 @@ elements:
         # تمثيل غربال إراتوستين للأعداد الطبيعية حتى 25 (Sieve of Eratosthenes)
         # الصف الأول (1 إلى 5)
         - { type: "text", content: "1", x: 0, y: 4, color: "gray" }
-        - { type: "point", x: 1, y: 4, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 1,
+            y: 4,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "2", x: 1.2, y: 4.2, color: "#168574" }
-        - { type: "point", x: 2, y: 4, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 2,
+            y: 4,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "3", x: 2.2, y: 4.2, color: "#168574" }
         - { type: "text", content: "4 (✕)", x: 3, y: 4, color: "gray" }
-        - { type: "point", x: 4, y: 4, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 4,
+            y: 4,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "5", x: 4.2, y: 4.2, color: "#168574" }
 
         # الصف الثاني (6 إلى 10)
         - { type: "text", content: "6 (✕)", x: 0, y: 3, color: "gray" }
-        - { type: "point", x: 1, y: 3, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 1,
+            y: 3,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "7", x: 1.2, y: 3.2, color: "#168574" }
         - { type: "text", content: "8 (✕)", x: 2, y: 3, color: "gray" }
         - { type: "text", content: "9 (✕)", x: 3, y: 3, color: "gray" }
         - { type: "text", content: "10 (✕)", x: 4, y: 3, color: "gray" }
 
         # الصف الثالث (11 إلى 15)
-        - { type: "point", x: 0, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 0,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "11", x: 0.2, y: 2.2, color: "#168574" }
         - { type: "text", content: "12 (✕)", x: 1, y: 2, color: "gray" }
-        - { type: "point", x: 2, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 2,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "13", x: 2.2, y: 2.2, color: "#168574" }
         - { type: "text", content: "14 (✕)", x: 3, y: 2, color: "gray" }
         - { type: "text", content: "15 (✕)", x: 4, y: 2, color: "gray" }
 
         # الصف الرابع (16 إلى 20)
         - { type: "text", content: "16 (✕)", x: 0, y: 1, color: "gray" }
-        - { type: "point", x: 1, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 1,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "17", x: 1.2, y: 1.2, color: "#168574" }
         - { type: "text", content: "18 (✕)", x: 2, y: 1, color: "gray" }
-        - { type: "point", x: 3, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 3,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "19", x: 3.2, y: 1.2, color: "#168574" }
         - { type: "text", content: "20 (✕)", x: 4, y: 1, color: "gray" }
 
         # نص توضيحي للغربال
-        - { type: "text", content: "المعايرة الخوارزمية لغربال إراتوستين: الأعداد المحددة تمثل عناصر أولية غير خاضعة للاستبعاد المركب", x: -0.8, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "المعايرة الخوارزمية لغربال إراتوستين: الأعداد المحددة تمثل عناصر أولية غير خاضعة للاستبعاد المركب",
+            x: -0.8,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "المحددات البيداغوجية والارتباطات الإجرائية المصاحبة:"

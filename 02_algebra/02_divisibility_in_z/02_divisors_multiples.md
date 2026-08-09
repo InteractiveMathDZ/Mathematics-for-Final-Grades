@@ -45,28 +45,144 @@ elements:
       elements:
         # الشبكة التوضيحية لتفكيك العدد 12 (التوزيع الأول: 4 × 3)
         # الصف الأول
-        - { type: "point", x: 0, y: 3, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 1, y: 3, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 2, y: 3, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 3, y: 3, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 0,
+            y: 3,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 1,
+            y: 3,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 2,
+            y: 3,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 3,
+            y: 3,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         # الصف الثاني
-        - { type: "point", x: 0, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 1, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 2, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 3, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 0,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 1,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 2,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 3,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         # الصف الثالث
-        - { type: "point", x: 0, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 1, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 2, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 3, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 0,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 1,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 2,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 3,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         # إطار المضلع المحيط بالشبكة لإظهار المساحة المقسمة بالتساوي 4x3
-        - { type: "line", points: [[-0.3, 3.3], [3.3, 3.3]], color: "gray", dash: 2 }
-        - { type: "line", points: [[3.3, 3.3], [3.3, 0.7]], color: "gray", dash: 2 }
-        - { type: "line", points: [[3.3, 0.7], [-0.3, 0.7]], color: "gray", dash: 2 }
-        - { type: "line", points: [[-0.3, 0.7], [-0.3, 3.3]], color: "gray", dash: 2 }
+        - {
+            type: "line",
+            points: [[-0.3, 3.3], [3.3, 3.3]],
+            color: "gray",
+            dash: 2,
+          }
+        - {
+            type: "line",
+            points: [[3.3, 3.3], [3.3, 0.7]],
+            color: "gray",
+            dash: 2,
+          }
+        - {
+            type: "line",
+            points: [[3.3, 0.7], [-0.3, 0.7]],
+            color: "gray",
+            dash: 2,
+          }
+        - {
+            type: "line",
+            points: [[-0.3, 0.7], [-0.3, 3.3]],
+            color: "gray",
+            dash: 2,
+          }
         # نصوص توضيحية هندسية مرئية للطلبّة
-        - { type: "text", content: "المعايرة المصفوفية: 4 أعمدة × 3 أسطر = 12 حد منفصل", x: 0, y: 4, color: "#168574" }
-        - { type: "text", content: "المقايسة الهندسية للقابلية باعتبارها تقسيماً متكافئاً صلب النطاق دون ناتج متبقٍ", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "المعايرة المصفوفية: 4 أعمدة × 3 أسطر = 12 حد منفصل",
+            x: 0,
+            y: 4,
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "المقايسة الهندسية للقابلية باعتبارها تقسيماً متكافئاً صلب النطاق دون ناتج متبقٍ",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "المحددات الطوبولوجية للعناصر الحدية صلب القابلية:"

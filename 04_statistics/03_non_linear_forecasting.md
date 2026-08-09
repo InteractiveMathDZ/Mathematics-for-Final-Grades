@@ -38,9 +38,25 @@ elements:
       xDomain: [0, 5]
       yDomain: [0, 100]
       elements:
-        - { type: "path", points: [[1, 2.5], [2, 7.3], [3, 20], [4, 54]], color: "gray", strokeWidth: 2 }
-        - { type: "path", points: [[0.5, 1.5], [5, 155]], color: "red", strokeDash: "5,5" }
-        - { type: "text", content: "y = 0.91 * e^(1.028x)", x: 2, y: 80, color: "red" }
+        - {
+            type: "path",
+            points: [[1, 2.5], [2, 7.3], [3, 20], [4, 54]],
+            color: "gray",
+            strokeWidth: 2,
+          }
+        - {
+            type: "path",
+            points: [[0.5, 1.5], [5, 155]],
+            color: "red",
+            strokeDash: "5,5",
+          }
+        - {
+            type: "text",
+            content: "y = 0.91 * e^(1.028x)",
+            x: 2,
+            y: 80,
+            color: "red",
+          }
 
   - NB:
       title: "تنبيه:"

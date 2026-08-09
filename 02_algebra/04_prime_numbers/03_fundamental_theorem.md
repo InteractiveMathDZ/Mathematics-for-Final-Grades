@@ -47,28 +47,119 @@ elements:
       yDomain: [-1, 5]
       elements:
         # مخطط شجري لتفكيك العدد 60
-        - { type: "point", x: 3, y: 4, strokeColor: "gray", fillColor: "gray", size: 3 }
+        - {
+            type: "point",
+            x: 3,
+            y: 4,
+            strokeColor: "gray",
+            fillColor: "gray",
+            size: 3,
+          }
         - { type: "text", content: "60", x: 2.8, y: 4.3, color: "gray" }
-        - { type: "line", points: [[3, 4], [1, 2.5]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[3, 4], [5, 2.5]], color: "gray", arrowStart: false, arrowEnd: true }
-        - { type: "point", x: 1, y: 2.5, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "line",
+            points: [[3, 4], [1, 2.5]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[3, 4], [5, 2.5]],
+            color: "gray",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "point",
+            x: 1,
+            y: 2.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "2", x: 0.8, y: 2.6, color: "#168574" }
-        - { type: "point", x: 5, y: 2.5, strokeColor: "gray", fillColor: "gray", size: 2 }
+        - {
+            type: "point",
+            x: 5,
+            y: 2.5,
+            strokeColor: "gray",
+            fillColor: "gray",
+            size: 2,
+          }
         - { type: "text", content: "30", x: 5.3, y: 2.4, color: "gray" }
-        - { type: "line", points: [[5, 2.5], [3, 1]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[5, 2.5], [7, 1]], color: "gray", arrowStart: false, arrowEnd: true }
-        - { type: "point", x: 3, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "line",
+            points: [[5, 2.5], [3, 1]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[5, 2.5], [7, 1]],
+            color: "gray",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "point",
+            x: 3,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "2", x: 2.8, y: 1.1, color: "#168574" }
-        - { type: "point", x: 7, y: 1, strokeColor: "gray", fillColor: "gray", size: 2 }
+        - {
+            type: "point",
+            x: 7,
+            y: 1,
+            strokeColor: "gray",
+            fillColor: "gray",
+            size: 2,
+          }
         - { type: "text", content: "15", x: 7.3, y: 0.9, color: "gray" }
-        - { type: "line", points: [[7, 1], [6, -0.5]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[7, 1], [8, -0.5]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "point", x: 6, y: -0.5, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "line",
+            points: [[7, 1], [6, -0.5]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[7, 1], [8, -0.5]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "point",
+            x: 6,
+            y: -0.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "3", x: 5.8, y: -0.4, color: "#168574" }
-        - { type: "point", x: 8, y: -0.5, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 8,
+            y: -0.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "5", x: 7.8, y: -0.4, color: "#168574" }
 
-        - { type: "text", content: "البصمة الأولية للعدد 60: 2² × 3 × 5", x: 0, y: -1.2, color: "#eee" }
+        - {
+            type: "text",
+            content: "البصمة الأولية للعدد 60: 2² × 3 × 5",
+            x: 0,
+            y: -1.2,
+            color: "#eee",
+          }
 
   - NB:
       title: "ملاحظة:"

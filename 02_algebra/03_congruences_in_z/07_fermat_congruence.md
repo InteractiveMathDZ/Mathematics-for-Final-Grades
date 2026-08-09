@@ -46,18 +46,66 @@ elements:
       yDomain: [-1, 5]
       elements:
         # شروط المبرهنة
-        - { type: "line", points: [[0, 3.5], [3, 3.5], [3, 4.5], [0, 4.5], [0, 3.5]], color: "gray" }
-        - { type: "text", content: "الشرط: p أولي", x: 0.4, y: 3.9, color: "blue" }
-        - { type: "line", points: [[0, 1.5], [3, 1.5], [3, 2.5], [0, 2.5], [0, 1.5]], color: "gray" }
-        - { type: "text", content: "الشرط: PGCD(a,p)=1", x: 0.2, y: 1.9, color: "blue" }
+        - {
+            type: "line",
+            points: [[0, 3.5], [3, 3.5], [3, 4.5], [0, 4.5], [0, 3.5]],
+            color: "gray",
+          }
+        - {
+            type: "text",
+            content: "الشرط: p أولي",
+            x: 0.4,
+            y: 3.9,
+            color: "blue",
+          }
+        - {
+            type: "line",
+            points: [[0, 1.5], [3, 1.5], [3, 2.5], [0, 2.5], [0, 1.5]],
+            color: "gray",
+          }
+        - {
+            type: "text",
+            content: "الشرط: PGCD(a,p)=1",
+            x: 0.2,
+            y: 1.9,
+            color: "blue",
+          }
 
         # بوابة الاستنتاج
-        - { type: "line", points: [[3, 4], [4.5, 3.2]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[3, 2], [4.5, 2.8]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[4.5, 2.3], [9, 2.3], [9, 3.7], [4.5, 3.7], [4.5, 2.3]], color: "#168574" }
-        - { type: "text", content: "a^(p-1) ≡ 1 [p]", x: 5.2, y: 2.9, color: "#168574" }
+        - {
+            type: "line",
+            points: [[3, 4], [4.5, 3.2]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[3, 2], [4.5, 2.8]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[4.5, 2.3], [9, 2.3], [9, 3.7], [4.5, 3.7], [4.5, 2.3]],
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "a^(p-1) ≡ 1 [p]",
+            x: 5.2,
+            y: 2.9,
+            color: "#168574",
+          }
 
-        - { type: "text", content: "مخطط شروط واستنتاج مبرهنة فيرما الصغرى", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "مخطط شروط واستنتاج مبرهنة فيرما الصغرى",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

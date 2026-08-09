@@ -45,9 +45,28 @@ elements:
         # تناظر الحلول
         - { type: "line", points: [[-1.5, 0], [4.5, 0]], color: "gray" }
         - { type: "line", points: [[0, -3.5], [0, 3.5]], color: "gray" }
-        - { type: "point", x: 1, y: -2, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "point", x: 1, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "line", points: [[1, -2], [1, 2]], color: "orange", strokeDash: "4,4" }
+        - {
+            type: "point",
+            x: 1,
+            y: -2,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "point",
+            x: 1,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "line",
+            points: [[1, -2], [1, 2]],
+            color: "orange",
+            strokeDash: "4,4",
+          }
 
   - NB:
       title: "قاعدة:"

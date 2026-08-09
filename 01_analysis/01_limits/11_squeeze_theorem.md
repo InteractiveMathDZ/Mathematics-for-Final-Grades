@@ -69,12 +69,47 @@ elements:
       xDomain: [0.5, 12]
       yDomain: [-1.2, 1.2]
       elements:
-        - { type: "function", fn: "Math.cos(x)/x", strokeColor: "#38bdf8", strokeWidth: 2.5 }
-        - { type: "function", fn: "1/x", strokeColor: "#ef4444", strokeWidth: 1.5, dash: 4 }
-        - { type: "function", fn: "-1/x", strokeColor: "#ef4444", strokeWidth: 1.5, dash: 4 }
-        - { type: "text", content: "الدالة العليا: h(x) = 1/x", x: 2, y: 0.6, color: "#ef4444" }
-        - { type: "text", content: "الدالة السفلى: g(x) = -1/x", x: 2, y: -0.6, color: "#ef4444" }
-        - { type: "text", content: "f(x) = cos(x)/x", x: 5, y: 0.25, color: "#38bdf8" }
+        - {
+            type: "function",
+            fn: "Math.cos(x)/x",
+            strokeColor: "#38bdf8",
+            strokeWidth: 2.5,
+          }
+        - {
+            type: "function",
+            fn: "1/x",
+            strokeColor: "#ef4444",
+            strokeWidth: 1.5,
+            dash: 4,
+          }
+        - {
+            type: "function",
+            fn: "-1/x",
+            strokeColor: "#ef4444",
+            strokeWidth: 1.5,
+            dash: 4,
+          }
+        - {
+            type: "text",
+            content: "الدالة العليا: h(x) = 1/x",
+            x: 2,
+            y: 0.6,
+            color: "#ef4444",
+          }
+        - {
+            type: "text",
+            content: "الدالة السفلى: g(x) = -1/x",
+            x: 2,
+            y: -0.6,
+            color: "#ef4444",
+          }
+        - {
+            type: "text",
+            content: "f(x) = cos(x)/x",
+            x: 5,
+            y: 0.25,
+            color: "#38bdf8",
+          }
 
   - NB:
       type: danger

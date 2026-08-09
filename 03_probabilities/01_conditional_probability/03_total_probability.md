@@ -39,12 +39,27 @@ elements:
       xDomain: [0, 3]
       yDomain: [0, 2]
       elements:
-        - { type: "line", points: [[1, 0], [1, 2]], color: "gray", strokeDash: "4,4" }
-        - { type: "line", points: [[2, 0], [2, 2]], color: "gray", strokeDash: "4,4" }
+        - {
+            type: "line",
+            points: [[1, 0], [1, 2]],
+            color: "gray",
+            strokeDash: "4,4",
+          }
+        - {
+            type: "line",
+            points: [[2, 0], [2, 2]],
+            color: "gray",
+            strokeDash: "4,4",
+          }
         - { type: "text", content: "B₁", x: 0.5, y: 1 }
         - { type: "text", content: "B₂", x: 1.5, y: 1 }
         - { type: "text", content: "B₃", x: 2.5, y: 1 }
-        - { type: "line", points: [[0, 1], [3, 1]], color: "#ef4444", strokeWidth: 3 }
+        - {
+            type: "line",
+            points: [[0, 1], [3, 1]],
+            color: "#ef4444",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "A", x: 0.2, y: 1.2, color: "#ef4444" }
 
   - NB:

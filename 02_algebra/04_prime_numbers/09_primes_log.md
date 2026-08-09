@@ -40,13 +40,21 @@ elements:
         # تقارب دالة التعداد مع التقدير اللوغاريتمي
         - { type: "line", points: [[0, 0], [14, 0]], color: "gray" }
         - { type: "line", points: [[0, 0], [0, 5]], color: "gray" }
-        
+
         # دالة pi(x)
-        - { type: "line", points: [[1, 0.5], [5, 1.5], [10, 3], [14, 4.2]], color: "blue" }
+        - {
+            type: "line",
+            points: [[1, 0.5], [5, 1.5], [10, 3], [14, 4.2]],
+            color: "blue",
+          }
         - { type: "text", content: "π(x)", x: 10, y: 4.5, color: "blue" }
-        
+
         # التقدير x/ln(x)
-        - { type: "line", points: [[1, 0.2], [5, 1.3], [10, 2.7], [14, 4.0]], color: "red" }
+        - {
+            type: "line",
+            points: [[1, 0.2], [5, 1.3], [10, 2.7], [14, 4.0]],
+            color: "red",
+          }
         - { type: "text", content: "x/ln(x)", x: 9.5, y: 2.8, color: "red" }
 
   - NB:

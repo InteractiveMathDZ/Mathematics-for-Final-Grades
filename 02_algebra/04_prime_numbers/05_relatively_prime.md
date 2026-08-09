@@ -42,17 +42,44 @@ elements:
       yDomain: [-2, 5]
       elements:
         # رسم توضيحي لتقاطع القواسم
-        - { type: "line", points: [[0, 2], [3, 4.5], [6, 2], [3, -0.5], [0, 2]], color: "blue" }
+        - {
+            type: "line",
+            points: [[0, 2], [3, 4.5], [6, 2], [3, -0.5], [0, 2]],
+            color: "blue",
+          }
         - { type: "text", content: "قواسم 8", x: 0.2, y: 3.5, color: "blue" }
-        - { type: "line", points: [[4, 2], [6, 4.5], [9, 2], [6, -0.5], [4, 2]], color: "orange" }
+        - {
+            type: "line",
+            points: [[4, 2], [6, 4.5], [9, 2], [6, -0.5], [4, 2]],
+            color: "orange",
+          }
         - { type: "text", content: "قواسم 9", x: 7.2, y: 3.5, color: "orange" }
-        
-        # نقطة التقاطع الوحيدة
-        - { type: "point", x: 4.5, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "1", x: 4.4, y: 2.4, color: "#168574" }
-        - { type: "text", content: "التقاطع الوحيد", x: 3.8, y: 1.1, color: "#168574" }
 
-        - { type: "text", content: "استقلالية قواسم العددين تثبت أنها أولية فيما بينها", x: 0, y: -1.2, color: "#eee" }
+        # نقطة التقاطع الوحيدة
+        - {
+            type: "point",
+            x: 4.5,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - { type: "text", content: "1", x: 4.4, y: 2.4, color: "#168574" }
+        - {
+            type: "text",
+            content: "التقاطع الوحيد",
+            x: 3.8,
+            y: 1.1,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "استقلالية قواسم العددين تثبت أنها أولية فيما بينها",
+            x: 0,
+            y: -1.2,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

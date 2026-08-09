@@ -43,35 +43,106 @@ elements:
       elements:
         # شجرة تفكيك العدد 12 هندسياً (Factorization Tree)
         # الجذع الرئيسي: العدد 12
-        - { type: "point", x: 2, y: 4, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "text", content: "المقدار المركب المراد تحليله: 12", x: 2.2, y: 4.2, color: "blue" }
-        
+        - {
+            type: "point",
+            x: 2,
+            y: 4,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "المقدار المركب المراد تحليله: 12",
+            x: 2.2,
+            y: 4.2,
+            color: "blue",
+          }
+
         # التفرع الأول: 2 × 6
         - { type: "line", points: [[2, 4], [0.5, 2.5]], color: "gray" }
         - { type: "line", points: [[2, 4], [3.5, 2.5]], color: "gray" }
-        
+
         # العامل الأولي الأول (2)
-        - { type: "point", x: 0.5, y: 2.5, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "عنصر أولي مستخلص: 2", x: -0.5, y: 2.5, color: "#168574" }
-        
+        - {
+            type: "point",
+            x: 0.5,
+            y: 2.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "عنصر أولي مستخلص: 2",
+            x: -0.5,
+            y: 2.5,
+            color: "#168574",
+          }
+
         # العدد المركب المتبقي (6)
-        - { type: "point", x: 3.5, y: 2.5, strokeColor: "orange", fillColor: "none", size: 2 }
-        - { type: "text", content: "عنصر مركب وسيطي: 6", x: 3.8, y: 2.6, color: "orange" }
-        
+        - {
+            type: "point",
+            x: 3.5,
+            y: 2.5,
+            strokeColor: "orange",
+            fillColor: "none",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "عنصر مركب وسيطي: 6",
+            x: 3.8,
+            y: 2.6,
+            color: "orange",
+          }
+
         # التفرع الثاني للعدد 6: 2 × 3
         - { type: "line", points: [[3, 2.5], [2.5, 1]], color: "gray" }
         - { type: "line", points: [[3, 2.5], [4.5, 1]], color: "gray" }
-        
+
         # العامل الأولي الثاني (2)
-        - { type: "point", x: 2.5, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "عنصر أولي مستخلص: 2", x: 1.5, y: 0.7, color: "#168574" }
-        
+        - {
+            type: "point",
+            x: 2.5,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "عنصر أولي مستخلص: 2",
+            x: 1.5,
+            y: 0.7,
+            color: "#168574",
+          }
+
         # العامل الأولي الثالث (3)
-        - { type: "point", x: 4.5, y: 1, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "عنصر أولي مستخلص: 3", x: 4.8, y: 0.7, color: "#168574" }
-        
+        - {
+            type: "point",
+            x: 4.5,
+            y: 1,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "عنصر أولي مستخلص: 3",
+            x: 4.8,
+            y: 0.7,
+            color: "#168574",
+          }
+
         # نص توضيحي بيداغوجي سفلي
-        - { type: "text", content: "التمثيل الشجري للمعايرة التحليلية النهائية: 12 = 2² × 3¹", x: 0.5, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "التمثيل الشجري للمعايرة التحليلية النهائية: 12 = 2² × 3¹",
+            x: 0.5,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "الضوابط البنيوية والمحددات المعرفية المستهدفة:"

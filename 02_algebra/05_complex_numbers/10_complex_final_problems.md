@@ -42,11 +42,39 @@ elements:
       xDomain: [0, 10]
       yDomain: [0, 5]
       elements:
-        - { type: "line", points: [[0, 2.5], [4, 2.5]], color: "blue", arrowEnd: true }
-        - { type: "text", content: "الأعداد المركبة (الحتمية)", x: 0.5, y: 3, color: "blue" }
-        - { type: "line", points: [[6, 2.5], [10, 2.5]], color: "#b45309", arrowEnd: true }
-        - { type: "text", content: "الإحتمالات الشرطية (النمذجة)", x: 6.5, y: 3, color: "#b45309" }
-        - { type: "text", content: "جسر التحليل المنهجي", x: 4.2, y: 2.7, color: "gray" }
+        - {
+            type: "line",
+            points: [[0, 2.5], [4, 2.5]],
+            color: "blue",
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "الأعداد المركبة (الحتمية)",
+            x: 0.5,
+            y: 3,
+            color: "blue",
+          }
+        - {
+            type: "line",
+            points: [[6, 2.5], [10, 2.5]],
+            color: "#b45309",
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "الإحتمالات الشرطية (النمذجة)",
+            x: 6.5,
+            y: 3,
+            color: "#b45309",
+          }
+        - {
+            type: "text",
+            content: "جسر التحليل المنهجي",
+            x: 4.2,
+            y: 2.7,
+            color: "gray",
+          }
 
   - NB:
       title: "خاتمة مسار الأعداد المركبة:"

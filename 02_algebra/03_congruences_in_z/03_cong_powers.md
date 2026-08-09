@@ -49,25 +49,75 @@ elements:
         # المرحلة 1: الأساس الأصلي
         - { type: "line", points: [[0, 2], [2, 2]], color: "gray" }
         - { type: "text", content: "الأساس a", x: 0.2, y: 2.3, color: "gray" }
-        
+
         # مرحلة تعويض الأساس بباقي قسمته b
-        - { type: "line", points: [[2, 2], [4, 2]], color: "blue", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "تعويض الأساس بالباقي", x: 2.1, y: 2.5, color: "blue" }
-        
+        - {
+            type: "line",
+            points: [[2, 2], [4, 2]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "تعويض الأساس بالباقي",
+            x: 2.1,
+            y: 2.5,
+            color: "blue",
+          }
+
         # المرحلة 2: الأساس المستبدل b
-        - { type: "point", x: 4, y: 2, strokeColor: "orange", fillColor: "orange", size: 3 }
+        - {
+            type: "point",
+            x: 4,
+            y: 2,
+            strokeColor: "orange",
+            fillColor: "orange",
+            size: 3,
+          }
         - { type: "text", content: "الباقي b", x: 3.7, y: 1.4, color: "orange" }
-        
+
         # مرحلة رفع الأس k للباقي b
-        - { type: "line", points: [[4, 2], [7, 2]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "الرفع إلى الأس k", x: 4.8, y: 2.5, color: "orange" }
-        
+        - {
+            type: "line",
+            points: [[4, 2], [7, 2]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "الرفع إلى الأس k",
+            x: 4.8,
+            y: 2.5,
+            color: "orange",
+          }
+
         # المرحلة 3: النتيجة النهائية
-        - { type: "point", x: 7, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "النتيجة bᵏ", x: 7.2, y: 2.2, color: "#168574" }
-        
+        - {
+            type: "point",
+            x: 7,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "النتيجة bᵏ",
+            x: 7.2,
+            y: 2.2,
+            color: "#168574",
+          }
+
         # نص توضيحي
-        - { type: "text", content: "تعويض الأساس قبل رفع الأس يمنع تضخم المقادير العددية ويختصر خطوات الحساب", x: -0.5, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "تعويض الأساس قبل رفع الأس يمنع تضخم المقادير العددية ويختصر خطوات الحساب",
+            x: -0.5,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

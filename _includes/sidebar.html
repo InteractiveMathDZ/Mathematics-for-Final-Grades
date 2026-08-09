@@ -1,47 +1,49 @@
-<button class="btn shadow position-fixed end-0 top-50 translate-middle-y rounded-start-pill border" 
-        type="button" 
-        data-bs-toggle="offcanvas" 
-        data-bs-target="#sidebarMenu" 
-        style="z-index: 1050; padding: 12px 18px;">
-    
-        <i class="bi bi-list-ul text-primary fs-4"></i>
+<button
+  class="btn shadow position-fixed end-0 top-50 translate-middle-y rounded-start-pill border"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#sidebarMenu"
+  style="z-index: 1050; padding: 12px 18px"
+>
+  <i class="bi bi-list-ul text-primary fs-4"></i>
 </button>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebarMenuLabel">الفهرس</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="sidebarMenu"
+  aria-labelledby="sidebarMenuLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebarMenuLabel">الفهرس</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
 
-<div class="offcanvas-body">
+  <div class="offcanvas-body">
     <ul class="list-group list-group-flush p-0" dir="rtl">
-        <li class="list-group-item"><a href="{{ site.baseurl }}/index.html" class="fw-bold">الرئيسية</a></li>
-        
-        {% if page.local_links %}
-            <li class="list-group-item fw-bold text-primary border-bottom mt-3">محتويات هذا الدرس</li>
-            <ul class="list-group list-group-flush pe-4">
-                {% for link in page.local_links %}
-                    <li class="list-group-item">
-                        <a href="{{ link.url }}" class="text-decoration-none d-block p-2">{{ link.title }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-            <li class="list-group-item fw-bold mt-3 border-top">تصفح باقي المحاور</li>
-        {% endif %}
-        {% include nav/global_nav_links.html %}
+      <li class="list-group-item">
+        <a href="{{ site.baseurl }}/index.html" class="fw-bold">الرئيسية</a>
+      </li>
+
+      {% if page.local_links %}
+      <li class="list-group-item fw-bold text-primary border-bottom mt-3">
+        محتويات هذا الدرس
+      </li>
+      <ul class="list-group list-group-flush pe-4">
+        {% for link in page.local_links %}
+        <li class="list-group-item">
+          <a href="{{ link.url }}" class="text-decoration-none d-block p-2"
+            >{{ link.title }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+      <li class="list-group-item fw-bold mt-3 border-top">تصفح باقي المحاور</li>
+      {% endif %} {% include nav/global_nav_links.html %}
     </ul>
+  </div>
 </div>
-</div>
-
-
-
-
-
-
-
-    
-
-
-
-
-
-

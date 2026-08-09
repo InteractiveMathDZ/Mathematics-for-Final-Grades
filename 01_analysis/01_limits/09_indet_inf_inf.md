@@ -75,10 +75,33 @@ elements:
       xDomain: [0, 15]
       yDomain: [0, 1]
       elements:
-        - { type: "function", fn: "Math.sqrt(x*x + x) - x", strokeColor: "#38bdf8", strokeWidth: 3 }
-        - { type: "line", points: [[0, 0.5], [15, 0.5]], color: "red", dash: 4, width: 1.5 }
-        - { type: "text", content: "f(x) = √(x²+x) - x", x: 4, y: 0.65, color: "#38bdf8" }
-        - { type: "text", content: "مستقيم مقارب أفقي بجوار اللانهاية: y = 0.5", x: 2, y: 0.4, color: "red" }
+        - {
+            type: "function",
+            fn: "Math.sqrt(x*x + x) - x",
+            strokeColor: "#38bdf8",
+            strokeWidth: 3,
+          }
+        - {
+            type: "line",
+            points: [[0, 0.5], [15, 0.5]],
+            color: "red",
+            dash: 4,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "f(x) = √(x²+x) - x",
+            x: 4,
+            y: 0.65,
+            color: "#38bdf8",
+          }
+        - {
+            type: "text",
+            content: "مستقيم مقارب أفقي بجوار اللانهاية: y = 0.5",
+            x: 2,
+            y: 0.4,
+            color: "red",
+          }
 
   - NB:
       type: success

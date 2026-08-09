@@ -21,8 +21,6 @@ elements:
       - center: "$$\\vec{AM} = t \\cdot \\vec{u} \\quad \\text{حيث} \\quad t \\in \\mathbb{R}$$"
       - rtl: "يُسمى العدد الحقيقي $t$ بالوسيط (Parameter)."
 
-
-
   - h3: "2. الجملة التحليلية للتمثيل الوسيطي"
     id: "parametric-system-equations"
 

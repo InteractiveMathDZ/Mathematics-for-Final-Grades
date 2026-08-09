@@ -50,18 +50,68 @@ elements:
         # تمثيل التشكيلة الخطية هندسياً على المحور للمثال 5(2) + 3(-3) = 1
         - { type: "line", points: [[-2, 0], [12, 0]], color: "gray" }
         # القفزة الأولى للأمام: 5 × 2 = 10
-        - { type: "point", x: 10, y: 0, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "text", content: "المركب الخطي الموجب الأول: 5 × (2) = 10", x: 4.5, y: 0.8, color: "blue" }
-        - { type: "line", points: [[0, 0.4], [10, 0.4]], color: "blue", arrowStart: false, arrowEnd: true }
-        
+        - {
+            type: "point",
+            x: 10,
+            y: 0,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "المركب الخطي الموجب الأول: 5 × (2) = 10",
+            x: 4.5,
+            y: 0.8,
+            color: "blue",
+          }
+        - {
+            type: "line",
+            points: [[0, 0.4], [10, 0.4]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+
         # القفزة الثانية للخلف: 3 × (-3) = -9 لتستقر عند النقطة 1
-        - { type: "point", x: 1, y: 0, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "نقطة الاستقرار الحادة المستهدفة: PGCD = 1", x: -0.5, y: -0.8, color: "#168574" }
-        - { type: "line", points: [[10, 1.2], [1, 1.2]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "المركب الارتدادي السالب الموازن: 3 × (-3) = -9", x: 3, y: 1.6, color: "orange" }
-        
+        - {
+            type: "point",
+            x: 1,
+            y: 0,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "نقطة الاستقرار الحادة المستهدفة: PGCD = 1",
+            x: -0.5,
+            y: -0.8,
+            color: "#168574",
+          }
+        - {
+            type: "line",
+            points: [[10, 1.2], [1, 1.2]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "المركب الارتدادي السالب الموازن: 3 × (-3) = -9",
+            x: 3,
+            y: 1.6,
+            color: "orange",
+          }
+
         # نص بيداغوجي توضيحي
-        - { type: "text", content: "المعايرة المتجهية الخطية لمعاملي بيزو باعتبارهما محددات اتجاهية موازنة لبلوغ قيمة المقدار الحاصم على المحور المنفصل", x: -1, y: -1.8, color: "#eee" }
+        - {
+            type: "text",
+            content: "المعايرة المتجهية الخطية لمعاملي بيزو باعتبارهما محددات اتجاهية موازنة لبلوغ قيمة المقدار الحاصم على المحور المنفصل",
+            x: -1,
+            y: -1.8,
+            color: "#eee",
+          }
 
   - NB:
       title: "المحددات الرياضية وقوانين عدم الوحدانية:"

@@ -46,12 +46,27 @@ elements:
         # رسم تدفق الدوران وتضاعف الزوايا
         - { type: "line", points: [[-4.5, 0], [5, 0]], color: "gray" }
         - { type: "line", points: [[0, -4.5], [0, 4.5]], color: "gray" }
-        
+
         # الأشعة z^1, z^2, z^3
-        - { type: "line", points: [[0, 0], [2, 1.2]], color: "blue", arrowEnd: true }
-        - { type: "line", points: [[0, 0], [1.5, 2.6]], color: "orange", arrowEnd: true }
-        - { type: "line", points: [[0, 0], [-1.2, 3.5]], color: "#168574", arrowEnd: true }
-        
+        - {
+            type: "line",
+            points: [[0, 0], [2, 1.2]],
+            color: "blue",
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[0, 0], [1.5, 2.6]],
+            color: "orange",
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[0, 0], [-1.2, 3.5]],
+            color: "#168574",
+            arrowEnd: true,
+          }
+
         - { type: "text", content: "z¹", x: 2.2, y: 1.4, color: "blue" }
         - { type: "text", content: "z²", x: 1.7, y: 2.8, color: "orange" }
         - { type: "text", content: "z³", x: -1.7, y: 3.6, color: "#168574" }

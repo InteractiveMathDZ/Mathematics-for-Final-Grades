@@ -39,16 +39,42 @@ elements:
       yDomain: [-1, 5]
       elements:
         # رسم هيكلي يربط نظرية الأعداد بالهندسة المركبة
-        - { type: "line", points: [[0, 1.5], [0, 4.5], [2.5, 4.5], [2.5, 1.5], [0, 1.5]], color: "blue" }
-        - { type: "text", content: "نظرية الأعداد", x: 0.1, y: 3, color: "blue" }
-        
+        - {
+            type: "line",
+            points: [[0, 1.5], [0, 4.5], [2.5, 4.5], [2.5, 1.5], [0, 1.5]],
+            color: "blue",
+          }
+        - {
+            type: "text",
+            content: "نظرية الأعداد",
+            x: 0.1,
+            y: 3,
+            color: "blue",
+          }
+
         - { type: "line", points: [[2.5, 3.8], [6, 3.8]], color: "orange" }
         - { type: "line", points: [[2.5, 2.2], [6, 2.2]], color: "orange" }
-        
-        - { type: "line", points: [[6, 1.5], [6, 4.5], [8.5, 4.5], [8.5, 1.5], [6, 1.5]], color: "#168574" }
-        - { type: "text", content: "الهندسة المركبة", x: 6.1, y: 3, color: "#168574" }
 
-        - { type: "text", content: "تكامل الحساب الهندسي والأولية الحسابية", x: -1, y: -0.5, color: "#eee" }
+        - {
+            type: "line",
+            points: [[6, 1.5], [6, 4.5], [8.5, 4.5], [8.5, 1.5], [6, 1.5]],
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "الهندسة المركبة",
+            x: 6.1,
+            y: 3,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "تكامل الحساب الهندسي والأولية الحسابية",
+            x: -1,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "خاتمة المسار:"

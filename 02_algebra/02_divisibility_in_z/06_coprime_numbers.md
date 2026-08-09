@@ -42,21 +42,58 @@ elements:
       elements:
         # المجموعات التوضيحية (شكل فين مبسط للمجموعات المنفصلة تقاطرياً إلا في 1)
         # الدائرة اليسرى: قواسم 8
-        - { type: "circle", center: [-1.2, 0], radius: 1.8, color: "blue", dash: 2 }
-        - { type: "text", content: "نطاق القواسم D_8", x: -2.5, y: 1.5, color: "blue" }
+        - {
+            type: "circle",
+            center: [-1.2, 0],
+            radius: 1.8,
+            color: "blue",
+            dash: 2,
+          }
+        - {
+            type: "text",
+            content: "نطاق القواسم D_8",
+            x: -2.5,
+            y: 1.5,
+            color: "blue",
+          }
         - { type: "text", content: "2، 4، 8", x: -2.0, y: 0, color: "blue" }
-        
+
         # الدائرة اليمنى: قواسم 15
-        - { type: "circle", center: [1.2, 0], radius: 1.8, color: "orange", dash: 2 }
-        - { type: "text", content: "نطاق القواسم D_15", x: 1.2, y: 1.5, color: "orange" }
+        - {
+            type: "circle",
+            center: [1.2, 0],
+            radius: 1.8,
+            color: "orange",
+            dash: 2,
+          }
+        - {
+            type: "text",
+            content: "نطاق القواسم D_15",
+            x: 1.2,
+            y: 1.5,
+            color: "orange",
+          }
         - { type: "text", content: "3، 5، 15", x: 1.2, y: 0, color: "orange" }
-        
+
         # منطقة التقاطع المحصورة التي تحتوي على 1 فقط
-        - { type: "point", x: 0, y: 0, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 0,
+            y: 0,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "1", x: -0.1, y: 0.3, color: "#168574" }
-        
+
         # نصوص توضيحية بيداغوجية
-        - { type: "text", content: "المعايرة المجموعاتية تفيد بانحصار التداخل صلب العنصر الأحادي الحيادي 1", x: -2.8, y: -2.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "المعايرة المجموعاتية تفيد بانحصار التداخل صلب العنصر الأحادي الحيادي 1",
+            x: -2.8,
+            y: -2.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "التمييز المنهجي والمحددات البنيوية:"

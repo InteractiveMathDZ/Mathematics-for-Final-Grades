@@ -46,22 +46,61 @@ elements:
       elements:
         # تمثيل بياني لتكافؤ القيم بترديد 5
         - { type: "line", points: [[-3, 0], [7, 0]], color: "gray" }
-        - { type: "point", x: 0, y: 0, strokeColor: "gray", fillColor: "gray", size: 2 }
+        - {
+            type: "point",
+            x: 0,
+            y: 0,
+            strokeColor: "gray",
+            fillColor: "gray",
+            size: 2,
+          }
         - { type: "text", content: "0", x: 0, y: -0.6, color: "gray" }
-        
+
         # التقدم الموجب
-        - { type: "line", points: [[0, 0.5], [4, 0.5]], color: "blue", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[0, 0.5], [4, 0.5]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
         - { type: "text", content: "+4", x: 1.5, y: 0.8, color: "blue" }
-        - { type: "point", x: 4, y: 0, strokeColor: "blue", fillColor: "blue", size: 3 }
+        - {
+            type: "point",
+            x: 4,
+            y: 0,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
         - { type: "text", content: "4", x: 4, y: -0.6, color: "blue" }
-        
+
         # الرجوع السالب
-        - { type: "line", points: [[0, 1.4], [-1, 1.4]], color: "#168574", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[0, 1.4], [-1, 1.4]],
+            color: "#168574",
+            arrowStart: false,
+            arrowEnd: true,
+          }
         - { type: "text", content: "-1", x: -1.2, y: 1.7, color: "#168574" }
-        - { type: "point", x: -1, y: 0, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: -1,
+            y: 0,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "-1", x: -1, y: -0.6, color: "#168574" }
-        
-        - { type: "text", content: "التكافؤ 4 ≡ -1 بترديد 5", x: -2.5, y: -1.5, color: "#eee" }
+
+        - {
+            type: "text",
+            content: "التكافؤ 4 ≡ -1 بترديد 5",
+            x: -2.5,
+            y: -1.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

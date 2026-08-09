@@ -36,7 +36,13 @@ elements:
   - table:
       headers: ["القسمة الخطية للأس $n$", "$4k$", "$4k+1$", "$4k+2$", "$4k+3$"]
       rows:
-          - ["باقي القسمة الإقليدية للمقدار $3^n$ على $10$", "$1$", "$3$", "$9$", "$7$"]
+        - [
+            "باقي القسمة الإقليدية للمقدار $3^n$ على $10$",
+            "$1$",
+            "$3$",
+            "$9$",
+            "$7$",
+          ]
 
   - h3: "3. الاختزال النمطي للأشكال الأسية العليا"
     id: "large-exponent-reduction"
@@ -53,25 +59,113 @@ elements:
       yDomain: [-3, 3]
       elements:
         # رسم الحلقة الدورية الرباعية للبواقي (1 -> 3 -> 9 -> 7)
-        - { type: "circle", center: [0, 0], radius: 1.8, color: "gray", dash: 2 }
+        - {
+            type: "circle",
+            center: [0, 0],
+            radius: 1.8,
+            color: "gray",
+            dash: 2,
+          }
         # الباقي 1
-        - { type: "point", x: 1.8, y: 0, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "الباقي 1 لأجل رتب الفئة: n = 4k", x: 2.0, y: 0.2, color: "#168574" }
+        - {
+            type: "point",
+            x: 1.8,
+            y: 0,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "الباقي 1 لأجل رتب الفئة: n = 4k",
+            x: 2.0,
+            y: 0.2,
+            color: "#168574",
+          }
         # الباقي 3
-        - { type: "point", x: 0, y: 1.8, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "text", content: "الباقي 3 لأجل رتب الفئة: n = 4k + 1", x: -0.5, y: 2.1, color: "blue" }
+        - {
+            type: "point",
+            x: 0,
+            y: 1.8,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "الباقي 3 لأجل رتب الفئة: n = 4k + 1",
+            x: -0.5,
+            y: 2.1,
+            color: "blue",
+          }
         # الباقي 9
-        - { type: "point", x: -1.8, y: 0, strokeColor: "orange", fillColor: "orange", size: 3 }
-        - { type: "text", content: "الباقي 9 لأجل رتب الفئة: n = 4k + 2", x: -2.8, y: -0.3, color: "orange" }
+        - {
+            type: "point",
+            x: -1.8,
+            y: 0,
+            strokeColor: "orange",
+            fillColor: "orange",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "الباقي 9 لأجل رتب الفئة: n = 4k + 2",
+            x: -2.8,
+            y: -0.3,
+            color: "orange",
+          }
         # الباقي 7
-        - { type: "point", x: 0, y: -1.8, strokeColor: "purple", fillColor: "purple", size: 3 }
-        - { type: "text", content: "الباقي 7 لأجل رتب الفئة: n = 4k + 3", x: -0.5, y: -2.2, color: "purple" }
+        - {
+            type: "point",
+            x: 0,
+            y: -1.8,
+            strokeColor: "purple",
+            fillColor: "purple",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "الباقي 7 لأجل رتب الفئة: n = 4k + 3",
+            x: -0.5,
+            y: -2.2,
+            color: "purple",
+          }
         # أسهم التوجيه لتوضيح مسار الحركة الدورية
-        - { type: "line", points: [[1.3, 1.3], [0.2, 1.7]], color: "green", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[-1.3, 1.3], [-1.7, 0.2]], color: "green", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[-1.3, -1.3], [-0.2, -1.7]], color: "green", arrowStart: false, arrowEnd: true }
-        - { type: "line", points: [[1.3, -1.3], [1.7, -0.2]], color: "green", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "المعايرة الموجهة لتمثيل بنية الفضاء الدوري للبواقي عند القيمة الحاصرة k = 4", x: -2.8, y: -2.8, color: "#eee" }
+        - {
+            type: "line",
+            points: [[1.3, 1.3], [0.2, 1.7]],
+            color: "green",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[-1.3, 1.3], [-1.7, 0.2]],
+            color: "green",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[-1.3, -1.3], [-0.2, -1.7]],
+            color: "green",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[1.3, -1.3], [1.7, -0.2]],
+            color: "green",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "المعايرة الموجهة لتمثيل بنية الفضاء الدوري للبواقي عند القيمة الحاصرة k = 4",
+            x: -2.8,
+            y: -2.8,
+            color: "#eee",
+          }
 
   - NB:
       title: "الضوابط النظرية والمحددات الاستدلالية:"

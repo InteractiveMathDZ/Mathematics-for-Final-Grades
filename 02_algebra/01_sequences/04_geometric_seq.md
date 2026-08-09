@@ -36,8 +36,6 @@ elements:
           "annotations": [{"label": "التطور الأسي بمقدار المعامل الجدائي q=2"}]
         }
 
-
-
   - h3: "2. الصياغة الدستورية لعبارة الحد العام"
     id: "general-term-geometric"
   - parags:

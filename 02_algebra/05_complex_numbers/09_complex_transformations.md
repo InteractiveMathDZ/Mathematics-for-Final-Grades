@@ -56,7 +56,12 @@ elements:
         - { type: "text", content: "M", x: 1.2, y: 1.2 }
         - { type: "point", x: 3, y: 3, size: 3 }
         - { type: "text", content: "M'", x: 3.2, y: 3.2 }
-        - { type: "line", points: [[1, 1], [3, 3]], color: "orange", arrowEnd: true }
+        - {
+            type: "line",
+            points: [[1, 1], [3, 3]],
+            color: "orange",
+            arrowEnd: true,
+          }
 
   - NB:
       title: "ملاحظة:"

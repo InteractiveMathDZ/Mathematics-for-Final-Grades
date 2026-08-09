@@ -1,7 +1,7 @@
 ---
 layout: lesson
 title: "حالة عدم التعيين صفر على صفر في الدوال الصماء"
-subtitle: "إزالة حالة عدم التعيين من الشكل \"0/0\" باستعمال طريقة الضرب في المرافق"
+subtitle: 'إزالة حالة عدم التعيين من الشكل "0/0" باستعمال طريقة الضرب في المرافق'
 permalink: /indet_0_0_sqrt/
 mathJax: true
 graph: true
@@ -25,7 +25,7 @@ elements:
 
   - parags:
       - rtl: "المرافق ليس حيلة عشوائية، بل هو تطبيق ذكي للمتطابقة الشهيرة الثالثة. الهدف منه هو توليد عملية 'تربيع إجباري' تتكفل بنسف الجذر التربيعي تماماً."
-  
+
   - NB:
       type: success
       title: "آلية عمل الهندسة الجبرية للمرافق:"
@@ -69,11 +69,41 @@ elements:
       xDomain: [-1, 5]
       yDomain: [0, 1.5]
       elements:
-        - { type: "function", fn: "(Math.sqrt(x+1) - 1)/x", strokeColor: "#38bdf8", strokeWidth: 3 }
-        - { type: "point", x: 0, y: 0.5, strokeColor: "red", fillColor: "black", size: 2 }
-        - { type: "line", points: [[0, 0], [0, 0.5]], color: "red", dash: 3, width: 1.2 }
-        - { type: "line", points: [[-1, 0.5], [0, 0.5]], color: "red", dash: 3, width: 1.2 }
-        - { type: "text", content: "فجوة عابرة عند (0، 0.5)", x: 0.3, y: 0.6, color: "orange" }
+        - {
+            type: "function",
+            fn: "(Math.sqrt(x+1) - 1)/x",
+            strokeColor: "#38bdf8",
+            strokeWidth: 3,
+          }
+        - {
+            type: "point",
+            x: 0,
+            y: 0.5,
+            strokeColor: "red",
+            fillColor: "black",
+            size: 2,
+          }
+        - {
+            type: "line",
+            points: [[0, 0], [0, 0.5]],
+            color: "red",
+            dash: 3,
+            width: 1.2,
+          }
+        - {
+            type: "line",
+            points: [[-1, 0.5], [0, 0.5]],
+            color: "red",
+            dash: 3,
+            width: 1.2,
+          }
+        - {
+            type: "text",
+            content: "فجوة عابرة عند (0، 0.5)",
+            x: 0.3,
+            y: 0.6,
+            color: "orange",
+          }
 
   - NB:
       type: danger
@@ -81,7 +111,7 @@ elements:
       NBs:
         - rtl: "من أكبر الأخطاء التي يقع فيها الطلبة وتكلّفهم وقتاً ثميناً، هو المسارعة بنشر الأقواس في الطرف غير المستهدف (المقام في مثالنا). احتفظ بالمقام دائماً على شكله التحليلي $x(\\sqrt{x+1} + 1)$ دون مساس؛ لأن هدفك الأساسي هو إبقاء $x$ الخارجي حراً طليقاً لكي تلتقطه وتختزله مع $x$ القادم من البسط في المرحلة النهائية."
 
-  - h3: "4. مهارات حسابية: استغلال \"العدد المشتق\""
+  - h3: '4. مهارات حسابية: استغلال "العدد المشتق"'
     id: "elite-derivative-shortcut"
 
   - parags:

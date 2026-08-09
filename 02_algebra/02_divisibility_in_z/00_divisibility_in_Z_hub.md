@@ -65,5 +65,4 @@ sections:
       - title: "المبحث 10: التفكيك البنيوي إلى عوامل أولية وحساب التعداد الإجمالي للقواسم"
         url: "/prime_factorization/"
         icon: "grid-3x3"
-
 ---

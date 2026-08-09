@@ -37,25 +37,92 @@ elements:
       xDomain: [-1, 15]
       yDomain: [-1, 6]
       elements:
-        - { type: "function", fn: "3", dash: 2, color: "green"}
-        - { type: "text", content: "النهاية المشتركة المستقرة L = 3", x: 1, y: 3.2, color: "green"}
-        - { type: "point", x: 0, y: 1, strokeColor: "blue", fillColor: "blue", size: 1}
-        - { type: "text", content: "u_0", x: -0.2, y: 1.2, color: "blue"}
-        - { type: "point", x: 2, y: 2, strokeColor: "blue", fillColor: "blue", size: 1}
-        - { type: "text", content: "u_1", x: 1.8, y: 2.2, color: "blue"}
-        - { type: "point", x: 5, y: 2.7, strokeColor: "blue", fillColor: "blue", size: 1}
-        - { type: "text", content: "u_2", x: 4.8, y: 2.9, color: "blue"}
-        - { type: "point", x: 10, y: 2.9, strokeColor: "blue", fillColor: "blue", size: 1}
-        - { type: "text", content: "u_3", x: 9.8, y: 3.1, color: "blue"}
-        - { type: "point", x: 0, y: 5, strokeColor: "red", fillColor: "red", size: 1}
-        - { type: "text", content: "v_0", x: -0.2, y: 5.2, color: "red"}
-        - { type: "point", x: 2, y: 4, strokeColor: "red", fillColor: "red", size: 1}
-        - { type: "text", content: "v_1", x: 1.8, y: 4.2, color: "red"}
-        - { type: "point", x: 5, y: 3.3, strokeColor: "red", fillColor: "red", size: 1}
-        - { type: "text", content: "v_2", x: 4.8, y: 3.5, color: "red"}
-        - { type: "point", x: 10, y: 3.1, strokeColor: "red", fillColor: "red", size: 1}
-        - { type: "text", content: "v_3", x: 9.8, y: 3.3, color: "red"}
-        - { type: "text", content: "المعايرة الطوبولوجية للحصر التناظري المتبادل بين النظم المتزايدة والمتناقصة", x: 0.5, y: 0.2}
+        - { type: "function", fn: "3", dash: 2, color: "green" }
+        - {
+            type: "text",
+            content: "النهاية المشتركة المستقرة L = 3",
+            x: 1,
+            y: 3.2,
+            color: "green",
+          }
+        - {
+            type: "point",
+            x: 0,
+            y: 1,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 1,
+          }
+        - { type: "text", content: "u_0", x: -0.2, y: 1.2, color: "blue" }
+        - {
+            type: "point",
+            x: 2,
+            y: 2,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 1,
+          }
+        - { type: "text", content: "u_1", x: 1.8, y: 2.2, color: "blue" }
+        - {
+            type: "point",
+            x: 5,
+            y: 2.7,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 1,
+          }
+        - { type: "text", content: "u_2", x: 4.8, y: 2.9, color: "blue" }
+        - {
+            type: "point",
+            x: 10,
+            y: 2.9,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 1,
+          }
+        - { type: "text", content: "u_3", x: 9.8, y: 3.1, color: "blue" }
+        - {
+            type: "point",
+            x: 0,
+            y: 5,
+            strokeColor: "red",
+            fillColor: "red",
+            size: 1,
+          }
+        - { type: "text", content: "v_0", x: -0.2, y: 5.2, color: "red" }
+        - {
+            type: "point",
+            x: 2,
+            y: 4,
+            strokeColor: "red",
+            fillColor: "red",
+            size: 1,
+          }
+        - { type: "text", content: "v_1", x: 1.8, y: 4.2, color: "red" }
+        - {
+            type: "point",
+            x: 5,
+            y: 3.3,
+            strokeColor: "red",
+            fillColor: "red",
+            size: 1,
+          }
+        - { type: "text", content: "v_2", x: 4.8, y: 3.5, color: "red" }
+        - {
+            type: "point",
+            x: 10,
+            y: 3.1,
+            strokeColor: "red",
+            fillColor: "red",
+            size: 1,
+          }
+        - { type: "text", content: "v_3", x: 9.8, y: 3.3, color: "red" }
+        - {
+            type: "text",
+            content: "المعايرة الطوبولوجية للحصر التناظري المتبادل بين النظم المتزايدة والمتناقصة",
+            x: 0.5,
+            y: 0.2,
+          }
 
   - NB:
       title: "مجالات التوظيف والأداء المنهجي:"

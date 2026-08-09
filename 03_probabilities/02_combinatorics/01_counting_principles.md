@@ -39,7 +39,12 @@ elements:
       yDomain: [0, 3]
       elements:
         - { type: "text", content: "الترتيب مهم؟", x: 0.5, y: 2.5 }
-        - { type: "line", points: [[1.5, 2.5], [2.5, 2.5]], color: "blue", arrowEnd: true }
+        - {
+            type: "line",
+            points: [[1.5, 2.5], [2.5, 2.5]],
+            color: "blue",
+            arrowEnd: true,
+          }
         - { type: "text", content: "تكرار مسموح؟", x: 3, y: 2.5 }
         - { type: "text", content: "نعم -> قائمة (n^p)", x: 3.5, y: 1.5 }
         - { type: "text", content: "لا -> ترتيبة (Aⁿₚ)", x: 3.5, y: 0.5 }

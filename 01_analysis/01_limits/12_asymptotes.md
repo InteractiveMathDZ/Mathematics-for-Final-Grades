@@ -44,12 +44,47 @@ elements:
       xDomain: [-5, 5]
       yDomain: [-5, 5]
       elements:
-        - { type: "function", fn: "x + 1/x", strokeColor: "#38bdf8", strokeWidth: 2.5 }
-        - { type: "line", points: [[-5, -5], [5, 5]], color: "#ef4444", dash: 4, width: 1.5 }
-        - { type: "line", points: [[0, -5], [0, 5]], color: "#10b981", dash: 4, width: 1.5 }
-        - { type: "text", content: "المقارب المائل: y = x", x: 1.2, y: 2.5, color: "#ef4444" }
-        - { type: "text", content: "المقارب العمودي: x = 0", x: -3.2, y: 0.5, color: "#10b981" }
-        - { type: "text", content: "f(x) = x + 1/x", x: 2, y: 4, color: "#38bdf8" }
+        - {
+            type: "function",
+            fn: "x + 1/x",
+            strokeColor: "#38bdf8",
+            strokeWidth: 2.5,
+          }
+        - {
+            type: "line",
+            points: [[-5, -5], [5, 5]],
+            color: "#ef4444",
+            dash: 4,
+            width: 1.5,
+          }
+        - {
+            type: "line",
+            points: [[0, -5], [0, 5]],
+            color: "#10b981",
+            dash: 4,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "المقارب المائل: y = x",
+            x: 1.2,
+            y: 2.5,
+            color: "#ef4444",
+          }
+        - {
+            type: "text",
+            content: "المقارب العمودي: x = 0",
+            x: -3.2,
+            y: 0.5,
+            color: "#10b981",
+          }
+        - {
+            type: "text",
+            content: "f(x) = x + 1/x",
+            x: 2,
+            y: 4,
+            color: "#38bdf8",
+          }
 
   - h3: "3. الموازنة التحليلية للتفسير البياني"
     id: "asymp-reading"

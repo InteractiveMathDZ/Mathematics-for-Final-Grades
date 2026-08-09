@@ -60,8 +60,14 @@ elements:
         - { type: "text", content: "X", x: 2.5, y: 2.8, color: "red" }
         - { type: "text", content: "X", x: 4.5, y: 2.8, color: "red" }
         - { type: "text", content: "[11]", x: 6.5, y: 2.8, color: "#168574" }
-        
-        - { type: "text", content: "الأعداد غير المشطوبة تمثل الأعداد الأولية", x: 0.2, y: -0.7, color: "#eee" }
+
+        - {
+            type: "text",
+            content: "الأعداد غير المشطوبة تمثل الأعداد الأولية",
+            x: 0.2,
+            y: -0.7,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

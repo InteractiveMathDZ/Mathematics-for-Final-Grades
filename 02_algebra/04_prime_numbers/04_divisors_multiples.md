@@ -45,16 +45,42 @@ elements:
       yDomain: [-2, 5]
       elements:
         # رسم مبسط للعلاقة بين عوامل A و B
-        - { type: "line", points: [[0, 2], [3, 4.5], [6, 2], [3, -0.5], [0, 2]], color: "blue" }
+        - {
+            type: "line",
+            points: [[0, 2], [3, 4.5], [6, 2], [3, -0.5], [0, 2]],
+            color: "blue",
+          }
         - { type: "text", content: "عوامل A", x: 0.2, y: 3.5, color: "blue" }
-        - { type: "line", points: [[3, 2], [6, 4.5], [9, 2], [6, -0.5], [3, 2]], color: "orange" }
+        - {
+            type: "line",
+            points: [[3, 2], [6, 4.5], [9, 2], [6, -0.5], [3, 2]],
+            color: "orange",
+          }
         - { type: "text", content: "عوامل B", x: 7.2, y: 3.5, color: "orange" }
-        
-        # التقاطع يمثل PGCD
-        - { type: "text", content: "PGCD = 12", x: 3.5, y: 1.1, color: "#168574" }
-        - { type: "text", content: "التقاطع (العوامل المشتركة)", x: 3.2, y: 2.8, color: "#168574" }
 
-        - { type: "text", content: "تداخل العوامل واستخراج القواسم والمضاعفات", x: -1, y: -1.2, color: "#eee" }
+        # التقاطع يمثل PGCD
+        - {
+            type: "text",
+            content: "PGCD = 12",
+            x: 3.5,
+            y: 1.1,
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "التقاطع (العوامل المشتركة)",
+            x: 3.2,
+            y: 2.8,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "تداخل العوامل واستخراج القواسم والمضاعفات",
+            x: -1,
+            y: -1.2,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

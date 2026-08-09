@@ -65,5 +65,4 @@ sections:
       - title: "المبحث 10: الأعداد الأولية والأعداد المركبة"
         url: "/composite_primes/"
         icon: "puzzle"
-
 ---

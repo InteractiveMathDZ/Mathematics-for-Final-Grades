@@ -38,10 +38,3 @@ sections:
         url: "/similar_triangles/"
         icon: "magnifying-glass-plus"
 ---
-
-
-
-
-
-
-

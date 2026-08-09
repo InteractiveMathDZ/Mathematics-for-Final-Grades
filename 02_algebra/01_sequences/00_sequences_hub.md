@@ -65,5 +65,4 @@ sections:
       - title: "المبحث 10: مبرهنة المتتاليات المتجاورة وشروط استقرار الجوار"
         url: "/adjacent_seq/"
         icon: "layout"
-
 ---

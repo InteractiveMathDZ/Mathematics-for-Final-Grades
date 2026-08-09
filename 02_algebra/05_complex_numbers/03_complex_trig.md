@@ -46,7 +46,12 @@ elements:
         - { type: "line", points: [[-0.5, 0], [5.5, 0]], color: "gray" }
         - { type: "line", points: [[0, -0.5], [0, 4.5]], color: "gray" }
         # الشعاع من المبدأ إلى النقطة z
-        - { type: "line", points: [[0, 0], [4, 3]], color: "blue", arrowEnd: true }
+        - {
+            type: "line",
+            points: [[0, 0], [4, 3]],
+            color: "blue",
+            arrowEnd: true,
+          }
         - { type: "point", x: 4, y: 3, size: 3 }
         - { type: "text", content: "M(z)", x: 4.2, y: 3.2, color: "blue" }
 

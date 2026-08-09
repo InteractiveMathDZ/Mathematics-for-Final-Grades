@@ -50,23 +50,60 @@ elements:
         # المسار الأول للعدد 17
         - { type: "line", points: [[0, 4], [2, 4]], color: "gray" }
         - { type: "text", content: "17", x: 0.5, y: 4.3, color: "gray" }
-        - { type: "line", points: [[2, 4], [4, 3]], color: "blue", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[2, 4], [4, 3]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
         - { type: "text", content: "≡ 2 [5]", x: 2.2, y: 3.8, color: "blue" }
 
         # المسار الثاني للعدد 22
         - { type: "line", points: [[0, 1], [2, 1]], color: "gray" }
         - { type: "text", content: "22", x: 0.5, y: 1.3, color: "gray" }
-        - { type: "line", points: [[2, 1], [4, 2]], color: "blue", arrowStart: false, arrowEnd: true }
+        - {
+            type: "line",
+            points: [[2, 1], [4, 2]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
         - { type: "text", content: "≡ 2 [5]", x: 2.2, y: 1.2, color: "blue" }
 
         # حساب جداء البواقي
-        - { type: "point", x: 4, y: 2.5, strokeColor: "orange", fillColor: "orange", size: 3 }
+        - {
+            type: "point",
+            x: 4,
+            y: 2.5,
+            strokeColor: "orange",
+            fillColor: "orange",
+            size: 3,
+          }
         - { type: "text", content: "×", x: 3.9, y: 2.7, color: "orange" }
-        - { type: "line", points: [[4, 2.5], [7, 2.5]], color: "#168574", arrowStart: false, arrowEnd: true }
-        
+        - {
+            type: "line",
+            points: [[4, 2.5], [7, 2.5]],
+            color: "#168574",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+
         # النتيجة
-        - { type: "text", content: "2 × 2 = 4", x: 4.5, y: 2.8, color: "#168574" }
-        - { type: "text", content: "تعويض الأعداد ببواقي قسمتها يسهل حساب العبارات والجداءات", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "2 × 2 = 4",
+            x: 4.5,
+            y: 2.8,
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "تعويض الأعداد ببواقي قسمتها يسهل حساب العبارات والجداءات",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "ملاحظة:"

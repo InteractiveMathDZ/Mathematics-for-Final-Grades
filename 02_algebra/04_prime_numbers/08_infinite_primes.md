@@ -42,13 +42,47 @@ elements:
       elements:
         # رسم تدفق البرهان
         - { type: "line", points: [[0, 4.5], [2.5, 4.5]], color: "red" }
-        - { type: "text", content: "فرضية: الأولية منتهية", x: 0.1, y: 4.8, color: "red" }
-        
-        - { type: "line", points: [[2.5, 3.5], [6, 3.5], [6, 5.5], [2.5, 5.5], [2.5, 3.5]], color: "orange" }
-        - { type: "text", content: "N = (P₁×...×Pn) + 1", x: 2.7, y: 4.0, color: "orange" }
-        
-        - { type: "line", points: [[6, 4.5], [8.5, 4.5]], color: "red", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "تناقض (قاسم جديد)", x: 7.0, y: 3.8, color: "blue" }
-        
-        - { type: "text", content: "النتيجة: الأعداد الأولية لا متناهية", x: 1.5, y: 1.1, color: "#168574" }
+        - {
+            type: "text",
+            content: "فرضية: الأولية منتهية",
+            x: 0.1,
+            y: 4.8,
+            color: "red",
+          }
+
+        - {
+            type: "line",
+            points: [[2.5, 3.5], [6, 3.5], [6, 5.5], [2.5, 5.5], [2.5, 3.5]],
+            color: "orange",
+          }
+        - {
+            type: "text",
+            content: "N = (P₁×...×Pn) + 1",
+            x: 2.7,
+            y: 4.0,
+            color: "orange",
+          }
+
+        - {
+            type: "line",
+            points: [[6, 4.5], [8.5, 4.5]],
+            color: "red",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "تناقض (قاسم جديد)",
+            x: 7.0,
+            y: 3.8,
+            color: "blue",
+          }
+
+        - {
+            type: "text",
+            content: "النتيجة: الأعداد الأولية لا متناهية",
+            x: 1.5,
+            y: 1.1,
+            color: "#168574",
+          }
 ---

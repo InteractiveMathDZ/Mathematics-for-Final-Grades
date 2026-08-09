@@ -51,21 +51,51 @@ elements:
         - { type: "line", points: [[3, 2], [3, 3]], color: "gray" }
         - { type: "line", points: [[3, 3], [0, 3]], color: "gray" }
         - { type: "line", points: [[0, 3], [0, 2]], color: "gray" }
-        - { type: "text", content: "الشرط الجدائي الأول: a | (b × c)", x: 0.2, y: 2.4, color: "blue" }
-        
+        - {
+            type: "text",
+            content: "الشرط الجدائي الأول: a | (b × c)",
+            x: 0.2,
+            y: 2.4,
+            color: "blue",
+          }
+
         # سهم المرور العابر المشروط بالأولية
-        - { type: "line", points: [[3, 2.5], [6, 2.5]], color: "orange", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "قيد المقايسة الحاصم: PGCD(a, b) = 1", x: 3.1, y: 2.8, color: "orange" }
-        
+        - {
+            type: "line",
+            points: [[3, 2.5], [6, 2.5]],
+            color: "orange",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "قيد المقايسة الحاصم: PGCD(a, b) = 1",
+            x: 3.1,
+            y: 2.8,
+            color: "orange",
+          }
+
         # الصندوق الثاني: الاستنتاج الحتمي
         - { type: "line", points: [[6, 2], [9, 2]], color: "#168574" }
         - { type: "line", points: [[9, 2], [9, 3]], color: "#168574" }
         - { type: "line", points: [[9, 3], [6, 3]], color: "#168574" }
         - { type: "line", points: [[6, 3], [6, 2]], color: "#168574" }
-        - { type: "text", content: "الاستلزام القطعي: a | c", x: 6.5, y: 2.4, color: "#168574" }
-        
+        - {
+            type: "text",
+            content: "الاستلزام القطعي: a | c",
+            x: 6.5,
+            y: 2.4,
+            color: "#168574",
+          }
+
         # نص توضيحي سفلي للمثال المضاد عند غياب الشرط
-        - { type: "text", content: "النموذج المضاد المنبثق عند خرق قيد الأولية: القيمة 4 تقسم الجداء الحسابي (2×6)، بيد أن الاستلزام باطل لكون 4 لا يقسم 2 ولا يقسم 6 عيارياً غياباً للشرط", x: -1.5, y: -0.5, color: "red" }
+        - {
+            type: "text",
+            content: "النموذج المضاد المنبثق عند خرق قيد الأولية: القيمة 4 تقسم الجداء الحسابي (2×6)، بيد أن الاستلزام باطل لكون 4 لا يقسم 2 ولا يقسم 6 عيارياً غياباً للشرط",
+            x: -1.5,
+            y: -0.5,
+            color: "red",
+          }
 
   - NB:
       title: "المحددات المنهجية والشروط لشرعية الاستدلال:"

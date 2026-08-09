@@ -51,19 +51,77 @@ elements:
         # رسم دائرة الحساب النمطي (ساعة الترديد 4 كمثال مبسط لبناء زوايا دقيقة)
         - { type: "circle", center: [0, 0], radius: 2, color: "gray", dash: 2 }
         # النقطة (0) في الأعلى
-        - { type: "point", x: 0, y: 2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "text", content: "الفئة الصفرية المعايرة: 0 [4]", x: -0.2, y: 2.3, color: "#168574" }
+        - {
+            type: "point",
+            x: 0,
+            y: 2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "الفئة الصفرية المعايرة: 0 [4]",
+            x: -0.2,
+            y: 2.3,
+            color: "#168574",
+          }
         # النقطة (1) على اليمين والتي توافق 1، 5، 9، 13...
-        - { type: "point", x: 2, y: 0, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "text", content: "الفئة المتكافئة: 1 ≡ 5 ≡ 9 [4]", x: 2.2, y: 0, color: "blue" }
+        - {
+            type: "point",
+            x: 2,
+            y: 0,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "الفئة المتكافئة: 1 ≡ 5 ≡ 9 [4]",
+            x: 2.2,
+            y: 0,
+            color: "blue",
+          }
         # النقطة (2) في الأسفل
-        - { type: "point", x: 0, y: -2, strokeColor: "gray", fillColor: "none", size: 2 }
-        - { type: "text", content: "الفئة الثنائية: 2 [4]", x: -0.2, y: -2.4, color: "gray" }
+        - {
+            type: "point",
+            x: 0,
+            y: -2,
+            strokeColor: "gray",
+            fillColor: "none",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "الفئة الثنائية: 2 [4]",
+            x: -0.2,
+            y: -2.4,
+            color: "gray",
+          }
         # النقطة (3) على اليسار
-        - { type: "point", x: -2, y: 0, strokeColor: "gray", fillColor: "none", size: 2 }
-        - { type: "text", content: "الفئة الثلاثية: 3 [4]", x: -2.5, y: 0, color: "gray" }
+        - {
+            type: "point",
+            x: -2,
+            y: 0,
+            strokeColor: "gray",
+            fillColor: "none",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "الفئة الثلاثية: 3 [4]",
+            x: -2.5,
+            y: 0,
+            color: "gray",
+          }
         # نص بيداغوجي توضيحي للفكرة الدورية
-        - { type: "text", content: "المقايسة الطوبولوجية للحساب النمطي باعتباره فضاءً دوريّاً تنطبق فيه المقادير اللامتناهية على فئات بواقٍ محدودة", x: -2.8, y: -2.8, color: "#eee" }
+        - {
+            type: "text",
+            content: "المقايسة الطوبولوجية للحساب النمطي باعتباره فضاءً دوريّاً تنطبق فيه المقادير اللامتناهية على فئات بواقٍ محدودة",
+            x: -2.8,
+            y: -2.8,
+            color: "#eee",
+          }
 
   - NB:
       title: "المحددات والقيود الحاصرة للاستنزال العملياتي:"

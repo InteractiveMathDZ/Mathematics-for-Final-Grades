@@ -16,7 +16,7 @@ next_url: "/divisibility_in_Z_hub/"
 
 elements:
   - h2: "الحصيلة الهيكلية للمحاور التحليلية للمتتاليات"
-  
+
   - h3: "1. النظم الدستورية للتوليد ومعايير المقايسة الرتيبية"
     id: "generation-monotonicity-review"
   - parags:
@@ -32,12 +32,29 @@ elements:
       - rtl: "تستقر النواميس والقوانين الهيكلية المعايرة للنماذج الخطية والأسية وفق الجدول البنيوي الآتي:"
 
   - table:
-      headers: ["المحدد التحليلي والمعايرة", "المنظومة الخطية (المتتالية الحسابية)", "المنظومة الأسية (المتتالية الهندسية)"]
+      headers:
+        [
+          "المحدد التحليلي والمعايرة",
+          "المنظومة الخطية (المتتالية الحسابية)",
+          "المنظومة الأسية (المتتالية الهندسية)",
+        ]
       rows:
-          - ["العلاقة التراجعية التوليدية", "$u_{n+1} = u_n + r \\quad (r \\in \\mathbb{R})$", "$u_{n+1} = u_n \\times q \\quad (q \\in \\mathbb{R}^*)$"]
-          - ["الدستور الصريح للحد العام", "$u_n = u_p + (n-p)r$", "$u_n = u_p \\times q^{n-p}$"]
-          - ["الخاصية الطوبولوجية للوسط", "$a + c = 2b$", "$a \\times c = b^2$"]
-          - ["دستور الحصيلة التجمعية $S$", "$\\frac{N}{2} \\times (\\text{الحد الأول} + \\text{الحد الأخير})$", "$\\text{الحد الأول} \\times \\frac{1 - q^N}{1 - q} \\quad (q \\neq 1)$"]
+        - [
+            "العلاقة التراجعية التوليدية",
+            "$u_{n+1} = u_n + r \\quad (r \\in \\mathbb{R})$",
+            "$u_{n+1} = u_n \\times q \\quad (q \\in \\mathbb{R}^*)$",
+          ]
+        - [
+            "الدستور الصريح للحد العام",
+            "$u_n = u_p + (n-p)r$",
+            "$u_n = u_p \\times q^{n-p}$",
+          ]
+        - ["الخاصية الطوبولوجية للوسط", "$a + c = 2b$", "$a \\times c = b^2$"]
+        - [
+            "دستور الحصيلة التجمعية $S$",
+            "$\\frac{N}{2} \\times (\\text{الحد الأول} + \\text{الحد الأخير})$",
+            "$\\text{الحد الأول} \\times \\frac{1 - q^N}{1 - q} \\quad (q \\neq 1)$",
+          ]
 
   - h3: "3. محددات السلوك التقاربي والاستقرار الطوبولوجي للجوار"
     id: "convergence-theorems-review"
@@ -53,19 +70,66 @@ elements:
       yDomain: [-1, 8]
       elements:
         # مستقيم النهاية المقاربة L = 2
-        - { type: "line", points: [[-1, 2], [10, 2]], dash: 2, color: "#1a9e8a", name: "L" }
+        - {
+            type: "line",
+            points: [[-1, 2], [10, 2]],
+            dash: 2,
+            color: "#1a9e8a",
+            name: "L",
+          }
         # نقاط متتالية هندسية متناقصة ومتقاربة نحو 2 (مثال: u_n = 2 + 5*(0.5)^n)
-        - { type: "point", x: 0, y: 7, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 0,
+            y: 7,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         - { type: "text", content: "u_0", x: 0.2, y: 7.2, color: "#168574" }
-        - { type: "point", x: 1, y: 4.5, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 1,
+            y: 4.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         - { type: "text", content: "u_1", x: 1.2, y: 4.7, color: "#168574" }
-        - { type: "point", x: 2, y: 3.25, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 2,
+            y: 3.25,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         - { type: "text", content: "u_2", x: 2.2, y: 3.45, color: "#168574" }
-        - { type: "point", x: 3, y: 2.62, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 3,
+            y: 2.62,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         - { type: "text", content: "u_3", x: 3.2, y: 2.82, color: "#168574" }
-        - { type: "point", x: 4, y: 2.31, strokeColor: "#168574", fillColor: "#168574", size: 2 }
+        - {
+            type: "point",
+            x: 4,
+            y: 2.31,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
         - { type: "text", content: "u_4", x: 4.2, y: 2.51, color: "#168574" }
-        - { type: "text", content: "المعايرة التحليلية لتقارب الحدود المنفصلة نحو المستقيم المقارب الأفقي L", x: 2, y: 0.5, color: "#eee" }
+        - {
+            type: "text",
+            content: "المعايرة التحليلية لتقارب الحدود المنفصلة نحو المستقيم المقارب الأفقي L",
+            x: 2,
+            y: 0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "الضوابط المنهجية لمعايرة المسائل الرسمية:"

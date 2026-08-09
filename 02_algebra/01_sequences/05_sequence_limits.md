@@ -57,16 +57,34 @@ elements:
       xDomain: [-1, 15]
       yDomain: [-1, 5]
       elements:
-        - { type: "function", fn: "2", dash: 2, strokeColor: "green", strokeWidth: 1}
-        - { type: "text", content: "L = 2 (المقاربة الأفقية لحواصر التقارب)", x: -0.5, y: 2.1, color: "green"}
-        - { type: "point", x: 0, y: 4.5, size: 1}
-        - { type: "point", x: 1, y: 3.2, size: 1}
-        - { type: "point", x: 2, y: 2.6, size: 1}
-        - { type: "point", x: 3, y: 2.3, size: 1}
-        - { type: "point", x: 4, y: 2.15, size: 1}
-        - { type: "point", x: 6, y: 2.05, size: 1}
-        - { type: "point", x: 10, y: 2.01, size: 1}
-        - { type: "text", content: "تناهي النقط المنفصلة نحو المستقيم المقارب الأفقي دون حدوث تداخل", x: -1, y: 1, fontSize: 16 }
+        - {
+            type: "function",
+            fn: "2",
+            dash: 2,
+            strokeColor: "green",
+            strokeWidth: 1,
+          }
+        - {
+            type: "text",
+            content: "L = 2 (المقاربة الأفقية لحواصر التقارب)",
+            x: -0.5,
+            y: 2.1,
+            color: "green",
+          }
+        - { type: "point", x: 0, y: 4.5, size: 1 }
+        - { type: "point", x: 1, y: 3.2, size: 1 }
+        - { type: "point", x: 2, y: 2.6, size: 1 }
+        - { type: "point", x: 3, y: 2.3, size: 1 }
+        - { type: "point", x: 4, y: 2.15, size: 1 }
+        - { type: "point", x: 6, y: 2.05, size: 1 }
+        - { type: "point", x: 10, y: 2.01, size: 1 }
+        - {
+            type: "text",
+            content: "تناهي النقط المنفصلة نحو المستقيم المقارب الأفقي دون حدوث تداخل",
+            x: -1,
+            y: 1,
+            fontSize: 16,
+          }
 
   - NB:
       title: "أحكام الاستقرار والمحدودية الطوبولوجية:"

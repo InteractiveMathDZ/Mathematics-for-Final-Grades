@@ -21,8 +21,6 @@ elements:
       - rtl: "<strong>الشرط الكافي:</strong> يكون الشعاع غير المعدوم $\\vec{n}$ ناظمياً للمستوي $(P)$ إذا وفقط إذا كان عمودياً على شعاعي توجيه غير مرتبطين خطياً $\\vec{u}$ و $\\vec{v}$ من هذا المستوي:"
       - center: "$$\\vec{n} \\cdot \\vec{u} = 0 \\quad \\text{و} \\quad \\vec{n} \\cdot \\vec{v} = 0$$"
 
-
-
   - h3: "2. مبرهنة الاستخراج والدستور الديكارتي"
     id: "cartesian-equation-theorem"
 

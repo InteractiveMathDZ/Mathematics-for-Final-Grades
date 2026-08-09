@@ -48,7 +48,7 @@ elements:
 
   - parags:
       - rtl: "بما أن الدالة الناطقة هي كسر يجمع بين كثيري حدود، فإن سلوكها عند اللانهاية يتحدد بنتيجة الصراع بين الحد المسيطر في البسط والحد المسيطر في المقام بعد عملية الاختزال الجبري."
-    
+
   - NB:
       type: success
       title: "مبرهنة الاختزال:"
@@ -77,10 +77,33 @@ elements:
       xDomain: [-10, 10]
       yDomain: [-2, 6]
       elements:
-        - { type: "function", fn: "(2*x^2 + 1)/(x^2 - 5)", strokeColor: "#38bdf8", strokeWidth: 3 }
-        - { type: "line", points: [[-10, 2], [10, 2]], color: "red", dash: 4, width: 1.5 }
-        - { type: "text", content: "y = (2x²+1)/(x²-5)", x: 3, y: 3.5, color: "#38bdf8" }
-        - { type: "text", content: "مستقيم مقارب أفقي: y = 2", x: -8, y: 2.3, color: "red" }
+        - {
+            type: "function",
+            fn: "(2*x^2 + 1)/(x^2 - 5)",
+            strokeColor: "#38bdf8",
+            strokeWidth: 3,
+          }
+        - {
+            type: "line",
+            points: [[-10, 2], [10, 2]],
+            color: "red",
+            dash: 4,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "y = (2x²+1)/(x²-5)",
+            x: 3,
+            y: 3.5,
+            color: "#38bdf8",
+          }
+        - {
+            type: "text",
+            content: "مستقيم مقارب أفقي: y = 2",
+            x: -8,
+            y: 2.3,
+            color: "red",
+          }
 
   - NB:
       type: danger
@@ -112,4 +135,3 @@ elements:
       title: "2.4. مناقشة سلوك دالة ناطقة درجتها في البسط أكبر من المقام (تأصيل المستقيم المقارب المائل)"
       exemID: "ex-poly-002"
 ---
-    

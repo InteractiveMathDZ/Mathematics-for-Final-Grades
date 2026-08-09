@@ -20,8 +20,6 @@ elements:
       - rtl: "<strong>نص المبرهنة:</strong> يتعامد مستويان إذا وفقط إذا كان أحدهما يشمل مستقيماً عمودياً على المستوي الآخر."
       - center: "$$(D) \\subset (P_2) \\quad \\text{و} \\quad (D) \\perp (P_1) \\implies (P_2) \\perp (P_1)$$"
 
-
-
   - h3: "2. المسقط العمودي لنقطة في الفضاء"
     id: "orthogonal-projection-point"
 

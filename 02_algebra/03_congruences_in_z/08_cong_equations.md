@@ -48,19 +48,58 @@ elements:
       elements:
         # تمثيل بياني لدورية الحلول
         - { type: "line", points: [[-2, 0], [16, 0]], color: "gray" }
-        - { type: "point", x: 2, y: 0, strokeColor: "#168574", fillColor: "#168574", size: 3 }
+        - {
+            type: "point",
+            x: 2,
+            y: 0,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
         - { type: "text", content: "x₀ = 2", x: 1.8, y: -0.6, color: "#168574" }
-        
-        - { type: "line", points: [[2, 0.5], [7, 0.5]], color: "blue", arrowStart: false, arrowEnd: true }
+
+        - {
+            type: "line",
+            points: [[2, 0.5], [7, 0.5]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
         - { type: "text", content: "+5", x: 4, y: 0.8, color: "blue" }
-        - { type: "point", x: 7, y: 0, strokeColor: "orange", fillColor: "orange", size: 3 }
+        - {
+            type: "point",
+            x: 7,
+            y: 0,
+            strokeColor: "orange",
+            fillColor: "orange",
+            size: 3,
+          }
         - { type: "text", content: "7", x: 7, y: -0.6, color: "orange" }
-        
-        - { type: "line", points: [[7, 0.5], [12, 0.5]], color: "blue", arrowStart: false, arrowEnd: true }
-        - { type: "point", x: 12, y: 0, strokeColor: "orange", fillColor: "orange", size: 3 }
+
+        - {
+            type: "line",
+            points: [[7, 0.5], [12, 0.5]],
+            color: "blue",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "point",
+            x: 12,
+            y: 0,
+            strokeColor: "orange",
+            fillColor: "orange",
+            size: 3,
+          }
         - { type: "text", content: "12", x: 12, y: -0.6, color: "orange" }
-        
-        - { type: "text", content: "الحلول تتكرر بانتظام وفق خطوة الترديد (5k)", x: -1, y: 1.8, color: "#eee" }
+
+        - {
+            type: "text",
+            content: "الحلول تتكرر بانتظام وفق خطوة الترديد (5k)",
+            x: -1,
+            y: 1.8,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

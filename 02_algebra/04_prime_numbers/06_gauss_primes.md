@@ -44,14 +44,42 @@ elements:
         # رسم منطقي للمبرهنة
         - { type: "line", points: [[0, 3], [3, 3]], color: "gray" }
         - { type: "text", content: "a يقسم bc", x: 0.1, y: 3.3, color: "gray" }
-        
-        - { type: "line", points: [[3, 1.5], [6, 1.5], [6, 4.5], [3, 4.5], [3, 1.5]], color: "orange" }
-        - { type: "text", content: "بوابة غوص (PGCD(a,b)=1)", x: 3.2, y: 3.2, color: "blue" }
-        
-        - { type: "line", points: [[6, 3], [8.5, 3]], color: "#168574", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "a يقسم c", x: 7.3, y: 3.2, color: "#168574" }
 
-        - { type: "text", content: "تطبيق مبرهنة غوص للاستنتاج المنطقي", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "line",
+            points: [[3, 1.5], [6, 1.5], [6, 4.5], [3, 4.5], [3, 1.5]],
+            color: "orange",
+          }
+        - {
+            type: "text",
+            content: "بوابة غوص (PGCD(a,b)=1)",
+            x: 3.2,
+            y: 3.2,
+            color: "blue",
+          }
+
+        - {
+            type: "line",
+            points: [[6, 3], [8.5, 3]],
+            color: "#168574",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "a يقسم c",
+            x: 7.3,
+            y: 3.2,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "تطبيق مبرهنة غوص للاستنتاج المنطقي",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

@@ -43,14 +43,39 @@ elements:
       yDomain: [-1, 6]
       elements:
         # مخطط تدفق التحويل
-        - { type: "line", points: [[0, 4.5], [3, 4.5], [3, 3.5], [0, 3.5], [0, 4.5]], color: "blue" }
+        - {
+            type: "line",
+            points: [[0, 4.5], [3, 4.5], [3, 3.5], [0, 3.5], [0, 4.5]],
+            color: "blue",
+          }
         - { type: "text", content: "z = a + bi", x: 0.5, y: 4, color: "blue" }
-        
-        - { type: "line", points: [[4.5, 5], [8.5, 5], [8.5, 3], [4.5, 3], [4.5, 5]], color: "orange" }
-        - { type: "text", content: "r(cos θ + i sin θ)", x: 4.7, y: 4, color: "orange" }
-        
-        - { type: "line", points: [[6.5, 3], [6.5, 1.5]], color: "#168574", arrowEnd: true }
-        - { type: "text", content: "z = r e^{iθ}", x: 6.7, y: 1.5, color: "#168574" }
+
+        - {
+            type: "line",
+            points: [[4.5, 5], [8.5, 5], [8.5, 3], [4.5, 3], [4.5, 5]],
+            color: "orange",
+          }
+        - {
+            type: "text",
+            content: "r(cos θ + i sin θ)",
+            x: 4.7,
+            y: 4,
+            color: "orange",
+          }
+
+        - {
+            type: "line",
+            points: [[6.5, 3], [6.5, 1.5]],
+            color: "#168574",
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "z = r e^{iθ}",
+            x: 6.7,
+            y: 1.5,
+            color: "#168574",
+          }
 
   - NB:
       title: "ملاحظة:"

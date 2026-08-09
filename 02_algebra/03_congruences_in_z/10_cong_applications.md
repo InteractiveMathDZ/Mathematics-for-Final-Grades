@@ -45,16 +45,57 @@ elements:
       elements:
         # رسم مبسط لعملية التشفير
         - { type: "line", points: [[0, 2.5], [2.5, 2.5]], color: "gray" }
-        - { type: "text", content: "النص الأصلي P", x: 0.2, y: 2.8, color: "gray" }
-        
-        - { type: "line", points: [[2.5, 1.5], [6, 1.5], [6, 3.5], [2.5, 3.5], [2.5, 1.5]], color: "blue" }
-        - { type: "text", content: "عملية التشفير بالترديد [n]", x: 2.9, y: 2.4, color: "blue" }
-        
-        - { type: "line", points: [[6, 2.5], [8.5, 2.5]], color: "#168574", arrowStart: false, arrowEnd: true }
-        - { type: "point", x: 8.5, y: 2.5, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "النص المشفر C", x: 8.7, y: 2.7, color: "#168574" }
+        - {
+            type: "text",
+            content: "النص الأصلي P",
+            x: 0.2,
+            y: 2.8,
+            color: "gray",
+          }
 
-        - { type: "text", content: "تطبيق الحساب النمطي في حماية البيانات", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "line",
+            points: [[2.5, 1.5], [6, 1.5], [6, 3.5], [2.5, 3.5], [2.5, 1.5]],
+            color: "blue",
+          }
+        - {
+            type: "text",
+            content: "عملية التشفير بالترديد [n]",
+            x: 2.9,
+            y: 2.4,
+            color: "blue",
+          }
+
+        - {
+            type: "line",
+            points: [[6, 2.5], [8.5, 2.5]],
+            color: "#168574",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "point",
+            x: 8.5,
+            y: 2.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "النص المشفر C",
+            x: 8.7,
+            y: 2.7,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "تطبيق الحساب النمطي في حماية البيانات",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "خاتمة:"

@@ -33,7 +33,7 @@ elements:
   - parags:
       - rtl: "لتكن متتالية هندسية أساسها الحقيقي $q = 2$ وحدها الابتدائي مقيد بـ $u_0 = 1$. يؤول حساب المجموع الإجمالي للحدود الخمسة الأولى المتتابعة صلب النطاق $[u_0, \\dots, u_4]$ إلى التعويض العددي الآتي:"
       - center: "$S = u_0 \\times \\frac{1 - 2^5}{1 - 2} = 1 \\times \\frac{1 - 32}{-1} = 31$"
-  
+
   - graph:
       id: "sum-viz"
       class: "graph-container"
@@ -43,14 +43,20 @@ elements:
         - type: "bar"
           color: "#168574"
           opacity: 0.5
-          barWidth: 0.8 
+          barWidth: 0.8
           labelColor: "#ffffff"
           data:
             - { x: 0, y: 1, label: "u0" }
             - { x: 1, y: 2, label: "u1" }
             - { x: 2, y: 4, label: "u2" }
             - { x: 3, y: 8, label: "u3" }
-        - { type: "text", content: "المعايرة الهندسية للمجموع باعتباره حصيلة تراكمية للمقادير المنفصلة", x: 0.5, y: 12, color: "#eee"}
+        - {
+            type: "text",
+            content: "المعايرة الهندسية للمجموع باعتباره حصيلة تراكمية للمقادير المنفصلة",
+            x: 0.5,
+            y: 12,
+            color: "#eee",
+          }
 
   - NB:
       title: "الحالات الخاصة والضوابط البيداغوجية:"

@@ -48,11 +48,40 @@ elements:
       xDomain: [-6, 6]
       yDomain: [-0.5, 1.5]
       elements:
-        - { type: "function", fn: "Math.sin(x)/x", strokeColor: "#38bdf8", strokeWidth: 3 }
-        - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 3, width: 1.2 }
-        - { type: "line", points: [[-6, 1], [6, 1]], color: "red", dash: 3, width: 1.2 }
-        - { type: "text", content: "f(x) = sin(x)/x", x: 1.5, y: 1.1, color: "#38bdf8" }
-        - { type: "text", content: "فجوة الاستقرار الجواري: (0، 1)", x: -4, y: 1.15, color: "red" }
+        - {
+            type: "function",
+            fn: "Math.sin(x)/x",
+            strokeColor: "#38bdf8",
+            strokeWidth: 3,
+          }
+        - {
+            type: "line",
+            points: [[0, 0], [0, 1]],
+            color: "red",
+            dash: 3,
+            width: 1.2,
+          }
+        - {
+            type: "line",
+            points: [[-6, 1], [6, 1]],
+            color: "red",
+            dash: 3,
+            width: 1.2,
+          }
+        - {
+            type: "text",
+            content: "f(x) = sin(x)/x",
+            x: 1.5,
+            y: 1.1,
+            color: "#38bdf8",
+          }
+        - {
+            type: "text",
+            content: "فجوة الاستقرار الجواري: (0، 1)",
+            x: -4,
+            y: 1.15,
+            color: "red",
+          }
 
   - h3: "3. المنهجية الجبرية للموازنة وتغيير المتغير"
     id: "variable-change"

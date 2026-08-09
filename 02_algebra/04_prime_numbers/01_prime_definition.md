@@ -40,25 +40,134 @@ elements:
       yDomain: [-2, 5]
       elements:
         # تمثيل الأعداد الأولية (عدم قابلية التجزئة)
-        - { type: "line", points: [[0, 3], [4, 3], [4, 4.5], [0, 4.5], [0, 3]], color: "#168574" }
-        - { type: "text", content: "الأعداد الأولية: {2, 3, 5, 7}", x: 0.2, y: 3.6, color: "#168574" }
-        - { type: "point", x: 0.5, y: 2.2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 1.2, y: 2.2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 1.9, y: 2.2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 2.6, y: 2.2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "point", x: 3.3, y: 2.2, strokeColor: "#168574", fillColor: "#168574", size: 2 }
-        - { type: "text", content: "العدد 5: قواسمه هي 1 و 5", x: 0.2, y: 1.5, color: "gray" }
+        - {
+            type: "line",
+            points: [[0, 3], [4, 3], [4, 4.5], [0, 4.5], [0, 3]],
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "الأعداد الأولية: {2, 3, 5, 7}",
+            x: 0.2,
+            y: 3.6,
+            color: "#168574",
+          }
+        - {
+            type: "point",
+            x: 0.5,
+            y: 2.2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 1.2,
+            y: 2.2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 1.9,
+            y: 2.2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 2.6,
+            y: 2.2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 3.3,
+            y: 2.2,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "العدد 5: قواسمه هي 1 و 5",
+            x: 0.2,
+            y: 1.5,
+            color: "gray",
+          }
 
         # تمثيل الأعداد المركبة (قابلية التجزئة)
-        - { type: "line", points: [[7, 3], [11, 3], [11, 4.5], [7, 4.5], [7, 3]], color: "blue" }
-        - { type: "text", content: "الأعداد المركبة: {4, 6, 8, 9}", x: 7.2, y: 3.6, color: "blue" }
-        - { type: "point", x: 7.5, y: 2.2, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "point", x: 8.5, y: 2.2, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "point", x: 9.5, y: 2.2, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "point", x: 7.5, y: 1.6, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "point", x: 8.5, y: 1.6, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "point", x: 9.5, y: 1.6, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "text", content: "العدد 6: مصفوفة (2 × 3)", x: 7.2, y: 0.9, color: "gray" }
+        - {
+            type: "line",
+            points: [[7, 3], [11, 3], [11, 4.5], [7, 4.5], [7, 3]],
+            color: "blue",
+          }
+        - {
+            type: "text",
+            content: "الأعداد المركبة: {4, 6, 8, 9}",
+            x: 7.2,
+            y: 3.6,
+            color: "blue",
+          }
+        - {
+            type: "point",
+            x: 7.5,
+            y: 2.2,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 8.5,
+            y: 2.2,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 9.5,
+            y: 2.2,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 7.5,
+            y: 1.6,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 8.5,
+            y: 1.6,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "point",
+            x: 9.5,
+            y: 1.6,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "العدد 6: مصفوفة (2 × 3)",
+            x: 7.2,
+            y: 0.9,
+            color: "gray",
+          }
 
   - NB:
       title: "تنبيه:"

@@ -4,38 +4,38 @@
 
 /* الوضع الافتراضي أو النمط الفاتح (Light Mode) */
 :root {
-    /* ألوان الدوائر في النمط الفاتح متناسقة مع بياض الخلفية */
-    --bg-card-circle: #f8fafc;
-    --border-circle: #e2e8f0;
-    --text-circle-main: #1e293b;
-    --text-circle-muted: #64748b;
-    
-    /* ألوان التمايز البصري للوضع الفاتح (داكنة لضمان التباين والقراءة) */
-    --accent-blue: #0284c7;        
-    --accent-emerald: #059669;     
-    --accent-amber: #d97706;       
+  /* ألوان الدوائر في النمط الفاتح متناسقة مع بياض الخلفية */
+  --bg-card-circle: #f8fafc;
+  --border-circle: #e2e8f0;
+  --text-circle-main: #1e293b;
+  --text-circle-muted: #64748b;
+
+  /* ألوان التمايز البصري للوضع الفاتح (داكنة لضمان التباين والقراءة) */
+  --accent-blue: #0284c7;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
 }
 
 /* النمط المظلم البرمجي (Dark Mode - يتم تفعيله عبر سمة بوتستراب) */
-[data-bs-theme='dark'] {
-    --bs-body-bg: #121212;
-    --bs-body-color: #e0e0e0;
-    
-    /* ألوان الدوائر الليليّة */
-    --bg-card-circle: rgba(30, 41, 59, 0.7);
-    --border-circle: rgba(51, 65, 85, 0.8);
-    --text-circle-main: #ffffff;
-    --text-circle-muted: #cbd5e1;
-    
-    /* ألوان التمايز البصري المضيئة للوضع الداكن */
-    --accent-blue: #38bdf8;        /* للبيانات الرقمية الإحصائية */
-    --accent-emerald: #34d399;     /* للمفاهيم المتفككة بناءً على الفاصلة */
-    --accent-amber: #fbbf24;       /* للأهداف والتوجيهات */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+
+  /* ألوان الدوائر الليليّة */
+  --bg-card-circle: rgba(30, 41, 59, 0.7);
+  --border-circle: rgba(51, 65, 85, 0.8);
+  --text-circle-main: #ffffff;
+  --text-circle-muted: #cbd5e1;
+
+  /* ألوان التمايز البصري المضيئة للوضع الداكن */
+  --accent-blue: #38bdf8; /* للبيانات الرقمية الإحصائية */
+  --accent-emerald: #34d399; /* للمفاهيم المتفككة بناءً على الفاصلة */
+  --accent-amber: #fbbf24; /* للأهداف والتوجيهات */
 }
 
 /* إلغاء بياض التركيز العشوائي في النظام */
 :focus {
-    outline: none !important;
+  outline: none !important;
 }
 
 /* ==========================================================================
@@ -43,345 +43,362 @@
    ========================================================================== */
 /* حاوية الفليكس لترتيب الدوائر كسطر مع التفاف تلقائي مرن */
 .roadmap-flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 10px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  width: 100%;
 }
 
 /* الكلاس المشترك الموحد للأبعاد والهيكل الهندسي الدائري */
 .roadmap-circle-item {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background-color: var(--bg-card-circle);
-    border: 2px solid var(--border-circle);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: var(--bg-card-circle);
+  border: 2px solid var(--border-circle);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .roadmap-circle-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .roadmap-circle-item .circle-number {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--text-circle-main);
-    line-height: 1.2;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-circle-main);
+  line-height: 1.2;
 }
 
 .roadmap-circle-item .circle-text {
-    font-size: 0.85rem;
-    color: var(--text-circle-muted);
-    margin-top: 4px;
-    line-height: 1.4;
+  font-size: 0.85rem;
+  color: var(--text-circle-muted);
+  margin-top: 4px;
+  line-height: 1.4;
 }
 
 /* كلاسات التمايز الثلاثة للدوائر */
 .circle-type-stat {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
 }
 .circle-type-stat .circle-number {
-    color: var(--accent-blue);
+  color: var(--accent-blue);
 }
 
 .circle-type-concept {
-    border-color: var(--accent-emerald);
-    box-shadow: 0 0 10px rgba(52, 211, 153, 0.15);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.15);
 }
 .circle-type-concept .circle-text {
-    color: var(--text-circle-main);
-    font-weight: 500;
+  color: var(--text-circle-main);
+  font-weight: 500;
 }
 
 .circle-type-objective {
-    border-color: var(--accent-amber);
-    box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
 }
 .circle-type-objective .circle-text {
-    color: var(--accent-amber);
+  color: var(--accent-amber);
 }
 
 /* ==========================================================================
    3. القائمة الجانبية وعناصر التحكم (Sidebar & List Group)
    ========================================================================== */
 /* تخصيص مظهر الأكورديون والقوائم ليعمل بالتناسق مع النمطين */
-[data-bs-theme='dark'] .offcanvas {
-    transition: background-color 0.3s ease;
-    background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
+[data-bs-theme="dark"] .offcanvas {
+  transition: background-color 0.3s ease;
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
 }
 
 .offcanvas .list-group-item a {
-    color: inherit;
+  color: inherit;
 }
-     
-[data-bs-theme='dark'] .list-group-item {
-    background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
-    border-color: #333 !important;
+
+[data-bs-theme="dark"] .list-group-item {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
 }
 
 .btn-sidebar {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-primary);
-    border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-body-bg);
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-border-color);
 }
 
 .bi-list-ul {
-    color: #66b2ff !important;
+  color: #66b2ff !important;
 }
 
 /* معالجة بياض الأزرار النشطة وحالة التركيز على الهواتف */
-.list-group-item-action:focus, 
+.list-group-item-action:focus,
 .list-group-item-action:active,
 .list-group-item-action.active {
-    background-color: #2c2c2c !important; 
-    color: #75b5ff !important; 
-    box-shadow: none !important;
+  background-color: #2c2c2c !important;
+  color: #75b5ff !important;
+  box-shadow: none !important;
 }
 
 @media (hover: none) {
-    [data-bs-theme='dark'] .list-group-item-action:hover {
-        background-color: #1e1e1e !important;
-    }
+  [data-bs-theme="dark"] .list-group-item-action:hover {
+    background-color: #1e1e1e !important;
+  }
 }
 
 /* ==========================================================================
    4. مكونات بطاقات الدروس والأسئلة (Lesson Cards & Questions)
    ========================================================================== */
-[data-bs-theme='dark'] .lesson-card {
-    background: #1e1e1e !important;
-    border-radius: 25px;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-right: 8px solid #0d6efd;
-    color: #e0e0e0 !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+[data-bs-theme="dark"] .lesson-card {
+  background: #1e1e1e !important;
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-right: 8px solid #0d6efd;
+  color: #e0e0e0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
 .question-label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .choices {
-    direction: ltr; 
-    margin-left: 30px;
+  direction: ltr;
+  margin-left: 30px;
 }
 
 .equation-line {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 /* معالجة خيارات الأسئلة المتعددة المتوافقة مع اتجاه الـ RTL وعرض المعادلات */
 .choices[dir="rtl"] .form-check {
-    display: flex !important;
-    flex-direction: row; 
-    align-items: center;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    gap: 12px;
-    text-align: right;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  gap: 12px;
+  text-align: right;
 }
 
 .choices[dir="rtl"] .form-check-input {
-    position: static !important;
-    margin: 0 !important;
-    float: none !important;
-    flex-shrink: 0;
-    width: 1.15em;
-    height: 1.15em;
+  position: static !important;
+  margin: 0 !important;
+  float: none !important;
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
 }
 
 .choices[dir="rtl"] .form-check-label {
-    margin: 0;
-    cursor: pointer;
-    width: 100%; 
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
 }
 
 /* ==========================================================================
    5. الكتل الرياضية والرسوم البيانية (Math Blocks & Graphics)
    ========================================================================== */
-.math-block { 
-    direction: ltr; 
-    background: #252525 !important; 
-    padding: 20px; 
-    border: 1px solid #333 !important;
-    border-radius: 8px; 
-    margin: 15px 0; 
-    text-align: center; 
-    color: #75b5ff !important;
-    font-size: 1.3rem; 
-    display: block;          
-    width: 100%;            
-    max-width: 100%;        
-    overflow-x: auto !important; 
-    white-space: nowrap; 
-    box-sizing: border-box; 
-    unicode-bidi: isolate;
+.math-block {
+  direction: ltr;
+  background: #252525 !important;
+  padding: 20px;
+  border: 1px solid #333 !important;
+  border-radius: 8px;
+  margin: 15px 0;
+  text-align: center;
+  color: #75b5ff !important;
+  font-size: 1.3rem;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  white-space: nowrap;
+  box-sizing: border-box;
+  unicode-bidi: isolate;
 }
 
 .math-wrapper {
-    direction: ltr !important; 
-    padding: 15px; 
-    border-radius: 8px; 
-    margin: 15px 0; 
-    overflow-x: auto; 
-    -webkit-overflow-scrolling: touch;
+  direction: ltr !important;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* شريط التمرير للكتل الرياضية لمنع الخروج عن الإطار */
 .math-block::-webkit-scrollbar {
-    height: 8px;
-    display: block !important;
+  height: 8px;
+  display: block !important;
 }
 .math-block::-webkit-scrollbar-thumb {
-    background: #0d6efd;
-    border-radius: 10px;
+  background: #0d6efd;
+  border-radius: 10px;
 }
-[data-bs-theme='dark'] .math-block::-webkit-scrollbar-track {
-    background: #1e1e1e; 
-    border-radius: 10px;
+[data-bs-theme="dark"] .math-block::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
 }
 
 /* النصوص الرياضية والرسومات */
 .math-label {
-    font-family: 'Times New Roman', serif;
-    font-style: italic;
-    padding: 2px;
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+  padding: 2px;
 }
-[data-bs-theme='dark'] .math-label {
-    background: rgba(0, 0, 0, 0.5); 
+[data-bs-theme="dark"] .math-label {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .graph-container {
-    width: 100%;
-    height: 450px;
-    background: var(--bs-body-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(128, 128, 128, 0.2);
+  width: 100%;
+  height: 450px;
+  background: var(--bs-body-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 /* ==========================================================================
    6. الجداول المصفاة (Dynamic Tables Layout)
    ========================================================================== */
 table {
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
 }
 
-[data-bs-theme='dark'] table {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+[data-bs-theme="dark"] table {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-[data-bs-theme='dark'] table th {
-    background-color: #1e293b !important; 
-    color: #38bdf8 !important;           
-    text-align: center;
-    padding: 12px !important;
-    border: 1px solid #334155 !important;
+[data-bs-theme="dark"] table th {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+  text-align: center;
+  padding: 12px !important;
+  border: 1px solid #334155 !important;
 }
 
-[data-bs-theme='dark'] table td {
-    vertical-align: middle;
-    text-align: center;
-    padding: 10px !important;
-    color: #cbd5e1;
-    border: 1px solid #334155 !important;
+[data-bs-theme="dark"] table td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px !important;
+  color: #cbd5e1;
+  border: 1px solid #334155 !important;
 }
 
 /* تأثير التناوب اللوني والمرور الهادئ المناسب للعتمة */
-[data-bs-theme='dark'] table tbody tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.02);
+[data-bs-theme="dark"] table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
 }
-[data-bs-theme='dark'] table tbody tr:hover {
-    background-color: rgba(56, 189, 248, 0.08); 
+[data-bs-theme="dark"] table tbody tr:hover {
+  background-color: rgba(56, 189, 248, 0.08);
 }
 
 /* ==========================================================================
    7. أزرار التنقل السفلية وشاشات الهواتف (Navigation & Responsiveness)
    ========================================================================== */
 .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
 }
 
-.btn-next, .btn-back { 
-    flex: 1; 
-    font-weight: bold; 
-    padding: 12px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    text-align: center; 
-    color: white;
+.btn-next,
+.btn-back {
+  flex: 1;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
 }
 
-.btn-next { background-color: #198754; }
-.btn-back { background-color: #6c757d; }
+.btn-next {
+  background-color: #198754;
+}
+.btn-back {
+  background-color: #6c757d;
+}
 
 .slider-wrapper {
-    margin: 20px 0;
-    width: 100%;
+  margin: 20px 0;
+  width: 100%;
 }
 .slides-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    gap: 15px;
-    padding-bottom: 10px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 15px;
+  padding-bottom: 10px;
 }
 .slide-card {
-    flex: 0 0 85%; /* يضمن ظهور جزء من الكارت الموالية ليتنبه التلميذ */
-    scroll-snap-align: start;
-    /*background: #1e1e1e; /* يتوافق مع الـ bg-dark */
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-   text-align:center;
+  flex: 0 0 85%; /* يضمن ظهور جزء من الكارت الموالية ليتنبه التلميذ */
+  scroll-snap-align: start;
+  /*background: #1e1e1e; /* يتوافق مع الـ bg-dark */
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .scroll-hint {
-    text-align: center;
-    font-size: 12px;
-    color: #666;
-    margin-top: 5px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
 }
 
 /* تحسينات الموبايل الشاملة والتعديل على أبعاد الدوائر لضبط الاستجابة */
 @media (max-width: 600px) {
-    [data-bs-theme='dark'] .lesson-card { padding: 15px; }
-    .nav-buttons { flex-direction: column; }
-    .math-block { font-size: 1.1rem; }
-    
-    /* تقليص حجم الدوائر بمرونة على شاشات الهواتف لتصطف بشكل متوازن */
-    .roadmap-circle-item {
-        width: 140px;
-        height: 140px;
-        padding: 10px;
-    }
-    .roadmap-circle-item .circle-number { font-size: 1.5rem; }
-    .roadmap-circle-item .circle-text { font-size: 0.75rem; }
+  [data-bs-theme="dark"] .lesson-card {
+    padding: 15px;
+  }
+  .nav-buttons {
+    flex-direction: column;
+  }
+  .math-block {
+    font-size: 1.1rem;
+  }
+
+  /* تقليص حجم الدوائر بمرونة على شاشات الهواتف لتصطف بشكل متوازن */
+  .roadmap-circle-item {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+  }
+  .roadmap-circle-item .circle-number {
+    font-size: 1.5rem;
+  }
+  .roadmap-circle-item .circle-text {
+    font-size: 0.75rem;
+  }
 }

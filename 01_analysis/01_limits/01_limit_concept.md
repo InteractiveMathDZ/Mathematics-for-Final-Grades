@@ -20,7 +20,7 @@ elements:
 
   - h3: "2. دراسة تحليلية للاقتراب بجوار نقطة"
     id: "case-study"
- 
+
   - parags:
       - rtl: "نعتبر الدالة $f$ المعرفة على $\\mathbb{R} \\setminus \\{1\\}$ بالعبارة:"
       - center: "$f(x) = \\frac{x^2 - 1}{x - 1}$"
@@ -39,7 +39,7 @@ elements:
           - td: "1.99"
           - td: "1.999"
           - td: "$\\to 2$"
-  
+
   - tableLines:
       dir: ltr
       lines:
@@ -59,13 +59,46 @@ elements:
       xDomain: [-1.5, 3.5]
       yDomain: [-0.5, 4.5]
       elements:
-        - { type: "function", fn: "(x**2 - 1) / (x - 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - {
+            type: "function",
+            fn: "(x**2 - 1) / (x - 1)",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_f", x: 2.2, y: 3.7, color: "#00ffcc" }
-        - { type: "point", x: 1, y: 2, strokeColor: "#ff007f", fillColor: "black", size: 2 }
-        - { type: "line", points: [[1, 0], [1, 2]], color: "#666666", dash: 2, width: 1 }
-        - { type: "line", points: [[0, 2], [1, 2]], color: "#666666", dash: 2, width: 1 } 
-        - { type: "text", content: "x = 1", x: 1.05, y: 3, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
-        - { type: "text", content: "y = 2", x: 2.5, y: 2.1, color: "#ffffff"}
+        - {
+            type: "point",
+            x: 1,
+            y: 2,
+            strokeColor: "#ff007f",
+            fillColor: "black",
+            size: 2,
+          }
+        - {
+            type: "line",
+            points: [[1, 0], [1, 2]],
+            color: "#666666",
+            dash: 2,
+            width: 1,
+          }
+        - {
+            type: "line",
+            points: [[0, 2], [1, 2]],
+            color: "#666666",
+            dash: 2,
+            width: 1,
+          }
+        - {
+            type: "text",
+            content: "x = 1",
+            x: 1.05,
+            y: 3,
+            color: "#ffffff",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -90,
+          }
+        - { type: "text", content: "y = 2", x: 2.5, y: 2.1, color: "#ffffff" }
 
   - NB:
       type: success
@@ -91,10 +124,10 @@ elements:
         - - th: "الوضعية في المثال"
           - td: "غير موجودة (الدالة غير معرفة عند القيمة $1$)."
           - td: "موجودة وتساوي تماماً العدد الحقيقي $2$."
-          
+
   - h3: "4. التعبير والترميز الرياضي"
     id: "notation"
-    
+
   - parags:
       - rtl: "نصيغ العبارة تحليلياً على النحو التالي:"
       - center: "$\\lim\\limits_{x \\to 1} f(x) = 2$"

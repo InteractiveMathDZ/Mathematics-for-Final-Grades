@@ -30,7 +30,7 @@ elements:
     id: "probability-table"
   - parags:
       - rtl: "يُعرض القانون في جدول يُلخص قيم $X$ واحتمالاتها:"
-      
+
   # تمثيل جدولي مبسط
   - raw_html: |
       <div style='margin: 20px 0;'>

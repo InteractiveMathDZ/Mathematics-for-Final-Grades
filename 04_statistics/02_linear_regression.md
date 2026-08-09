@@ -45,8 +45,19 @@ elements:
         - { type: "point", x: 15, y: 16, color: "gray" }
         - { type: "point", x: 8, y: 10, color: "gray" }
         - { type: "point", x: 15, y: 15, color: "gray" }
-        - { type: "line", points: [[5, 7.28], [18, 17.89]], color: "blue", strokeWidth: 2 }
-        - { type: "text", content: "y = 0.816x + 3.208", x: 10, y: 18, color: "blue" }
+        - {
+            type: "line",
+            points: [[5, 7.28], [18, 17.89]],
+            color: "blue",
+            strokeWidth: 2,
+          }
+        - {
+            type: "text",
+            content: "y = 0.816x + 3.208",
+            x: 10,
+            y: 18,
+            color: "blue",
+          }
 
   - NB:
       title: "قاعدة للتحقق:"

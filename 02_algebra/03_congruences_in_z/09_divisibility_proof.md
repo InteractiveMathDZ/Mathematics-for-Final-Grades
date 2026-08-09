@@ -50,17 +50,64 @@ elements:
       elements:
         # مخطط منطقي للتحقق من القسمة
         - { type: "line", points: [[0, 2.5], [3, 2.5]], color: "gray" }
-        - { type: "text", content: "العبارة A(n)", x: 0.2, y: 2.8, color: "gray" }
-        
-        - { type: "line", points: [[3, 1.5], [6, 1.5], [6, 3.5], [3, 3.5], [3, 1.5]], color: "orange" }
-        - { type: "text", content: "الاختزال بترديد m", x: 3.3, y: 2.4, color: "orange" }
-        
-        - { type: "line", points: [[6, 2.5], [8, 2.5]], color: "#168574", arrowStart: false, arrowEnd: true }
-        - { type: "point", x: 8, y: 2.5, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "text", content: "الباقي = 0", x: 8.3, y: 2.7, color: "#168574" }
-        - { type: "text", content: "القابلية محققة", x: 8.3, y: 2.1, color: "#168574" }
+        - {
+            type: "text",
+            content: "العبارة A(n)",
+            x: 0.2,
+            y: 2.8,
+            color: "gray",
+          }
 
-        - { type: "text", content: "إذا آلت العبارة إلى الصفر الترديدي، فالقسمة تامة", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "line",
+            points: [[3, 1.5], [6, 1.5], [6, 3.5], [3, 3.5], [3, 1.5]],
+            color: "orange",
+          }
+        - {
+            type: "text",
+            content: "الاختزال بترديد m",
+            x: 3.3,
+            y: 2.4,
+            color: "orange",
+          }
+
+        - {
+            type: "line",
+            points: [[6, 2.5], [8, 2.5]],
+            color: "#168574",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "point",
+            x: 8,
+            y: 2.5,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "text",
+            content: "الباقي = 0",
+            x: 8.3,
+            y: 2.7,
+            color: "#168574",
+          }
+        - {
+            type: "text",
+            content: "القابلية محققة",
+            x: 8.3,
+            y: 2.1,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "إذا آلت العبارة إلى الصفر الترديدي، فالقسمة تامة",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "ملاحظة:"

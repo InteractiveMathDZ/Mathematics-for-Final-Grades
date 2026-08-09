@@ -41,18 +41,35 @@ elements:
       xDomain: [-1, 8]
       yDomain: [-1, 5]
       elements:
-        - { type: "function", fn: "4", dash: 2, color: "red"}
-        - { type: "text", content: "المقدار الحاد من الأعلى M", x: 1, y: 4.3, color: "red"}
-        - { type: "function", fn: "1", dash: 2}
-        - { type: "text", content: "المقدار الحاد من الأسفل m", x: 1, y: 0.7, color: "blue"}
-        - { type: "point", x: 0, y: 1.5, size: 1}
-        - { type: "point", x: 1, y: 3.2, size: 1}
-        - { type: "point", x: 2, y: 2.1, size: 1}
-        - { type: "point", x: 3, y: 3.8, size: 1}
-        - { type: "point", x: 4, y: 1.2, size: 1}
-        - { type: "point", x: 5, y: 2.5, size: 1}
-        - { type: "point", x: 6, y: 3.5, size: 1}
-        - { type: "text", content: "استقرار قيم الحدود المنفصلة صلب النطاق المحصور بين الحاصرين العلوى والسفلي", x: 0.2, y: 5}
+        - { type: "function", fn: "4", dash: 2, color: "red" }
+        - {
+            type: "text",
+            content: "المقدار الحاد من الأعلى M",
+            x: 1,
+            y: 4.3,
+            color: "red",
+          }
+        - { type: "function", fn: "1", dash: 2 }
+        - {
+            type: "text",
+            content: "المقدار الحاد من الأسفل m",
+            x: 1,
+            y: 0.7,
+            color: "blue",
+          }
+        - { type: "point", x: 0, y: 1.5, size: 1 }
+        - { type: "point", x: 1, y: 3.2, size: 1 }
+        - { type: "point", x: 2, y: 2.1, size: 1 }
+        - { type: "point", x: 3, y: 3.8, size: 1 }
+        - { type: "point", x: 4, y: 1.2, size: 1 }
+        - { type: "point", x: 5, y: 2.5, size: 1 }
+        - { type: "point", x: 6, y: 3.5, size: 1 }
+        - {
+            type: "text",
+            content: "استقرار قيم الحدود المنفصلة صلب النطاق المحصور بين الحاصرين العلوى والسفلي",
+            x: 0.2,
+            y: 5,
+          }
 
   - NB:
       title: "مبرهنات الاتساق والتقارب المطرد المقيد:"

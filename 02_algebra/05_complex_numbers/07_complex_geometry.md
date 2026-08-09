@@ -45,11 +45,42 @@ elements:
         - { type: "line", points: [[-0.5, 0], [6.5, 0]], color: "gray" }
         - { type: "line", points: [[0, -0.5], [0, 4.5]], color: "gray" }
         # النقط والأشعة
-        - { type: "point", x: 1, y: 1, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "point", x: 4, y: 1.5, strokeColor: "blue", fillColor: "blue", size: 3 }
-        - { type: "point", x: 3, y: 4, strokeColor: "#168574", fillColor: "#168574", size: 3 }
-        - { type: "line", points: [[1, 1], [4, 1.5]], color: "blue", arrowEnd: true }
-        - { type: "line", points: [[1, 1], [3, 4]], color: "#168574", arrowEnd: true }
+        - {
+            type: "point",
+            x: 1,
+            y: 1,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "point",
+            x: 4,
+            y: 1.5,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 3,
+          }
+        - {
+            type: "point",
+            x: 3,
+            y: 4,
+            strokeColor: "#168574",
+            fillColor: "#168574",
+            size: 3,
+          }
+        - {
+            type: "line",
+            points: [[1, 1], [4, 1.5]],
+            color: "blue",
+            arrowEnd: true,
+          }
+        - {
+            type: "line",
+            points: [[1, 1], [3, 4]],
+            color: "#168574",
+            arrowEnd: true,
+          }
 
   - NB:
       title: "تنبيه:"

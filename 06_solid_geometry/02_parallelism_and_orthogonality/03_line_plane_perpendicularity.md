@@ -20,8 +20,6 @@ elements:
       - rtl: "<strong>نص المبرهنة:</strong> يكون مستقيم $(D)$ عمودياً على مستوٍ $(P)$ إذا وفقط إذا كان عمودياً على مستقيمين متقاطعين من المستوي $(P)$."
       - center: "$$(D) \\perp (D_1) \\quad \\text{و} \\quad (D) \\perp (D_2) \\quad \\text{حيث} \\quad (D_1) \\cap (D_2) = \\{A\\} \\quad \\text{و} \\quad (D_1), (D_2) \\subset (P) \\implies (D) \\perp (P)$$"
 
-
-
   - h3: "2. الخواص الهندسية الناتجة عن التعامد الفضائي"
     id: "perpendicularity-properties"
 

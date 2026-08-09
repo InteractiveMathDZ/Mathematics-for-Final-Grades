@@ -65,5 +65,4 @@ sections:
       - title: "المبحث 10: تطبيقات الموافقات في التعداد وأنظمة التشفير"
         url: "/cong_applications/"
         icon: "shield-lock"
-
 ---

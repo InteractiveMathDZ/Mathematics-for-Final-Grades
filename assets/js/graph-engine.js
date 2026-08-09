@@ -25,165 +25,210 @@
 
 */
 const MathSovereign = {
-    init: function(id) {
-        const c = document.getElementById(id);
-        if (!c) return;
-        try { 
-              JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id)); 
-        } catch(err) {
-              console.warn(`تعذر تنظيف أو بناء اللوحة للمعرف ${id}:`, err);
-    
-              // إظهار رسالة بسيطة وأنيقة في نفس مكان الرسم دون إيقاف باقي الصفحة
-              c.innerHTML = `
+  init: function (id) {
+    const c = document.getElementById(id);
+    if (!c) return;
+    try {
+      JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id));
+    } catch (err) {
+      console.warn(`تعذر تنظيف أو بناء اللوحة للمعرف ${id}:`, err);
+
+      // إظهار رسالة بسيطة وأنيقة في نفس مكان الرسم دون إيقاف باقي الصفحة
+      c.innerHTML = `
                           <div class="d-flex align-items-center justify-content-center h-100 bg-light border text-muted p-3 text-center">
                               <small>⚠️ تعذر تحميل الرسم التفاعلي حالياً، يرجى تحديث الصفحة.</small>
                           </div>
               `;
-        }
-        
-        const config = JSON.parse(c.getAttribute('data-graph-config'));
-        const axisColor = '#ffffff';
-
-        const b = JXG.JSXGraph.initBoard(id, {
-            boundingbox: [config.xDomain[0], config.yDomain[1], config.xDomain[1], config.yDomain[0]],
-            keepAspectRatio: true,
-            axis: false, 
-            showCopyright: false,
-
-            grid: { 
-                strokeColor: '#444', 
-                opacity: 0.2, 
-                majorStep: 1, // بدلاً من gridX
-                minorStep: 0.2 // (اختياري) للتحكم في الخطوط الثانوية
-            }
-        });
-
-
-        // رسم المحاور (مع إزاحة الأرقام لضمان الوضوح)
-        b.create('axis', [[0, 0], [1, 0]], { strokeColor: axisColor, fixed: true, ticks: { label: { offset: [-5, -15], strokeColor: axisColor } } });
-        b.create('axis', [[0, 0], [0, 1]], { strokeColor: axisColor, fixed: true, ticks: { label: { offset: [-25, 0], anchorX: 'right', strokeColor: axisColor } } });
-
-        if (config.elements) {
-            config.elements.forEach(el => {
-                if (el.type === 'function') {
-                    // التعطيل الصريح للـ label التلقائي المشوه
-                    b.create(
-                        'functiongraph',
-                        [x => eval(el.fn.replace(/\^/g, '**').replace(/x/g, `(${x})`))],
-                          { 
-                            strokeColor: el.strokeColor || "blue", 
-                            strokeWidth: el.strokeWidth || 3,
-                            dash: el.dash || 0,
-                            withLabel: false
-                           }
-                    );
-                } else if (el.type === 'path') {
-                    try {
-                        let px = el.points.map(p => p[0]);
-                        let py = el.points.map(p => p[1]);
-        
-                        b.create('curve', [px, py], {
-                            strokeColor: el.color || '#ff0000',
-                            strokeWidth: 2,
-                            dash: el.dash || 0,
-                            fixed: el.fixed || true
-                        });
-                    } catch(e) { console.log('path drawing error : ' + e ); };
-                      
-                } else if (el.type === 'point') {
-                    try { b.create('point', [el.x, el.y], { 
-                          size: el.size || 4, 
-                          strokeColor: el.strokeColor || "red", 
-                          fillColor: el.fillColor || 'red', 
-                          withLabel: false, 
-                          fixed: el.fixed || true 
-                          });
-                     } catch(e) { console.log('point drawing error :' + e ); };
-                      
-                } else if (el.type === 'text') {
-                    // نعتمد على النصوص اليدوية فقط للتحكم الكامل
-                    try { const rotationAngle = el.rotate || 0;
-                          const cssTransform = rotationAngle !== 0 ? `transform: rotate(${rotationAngle}deg); transform-origin: top left;` : '';
-                          b.create('text', 
-                            [el.x, el.y, el.content], {
-                              useMathJax: true,
-                              color: el.color || axisColor, 
-                              fontSize: 16, 
-                              fixed: el.fixed || true,
-                              anchorX: el.anchorX || 'left',
-                              anchorY: el.anchorY || 'top',
-                              withLabel: false,
-                              cssStyle: cssTransform
-                          }); 
-                      } catch(e) { console.log('text drawing error :' + e )};
-                } else if (el.type === 'line') {
-                    try { b.create('line', el.points, {
-                          strokeColor: el.color || "blue", 
-                          strokeWidth: el.width || 2, 
-                          fixed: el.fixed || true, 
-                          dash: el.dash || 0, 
-                          name: el.name || '', 
-                          withLabel: !!el.name, 
-                          label: { 
-                                offset: [10, 10], 
-                                color: el.color || "blue"
-                          }})} catch (e) { 
-                             console.log ("line drawing error :", e); 
-                    };
-                } else if (el.type === 'bar') {
-                    try {
-                        // نمرر عبر مصفوفة البيانات لرسم كل عمود على حدة
-                        el.data.forEach(item => {
-                          // حساب إحداثيات الرؤوس الأربعة للعمود (بافتراض عرض العمود = 1)
-                          // يمكنك جعل العرض متغيرًا في اليامل إذا أردت (مثال: el.width)
-                          const width = el.barWidth || 1;
-                          const xLeft = item.x - width / 2;
-                          const xRight = item.x + width / 2;
-                          const yBottom = 0; // يبدأ من محور الفواصل
-                          const yTop = item.y;
-
-                         // إنشاء نقاط المضلع الأربعة
-                         const p1 = b.create('point', [xLeft, yBottom], { visible: false });
-                         const p2 = b.create('point', [xLeft, yTop], { visible: false });
-                         const p3 = b.create('point', [xRight, yTop], { visible: false });
-                         const p4 = b.create('point', [xRight, yBottom], { visible: false });
-
-                         // رسم العمود كمضلع (Polygon)
-                         b.create('polygon', [p1, p2, p3, p4], {
-                               fillColor: el.color || '#168574',
-                               fillOpacity: el.opacity || 0.6,
-                               strokeColor: el.strokeColor || el.color || '#168574',
-                               strokeWidth: el.strokeWidth || 1,
-                               highlight: false, // لمنع تفاعل العمود مع السحب
-                               fixed: el.fixed || true
-                         });
-
-                         // إضافة التسمية (u0, u1...) فوق العمود إذا وجدت
-                         if (item.label) {
-                             b.create('text', [item.x, yTop + (el.yDomain[1] * 0.02), item.label], {
-                                   anchorX: 'middle',
-                                   anchorY: 'bottom',
-                                   strokeColor: el.labelColor || '#eee',
-                                   fontSize: 14,
-                                   useMathJax: true,
-                                   fixed: true
-                              });
-                          }
-                        });
-                  } catch (e) {
-                       console.error("خطأ في رسم الأعمدة (bar): ", e, el);
-                  } 
-                }
-            });
-        }
     }
+
+    const config = JSON.parse(c.getAttribute("data-graph-config"));
+    const axisColor = "#ffffff";
+
+    const b = JXG.JSXGraph.initBoard(id, {
+      boundingbox: [
+        config.xDomain[0],
+        config.yDomain[1],
+        config.xDomain[1],
+        config.yDomain[0],
+      ],
+      keepAspectRatio: true,
+      axis: false,
+      showCopyright: false,
+
+      grid: {
+        strokeColor: "#444",
+        opacity: 0.2,
+        majorStep: 1, // بدلاً من gridX
+        minorStep: 0.2, // (اختياري) للتحكم في الخطوط الثانوية
+      },
+    });
+
+    // رسم المحاور (مع إزاحة الأرقام لضمان الوضوح)
+    b.create(
+      "axis",
+      [
+        [0, 0],
+        [1, 0],
+      ],
+      {
+        strokeColor: axisColor,
+        fixed: true,
+        ticks: { label: { offset: [-5, -15], strokeColor: axisColor } },
+      },
+    );
+    b.create(
+      "axis",
+      [
+        [0, 0],
+        [0, 1],
+      ],
+      {
+        strokeColor: axisColor,
+        fixed: true,
+        ticks: {
+          label: { offset: [-25, 0], anchorX: "right", strokeColor: axisColor },
+        },
+      },
+    );
+
+    if (config.elements) {
+      config.elements.forEach((el) => {
+        if (el.type === "function") {
+          // التعطيل الصريح للـ label التلقائي المشوه
+          b.create(
+            "functiongraph",
+            [(x) => eval(el.fn.replace(/\^/g, "**").replace(/x/g, `(${x})`))],
+            {
+              strokeColor: el.strokeColor || "blue",
+              strokeWidth: el.strokeWidth || 3,
+              dash: el.dash || 0,
+              withLabel: false,
+            },
+          );
+        } else if (el.type === "path") {
+          try {
+            let px = el.points.map((p) => p[0]);
+            let py = el.points.map((p) => p[1]);
+
+            b.create("curve", [px, py], {
+              strokeColor: el.color || "#ff0000",
+              strokeWidth: 2,
+              dash: el.dash || 0,
+              fixed: el.fixed || true,
+            });
+          } catch (e) {
+            console.log("path drawing error : " + e);
+          }
+        } else if (el.type === "point") {
+          try {
+            b.create("point", [el.x, el.y], {
+              size: el.size || 4,
+              strokeColor: el.strokeColor || "red",
+              fillColor: el.fillColor || "red",
+              withLabel: false,
+              fixed: el.fixed || true,
+            });
+          } catch (e) {
+            console.log("point drawing error :" + e);
+          }
+        } else if (el.type === "text") {
+          // نعتمد على النصوص اليدوية فقط للتحكم الكامل
+          try {
+            const rotationAngle = el.rotate || 0;
+            const cssTransform =
+              rotationAngle !== 0
+                ? `transform: rotate(${rotationAngle}deg); transform-origin: top left;`
+                : "";
+            b.create("text", [el.x, el.y, el.content], {
+              useMathJax: true,
+              color: el.color || axisColor,
+              fontSize: 16,
+              fixed: el.fixed || true,
+              anchorX: el.anchorX || "left",
+              anchorY: el.anchorY || "top",
+              withLabel: false,
+              cssStyle: cssTransform,
+            });
+          } catch (e) {
+            console.log("text drawing error :" + e);
+          }
+        } else if (el.type === "line") {
+          try {
+            b.create("line", el.points, {
+              strokeColor: el.color || "blue",
+              strokeWidth: el.width || 2,
+              fixed: el.fixed || true,
+              dash: el.dash || 0,
+              name: el.name || "",
+              withLabel: !!el.name,
+              label: {
+                offset: [10, 10],
+                color: el.color || "blue",
+              },
+            });
+          } catch (e) {
+            console.log("line drawing error :", e);
+          }
+        } else if (el.type === "bar") {
+          try {
+            // نمرر عبر مصفوفة البيانات لرسم كل عمود على حدة
+            el.data.forEach((item) => {
+              // حساب إحداثيات الرؤوس الأربعة للعمود (بافتراض عرض العمود = 1)
+              // يمكنك جعل العرض متغيرًا في اليامل إذا أردت (مثال: el.width)
+              const width = el.barWidth || 1;
+              const xLeft = item.x - width / 2;
+              const xRight = item.x + width / 2;
+              const yBottom = 0; // يبدأ من محور الفواصل
+              const yTop = item.y;
+
+              // إنشاء نقاط المضلع الأربعة
+              const p1 = b.create("point", [xLeft, yBottom], {
+                visible: false,
+              });
+              const p2 = b.create("point", [xLeft, yTop], { visible: false });
+              const p3 = b.create("point", [xRight, yTop], { visible: false });
+              const p4 = b.create("point", [xRight, yBottom], {
+                visible: false,
+              });
+
+              // رسم العمود كمضلع (Polygon)
+              b.create("polygon", [p1, p2, p3, p4], {
+                fillColor: el.color || "#168574",
+                fillOpacity: el.opacity || 0.6,
+                strokeColor: el.strokeColor || el.color || "#168574",
+                strokeWidth: el.strokeWidth || 1,
+                highlight: false, // لمنع تفاعل العمود مع السحب
+                fixed: el.fixed || true,
+              });
+
+              // إضافة التسمية (u0, u1...) فوق العمود إذا وجدت
+              if (item.label) {
+                b.create(
+                  "text",
+                  [item.x, yTop + el.yDomain[1] * 0.02, item.label],
+                  {
+                    anchorX: "middle",
+                    anchorY: "bottom",
+                    strokeColor: el.labelColor || "#eee",
+                    fontSize: 14,
+                    useMathJax: true,
+                    fixed: true,
+                  },
+                );
+              }
+            });
+          } catch (e) {
+            console.error("خطأ في رسم الأعمدة (bar): ", e, el);
+          }
+        }
+      });
+    }
+  },
 };
 
-window.onload = () => document.querySelectorAll('.graph-container').forEach(c => MathSovereign.init(c.id));
-
-
-
-
-
+window.onload = () =>
+  document
+    .querySelectorAll(".graph-container")
+    .forEach((c) => MathSovereign.init(c.id));
 
 //

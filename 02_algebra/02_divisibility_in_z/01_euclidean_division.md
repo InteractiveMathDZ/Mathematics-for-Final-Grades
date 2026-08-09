@@ -49,15 +49,66 @@ elements:
         # المحور الأفقي العددي
         - { type: "line", points: [[-25, 0], [5, 0]], color: "gray" }
         # تمثيل المضاعف الأدنى ومضاعف التجاوز والمقسوم
-        - { type: "point", x: -20, y: 0, strokeColor: "blue", fillColor: "blue", size: 2 }
-        - { type: "text", content: "المضاعف الأدنى المحقق: 5 × (-4) = -20", x: -25, y: -0.8, color: "blue" }
-        - { type: "point", x: -17, y: 0, strokeColor: "red", fillColor: "red", size: 2 }
-        - { type: "text", content: "المقسوم المستهدف: a = -17", x: -18, y: 0.8, color: "red" }
-        - { type: "point", x: -15, y: 0, strokeColor: "gray", fillColor: "none", size: 2 }
-        - { type: "text", content: "مضاعف التجاوز المحظور: 5 × (-3) = -15", x: -15, y: -0.8, color: "gray" }
+        - {
+            type: "point",
+            x: -20,
+            y: 0,
+            strokeColor: "blue",
+            fillColor: "blue",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "المضاعف الأدنى المحقق: 5 × (-4) = -20",
+            x: -25,
+            y: -0.8,
+            color: "blue",
+          }
+        - {
+            type: "point",
+            x: -17,
+            y: 0,
+            strokeColor: "red",
+            fillColor: "red",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "المقسوم المستهدف: a = -17",
+            x: -18,
+            y: 0.8,
+            color: "red",
+          }
+        - {
+            type: "point",
+            x: -15,
+            y: 0,
+            strokeColor: "gray",
+            fillColor: "none",
+            size: 2,
+          }
+        - {
+            type: "text",
+            content: "مضاعف التجاوز المحظور: 5 × (-3) = -15",
+            x: -15,
+            y: -0.8,
+            color: "gray",
+          }
         # سهم يوضح المسافة الموجبة للباقي (من -20 إلى -17 طولها 3)
-        - { type: "line", points: [[-20, 1.5], [-17, 1.5]], color: "green", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "الباقي الموجب المحصور عيارياً: r = 3", x: -21, y: 2, color: "green" }
+        - {
+            type: "line",
+            points: [[-20, 1.5], [-17, 1.5]],
+            color: "green",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "الباقي الموجب المحصور عيارياً: r = 3",
+            x: -21,
+            y: 2,
+            color: "green",
+          }
 
   - NB:
       title: "المحددات العيارية والمفارقات البرمجية:"

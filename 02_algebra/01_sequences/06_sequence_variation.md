@@ -4,7 +4,7 @@ title: "اتجاه التغير والمقايسة التحليلية لرتاب
 subtitle: "المعايير الجبرية والدالية لإثبات رتابة المتتاليات صلب النطاق الطبيعي المقيد"
 permalink: /sequence_variation/
 mathJax: true
-graph: true 
+graph: true
 lessonID: "seque"
 
 # روابط الاتصال
@@ -17,7 +17,7 @@ next_url: "/induction_proof/"
 elements:
   - h3: "1. الاستراتيجيات المنهجية لتقييم رتابة النظم المنفصلة"
     id: "monotonicity-methods"
-  
+
   - h3: "2. معيار الفرق الجبري المحوري"
     id: "difference-method"
   - parags:
@@ -44,12 +44,17 @@ elements:
       xDomain: [-1, 6]
       yDomain: [-1, 10]
       elements:
-        - { type: "point", x: 0, y: 8, size: 1}
-        - { type: "point", x: 1, y: 6, size: 1}
-        - { type: "point", x: 2, y: 4.5, size: 1}
-        - { type: "point", x: 3, y: 3.5, size: 1}
-        - { type: "point", x: 4, y: 3, size: 1}
-        - { type: "text", content: "التمثيل الهيكلي لمتتالية رتيبة متناقصة تماماً صلب النطاق المنفصل", x: 1, y: 1}
+        - { type: "point", x: 0, y: 8, size: 1 }
+        - { type: "point", x: 1, y: 6, size: 1 }
+        - { type: "point", x: 2, y: 4.5, size: 1 }
+        - { type: "point", x: 3, y: 3.5, size: 1 }
+        - { type: "point", x: 4, y: 3, size: 1 }
+        - {
+            type: "text",
+            content: "التمثيل الهيكلي لمتتالية رتيبة متناقصة تماماً صلب النطاق المنفصل",
+            x: 1,
+            y: 1,
+          }
 
   - NB:
       title: "محددات وضوابط الاتساق الإجرائي للمعايرة:"

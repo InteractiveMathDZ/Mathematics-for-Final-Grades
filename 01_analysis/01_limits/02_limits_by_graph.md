@@ -49,7 +49,7 @@ elements:
 
   - parags:
       - rtl: "أثناء دراسة مآل المنحنى الممثل للدالة، نميز هندسيا مجموعة حالات رئيسية، نفصلها فيما يلي:"
-        
+
   - h4: "1-نهاية منتهية عندما يؤول $x$ إلى عدد حقيقي ثابت:"
   - parags:
       - rtl: "تقارب نقط المنحنى نحو نقطة معلومة أو فجوة: تؤول الصور نحو قيمة منتهية $L$."
@@ -64,10 +64,22 @@ elements:
       xDomain: [-5, 5]
       yDomain: [-5, 5]
       elements:
-        - { type: "function", fn: "(x**3 / x)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - {
+            type: "function",
+            fn: "(x**3 / x)",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "point", x: 0, y: 0, color: "red", fillColor: "black", size: 2 }
-      
+        - {
+            type: "point",
+            x: 0,
+            y: 0,
+            color: "red",
+            fillColor: "black",
+            size: 2,
+          }
+
   - h4: "2- نهاية غير منتهية بجوار مستقيم عمودي أو مائل"
   - parags:
       - rtl: "نعالج تحت هذا العنوان، حالتي الصعود والنزول."
@@ -85,13 +97,48 @@ elements:
       xDomain: [-5, 5]
       yDomain: [-5, 5]
       elements:
-        - { type: "function", fn: "(x**2 + 1) / x", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - {
+            type: "function",
+            fn: "(x**2 + 1) / x",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "line", points: [[0, 0], [0, 1]], color: "red", dash: 2, width: 1.5 }
-        - { type: "text", content: "x = 0", x: 0.1, y: -4, color: "red", anchorX: 'left', anchorY: 'middle', rotate: -90 }
-        - { type: "line", points: [[0, 0], [1, 1]], color: "#ffffff", dash: 2, width: 1.5 }
-        - { type: "text", content: "y = x", x: 2.1, y: 1.9, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -45 }
-    
+        - {
+            type: "line",
+            points: [[0, 0], [0, 1]],
+            color: "red",
+            dash: 2,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "x = 0",
+            x: 0.1,
+            y: -4,
+            color: "red",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -90,
+          }
+        - {
+            type: "line",
+            points: [[0, 0], [1, 1]],
+            color: "#ffffff",
+            dash: 2,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "y = x",
+            x: 2.1,
+            y: 1.9,
+            color: "#ffffff",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -45,
+          }
+
   - h4: "3-الاستقرار الأفقي عند الأطراف"
   - parags:
       - rtl: "نتعرض هنا أيضا، إلى حالتين، عندما يؤول $x$إلى $\\pm\\infty$"
@@ -107,13 +154,39 @@ elements:
       xDomain: [-10, 10]
       yDomain: [-10, 10]
       elements:
-        - { type: "function", fn: "(2*x + 3) / (x + 1)", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - {
+            type: "function",
+            fn: "(2*x + 3) / (x + 1)",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "line", points: [[0, 2], [1, 2]], color: "red", dash: 2, width: 1.5 }
+        - {
+            type: "line",
+            points: [[0, 2], [1, 2]],
+            color: "red",
+            dash: 2,
+            width: 1.5,
+          }
         - { type: "text", content: "y = 2", x: 1, y: 2.1, color: "red" }
-        - { type: "line", points: [[-1, 2], [-1, 0]], color: "#ffffff", dash: 2, width: 1.5 }
-        - { type: "text", content: "x = -1", x: -0.97, y: -4, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
-        
+        - {
+            type: "line",
+            points: [[-1, 2], [-1, 0]],
+            color: "#ffffff",
+            dash: 2,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "x = -1",
+            x: -0.97,
+            y: -4,
+            color: "#ffffff",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -90,
+          }
+
   - h4: "4-الصعود عند الأطراف"
   - parags:
       - rtl: "إمتداد المنحنى بشكل غير محدود نحو الأعلى عند الأطراف اللانهائية."
@@ -126,20 +199,45 @@ elements:
       - center: "$\\lim\\limits_{x \\to \\pm\\infty} f(x) = +\\infty$"
       - rtl: "و:"
       - center: "$\\lim\\limits_{x \\to +\\infty} g(x) = +\\infty$"
-   
+
   - graph:
       id: "limit-concept-discontinuity-4"
       class: "graph-container"
       xDomain: [-10, 10]
       yDomain: [-10, 10]
       elements:
-        - { type: "function", fn: " x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - {
+            type: "function",
+            fn: " x**2 ",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_f", x: 2.5, y: 4.3, color: "#00ffcc" }
-        - { type: "function", fn: "x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
+        - {
+            type: "function",
+            fn: "x / ((x + 1)**0.5)",
+            strokeColor: "orange",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_g", x: 7, y: 4.2, color: "orange" }
-        - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
-        - { type: "text", content: "x = -1", x: -0.97, y: 6, color: "#ffffff", anchorX: 'left', anchorY: 'middle', rotate: -90 }
-        
+        - {
+            type: "line",
+            points: [[-1, 0], [-1, -1]],
+            color: "#ffffff",
+            dash: 2,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "x = -1",
+            x: -0.97,
+            y: 6,
+            color: "#ffffff",
+            anchorX: "left",
+            anchorY: "middle",
+            rotate: -90,
+          }
+
   - h4: "5-نزول المنحنى عند الأطراف"
   - parags:
       - rtl: "إمتداد المنحنى بشكل غير محدود نحو الأسفل عند الأطراف اللانهائية."
@@ -153,11 +251,27 @@ elements:
       xDomain: [-10, 10]
       yDomain: [-10, 10]
       elements:
-        - { type: "function", fn: " -1*x**2 ", strokeColor: "#00ffcc", strokeWidth: 3 } 
+        - {
+            type: "function",
+            fn: " -1*x**2 ",
+            strokeColor: "#00ffcc",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_f", x: 2.5, y: -4.3, color: "#00ffcc" }
-        - { type: "function", fn: "-1*x / ((x + 1)**0.5)", strokeColor: "orange", strokeWidth: 3 }
+        - {
+            type: "function",
+            fn: "-1*x / ((x + 1)**0.5)",
+            strokeColor: "orange",
+            strokeWidth: 3,
+          }
         - { type: "text", content: "C_g", x: 7, y: -4.2, color: "orange" }
-        - { type: "line", points: [[-1,0], [-1,-1]], color: "#ffffff", dash: 2, width: 1.5 }
+        - {
+            type: "line",
+            points: [[-1, 0], [-1, -1]],
+            color: "#ffffff",
+            dash: 2,
+            width: 1.5,
+          }
   - parags:
       - rtl: "ونجملها في الجدول التالي:"
 

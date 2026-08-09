@@ -36,13 +36,41 @@ elements:
       yDomain: [-1, 5]
       elements:
         # مقارنة مسار الحساب العادي مقابل اختزال فيرما
-        - { type: "line", points: [[0, 4], [2, 4.5], [4, 3.8], [6, 4.2], [8, 4]], color: "red" }
-        - { type: "text", content: "حساب (a^k) التقليدي", x: 0.5, y: 4.6, color: "red" }
-        
-        - { type: "line", points: [[0, 1.5], [8, 1.5]], color: "#168574", arrowStart: false, arrowEnd: true }
-        - { type: "text", content: "اختزال فيرما المباشر", x: 2, y: 1.1, color: "#168574" }
-        
-        - { type: "text", content: "استخدام مبرهنة فيرما يختصر التعقيد الحسابي", x: 0, y: -0.5, color: "#eee" }
+        - {
+            type: "line",
+            points: [[0, 4], [2, 4.5], [4, 3.8], [6, 4.2], [8, 4]],
+            color: "red",
+          }
+        - {
+            type: "text",
+            content: "حساب (a^k) التقليدي",
+            x: 0.5,
+            y: 4.6,
+            color: "red",
+          }
+
+        - {
+            type: "line",
+            points: [[0, 1.5], [8, 1.5]],
+            color: "#168574",
+            arrowStart: false,
+            arrowEnd: true,
+          }
+        - {
+            type: "text",
+            content: "اختزال فيرما المباشر",
+            x: 2,
+            y: 1.1,
+            color: "#168574",
+          }
+
+        - {
+            type: "text",
+            content: "استخدام مبرهنة فيرما يختصر التعقيد الحسابي",
+            x: 0,
+            y: -0.5,
+            color: "#eee",
+          }
 
   - NB:
       title: "تنبيه:"

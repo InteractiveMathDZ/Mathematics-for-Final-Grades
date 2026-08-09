@@ -12,8 +12,6 @@ previous_url: "/ops_limits/"
 next_title: "نهاية دالة كثير حدود ودالة ناطقة"
 next_url: "/polynomial_limits/"
 
-
-
 elements:
   - h3: "1. مبرهنة نهاية دالة مركبة"
     id: "composite-theorem"
@@ -63,10 +61,33 @@ elements:
       xDomain: [0, 20]
       yDomain: [-0.5, 1.5]
       elements:
-        - { type: "function", fn: "x * Math.sin(1/x)", strokeColor: "#38bdf8", strokeWidth: 3 }
-        - { type: "line", points: [[0, 1], [20, 1]], color: "red", dash: 4, width: 1.5 }
-        - { type: "text", content: "y = x.sin(1/x)", x: 10, y: 1.2, color: "#38bdf8" }
-        - { type: "text", content: "المستقيم المقارب y = 1", x: 12, y: 0.8, color: "red" }
+        - {
+            type: "function",
+            fn: "x * Math.sin(1/x)",
+            strokeColor: "#38bdf8",
+            strokeWidth: 3,
+          }
+        - {
+            type: "line",
+            points: [[0, 1], [20, 1]],
+            color: "red",
+            dash: 4,
+            width: 1.5,
+          }
+        - {
+            type: "text",
+            content: "y = x.sin(1/x)",
+            x: 10,
+            y: 1.2,
+            color: "#38bdf8",
+          }
+        - {
+            type: "text",
+            content: "المستقيم المقارب y = 1",
+            x: 12,
+            y: 0.8,
+            color: "red",
+          }
 
   - NB:
       type: "primary"
@@ -78,45 +99,45 @@ elements:
         - rtl: "💡 <b>رابط ممتع مع البرنامج:</b> هذا المشهد البصري المثير هو التجسيد الحي لـ <b>مبرهنة الحصر</b> (تدرسها لاحقاً)، حيث تقع الدالة في مصيدة محكمة بين المستقيمين المائلين $y = x$ و $y = -x$ اللذين يلتقيان عند الصفر ويسحقان الأمواج بينهما."
 
   - raw_html: |
-        <div class="graph" style="text-align: center; margin: 30px 0;">
-          <svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="background: transparent; max-width: 100%;">
-            <style>
-              text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 14px; fill: #eee; }
-              .box-title { font-weight: bold; font-size: 14px; fill: #fff; }
-              .step-num { font-size: 11px; fill: #aaa; }
-              .math-text { font-style: italic; font-weight: bold; }
-            </style>
+      <div class="graph" style="text-align: center; margin: 30px 0;">
+        <svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="background: transparent; max-width: 100%;">
+          <style>
+            text { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 14px; fill: #eee; }
+            .box-title { font-weight: bold; font-size: 14px; fill: #fff; }
+            .step-num { font-size: 11px; fill: #aaa; }
+            .math-text { font-style: italic; font-weight: bold; }
+          </style>
 
-            <defs>
-              <marker id="arrow-transition" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <polygon points="0 1, 7 4, 0 7" fill="#007bff"/>
-              </marker>
-            </defs>
+          <defs>
+            <marker id="arrow-transition" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <polygon points="0 1, 7 4, 0 7" fill="#007bff"/>
+            </marker>
+          </defs>
 
-            <rect x="10" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#007bff" stroke-width="1.5" />
-            <text x="85" y="52" text-anchor="middle" class="step-num">المرحلة 1</text>
-            <text x="85" y="72" text-anchor="middle" class="box-title">المتغير الأصلي</text>
-            <text x="85" y="95" text-anchor="middle" fill="#007bff" class="math-text">x &rarr; a</text>
+          <rect x="10" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#007bff" stroke-width="1.5" />
+          <text x="85" y="52" text-anchor="middle" class="step-num">المرحلة 1</text>
+          <text x="85" y="72" text-anchor="middle" class="box-title">المتغير الأصلي</text>
+          <text x="85" y="95" text-anchor="middle" fill="#007bff" class="math-text">x &rarr; a</text>
 
-            <path d="M165 70 L 210 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
-            <text x="190" y="60" text-anchor="middle" fill="#007bff" class="math-text">g(x)</text>
+          <path d="M165 70 L 210 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
+          <text x="190" y="60" text-anchor="middle" fill="#007bff" class="math-text">g(x)</text>
 
-            <rect x="220" y="30" width="160" height="80" rx="8" fill="#1e293b" stroke="#ffa500" stroke-width="1.5" />
-            <text x="300" y="52" text-anchor="middle" class="step-num">المرحلة 2</text>
-            <text x="300" y="72" text-anchor="middle" class="box-title" fill="#ffa500">تغيير المتغير</text>
-            <text x="300" y="95" text-anchor="middle" fill="#ffa500" class="math-text">X = g(x) &rarr; b</text>
+          <rect x="220" y="30" width="160" height="80" rx="8" fill="#1e293b" stroke="#ffa500" stroke-width="1.5" />
+          <text x="300" y="52" text-anchor="middle" class="step-num">المرحلة 2</text>
+          <text x="300" y="72" text-anchor="middle" class="box-title" fill="#ffa500">تغيير المتغير</text>
+          <text x="300" y="95" text-anchor="middle" fill="#ffa500" class="math-text">X = g(x) &rarr; b</text>
 
-            <path d="M385 70 L 430 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
-            <text x="410" y="60" text-anchor="middle" fill="#168574" class="math-text">f(X)</text>
+          <path d="M385 70 L 430 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
+          <text x="410" y="60" text-anchor="middle" fill="#168574" class="math-text">f(X)</text>
 
-            <rect x="440" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#168574" stroke-width="1.5" />
-            <text x="515" y="52" text-anchor="middle" class="step-num">النتيجة</text>
-            <text x="515" y="72" text-anchor="middle" class="box-title">الاستقرار النهائي</text>
-            <text x="515" y="95" text-anchor="middle" fill="#168574" class="math-text">الناتج = c</text>
+          <rect x="440" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#168574" stroke-width="1.5" />
+          <text x="515" y="52" text-anchor="middle" class="step-num">النتيجة</text>
+          <text x="515" y="72" text-anchor="middle" class="box-title">الاستقرار النهائي</text>
+          <text x="515" y="95" text-anchor="middle" fill="#168574" class="math-text">الناتج = c</text>
 
-            <text x="300" y="145" text-anchor="middle" fill="#94a3b8" style="font-size: 13px;">مخطط تتابع مراحل حساب نهاية دالة مركبة بالانتقال من المتغير الأصلي إلى المتغير الوسيط</text>
-          </svg>
-        </div>
+          <text x="300" y="145" text-anchor="middle" fill="#94a3b8" style="font-size: 13px;">مخطط تتابع مراحل حساب نهاية دالة مركبة بالانتقال من المتغير الأصلي إلى المتغير الوسيط</text>
+        </svg>
+      </div>
 
   - NB:
       title: "تنبيه منهجي حول ترحيل مآل المتغير المساعد:"
