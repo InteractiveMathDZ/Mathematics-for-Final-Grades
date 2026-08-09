@@ -29,7 +29,7 @@ elements:
   - tableLines:
       dir: ltr
       lines:
-        - - th: "<span dir='rtl'>قيم المتغير $x$ أقل من 1$x \lt 1$</span>"
+        - - th: "<span dir='rtl'>قيم المتغير $x$ أقل من 1$x \\lt 1$</span>"
           - td: "0.9"
           - td: "0.99"
           - td: "0.999"
@@ -43,7 +43,7 @@ elements:
   - tableLines:
       dir: ltr
       lines:
-        - - th: "<span dir='rtl'>قيم المتغير $x$ أكبر من 1 $x \gt 1$</span>"
+        - - th: "<span dir='rtl'>قيم المتغير $x$ أكبر من 1 $x \\gt 1$</span>"
           - td: "1.1"
           - td: "1.01"
           - td: "1.001"
