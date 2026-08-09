@@ -1,6 +1,7 @@
 // ==========================================================================
 // 1. الدالة التنفيذية المستقرة: الزاوية الموجهة لشعاعين (إصلاح الانهيار والأقصر مسافة)
 // ==========================================================================
+// eslint-disable-line no-unused-vars
 function buildDirectedAngle(id, config) {
     if (typeof JXG === 'undefined') return;
 
@@ -49,7 +50,7 @@ function buildDirectedAngle(id, config) {
     });
     
     // 1. إنشاء الشعاع u (المثبت) بدون تسمية افتراضية تماماً
-    const arrowU = board.create('arrow', [O, A], {
+    board.create('arrow', [O, A], {
         strokeColor: theme.uColor,
         strokeWidth: 3,
         withLabel: false // الاستغناء التام عن الـ label الافتراضي
@@ -70,7 +71,7 @@ function buildDirectedAngle(id, config) {
     });
 
     // 3. إنشاء الشعاع v (المتحرك) بدون تسمية افتراضية تماماً
-    const arrowV = board.create('arrow', [O, B], {
+    board.create('arrow', [O, B], {
         strokeColor: theme.vColor,
         strokeWidth: 3,
         withLabel: false // الاستغناء التام عن الـ label الافتراضي
@@ -142,11 +143,6 @@ function buildDirectedAngle(id, config) {
 // ==========================================================================
 function buildTrigonometricCircle(id, config) {
     if (typeof JXG === 'undefined') return;
-
-    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark' || 
-                   document.documentElement.getAttribute('data-theme') === 'dark' ||
-                   document.body.classList.contains('dark-theme') ||
-                   document.body.classList.contains('dark');
 
     // تصحيح هندسة الألوان لتدعم التبديل اللحظي بدقة
     const theme = {
