@@ -2,7 +2,7 @@
 layout: lesson
 title: "المبحث 4: استخراج القواسم والمضاعفات بالتفكيك"
 subtitle: "استثمار التفكيك في الحسابات الترديدية"
-permalink: /divisors_multiples/
+permalink: /divisors_multiples_/
 mathJax: true
 graph: true
 lessonID: "primN"
