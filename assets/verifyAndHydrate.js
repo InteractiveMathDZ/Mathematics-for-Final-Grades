@@ -1,3 +1,4 @@
+/* exported resetExercise */
 /*الترتيب المتفق عليه: 
 [0: score, 
  1: date, 
@@ -489,8 +490,6 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * دالة إعادة المحاولة: تصفير التمرين برمجياً وبصرياً
  */
-/* exported resetExercise */
-
 function resetExercise(exID){
     // 1. جلب كافة العناصر والمدخلات
     const allElements = document.querySelectorAll(`.${exID}`);
@@ -582,20 +581,6 @@ function updateParentsScore(exID, deltaPercent) {
     localStorage.setItem('progressResume', JSON.stringify(resume));
     console.log("تم تحديث شجرة الآباء بنجاح");
 }
-//________________________________
-/**
-*الحصول على رقم التمرين من معرفه
-*لتفادي التكرار في nextExercise و prevExercise
-*/
-function getExNumber(exID){
-    // 1. استخراج الجزء الرقمي من الـ ID (مثلاً 001 من maths-analy-limit-pra-ex001)
-    // نفترض أن الرقم دائماً في آخر 3 خانات قبل أي ملحقات
-    let parts = exID.split('-');
-    let lastPart = parts[parts.length - 1]; // سيأخذ ex001
-    return lastPart.replace('ex', ''); // سيتبقى 001
-}
-//________________________________
-
 
 
 
