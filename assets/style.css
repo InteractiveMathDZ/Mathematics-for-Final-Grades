@@ -1,0 +1,240 @@
+/* ==========================================================================
+   1. الإعدادات العامة والمتغيرات الديناميكية (Global Settings & Themes)
+   ========================================================================== */
+
+/* الوضع الافتراضي أو النمط الفاتح (Light Mode) */
+:root {
+  /* ألوان الدوائر في النمط الفاتح متناسقة مع بياض الخلفية */
+  --bg-card-circle: #f8fafc;
+  --border-circle: #e2e8f0;
+  --text-circle-main: #1e293b;
+  --text-circle-muted: #64748b;
+
+  /* ألوان التمايز البصري للوضع الفاتح */
+  --accent-blue: #0284c7;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
+}
+
+/* النمط المظلم البرمجي (Dark Mode - يتم تفعيله عبر سمة بوتستراب) */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+
+  /* ألوان الدوائر الليليّة */
+  --bg-card-circle: rgba(30, 41, 59, 0.7);
+  --border-circle: rgba(51, 65, 85, 0.8);
+  --text-circle-main: #ffffff;
+  --text-circle-muted: #cbd5e1;
+
+  /* ألوان التمايز البصري المضيئة للوضع الداكن */
+  --accent-blue: #38bdf8;
+  --accent-emerald: #34d399;
+  --accent-amber: #fbbf24;
+}
+
+/* ==========================================================================
+   2. القائمة الجانبية وعناصر التحكم (Sidebar & List Group)
+   ========================================================================== */
+[data-bs-theme="dark"] .offcanvas {
+  transition: background-color 0.3s ease;
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+.offcanvas .list-group-item a {
+  color: inherit;
+}
+
+[data-bs-theme="dark"] .list-group-item {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+.bi-list-ul {
+  color: #66b2ff !important;
+}
+
+/* معالجة بياض الأزرار النشطة وحالة التركيز على الهواتف */
+.list-group-item-action:focus,
+.list-group-item-action:active,
+.list-group-item-action.active {
+  background-color: #2c2c2c !important;
+  color: #75b5ff !important;
+  box-shadow: none !important;
+}
+
+@media (hover: none) {
+  [data-bs-theme="dark"] .list-group-item-action:hover {
+    background-color: #1e1e1e !important;
+  }
+}
+
+/* ==========================================================================
+   3. مكونات بطاقات الأسئلة والخيارات (Questions & Choices)
+   ========================================================================== */
+.choices {
+  direction: ltr;
+  margin-left: 30px;
+}
+
+/* معالجة خيارات الأسئلة المتعددة المتوافقة مع اتجاه الـ RTL ועرض المعادلات */
+.choices[dir="rtl"] .form-check {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  gap: 12px;
+  text-align: right;
+}
+
+.choices[dir="rtl"] .form-check-input {
+  position: static !important;
+  margin: 0 !important;
+  float: none !important;
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.choices[dir="rtl"] .form-check-label {
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ==========================================================================
+   4. الكتل الرياضية والرسوم البيانية (Math Blocks & Graphics)
+   ========================================================================== */
+.math-block {
+  direction: ltr;
+  background: #252525 !important;
+  padding: 20px;
+  border: 1px solid #333 !important;
+  border-radius: 8px;
+  margin: 15px 0;
+  text-align: center;
+  color: #75b5ff !important;
+  font-size: 1.3rem;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  white-space: nowrap;
+  box-sizing: border-box;
+  unicode-bidi: isolate;
+}
+
+.math-wrapper {
+  direction: ltr !important;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* شريط التمرير للكتل الرياضية */
+.math-block::-webkit-scrollbar {
+  height: 8px;
+  display: block !important;
+}
+.math-block::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 10px;
+}
+[data-bs-theme="dark"] .math-block::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.graph-container {
+  width: 100%;
+  height: 450px;
+  background: var(--bs-body-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* ==========================================================================
+   5. الجداول المصفاة (Dynamic Tables Layout)
+   ========================================================================== */
+table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+[data-bs-theme="dark"] table {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] table th {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+  text-align: center;
+  padding: 12px !important;
+  border: 1px solid #334155 !important;
+}
+
+[data-bs-theme="dark"] table td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px !important;
+  color: #cbd5e1;
+  border: 1px solid #334155 !important;
+}
+
+/* تأثير التناوب اللوني والمرور الهادئ المناسب للعتمة */
+[data-bs-theme="dark"] table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+[data-bs-theme="dark"] table tbody tr:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* ==========================================================================
+   6. السلايدر والشاشات الصغيرة (Slider & Responsiveness)
+   ========================================================================== */
+.slider-wrapper {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.slides-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.slide-card {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.scroll-hint {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+  .math-block {
+    font-size: 1.1rem;
+  }
+}
