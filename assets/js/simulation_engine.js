@@ -1,7 +1,8 @@
 // ==========================================================================
 // 1. الدالة التنفيذية المستقرة: الزاوية الموجهة لشعاعين (إصلاح الانهيار والأقصر مسافة)
 // ==========================================================================
-function buildDirectedAngle(id, _config) {
+// eslint-disable-next-line no-unused-vars
+function buildDirectedAngle(id, config) {
     if (typeof JXG === 'undefined') return;
 
     const theme = {
