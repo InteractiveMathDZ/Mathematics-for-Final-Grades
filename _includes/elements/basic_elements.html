@@ -5,10 +5,11 @@
   class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark d-flex justify-content-center align-content-center align-items-center"
   dir="ltr"
 >
+  <!-- prettier-ignore -->
   <div
     id="{{ el.graph.id }}"
     class="{{ el.graph.class }}"
-    data-graph-config="{{ el.graph | jsonify }}"
+    data-graph-config='{{ el.graph | jsonify }}'
     style="
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -27,7 +28,7 @@
   <div
     id="{{ el.simulation.id }}"
     class="jxgbox {{ el.simulation.class }}"
-    data-simulation-config="{{ el.simulation | jsonify }}"
+    data-simulation-config='{{ el.simulation | jsonify }}'
     style="
       width: 100%;
       aspect-ratio: 1 / 1;
