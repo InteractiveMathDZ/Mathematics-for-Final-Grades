@@ -91,6 +91,12 @@
    height: 3rem;
 }
 
+debug-header-style {
+  margin-bottom: 0;
+  border-radius: 0;
+  display: none
+}
+
 @media (hover: none) {
   [data-bs-theme="dark"] .list-group-item-action:hover {
     background-color: #1e1e1e !important;
