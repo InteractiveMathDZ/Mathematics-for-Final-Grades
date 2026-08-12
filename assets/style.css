@@ -91,10 +91,16 @@
    height: 3rem;
 }
 
-debug-header-style {
+.debug-header-style {
   margin-bottom: 0;
   border-radius: 0;
   display: none
+}
+
+sidebar-button-style {
+  z-index:
+  1050;
+  padding: 12px 18px
 }
 
 @media (hover: none) {
