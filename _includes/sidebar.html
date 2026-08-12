@@ -22,15 +22,12 @@
     >
       <span class="visually-hidden">إغلاق</span>
     </button>
-
   </div>
-
   <div class="offcanvas-body">
     <ul class="list-group list-group-flush p-0" dir="rtl">
       <li class="list-group-item">
         <a href="{{ site.baseurl }}/index.html" class="fw-bold">الرئيسية</a>
       </li>
-
       {%- if page.local_links -%}
       <li class="list-group-item fw-bold text-primary border-bottom mt-3">
         محتويات هذا الدرس
@@ -38,9 +35,7 @@
       <ul class="list-group list-group-flush pe-4">
         {%- for link in page.local_links -%}
         <li class="list-group-item">
-          <a href="{{ link.url }}" class="text-decoration-none d-block p-2"
-            >{{ link.title }}</a
-          >
+          <a href="{{ link.url }}" class="text-decoration-none d-block p-2">{{ link.title }}</a>
         </li>
         {%- endfor -%}
       </ul>
