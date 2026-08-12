@@ -18,8 +18,11 @@
       type="button"
       class="btn-close"
       data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
+      aria-label="إغلاق"
+    >
+      <span class="visually-hidden">إغلاق</span>
+    </button>
+
   </div>
 
   <div class="offcanvas-body">
@@ -28,21 +31,21 @@
         <a href="{{ site.baseurl }}/index.html" class="fw-bold">الرئيسية</a>
       </li>
 
-      {% if page.local_links %}
+      {%- if page.local_links -%}
       <li class="list-group-item fw-bold text-primary border-bottom mt-3">
         محتويات هذا الدرس
       </li>
       <ul class="list-group list-group-flush pe-4">
-        {% for link in page.local_links %}
+        {%- for link in page.local_links -%}
         <li class="list-group-item">
           <a href="{{ link.url }}" class="text-decoration-none d-block p-2"
             >{{ link.title }}</a
           >
         </li>
-        {% endfor %}
+        {%- endfor -%}
       </ul>
       <li class="list-group-item fw-bold mt-3 border-top">تصفح باقي المحاور</li>
-      {% endif %} {% include nav/global_nav_links.html %}
+      {%- endif -%} {%- include nav/global_nav_links.html -%}
     </ul>
   </div>
 </div>
