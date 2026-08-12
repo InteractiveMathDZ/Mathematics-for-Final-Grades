@@ -1,8 +1,6 @@
 {% if el.formula %}
 <div class="math-block">{{ el.formula }}</div>
-{% endif %} 
-{% if el.raw_html %} {{ el.raw_html }} {% endif %}
-{% if el.graph %}
+{% endif %} {% if el.raw_html %} {{ el.raw_html }} {% endif %} {% if el.graph %}
 <div
   class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark d-flex justify-content-center align-content-center align-items-center"
   dir="ltr"
@@ -22,8 +20,7 @@
     "
   ></div>
 </div>
-{% endif %} 
-{% if el.simulation %}
+{% endif %} {% if el.simulation %}
 <div
   class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark d-flex justify-content-center align-content-center align-items-center"
   dir="ltr"
@@ -42,30 +39,31 @@
     "
   ></div>
 </div>
-{% endif %} 
-{% if el.h3 %}
+{% endif %} {% if el.h3 %}
 <h3 {% if el.id %}id="{{ el.id }}" {% endif %} class="text-primary mt-4 mb-4">
   {% if el.h3.text %} {{ el.h3.text }} {% else %} {{ el.h3 }} {% endif %}
 </h3>
-{% endif %}
-{% if el.h4 %}
-<h4 {% if el.id %}id="{{ el.id }}"{% endif %} class="text-primary ms-4 mt-4 mb-4">
+{% endif %} {% if el.h4 %}
+<h4
+  {%
+  if
+  el.id
+  %}id="{{ el.id }}"
+  {%
+  endif
+  %}
+  class="text-primary ms-4 mt-4 mb-4"
+>
   {% if el.h4.text %} {{ el.h4.text }} {% else %} {{ el.h4 }} {% endif %}
 </h4>
-{% endif %} 
-{% if el.parags %}
-{% for parag in el.parags %}
-{% if parag.ltr %}
-    <p dir="ltr">{{ parag.ltr }}</p>
+{% endif %} {% if el.parags %} {% for parag in el.parags %} {% if parag.ltr %}
+<p dir="ltr">{{ parag.ltr }}</p>
 {% elsif parag.center %}
-    <p class="text-center" dir="ltr">{{ parag.center }}</p>
+<p class="text-center" dir="ltr">{{ parag.center }}</p>
 {% else %}
 <p>{{ parag.rtl }}</p>
-{% endif %}
-{% endfor %}
-{% endif %}
-{% if el.tableLines %} 
-{% if el.tableLines.type == 'svg' %}
+{% endif %} {% endfor %} {% endif %} {% if el.tableLines %} {% if
+el.tableLines.type == 'svg' %}
 <div
   class="table-responsive math-wrapper mt-4"
   style="overflow-x: auto; -webkit-overflow-scrolling: touch"
@@ -100,12 +98,10 @@
       stroke="#333333"
       stroke-width="1"
     />
-    {% endif %}
-    {% for cel in line %} {% assign col_count = line.size %} {%
+    {% endif %} {% for cel in line %} {% assign col_count = line.size %} {%
     assign cell_width = 650 | divided_by: col_count %} {% assign x_pos =
     forloop.index0 | times: cell_width | plus: 20 %} {% assign text_y = y_pos |
-    plus: 28 %}
-    {% if cel.th %}
+    plus: 28 %} {% if cel.th %}
     <text
       x="{{ x_pos }}"
       y="{{ text_y }}"

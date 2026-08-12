@@ -28,7 +28,7 @@
   <div
     id="{{ el.simulation.id }}"
     class="jxgbox {{ el.simulation.class }}"
-    data-simulation-config='{{ el.simulation | jsonify }}'
+    data-simulation-config="{{ el.simulation | jsonify }}"
     style="
       width: 100%;
       aspect-ratio: 1 / 1;
