@@ -65,6 +65,14 @@
   box-shadow: none !important;
 }
 
+.main-content-wrapper {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  unicode-bidi: isolate;
+}
+
 @media (hover: none) {
   [data-bs-theme="dark"] .list-group-item-action:hover {
     background-color: #1e1e1e !important;
