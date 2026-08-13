@@ -1,4 +1,4 @@
-{% if page.mind_map %}
+{%- if page.mind_map -%}
 <div
   class="mindmap-hybrid-container"
   style="
@@ -183,15 +183,15 @@
       <div class="tree-master-hub">رؤية توجيهية</div>
     </div>
 
-    {% for node in page.mind_map.nodes %} {% if node.type == "concept" or
-    node.value contains "،" %} {% assign sub_items = node.value | split: "،" %}
-    {% for item in sub_items %}
+    {%- for node in page.mind_map.nodes -%} {%- if node.type == "concept" or
+    node.value contains "،" -%} {%- assign sub_items = node.value | split: "،" -%}
+    {%- for item in sub_items -%}
     <div class="tree-branch-item branch-{{ node.color }}">
       <div class="tree-node-box">
         <div class="node-box-content">{{ item | strip }}</div>
       </div>
     </div>
-    {% endfor %} {% else %}
+    {%- endfor -%} {%- else -%}
 
     <div class="tree-branch-item branch-{{ node.color }}">
       <div class="tree-node-box">
@@ -202,7 +202,7 @@
       </div>
     </div>
 
-    {% endif %} {% endfor %}
+    {%- endif -%} {%- endfor -%}
   </div>
 </div>
-{% endif %}
+{%- endif -%}
