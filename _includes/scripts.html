@@ -3,7 +3,7 @@
 <script src="/Mathematics-for-Final-Grades/assets/script.js"></script>
 <script src="/Mathematics-for-Final-Grades/assets/verifyAndHydrate.js"></script>
 
-{% if page.graph %}
+{%- if page.graph -%}
 <link
   rel="stylesheet"
   type="text/css"
@@ -16,7 +16,7 @@
 ></script>
 <script src="{{ '/assets/js/graph-engine.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/simulation_engine.js' | relative_url }}"></script>
-{% endif %}
+{%- endif -%}
 
 <script>
   // التحقق من وجود وسم الآدمن قبل تحميل وتشغيل الكونسول
