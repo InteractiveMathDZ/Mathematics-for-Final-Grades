@@ -24,7 +24,7 @@
   ></div>
 </div>
 {%- endif -%} {%- if el.h3 -%}
-<h3 {%- if el.id -%}id="{{ el.id }}" {%- endif -%} class="text-primary mt-4 mb-4">
+<h3 {% if el.id %}id="{{ el.id }}" {% endif %} class="text-primary mt-4 mb-4">
   {%- if el.h3.text -%} {{ el.h3.text }} {%- else -%} {{ el.h3 }} {%- endif -%}
 </h3>
 {%- endif -%} {%- if el.h4 -%}
