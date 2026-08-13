@@ -3,12 +3,11 @@
   <div class="exercise-marker d-none" data-ex-id="{{ pageContent.exID }}"></div>
   <span class="badge bg-info" id="{{ pageContent.exID }}-val">??/10</span>
 </div>
-<div class="progress" style="height: 10px">
+<div class="progress height10px">
   <div
     id="{{ pageContent.exID }}-bar"
-    class="progress-bar bg-success"
+    class="progress-bar bg-success width0"
     role="progressbar"
-    style="width: 0%"
   ></div>
 </div>
 
@@ -31,7 +30,7 @@
         class="form-check-input {{ pageContent.exID }} {%- if choice.correct -%}correct-node{%- endif -%}"
         value="{%- if choice.correct -%}1{%- else -%}0{%- endif -%}"
         data-answer="{%- if choice.correct -%}1{%- else %}0{%- endif -%}"
-      />
+      >
       <label
         for="{{ pageContent.exID }}-{{ part.pID }}-choice{{ forloop.index }}"
         class="form-check-label"
@@ -64,7 +63,7 @@
           data-answer="{{ number.correct }}"
           data-delta="{{ number.delta | default: 0 }}"
           placeholder="..الإجابة"
-        />
+        >
       </div>
     </div>
     {%- endfor -%}
@@ -105,6 +104,7 @@
   {%- if pageContent.previous_url -%}
   <button
     id="{{ pageContent.exID }}-btnPrev"
+    type="button"
     class="btn btn-outline-primary fw-bold flex-grow-1 shadow-sm"
     onclick="window.location.href='{{ site.baseurl }}{{ pageContent.previous_url }}'"
   >
@@ -114,6 +114,7 @@
 
   <button
     id="{{ pageContent.exID }}-btnRetry"
+    type="button"
     class="btn btn-outline-primary fw-bold flex-grow-1 d-none"
     onclick="resetExercise('{{ page.exID }}')"
   >
@@ -122,6 +123,7 @@
 
   <button
     id="{{ pageContent.exID }}-btnVerify"
+    type="button"
     class="btn btn-outline-primary fw-bold flex-grow-1"
     onclick="verify('{{ pageContent.exID }}')"
   >
@@ -131,6 +133,7 @@
   {%- if pageContent.next_url -%}
   <button
     id="{{ pageContent.exID }}-btnNext"
+    type="button"
     class="btn btn-outline-primary fw-bold flex-grow-1"
     onclick="window.location.href='{{ site.baseurl }}{{ pageContent.next_url }}'"
   >
