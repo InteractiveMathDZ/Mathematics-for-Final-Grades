@@ -8,16 +8,8 @@
   <!-- prettier-ignore -->
   <div
     id="{{ el.graph.id }}"
-    class="{{ el.graph.class }}"
+    class="{{ el.graph.class }} div-graph-style"
     data-graph-config='{{ el.graph | jsonify }}'
-    style="
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #1a1a1a;
-      border-radius: 6px;
-      overflow: hidden;
-      touch-action: none;
-    "
   ></div>
 </div>
 {%- endif %} {% if el.simulation -%}
@@ -27,31 +19,17 @@
 >
   <div
     id="{{ el.simulation.id }}"
-    class="jxgbox {{ el.simulation.class }}"
+    class="jxgbox {{ el.simulation.class }} div-graph-style"
     data-simulation-config="{{ el.simulation | jsonify }}"
-    style="
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #1a1a1a;
-      border-radius: 6px;
-      overflow: hidden;
-      touch-action: none;
-    "
   ></div>
 </div>
 {%- endif -%} {%- if el.h3 -%}
-<h3 {% if el.id %}id="{{ el.id }}" {% endif %} class="text-primary mt-4 mb-4">
+<h3 {% if el.id %} id="{{ el.id }}" {% endif %} class="text-primary mt-4 mb-4">
   {%- if el.h3.text -%} {{ el.h3.text }} {%- else -%} {{ el.h3 }} {%- endif -%}
 </h3>
-{%- endif %} {% if el.h4 -%}
+{%- endif -%} {%- if el.h4 -%}
 <h4
-  {%-
-  if
-  el.id
-  -%}id="{{ el.id }}"
-  {%-
-  endif
-  -%}
+  {%- if el.id -%} id="{{ el.id }}"{%- endif -%}
   class="text-primary ms-4 mt-4 mb-4"
 >
   {%- if el.h4.text -%} {{ el.h4.text }} {%- else -%} {{ el.h4 }} {%- endif -%}
