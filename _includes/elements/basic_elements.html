@@ -8,16 +8,8 @@
   <!-- prettier-ignore -->
   <div
     id="{{ el.graph.id }}"
-    class="{{ el.graph.class }}"
+    class="{{ el.graph.class }} div-graph-style"
     data-graph-config="{{ el.graph | jsonify | escape }}"
-    style="
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #1a1a1a;
-      border-radius: 6px;
-      overflow: hidden;
-      touch-action: none;
-    "
   ></div>
 </div>
 {%- endif -%} {%- if el.simulation -%}
@@ -27,16 +19,8 @@
 >
   <div
     id="{{ el.simulation.id }}"
-    class="jxgbox {{ el.simulation.class }}"
+    class="jxgbox {{ el.simulation.class }} div-graph-style"
     data-simulation-config="{{ el.simulation | jsonify | escape }}"
-    style="
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #1a1a1a;
-      border-radius: 6px;
-      overflow: hidden;
-      touch-action: none;
-    "
   ></div>
 </div>
 {%- endif %} {%- if el.h3 -%}
@@ -122,8 +106,7 @@ el.tableLines.type == 'svg' -%}
 {%- else -%}
 <div class="table-responsive math-wrapper mt-4">
   <table
-    class="table table-bordered text-center"
-    style="font-size: 0.8rem"
+    class="table table-bordered text-center style-font-size-0-8rem"
     dir="{{ el.tableLines.dir }}"
   >
     <tbody>
