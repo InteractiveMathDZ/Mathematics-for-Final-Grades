@@ -309,7 +309,7 @@ table {
 .width100 {
    width: 100%;
 }
-height10px {
+.height10px {
    height: 10px;
 }
 
@@ -327,4 +327,9 @@ height10px {
       border: 1px solid #333333;
       border-radius: 6px;
       font-family: sans-serif;
+}
+
+.raw_html-style {
+   text-align: center;
+   margin: 25px 0;
 }
