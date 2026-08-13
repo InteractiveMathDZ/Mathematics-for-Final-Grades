@@ -1,13 +1,13 @@
-{% include elements/basic_elements.html %} {% if el.tableSlides %}
+{%- include elements/basic_elements.html -%} {%- if el.tableSlides -%}
 <div class="slider-wrapper" dir="rtl">
   <div class="slides-container">
-    {% for card in el.tableSlides.cards %}
+    {%- for card in el.tableSlides.cards -%}
     <div class="slide-card">
-      {% for el in card %} {% include elements/basic_elements.html %} {% endfor
-      %}
+      {%- for el in card -%} {%- include elements/basic_elements.html -%} {%- endfor
+      -%}
     </div>
-    {% endfor %}
+    {%- endfor -%}
   </div>
   <div class="scroll-hint">اسحب أفقياً لرؤية الموالي...</div>
 </div>
-{% endif %}
+{%- endif -%}
