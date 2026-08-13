@@ -12,25 +12,25 @@
   ></div>
 </div>
 
-{% for part in pageContent.sections %}
+{%- for part in pageContent.sections -%}
 <div
   id="{{ pageContent.exID }}-{{ part.pID }}"
   class="container py-4 border-bottom"
 >
-  {% if part.title %}
+  {%- if part.title -%}
   <p class="fw-bold">{{ part.title }}</p>
-  {% endif %} {% for el in part.contents %} {% include elements/elements.html %}
-  {%if el.choices %}
+  {%- endif -%} {%- for el in part.contents -%} {%- include elements/elements.html -%}
+  {%- if el.choices -%}
   <div class="choices ms-6" dir="{{ el.dir | default: 'ltr' }}">
-    {% for choice in el.choices %}
+    {%- for choice in el.choices -%}
     <div class="form-check my-3 mt-4">
       <input
         type="radio"
         id="{{ pageContent.exID }}-{{ part.pID }}-choice{{ forloop.index }}"
         name="{{ pageContent.exID }}-{{ part.pID }}"
-        class="form-check-input {{ pageContent.exID }} {% if choice.correct %}correct-node{% endif %}"
-        value="{% if choice.correct %}1{% else %}0{% endif %}"
-        data-answer="{% if choice.correct %}1{% else %}0{% endif %}"
+        class="form-check-input {{ pageContent.exID }} {%- if choice.correct -%}correct-node{%- endif -%}"
+        value="{%- if choice.correct -%}1{%- else -%}0{%- endif -%}"
+        data-answer="{%- if choice.correct -%}1{%- else %}0{%- endif -%}"
       />
       <label
         for="{{ pageContent.exID }}-{{ part.pID }}-choice{{ forloop.index }}"
@@ -39,11 +39,11 @@
         {{ choice.label }}
       </label>
     </div>
-    {% endfor %}
+    {%- endfor -%}
   </div>
-  {% endif %} {% if el.numbers %}
+  {%- endif -%} {%- if el.numbers -%}
   <div class="numbers-input ms-4" dir="{{ el.dir | default: 'ltr' }}">
-    {% for number in el.numbers %}
+    {%- for number in el.numbers -%}
     <div class="d-flex align-items-center flex-wrap my-3">
       <div class="me-2 text-nowrap">
         <label
@@ -67,42 +67,42 @@
         />
       </div>
     </div>
-    {% endfor %}
+    {%- endfor -%}
   </div>
-  {% endif %} {% if el.success_msg %}
+  {%- endif -%} {%- if el.success_msg -%}
   <div
     id="{{ pageContent.exID }}-{{ part.pID }}-hintSuccess"
     class="{{ pageContent.exID }}-hint alert alert-success d-none mt-5"
   >
     <i class="bi bi-check-circle-fill"></i>
-    {% for parag in el.success_msg %} {% if parag.ltr %}
+    {%- for parag in el.success_msg -%} {%- if parag.ltr -%}
     <p dir="ltr">{{ parag.ltr }}</p>
-    {% elsif parag.center %}
+    {%- elsif parag.center -%}
     <p class="text-center" dir="ltr">{{ parag.center }}</p>
-    {% else %}
+    {%- else -%}
     <p>{{ parag.rtl }}</p>
-    {% endif %} {% endfor %}
+    {%- endif -%} {%- endfor -%}
   </div>
-  {% endif %} {% if el.error_msg %}
+  {%- endif -%} {%- if el.error_msg -%}
   <div
     id="{{ pageContent.exID }}-{{ part.pID }}-hintError"
     class="{{ pageContent.exID }}-hint alert alert-danger d-none mt-5"
   >
     <i class="bi bi-x-circle-fill"></i>
-    {% for parag in el.error_msg %} {% if parag.ltr %}
+    {%- for parag in el.error_msg -%} {%- if parag.ltr -%}
     <p dir="ltr">{{ parag.ltr }}</p>
-    {% elsif parag.center %}
+    {%- elsif parag.center -%}
     <p class="text-center" dir="ltr">{{ parag.center }}</p>
-    {% else %}
+    {%- else -%}
     <p>{{ parag.rtl }}</p>
-    {% endif %} {% endfor %}
+    {%- endif -%} {%- endfor -%}
   </div>
-  {% endif %} {% endfor %}
+  {%- endif -%} {%- endfor -%}
 </div>
-{% endfor %}
+{%- endfor -%}
 
 <div class="d-flex gap-2 mt-4">
-  {% if pageContent.previous_url %}
+  {%- if pageContent.previous_url -%}
   <button
     id="{{ pageContent.exID }}-btnPrev"
     class="btn btn-outline-primary fw-bold flex-grow-1 shadow-sm"
@@ -110,7 +110,7 @@
   >
     <i class="bi bi-chevron-right me-1"></i> السابق
   </button>
-  {% endif %}
+  {%- endif -%}
 
   <button
     id="{{ pageContent.exID }}-btnRetry"
@@ -128,7 +128,7 @@
     تحقق <i class="bi bi-check2-circle"></i>
   </button>
 
-  {% if pageContent.next_url %}
+  {%- if pageContent.next_url -%}
   <button
     id="{{ pageContent.exID }}-btnNext"
     class="btn btn-outline-primary fw-bold flex-grow-1"
@@ -136,5 +136,5 @@
   >
     التالي <i class="bi bi-chevron-left"></i>
   </button>
-  {% endif %}
+  {%- endif -%}
 </div>
