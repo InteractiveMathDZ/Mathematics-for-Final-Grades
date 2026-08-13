@@ -312,3 +312,14 @@ table {
 height10px {
    height: 10px;
 }
+.div-graph-style {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.svg-style {
+      min-width: 650px;
+      background: #1e1e1e;
+      border: 1px solid #333333;
+      border-radius: 6px;
+      font-family: sans-serif;
+}
