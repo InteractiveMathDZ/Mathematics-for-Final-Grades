@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-
 <div class="d-flex justify-content-between align-items-center mb-2">
   <div class="text-center flex-grow-1">
     <h2 class="text-primary fw-bold">{{ page.title }}</h2>
-    {% if page.subtitle %}
+    {%- if page.subtitle -%}
     <h3 class="text-primary fw-bold">{{ page.subtitle }}</h3>
-    {% endif %}
+    {%- endif -%}
   </div>
   <span class="badge bg-info" id="{{ page.lessonID }}-val"
     >لا محاولة بعد...</span
@@ -21,13 +20,10 @@ layout: default
     style="width: 0%"
   ></div>
 </div>
-
-{% for el in page.elements %} {% include elements/elements.html %} {% endfor %}
-
+{%- for el in page.elements -%} {%- include elements/elements.html -%} {%- endfor -%}
 <hr class="mt-5" />
-
 <div class="previous-link mt-2">
-  {% if page.previous_url %}
+  {%- if page.previous_url -%}
   <a
     href="{{ page.previous_url | relative_url }}"
     class="btn btn-outline-primary"
@@ -35,11 +31,10 @@ layout: default
   >
     <i class="fas fa-arrow-right ml-2"></i> السابق: {{ page.previous_title }}
   </a>
-  {% endif %}
+  {%- endif -%}
 </div>
-
 <div class="next-link mt-2">
-  {% if page.next_url %}
+  {%- if page.next_url -%}
   <a
     href="{{ page.next_url | relative_url }}"
     class="btn btn-outline-primary"
@@ -47,5 +42,5 @@ layout: default
   >
     التالي: {{ page.next_title }} <i class="fas fa-arrow-left mr-2"></i>
   </a>
-  {% endif %}
+  {%- endif -%}
 </div>
