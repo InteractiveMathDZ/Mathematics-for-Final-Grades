@@ -303,9 +303,12 @@ table {
 }
 
 .width0 {
-   width: 0%
+   width: 0%;
 }
 
 .width100 {
-   width: 100%
+   width: 100%;
+}
+height10px {
+   height: 10px;
 }
