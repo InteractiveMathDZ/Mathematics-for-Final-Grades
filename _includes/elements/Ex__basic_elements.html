@@ -12,7 +12,7 @@
     data-graph-config='{{ el.graph | jsonify }}'
   ></div>
 </div>
-{%- endif %} {% if el.simulation -%}
+{%- endif -%} {%- if el.simulation -%}
 <div
   class="simulation-wrapper my-4 p-3 shadow-sm border rounded bg-dark d-flex justify-content-center align-content-center align-items-center"
   dir="ltr"
@@ -24,7 +24,7 @@
   ></div>
 </div>
 {%- endif -%} {%- if el.h3 -%}
-<h3 {% if el.id %} id="{{ el.id }}" {% endif %} class="text-primary mt-4 mb-4">
+<h3 {%- if el.id -%}id="{{ el.id }}" {%- endif -%} class="text-primary mt-4 mb-4">
   {%- if el.h3.text -%} {{ el.h3.text }} {%- else -%} {{ el.h3 }} {%- endif -%}
 </h3>
 {%- endif -%} {%- if el.h4 -%}
