@@ -312,6 +312,11 @@ table {
 height10px {
    height: 10px;
 }
+
+.style-font-size-0-8rem {
+   font-size: 0.8rem;
+}
+
 .div-graph-style {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
