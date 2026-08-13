@@ -293,3 +293,10 @@ table {
     transition: 0.3s;
 }
 
+.width0 {
+   width: 0%
+}
+
+.width100 {
+   width: 100%
+}
