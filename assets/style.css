@@ -103,6 +103,15 @@ sidebar-button-style {
   padding: 12px 18px
 }
 
+div-graph-style {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #1a1a1a;
+      border-radius: 6px;
+      overflow: hidden;
+      touch-action: none;
+}
+
 @media (hover: none) {
   [data-bs-theme="dark"] .list-group-item-action:hover {
     background-color: #1e1e1e !important;
