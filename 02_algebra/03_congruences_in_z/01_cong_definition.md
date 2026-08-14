@@ -17,7 +17,7 @@ elements:
   - h3: "1. التعريف"
     id: "congruence-definition"
   - parags:
-      - rtl: "ليكن $n$ عدداً طبيعياً حيث $n > 1$. نقول إن العددين الصحيحين $a$ و $b$ <b>متوافقان بترديد $n$</b> إذا وفقط إذا كان لهما نفس باقي القسمة الإقليدية على $n$."
+      - rtl: "ليكن $n$ عدداً طبيعياً حيث $n \\gt 1$. نقول إن العددين الصحيحين $a$ و $b$ <b>متوافقان بترديد $n$</b> إذا وفقط إذا كان لهما نفس باقي القسمة الإقليدية على $n$."
       - rtl: "ونكتب:"
       - center: "$a \\equiv b \\pmod{n}$"
 
@@ -32,7 +32,7 @@ elements:
     id: "special-cases"
   - parags:
       - rtl: "• كل عدد صحيح $a$ يوافق باقي قسمته الإقليدية $r$ بترديد $n$:"
-      - center: "$a \\equiv r \\pmod{n} \\quad \\text{حيث} \\quad 0 \\le r < n$"
+      - center: "$a \\equiv r \\pmod{n} \\quad \\text{حيث} \\quad 0 \\le r \\lt n$"
       - rtl: "• يكون $a \\equiv 0 \\pmod{n}$ إذا وفقط إذا كان $a$ مضاعفاً للعدد $n$."
 
   - graph:
@@ -43,7 +43,6 @@ elements:
       elements:
         # تمثيل بياني للموافقات بترديد 5 على المحور العددي
         - { type: "line", points: [[-2, 0], [15, 0]], color: "gray" }
-
         # القيمة المرجعية 2
         - {
             type: "point",
@@ -54,7 +53,6 @@ elements:
             size: 3,
           }
         - { type: "text", content: "2", x: 2, y: -0.6, color: "#168574" }
-
         # الانتقال بمقدار الترديد 5 إلى القيمة 7
         - {
             type: "line",
@@ -73,7 +71,6 @@ elements:
             size: 3,
           }
         - { type: "text", content: "7", x: 7, y: -0.6, color: "#168574" }
-
         # الانتقال بمقدار الترديد 5 إلى القيمة 12
         - {
             type: "line",
@@ -92,7 +89,6 @@ elements:
             size: 3,
           }
         - { type: "text", content: "12", x: 12, y: -0.6, color: "#168574" }
-
         # نص توضيحي
         - {
             type: "text",
