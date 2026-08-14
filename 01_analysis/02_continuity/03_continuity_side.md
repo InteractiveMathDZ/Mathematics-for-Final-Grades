@@ -42,7 +42,7 @@ elements:
 
   - parags:
       - rtl: "لتكن الدالة العددية $f$ المعرفة على $\\mathbb{R}$ بالعبارات المجالية المتفرعة التالية:"
-      - center: "$f(x) = \\begin{cases} x+1 & \\text{من أجل } x \\ge 1 \\\\ x^2 & \\text{من أجل } x < 1 \\end{cases}$"
+      - center: "$f(x) = \\begin{cases} x+1 &amp; \\text{من أجل } x \\ge 1 \\\\ x^2 &amp; \\text{من أجل } x \\lt 1 \\end{cases}$"
       - rtl: "المطلوب: ادرس استمرارية الدالة $f$ عند القيمة الحقيقية $x_0 = 1$."
 
   - tableLines:
