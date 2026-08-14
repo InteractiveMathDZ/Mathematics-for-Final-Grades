@@ -27,28 +27,28 @@ elements:
       - rtl: "الدالة $f$ غير معرفة عند القيمة $1$ لكونها تعدم المقام. لدراسة سلوك صور القيم القريبة من $1$، نلخص نتائج الاقتراب في الجدولين التاليين:"
 
   - tableLines:
-      dir: ltr
+      dir: "ltr"
       lines:
-        - - th: "<span dir='rtl'>قيم المتغير $x$ أقل من 1$x \\lt 1$</span>"
+        - - th: "<span dir="rtl">قيم المتغير $x$ أقل من 1$x \\lt 1$</span>"
           - td: "0.9"
           - td: "0.99"
           - td: "0.999"
           - td: "$\\to 1$"
-        - - th: "<span dir='rtl'>الصور بواسطة $f(x)$</span>"
+        - - th: "<span dir="rtl">الصور بواسطة $f(x)$</span>"
           - td: "1.9"
           - td: "1.99"
           - td: "1.999"
           - td: "$\\to 2$"
 
   - tableLines:
-      dir: ltr
+      dir: "ltr"
       lines:
-        - - th: "<span dir='rtl'>قيم المتغير $x$ أكبر من 1 $x \\gt 1$</span>"
+        - - th: "<span dir="rtl">قيم المتغير $x$ أكبر من 1 $x \\gt 1$</span>"
           - td: "1.1"
           - td: "1.01"
           - td: "1.001"
           - td: "$\\to 1$"
-        - - th: "<span dir='rtl'>الصور بواسطة $f(x)$</span>"
+        - - th: "<span dir="rtl">الصور بواسطة $f(x)$</span>"
           - td: "2.1"
           - td: "2.01"
           - td: "2.001"
@@ -113,7 +113,7 @@ elements:
       - rtl: "يجب التمييز بدقة بين القيمة المباشرة للدالة عند النقطة وبين سلوكها الديناميكي بجوارها:"
 
   - tableLines:
-      dir: rtl
+      dir: "rtl"
       lines:
         - - th: "المفهوم التحليلي"
           - th: "الصورة $f(a)$"
