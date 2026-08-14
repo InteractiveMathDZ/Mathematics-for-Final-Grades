@@ -107,34 +107,27 @@ elements:
             .step-num { font-size: 11px; fill: #aaa; }
             .math-text { font-style: italic; font-weight: bold; }
           </style>
-
           <defs>
             <marker id="arrow-transition" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
               <polygon points="0 1, 7 4, 0 7" fill="#007bff"/>
             </marker>
           </defs>
-
           <rect x="10" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#007bff" stroke-width="1.5" />
           <text x="85" y="52" text-anchor="middle" class="step-num">المرحلة 1</text>
           <text x="85" y="72" text-anchor="middle" class="box-title">المتغير الأصلي</text>
           <text x="85" y="95" text-anchor="middle" fill="#007bff" class="math-text">x &rarr; a</text>
-
           <path d="M165 70 L 210 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
           <text x="190" y="60" text-anchor="middle" fill="#007bff" class="math-text">g(x)</text>
-
           <rect x="220" y="30" width="160" height="80" rx="8" fill="#1e293b" stroke="#ffa500" stroke-width="1.5" />
           <text x="300" y="52" text-anchor="middle" class="step-num">المرحلة 2</text>
           <text x="300" y="72" text-anchor="middle" class="box-title" fill="#ffa500">تغيير المتغير</text>
           <text x="300" y="95" text-anchor="middle" fill="#ffa500" class="math-text">X = g(x) &rarr; b</text>
-
           <path d="M385 70 L 430 70" stroke="#007bff" stroke-width="2" fill="none" marker-end="url(#arrow-transition)"/>
           <text x="410" y="60" text-anchor="middle" fill="#168574" class="math-text">f(X)</text>
-
           <rect x="440" y="30" width="150" height="80" rx="8" fill="#1e293b" stroke="#168574" stroke-width="1.5" />
           <text x="515" y="52" text-anchor="middle" class="step-num">النتيجة</text>
           <text x="515" y="72" text-anchor="middle" class="box-title">الاستقرار النهائي</text>
           <text x="515" y="95" text-anchor="middle" fill="#168574" class="math-text">الناتج = c</text>
-
           <text x="300" y="145" text-anchor="middle" fill="#94a3b8" style="font-size: 13px;">مخطط تتابع مراحل حساب نهاية دالة مركبة بالانتقال من المتغير الأصلي إلى المتغير الوسيط</text>
         </svg>
       </div>
