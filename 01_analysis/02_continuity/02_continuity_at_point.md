@@ -50,7 +50,7 @@ elements:
 
   - parags:
       - rtl: "لتكن الدالة العددية $f$ المعرفة على $\\mathbb{R}$ بما يلي:"
-      - center: "$f(x) = \\begin{cases} \\frac{x^2 - 4}{x - 2} & \\text{من أجل } x \\neq 2 \\\\ 4 & \\text{من أجل } x = 2 \\end{cases}$"
+      - center: "$f(x) = \\begin{cases} \\frac{x^2 - 4}{x - 2} &amp; \\text{من أجل } x \\neq 2 \\\\ 4 &amp; \\text{من أجل } x = 2 \\end{cases}$"
       - rtl: "المطلوب: ادرس استمرارية الدالة $f$ عند القيمة $x_0 = 2$."
 
   - tableLines:
