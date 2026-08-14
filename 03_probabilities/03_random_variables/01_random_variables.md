@@ -33,8 +33,8 @@ elements:
 
   # تمثيل جدولي مبسط
   - raw_html: |
-      <div style='margin: 20px 0;'>
-        <table border='1' style='width:100%; text-align:center;'>
+      <div style="margin: 20px 0;">
+        <table border="1" style="width:100%; text-align:center;">
           <tbody>
               <tr><th>$x_i$</th><td>$x_1$</td><td>$x_2$</td><td>...</td><td>$x_n$</td></tr>
               <tr><th>$P(X=x_i)$</th><td>$p_1$</td><td>$p_2$</td><td>...</td><td>$p_n$</td></tr>
