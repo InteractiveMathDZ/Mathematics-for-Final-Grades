@@ -1,11 +1,16 @@
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous">
+
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
->
+<!-- 1. Bootstrap Icons -->
+<link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" 
+  integrity="sha384-XG92Z33f4L+xLzU9eMsl1M1i8i0v8I1jL110j191054625b597143f60f601b08" 
+  crossorigin="anonymous">
 <style>
   [data-bs-theme="dark"] #graph-limits svg {
     background-color: #1a1a1a !important;
@@ -23,15 +28,24 @@
     background-color: #ffffff !important;
   }
 </style>
+<!-- 2. Bootstrap JS -->
+<script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+  crossorigin="anonymous">
+</script>
 {%- if page.mathJax -%}
 <script>
   window.MathJax = {
     tex: { inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]] },
   };
 </script>
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-></script>
+<!-- 3. MathJax -->
+<script 
+  id="MathJax-script" 
+  async 
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+  integrity="sha384-dqC4S3I1s01sR5f4s1l437R4S2R5W6e2L/b/61y403e002sS01" 
+  crossorigin="anonymous">
+</script>
 {%- endif -%}
