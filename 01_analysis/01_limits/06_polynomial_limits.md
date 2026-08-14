@@ -41,7 +41,7 @@ elements:
           - td: "$3(+\\infty)^2 = +\\infty$"
         - - th: "$g(x) = -2x^3 + x^2$"
           - td: "$\\lim\\limits_{x \\to -\\infty} -2x^3$"
-          - td: "$-2(-\\infty)^3 = -2(-\\infty) = +\\infty$ <br><small class='text-warning'>(انتبه لإشارة الأس الفردي مضروبة في المعامل السالب)</small>"
+          - td: '$-2(-\\infty)^3 = -2(-\\infty) = +\\infty$ <br><small class="text-warning">(انتبه لإشارة الأس الفردي مضروبة في المعامل السالب)</small>'
 
   - h3: "2. نهاية دالة ناطقة عند اللانهاية: صراع القوى في البسط والمقام"
     id: "rational-inf"
