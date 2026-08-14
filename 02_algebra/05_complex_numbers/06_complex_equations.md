@@ -33,7 +33,7 @@ elements:
   - parags:
       - rtl: "حل المعادلة $z^2 - 2z + 5 = 0$:"
       - rtl: "1. $\\Delta = (-2)^2 - 4(1)(5) = 4 - 20 = -16$."
-      - rtl: "2. بما أن $\\Delta < 0$، إذن $\\sqrt{\\Delta} = \\sqrt{16i^2} = 4i$."
+      - rtl: "2. بما أن $\\Delta \\lt 0$، إذن $\\sqrt{\\Delta} = \\sqrt{16i^2} = 4i$."
       - rtl: "3. الحلان: $z_1 = \\frac{2 - 4i}{2} = 1 - 2i$ و $z_2 = \\bar{z}_1 = 1 + 2i$."
 
   - graph:
