@@ -424,7 +424,7 @@ function initAllSimulations() {
           console.warn("نوع المحاكاة غير مدرج:", config.type);
       }
     } catch (e) {
-      console.error("خطأ في قراءة بيانات المحاكاة " + simId, e);
+      console.error("خطأ في قراءة بيانات المحاكاة:", simId, e);
     }
   });
 }
