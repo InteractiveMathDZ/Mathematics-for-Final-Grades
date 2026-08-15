@@ -31,7 +31,7 @@ const MathSovereign = {
     try {
       JXG.JSXGraph.freeBoard(JXG.JSXGraph.getBoardByContainerId(id));
     } catch (err) {
-      console.warn(`تعذر تنظيف أو بناء اللوحة للمعرف ${id}:`, err);
+      console.warn("تعذر تنظيف أو بناء اللوحة للمعرف:", id, err);
 
       // إظهار رسالة بسيطة وأنيقة في نفس مكان الرسم دون إيقاف باقي الصفحة
       c.innerHTML = `
@@ -97,7 +97,7 @@ const MathSovereign = {
           // التعطيل الصريح للـ label التلقائي المشوه
           b.create(
             "functiongraph",
-            [(x) => eval(el.fn.replace(/\^/g, "**").replace(/x/g, `(${x})`))],
+            [(x) => new Function('x', `return ${el.fn.replace(/\^/g, "**").replace(/x/g, `(${x})`)}`)(x)],
             {
               strokeColor: el.strokeColor || "blue",
               strokeWidth: el.strokeWidth || 3,
