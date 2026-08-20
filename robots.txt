@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: "https://interactivemathdz.github.io/Mathematics-for-Final-Grades/index.html/sitemap_v1.xml"
