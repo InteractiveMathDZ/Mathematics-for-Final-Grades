@@ -7,6 +7,8 @@ mathJax: true
 graph: true
 lessonID: "limit"
 
+previous_title: "النهايات، خارطة الطريق."
+previous_url: "/limits_hub/"
 next_title: "القراءة البيانية للنهايات"
 next_url: "/limits_by_graph/"
 
