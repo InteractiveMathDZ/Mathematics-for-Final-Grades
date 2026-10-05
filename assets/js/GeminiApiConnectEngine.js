@@ -20,8 +20,8 @@ sendBtn.addEventListener('click', async () => {
 
         const aiAnswer =  askCentralAI(question, prompt);
        
-            // 3. استبدال رسالة التحميل بالإجابة الحقيقية
-             updateMessage(loadingId, aiAaiAns.msg);
+        // 3. استبدال رسالة التحميل بالإجابة الحقيقية
+        updateMessage(loadingId, aiAnswer);
 });
 
 function appendMessage(text, sender, isLoading = false) {
@@ -65,25 +65,16 @@ async function askCentralAI(userQuestion, customPrompt) {
 
     const data = await response.json();
     
-    if (response.ok) {
-      return {
-          status: "ok",
-          msg: data.reply // النص الراجع من الذكاء الاصطناعي
-        }
+    if (data.ok) {
+      return  data.reply // النص الراجع من الذكاء الاصطناعي
     } else {
       console.error('خطأ من السيرفر:', data.error);
-      return {
-           status: "error",
-           msg: 'عذراً، حدث خطأ أثناء الاتصال بالخادم.';
-       }
+      return 'عذراً، حدث خطأ أثناء الاتصال بالخادم.'
     }
 
   } catch (error) {
     console.error('خطأ في الشبكة:', error);
-    return {
-        status: "error",
-        msg: 'عذراً، تعذر الاتصال بالخدمة.'
-      }
+    return 'عذراً، تعذر الاتصال بالخدمة.'
   }
 }
 
