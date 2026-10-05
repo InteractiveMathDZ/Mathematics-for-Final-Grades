@@ -17,7 +17,7 @@ sendBtn.addEventListener("click", async () => {
   const promptForMathSite = "أنت مساعد تعليمي لموقع الرياضيات https://github.com/InteractiveMathDZ/Mathematics-for-Final-Grades/. أجب بدقة بناءً على محتوى الموقع.";
 
   askCentralAI(question, promptForMathSite).then(reply => {
-      updateMessage(loadingId, aiAnswer);
+      updateMessage(loadingId, reply);
   });
 });
 
