@@ -98,9 +98,14 @@
 }
 
 .sidebar-button-style {
-  z-index:
-  1050;
+  z-index: 1050;
   padding: 12px 18px
+}
+
+.chatwideget-button-style {
+   z-index: 1050;
+   padding: 12px 18px;
+   top: 400px
 }
 
 .div-graph-style {
