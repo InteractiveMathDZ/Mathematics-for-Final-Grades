@@ -14,14 +14,11 @@ sendBtn.addEventListener("click", async () => {
   const loadingId = appendMessage("جاري صياغة الإجابة...", "ai", true);
 
   // إرسال الطلب لنفس النموذج المستقر الذي جربناه
-  const prompt = {
-    // custom
-  };
+  const promptForMathSite = "أنت مساعد تعليمي لموقع الرياضيات https://github.com/InteractiveMathDZ/Mathematics-for-Final-Grades/. أجب بدقة بناءً على محتوى الموقع.";
 
-  const aiAnswer = askCentralAI(question, prompt);
-
-  // 3. استبدال رسالة التحميل بالإجابة الحقيقية
-  updateMessage(loadingId, aiAnswer);
+  askCentralAI(question, promptForMathSite).then(reply => {
+      updateMessage(loadingId, aiAnswer);
+  });
 });
 
 function appendMessage(text, sender, isLoading = false) {
