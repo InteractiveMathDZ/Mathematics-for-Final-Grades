@@ -374,8 +374,7 @@ table {
   gap: 10px;
 }
 
-.bot-message,
-.user-question {
+.bot-response {
   background: var(--bg-card);
   color: var(--bs-body-color);
   padding: 10px;
@@ -383,6 +382,16 @@ table {
   max-width: 85%;
   font-size: 14px;
   align-self: flex-start;
+}
+
+.user-question {
+  background: var(--bg-card);
+  color: var(--bs-body-color);
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 85%;
+  font-size: 14px;
+  align-self: flex-end;
 }
 
 .input-area {
