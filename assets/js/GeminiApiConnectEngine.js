@@ -58,17 +58,18 @@ async function askCentralAI(userQuestion, customPrompt) {
         },
         body: JSON.stringify({
           message: userQuestion,
-          systemPrompt: customPrompt, // هنا تحدد دور البوت، مثلاً: "أنت مساعد تعليمي لموقع الرياضيات..."
+          systemPrompt: customPrompt,
         }),
       },
     );
 
     const data = await response.json();
 
-    if (data.ok) {
-      return data.reply; // النص الراجع من الذكاء الاصطناعي
+    // التصحيح هنا: الاعتماد على response.ok أو وجود data.reply
+    if (response.ok && data.reply) {
+      return data.reply;
     } else {
-      console.error("خطأ من السيرفر:", data.error);
+      console.error("خطأ من السيرفر:", data.error || data.reply);
       return "عذراً، حدث خطأ أثناء الاتصال بالخادم.";
     }
   } catch (error) {
