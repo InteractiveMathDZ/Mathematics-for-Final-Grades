@@ -26,9 +26,9 @@ function appendMessage(text, sender, isLoading = false) {
   const id = "msg-" + Date.now();
   msgDiv.id = id;
   if (sender === "user") {
-    msgDiv.class = "user-question";
+    msgDiv.classList.add("user-question");
   } else {
-    msgDiv.class = "bot-response";
+    msgDiv.classList.add("bot-response");
     if (isLoading) msgDiv.style.fontStyle = "italic";
   }
 
