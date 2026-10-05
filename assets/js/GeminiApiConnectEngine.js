@@ -43,6 +43,9 @@ function updateMessage(id, newText) {
   if (msgDiv) {
     msgDiv.textContent = newText;
     msgDiv.style.fontStyle = "normal";
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([msgDiv]).catch((err) => console.log('MathJax error:', err));
+    }
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 }
