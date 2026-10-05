@@ -357,3 +357,50 @@ table {
 .bi-list-ul {
   color: #66b2ff !important;
 }
+
+#ai-chat-messages {
+   flex: 1; 
+   padding: 15px; 
+   overflow-y: auto; 
+   background: var(--bs-body-bg); 
+   display: flex; 
+   flex-direction: column; 
+   gap: 10px;"
+}
+
+.bot-message {
+   background: var(--ɓg-card);
+   color: var(--bs-body-color);
+   padding: 10px; 
+   border-radius: 8px; 
+   max-width: 85%;
+   font-size: 14px;
+   align-self: flex-start;
+}
+
+.input-area {
+   padding: 15px; 
+   background: white; 
+   border-top: 1px solid var(--bs-border-color);
+   display: flex; 
+   gap: 8px;"
+}
+
+#ai-chat-input {
+   flex: 1; 
+   padding: 10px;
+   border: 1px solid var(--bs-border-color);
+   border-radius: 6px; 
+   outline: none;
+   font-size: 14px;"
+}
+
+#ai-chat-send-btn {
+   background: #2563eb; 
+   color: white;
+   border: none; 
+   padding: 10px 15px; 
+   border-radius: 6px; 
+   cursor: pointer; 
+   font-weight: bold;
+}
