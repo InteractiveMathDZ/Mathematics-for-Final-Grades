@@ -1,15 +1,34 @@
 <!-- زر الإطلاق الجانبي -->
-<button id="ai-chat-toggle-btn" style="position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-weight: bold; z-index: 9999;">
-    💬 مساعدك الذكي
+<button
+  class="btn shadow position-fixed end-0 top-50 translate-middle-y rounded-start-pill border sidebar-button-style"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#chat-widget"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="text-primary bi bi-list-ul" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+  </svg>
+  <span class="visually-hidden">محادثة آلية</span>
 </button>
 
 <!-- نافذة الشات الجانبية (SideBar) -->
-<div id="ai-chat-sidebar" style="position: fixed; top: 0; right: -380px; width: 350px; height: 100%; background: #ffffff; box-shadow: -4px 0 15px rgba(0,0,0,0.1); transition: right 0.3s ease; z-index: 10000; display: flex; flexDirection: column; font-family: sans-serif;">
-    
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="chat-widget"
+  aria-labelledby="chatwidgetLabel"
+>
     <!-- رأس النافذة -->
-    <div style="background: #2563eb; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
-        <h3 style="margin: 0; font-size: 16px;">المساعد الذكي للموقع</h3>
-        <button id="ai-chat-close-btn" style="background: none; border: none; color: white; font-size: 18px; cursor: pointer;">✕</button>
+    <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="chatwidgetLabel">محادثة آلية</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="إغلاق"
+    >
+      <span class="visually-hidden">إغلاق</span>
+    </button>
     </div>
 
     <!-- منطقة عرض الرسائل -->
