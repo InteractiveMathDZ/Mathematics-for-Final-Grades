@@ -374,7 +374,8 @@ table {
   gap: 10px;
 }
 
-.bot-message {
+.bot-message,
+.user-question {
   background: var(--bg-card);
   color: var(--bs-body-color);
   padding: 10px;
