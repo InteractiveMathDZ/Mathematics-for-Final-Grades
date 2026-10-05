@@ -53,12 +53,6 @@
 /* ==========================================================================
    2. القائمة الجانبية وعناصر التحكم (Sidebar & List Group)
    ========================================================================== */
-[data-bs-theme="dark"] .offcanvas {
-  transition: background-color 0.3s ease;
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
 .offcanvas .list-group-item a {
   color: inherit;
 }
@@ -67,10 +61,6 @@
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
-}
-
-.bi-list-ul {
-  color: #66b2ff !important;
 }
 
 /* معالجة بياض الأزرار النشطة وحالة التركيز على الهواتف */
@@ -117,12 +107,6 @@
 .sidebar-button-style {
   z-index: 1050;
   padding: 12px 18px
-}
-
-.chatwideget-button-style {
-   z-index: 1050;
-   padding: 12px 18px;
-   top: 40%
 }
 
 .div-graph-style {
@@ -354,4 +338,22 @@ table {
 .raw_html-style {
    text-align: center;
    margin: 25px 0;
+}
+
+
+/* chat-widget style */
+.chatwideget-button-style {
+   z-index: 1050;
+   padding: 12px 18px;
+   top: 40%
+}
+
+[data-bs-theme="dark"] .offcanvas {
+  transition: background-color 0.3s ease;
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+.bi-list-ul {
+  color: #66b2ff !important;
 }
