@@ -4,11 +4,21 @@
 
 /* الوضع الافتراضي أو النمط الفاتح (Light Mode) */
 :root {
-  /* ألوان الدوائر في النمط الفاتح متناسقة مع بياض الخلفية */
+  /* الخلفيات العامة والعناصر */
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #1e293b;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+
+  /* ألوان الدوائر والبطاقات في النمط الفاتح متناسقة مع بياض الخلفية */
   --bg-card-circle: #f8fafc;
   --border-circle: #e2e8f0;
   --text-circle-main: #1e293b;
   --text-circle-muted: #64748b;
+
+  /* ألوان النصوص والترويسات */
+  --text-main: #0f172a;
+  --text-muted: #475569;
 
   /* ألوان التمايز البصري للوضع الفاتح */
   --accent-blue: #0284c7;
@@ -18,14 +28,21 @@
 
 /* النمط المظلم البرمجي (Dark Mode - يتم تفعيله عبر سمة بوتستراب) */
 [data-bs-theme="dark"] {
+  /* الخلفيات العامة والعناصر */
   --bs-body-bg: #121212;
   --bs-body-color: #e0e0e0;
+  --bg-card: #1e1e1e;
+  --border-color: #333333;
 
   /* ألوان الدوائر الليليّة */
   --bg-card-circle: rgba(30, 41, 59, 0.7);
   --border-circle: rgba(51, 65, 85, 0.8);
   --text-circle-main: #ffffff;
   --text-circle-muted: #cbd5e1;
+
+  /* ألوان النصوص والترويسات */
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
 
   /* ألوان التمايز البصري المضيئة للوضع الداكن */
   --accent-blue: #38bdf8;
