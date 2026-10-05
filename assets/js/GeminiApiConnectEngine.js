@@ -72,3 +72,32 @@ function updateMessage(id, newText) {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 }
+
+async function askCentralAI(userQuestion, customPrompt) {
+  try {
+    const response = await fetch('https://ai-proxy-server-reul.vercel.app/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: userQuestion,
+        systemPrompt: customPrompt // هنا تحدد دور البوت، مثلاً: "أنت مساعد تعليمي لموقع الرياضيات..."
+      })
+    });
+
+    const data = await response.json();
+    
+    if (response.ok) {
+      return data.reply; // النص الراجع من الذكاء الاصطناعي
+    } else {
+      console.error('خطأ من السيرفر:', data.error);
+      return 'عذراً، حدث خطأ أثناء الاتصال بالخادم.';
+    }
+
+  } catch (error) {
+    console.error('خطأ في الشبكة:', error);
+    return 'عذراً، تعذر الاتصال بالخدمة.';
+  }
+}
+
