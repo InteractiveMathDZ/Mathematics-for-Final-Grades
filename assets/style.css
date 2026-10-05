@@ -35,8 +35,8 @@
   --border-color: #333333;
 
   /* ألوان الدوائر الليليّة */
-  --bg-card-circle: rgba(30, 41, 59, 0.7);
-  --border-circle: rgba(51, 65, 85, 0.8);
+  --bg-card-circle: rgb(30, 41, 59, 0.7);
+  --border-circle: rgb(51, 65, 85, 0.8);
   --text-circle-main: #ffffff;
   --text-circle-muted: #cbd5e1;
 
@@ -114,8 +114,9 @@
       aspect-ratio: 1 / 1;
       background-color: #1a1a1a;
       border-radius: 6px;
-      overflow: hidden;
+      overflow: auto;
       touch-action: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (hover: none) {
@@ -194,10 +195,12 @@
   height: 8px;
   display: block !important;
 }
+
 .math-block::-webkit-scrollbar-thumb {
   background: #0d6efd;
   border-radius: 10px;
 }
+
 [data-bs-theme="dark"] .math-block::-webkit-scrollbar-track {
   background: #1e1e1e;
   border-radius: 10px;
@@ -247,6 +250,7 @@ table {
 [data-bs-theme="dark"] table tbody tr:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.02);
 }
+
 [data-bs-theme="dark"] table tbody tr:hover {
   background-color: rgba(56, 189, 248, 0.08);
 }
@@ -295,6 +299,7 @@ table {
 .stat-card {
     min-width: 120px;
 }
+
 .icon-box {
     width: 40px;
     height: 40px;
@@ -302,6 +307,7 @@ table {
     align-items: center;
     justify-content: center;
 }
+
 .list-group-item:hover {
     background-color: #f8f9fa;
     transform: translateX(-5px);
@@ -315,6 +321,7 @@ table {
 .width100 {
    width: 100%;
 }
+
 .height10px {
    height: 10px;
 }
@@ -323,10 +330,6 @@ table {
    font-size: 0.8rem;
 }
 
-.div-graph-style {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
 .svg-style {
       min-width: 650px;
       background: #1e1e1e;
