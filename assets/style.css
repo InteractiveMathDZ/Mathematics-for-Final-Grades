@@ -380,7 +380,7 @@ table {
 
 .input-area {
    padding: 15px; 
-   background: white; 
+   background: var(--bg-card); 
    border-top: 1px solid var(--bs-border-color);
    display: flex; 
    gap: 8px;"
