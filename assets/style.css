@@ -345,6 +345,7 @@ table {
 
 /* chat-widget style */
 .chatwideget-button-style {
+  background: var(--bg-card);
   z-index: 1050;
   padding: 12px 18px;
   top: 40%;
