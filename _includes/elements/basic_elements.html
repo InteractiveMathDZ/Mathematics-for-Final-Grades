@@ -8,7 +8,7 @@
   <!-- prettier-ignore -->
   <div
     id="{{ el.graph.id }}"
-    class="{{ el.graph.class }} div-graph-style"
+    class="bg-dark {{ el.graph.class }} div-graph-style"
     data-graph-config="{{ el.graph | jsonify | escape }}"
   ></div>
 </div>
@@ -19,7 +19,7 @@
 >
   <div
     id="{{ el.simulation.id }}"
-    class="jxgbox {{ el.simulation.class }} div-graph-style"
+    class="bg-dark jxgbox {{ el.simulation.class }} div-graph-style"
     data-simulation-config="{{ el.simulation | jsonify | escape }}"
   ></div>
 </div>
