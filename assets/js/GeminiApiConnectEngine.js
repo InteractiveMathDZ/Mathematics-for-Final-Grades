@@ -41,7 +41,7 @@ function appendMessage(text, sender, isLoading = false) {
 function updateMessage(id, newText) {
   const msgDiv = document.getElementById(id);
   if (msgDiv) {
-    msgDiv.textContent = newText;
+    msgDiv.innerHTML = marked.parse(newText);
     msgDiv.style.fontStyle = "normal";
     if (window.MathJax && window.MathJax.typesetPromise) {
         window.MathJax.typesetPromise([msgDiv]).catch((err) => console.log('MathJax error:', err));
