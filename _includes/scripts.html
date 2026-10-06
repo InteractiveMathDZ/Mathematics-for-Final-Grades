@@ -7,6 +7,9 @@
 <script src="{{ '/assets/js/simulation_engine.js' | relative_url }}"></script>
 {%- endif -%}
 
+# مكتبة لتحويل نصوص مارك داون إلى html
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <script>
   // التحقق من وجود وسم الآدمن قبل تحميل وتشغيل الكونسول
   if (localStorage.getItem("role") === "admin") {
