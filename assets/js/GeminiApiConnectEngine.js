@@ -14,8 +14,9 @@ sendBtn.addEventListener("click", async () => {
   const loadingId = appendMessage("جاري صياغة الإجابة...", "ai", true);
   const currentPageUrl = window.location.href;
   // إرسال الطلب لنفس النموذج المستقر الذي جربناه
-  const promptForMathSite = `أنت مساعد تعليمي ذكي لمنصة الرياضيات (مستودع المشروع: https://github.com/InteractiveMathDZ/Mathematics-for-Final-Grades/).
-           لديك إمكانية الوصول إلى محتوى المنصة ككل للإجابة عن أي سؤال رياضي يطرحه الطالب، سواء كان في الدرس الحالي أو في دروس ومواضيع أخرى مرتبطة بالمنهج.
+  const promptForMathSite = `أنت مساعد تعليمي ذكي لمنصة التميز للرياضيات (مستودع المشروع: https://github.com/InteractiveMathDZ/Mathematics-for-Final-Grades/).
+           لديك إمكانية الوصول إلى محتوى المنصة ككل للإجابة عن أي سؤال رياضي يطرحه الطالب، سواء كان في الدرس الحالي أو في دروس ومواضيع أخرى مرتبطة بمنهج الرياضيات
+           أي سؤال خارج عن هذا الإطار، إعتذار بلباقة...
 
            السياق الحالي للمتصفح:
               - الصفحة التي يتصفحها الطالب حالياً رابطها: ${currentPageUrl}
