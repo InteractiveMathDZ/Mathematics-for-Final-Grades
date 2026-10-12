@@ -382,6 +382,8 @@ table {
   max-width: 85%;
   font-size: 14px;
   align-self: flex-start;
+  overflow: auto hidden;
+  white-space: nowrap;
 }
 
 .user-question {
